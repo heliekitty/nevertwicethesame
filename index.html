@@ -190,7 +190,7 @@ tr.grp td{background:var(--bg);font-weight:bold;letter-spacing:.03em;color:var(-
 .tabbar button.on>span:first-child>.ni-o{display:none}
  .tabbar button.big span+span{font-size:12px}
  .tabbar button.on{color:var(--lnk,var(--acc))}
- main{padding-bottom:calc(100px + env(safe-area-inset-bottom,0px))}
+ main{padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
 main>:first-child{margin-top:6px}
 main>h2:first-child{margin-bottom:14px}
 }
@@ -302,7 +302,7 @@ header button[data-a="drawer"]{display:flex;align-items:center;justify-content:c
 <script>
 document.getElementById('app').innerHTML=mothLoaderHTML();
 var K='ntts_items_v2',OK='ntts_order_v1',PER=25,MAX_UPLOAD=300*1024;
-var APP_VERSION='2.14.0',APP_DATE='2026-11-16 · 10:21 PM ET',UPDATE_URL='';
+var APP_VERSION='2.14.1',APP_DATE='2026-11-16 · 11:17 PM ET',UPDATE_URL='';
 var EMOJI={ring:'💍',earrings:'✨',necklace:'📿',bracelet:'⭕',watch:'⌚',other:'💎'};
 var ICONS={pkg:"<path d='M3 7.5L12 3l9 4.5v9L12 21l-9-4.5z'/><path d='M3 7.5l9 4.5 9-4.5M12 12v9'/>",hand:"<path d='M5 11V7a1.5 1.5 0 0 1 3 0v4M8 11V5a1.5 1.5 0 0 1 3 0v6M11 11V6a1.5 1.5 0 0 1 3 0v6M14 11V8a1.5 1.5 0 0 1 3 0v7c0 3-2 5-5 5h-1c-2 0-3-1-4-3l-2-4'/>",x:"<path d='M6 6l12 12M18 6L6 18'/>",ring:"<circle cx='12' cy='14' r='6'/><path d='M9.5 8 12 4l2.5 4'/><path d='M12 9.5l1.5 2.5-1.5 2.5-1.5-2.5z'/>",earrings:"<path d='M7 3v3'/><path d='M7 6c-1.6 0-2.5 1.3-2.5 3S6 14 7 17c1-3 2.5-5 2.5-8C9.5 7.3 8.6 6 7 6z'/><path d='M17 3v3'/><path d='M17 6c-1.6 0-2.5 1.3-2.5 3S16 14 17 17c1-3 2.5-5 2.5-8C19.5 7.3 18.6 6 17 6z'/>",necklace:"<path d='M4 5c2 7 14 7 16 0'/><path d='M12 12.5V15'/><circle cx='12' cy='17' r='2.2'/>",bracelet:"<ellipse cx='12' cy='12' rx='8' ry='5.5'/><ellipse cx='12' cy='12' rx='5.5' ry='3'/>",watch:"<circle cx='12' cy='13' r='5.5'/><path d='M9 7.5 10 3h4l1 4.5M9 18.5 10 23h4l1-4.5'/><path d='M12 10.5V13l1.8 1.2'/>",other:"<path d='M7 4h10l4 5-9 11L3 9z'/><path d='M3 9h18M9 4l3 16 3-16'/>",heart:"<path d='M12 20s-7-4.4-7-9.5A4 4 0 0 1 12 8a4 4 0 0 1 7 2.5C19 15.6 12 20 12 20z'/>",wrench:"<path d='M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-.5-.5-2.5z'/>",key:"<g transform='rotate(-45 12.5 12)'><circle cx='8' cy='12' r='4'/><path d='M12 12h9M18 12v3M21 12v2.5'/></g>",curio:"<rect x='4' y='3' width='16' height='18' rx='1'/><path d='M3 3h18M3 21h18'/><path d='M12 3v18'/><path d='M4 11h16'/><path d='M10.5 7v1.5M13.5 7v1.5M10.5 15v1.5M13.5 15v1.5'/>",clock:"<circle cx='12' cy='12' r='9'/><path d='M12 7v5l3 2'/>",pencil:"<path d='M4 20h4L19 9l-4-4L4 16z'/><path d='M13.5 6.5l4 4'/>",lock:"<rect x='5' y='11' width='14' height='10' rx='2'/><path d='M8 11V7a4 4 0 0 1 8 0v4'/>",unlock:"<rect x='3.95' y='11' width='11.1' height='10' rx='2'/><path d='M12.8 11V6.3A3.3 3.3 0 0 1 19.4 6.3V9.5'/>",bag:"<path d='M5 8h14l-1 12H6z'/><path d='M9 8V6a3 3 0 0 1 6 0v2'/>",plus:"<path d='M12 5v14M5 12h14'/>",x:"<path d='M6 6l12 12M18 6L6 18'/>",spark:"<path d='M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z'/>",gallery:"<rect x='3' y='4' width='18' height='16' rx='2'/><circle cx='9' cy='10' r='2'/><path d='M21 16l-5-5-8 9'/>"};
 var ORN='<svg width="72" height="10" viewBox="0 0 72 10" fill="none" stroke="#a8864f" stroke-width="1.2"><path d="M0 5h28M44 5h28"/><path d="M36 1l4 4-4 4-4-4z"/></svg>';
@@ -372,7 +372,7 @@ function applyStatusRule(o){
   if(wh!=='In possession'&&wh!=='Gone'){if(!confirm('This piece is '+wh+'. Mark it In possession and record '+st+'?'))return false;wh='In possession'}
   o.whereabouts='Gone';return true;
  }
- if(wh==='Gone'){alert('Gone is set by recording an exit. Pick Sold, Melted, Returned or Gifted as the status, or choose another location.');return false}
+ if(wh==='Gone'){o.status='Sold';return true}
  o.whereabouts=wh;return true;
 }
 function linkLabel(u){var h=String(u).replace(/^https?:\/\/(www\.)?/,'').split('/')[0].split('.')[0];return h.charAt(0).toUpperCase()+h.slice(1)}
@@ -828,8 +828,8 @@ var FACETS=[
  {k:'photoshoot',l:'Photoshoot',cnt:1,v:function(){return ['Yes','No']},g:function(i){return [i.photoshoot?'Yes':'No']}},
  {k:'refimg',l:'Reference Images',cnt:1,v:function(){return ['Yes','No']},g:function(i){return [(i.refs&&i.refs.length)?'Yes':'No']}},
  {k:'inColl',l:'In a Collection',cnt:1,v:function(){return ['Yes','No']},g:function(i){return [pieceInColl(i)?'Yes':'No']}},
- {k:'status',l:'Status',cnt:1,v:function(){return STAT},g:function(i){return [i.status]}},
  {k:'where',l:'Whereabouts',cnt:1,v:function(){return WHERE},g:function(i){return [i.whereabouts||'In possession']}},
+ {k:'status',l:'Status',cnt:1,v:function(){return STAT},g:function(i){return [i.status]}},
  {k:'category',l:'Type',cnt:1,counted:1,v:function(){return CATS},g:function(i){return [i.category]}},
  {k:'seller',l:'Seller',counted:1,v:function(){return allOf(function(i){return [i.seller]})},g:function(i){return [i.seller]}},
  {k:'period',l:'Period',cnt:1,v:function(){return PERIODS},g:function(i){return [i.period]}},
@@ -1097,7 +1097,7 @@ function renderBox(){
 }
 function valOf(v){return v==null?'':Array.isArray(v)?v.join(', '):String(v)}
 var WIDE_KEYS=['title','seller','link','notes','description','condition'];
-function fieldHTML(k,v){
+function fieldHTML(k,v,opts){
  var s=FS[k],t=s[1],val=LISTS.indexOf(k)>-1?(v||[]).join(', '):(v==null?'':v),c;
  if(LOWER_KEYS.indexOf(k)>-1)val=String(val).toLowerCase();
  if(k==='metal'){var msel=(Array.isArray(v)?v:[]).slice();return '<details class="cdd mdd" data-sel="'+esc(JSON.stringify(msel))+'"><summary class="cddS"><span>'+s[0]+'</span><span class="cddBox"><span class="cddTxt">'+metalTxt(msel)+'</span><span class="cddArr"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></span></span></summary><div style="display:grid;grid-template-columns:1fr;gap:0;margin-top:4px;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg)">'+metalsHTML(msel)+'</div></details>'}
@@ -1106,7 +1106,7 @@ function fieldHTML(k,v){
  if(t==='check')return '<label class="swl"><input type="checkbox" name="'+k+'"'+(v?' checked':'')+'> '+s[0]+'</label>';
  if(t==='calc')return '<label>'+s[0]+'<div class="calc" id="'+s[2]+'">'+esc(calcs(editing)[s[2]])+'</div></label>';
  if(t==='pct')return '<label>'+s[0]+'<input name="'+k+'" type="number" step="0.1" inputmode="decimal" value="'+(k==='ebayPct'?PS.eb:PS.ig)+'"></label>';
- if(t==='sel')c='<select name="'+k+'">'+s[2].map(function(o){return '<option value="'+esc(o)+'"'+(o===val?' selected':'')+'>'+esc(o||'—')+'</option>'}).join('')+'</select>';
+ if(t==='sel')c='<select name="'+k+'">'+(opts||s[2]).map(function(o){return '<option value="'+esc(o)+'"'+(o===val?' selected':'')+'>'+esc(o||'—')+'</option>'}).join('')+'</select>';
  else if(t==='ringsz')c='<select name="ringSize"><option value="">—</option>'+ringOpts(val)+'</select>';
  else if(t==='textarea')c='<textarea name="'+k+'" rows="3">'+esc(val)+'</textarea>';
  else if(t==='rating')c='<select name="'+k+'">'+[0,1,2,3,4,5].map(function(n){return '<option value="'+n+'"'+(Number(val)===n?' selected':'')+'>'+(n?stars(n):'No rating')+'</option>'}).join('')+'</select>';
@@ -1306,7 +1306,7 @@ function renderEdit(){
  var pr=it.shipEstimate!=null&&it.shipEstimate!==''?it.shipEstimate:shipDefault(it.cost);
  shipTouched=false;
  var h='<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:20px"><h2 style="margin:0">Add/Edit a Piece</h2><button type="button" data-a="quickadd">Quick Fill</button></div>'+'<form id="form" autocomplete="off">';
- h+='<details data-sec="stats"'+dOpen('stats',true)+'><summary>Stats</summary><div class="f">'+fieldHTML('whereabouts',it.whereabouts||'In possession')+fieldHTML('status',it.status)+sec(ORDER_STATS)+'</div>'
+ h+='<details data-sec="stats"'+dOpen('stats',true)+'><summary>Stats</summary><div class="f">'+fieldHTML('whereabouts',it.whereabouts||'In possession')+fieldHTML('status',it.status,it.whereabouts==='Gone'?EXITS:null)+sec(ORDER_STATS)+'</div>'
   +'<h4 class="sub" style="margin-top:14px">Collections</h4><div id="collsub">'+collsSubHTML(it)+'</div>'
   +'<h4 class="sub" style="margin-top:14px">Set</h4><div id="setsub">'+setSubHTML(it)+'</div></details>';
  h+='<details data-sec="images"'+dOpen('images',true)+'><summary>Images</summary>'+imagesHTML()+'</details>';
@@ -1643,7 +1643,7 @@ function renderMain(){
 }
 function render(){renderMain();renderDrawer();wfix()}
 var wtopRO=window.ResizeObserver?new ResizeObserver(function(){wfix()}):null;
-function wfix(){var st=document.documentElement.style;var h=document.querySelector('header');if(h){st.setProperty('--hdr-h',h.offsetHeight+'px');if(wtopRO)wtopRO.observe(h)}var w=document.querySelector('.wtop');st.setProperty('--wtop-h',(w?w.offsetHeight:0)+'px');if(wtopRO&&w)wtopRO.observe(w)}
+function wfix(){var st=document.documentElement.style;var h=document.querySelector('header');if(h){st.setProperty('--hdr-h',Math.ceil(h.getBoundingClientRect().bottom)+'px');if(wtopRO)wtopRO.observe(h)}var w=document.querySelector('.wtop');st.setProperty('--wtop-h',(w?Math.ceil(w.getBoundingClientRect().height):0)+'px');if(wtopRO&&w)wtopRO.observe(w)}
 window.addEventListener('resize',wfix);
 var keepY=null;
 var trail=[];
@@ -1746,7 +1746,7 @@ function jotdLuck(){
 }
 function jotdStart(){
  jotdSel={ring1:null,ring2:null,earring:null,necklace:null};
- jotdLock={ring1:false,ring2:false,earring:true,necklace:true};jotdMsg='';
+ jotdLock={ring1:false,ring2:false,earring:true,necklace:true};jotdColors={ring1:null,ring2:null,earring:null,necklace:null};jotdMsg='';
 }
 function jotdCard(label,i,emptyMsg,k){
  var locked=!!jotdLock[k];
@@ -2417,7 +2417,8 @@ case 'frm':frameStyle=d.v;document.documentElement.dataset.frame=frameStyle;kset
  }
 });
 document.addEventListener('change',function(e){
- var t=e.target,a=t.getAttribute('data-a');
+ var t=e.target;if(t&&t.name==='whereabouts'&&t.closest&&t.closest('#form')){var ss=document.querySelector('#form select[name="status"]');if(ss){var cur=ss.value,gone=t.value==='Gone',opts=gone?EXITS:STAT,pick=opts.indexOf(cur)>-1?cur:opts[0];ss.innerHTML=opts.map(function(o){return '<option value="'+esc(o)+'"'+(o===pick?' selected':'')+'>'+esc(o)+'</option>'}).join('')}}
+ var a=t.getAttribute('data-a');
  if(t.id==='sort'){sortBy=t.value;render();return}
  if(a==='smode'){secretCfg.on=t.checked;saveSecret();render();return}
  if(a==='sthr'){var tv=num(parseMoney(t.value));t.value=tv==null?'':fmtMoney(tv);return}
