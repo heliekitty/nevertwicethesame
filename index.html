@@ -93,9 +93,9 @@ h4.sub{margin:14px 0 6px;letter-spacing:.03em;grid-column:1/-1}
 .kwm{align-items:flex-start;padding-top:12vh}
 .kwm>div{max-height:70vh}
 @keyframes jfxgem{0%{opacity:0}10%{opacity:1}80%{opacity:1}100%{opacity:0}}
-.gfade{position:fixed;left:0;right:0;height:22px;pointer-events:none;z-index:3;opacity:0;transition:opacity .2s}
-#gfT{top:var(--hdr-h,62px);background:linear-gradient(var(--bg),transparent)}
-#gfB{bottom:calc(69px + env(safe-area-inset-bottom,0px));background:linear-gradient(transparent,var(--bg))}
+.gfade{position:fixed;left:0;right:0;height:40px;pointer-events:none;z-index:3;opacity:0;transition:opacity .35s ease}
+#gfT{top:var(--hdr-h,62px);background:linear-gradient(to bottom,var(--bg) 0%,color-mix(in srgb,var(--bg) 60%,transparent) 45%,transparent 100%)}
+#gfB{bottom:0;background:linear-gradient(to top,var(--bg) 0%,color-mix(in srgb,var(--bg) 60%,transparent) 45%,transparent 100%)}
 .modal{position:fixed;inset:0;background:rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center;padding:20px;z-index:40}
 .modal>div{background:var(--card);border-radius:14px;padding:16px;max-width:420px;width:100%;max-height:85vh;overflow:auto}
 .drawer{position:fixed;top:0;bottom:0;left:0;width:min(86vw,320px);background:var(--card);border-right:1px solid var(--line);transform:translateX(-102%);transition:transform .25s;z-index:30;display:flex;flex-direction:column;overflow:hidden;padding:0}
@@ -312,7 +312,7 @@ header button[data-a="drawer"]{display:flex;align-items:center;justify-content:c
 <script>
 document.getElementById('app').innerHTML=mothLoaderHTML();
 var K='ntts_items_v2',OK='ntts_order_v1',PER=25,MAX_UPLOAD=300*1024;
-var APP_VERSION='2.16.0',APP_DATE='2026-11-17 · 12:57 PM ET',UPDATE_URL='';
+var APP_VERSION='2.16.1',APP_DATE='2026-11-17 · 1:03 PM ET',UPDATE_URL='';
 var EMOJI={ring:'💍',earrings:'✨',necklace:'📿',bracelet:'⭕',watch:'⌚',other:'💎'};
 var ICONS={coll:"<rect x='3' y='4' width='18' height='16' rx='2'/><path d='M3 10h18M8 14h8'/>",gem:"<path d='M7 4h10l4 5-9 11L3 9z'/><path d='M3 9h18M9 4l-1.5 5L12 20l4.5-11L15 4'/>",pkg:"<path d='M3 7.5L12 3l9 4.5v9L12 21l-9-4.5z'/><path d='M3 7.5l9 4.5 9-4.5M12 12v9'/>",hand:"<path d='M5 11V7a1.5 1.5 0 0 1 3 0v4M8 11V5a1.5 1.5 0 0 1 3 0v6M11 11V6a1.5 1.5 0 0 1 3 0v6M14 11V8a1.5 1.5 0 0 1 3 0v7c0 3-2 5-5 5h-1c-2 0-3-1-4-3l-2-4'/>",x:"<path d='M6 6l12 12M18 6L6 18'/>",ring:"<circle cx='12' cy='14' r='6'/><path d='M9.5 8 12 4l2.5 4'/><path d='M12 9.5l1.5 2.5-1.5 2.5-1.5-2.5z'/>",earrings:"<path d='M7 3v3'/><path d='M7 6c-1.6 0-2.5 1.3-2.5 3S6 14 7 17c1-3 2.5-5 2.5-8C9.5 7.3 8.6 6 7 6z'/><path d='M17 3v3'/><path d='M17 6c-1.6 0-2.5 1.3-2.5 3S16 14 17 17c1-3 2.5-5 2.5-8C19.5 7.3 18.6 6 17 6z'/>",necklace:"<path d='M4 5c2 7 14 7 16 0'/><path d='M12 12.5V15'/><circle cx='12' cy='17' r='2.2'/>",bracelet:"<ellipse cx='12' cy='12' rx='8' ry='5.5'/><ellipse cx='12' cy='12' rx='5.5' ry='3'/>",watch:"<circle cx='12' cy='13' r='5.5'/><path d='M9 7.5 10 3h4l1 4.5M9 18.5 10 23h4l1-4.5'/><path d='M12 10.5V13l1.8 1.2'/>",heart:"<path d='M12 20s-7-4.4-7-9.5A4 4 0 0 1 12 8a4 4 0 0 1 7 2.5C19 15.6 12 20 12 20z'/>",wrench:"<path d='M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-.5-.5-2.5z'/>",key:"<g transform='rotate(-45 12.5 12)'><circle cx='8' cy='12' r='4'/><path d='M12 12h9M18 12v3M21 12v2.5'/></g>",curio:"<rect x='4' y='3' width='16' height='18' rx='1'/><path d='M3 3h18M3 21h18'/><path d='M12 3v18'/><path d='M4 11h16'/><path d='M10.5 7v1.5M13.5 7v1.5M10.5 15v1.5M13.5 15v1.5'/>",clock:"<circle cx='12' cy='12' r='9'/><path d='M12 7v5l3 2'/>",pencil:"<path d='M4 20h4L19 9l-4-4L4 16z'/><path d='M13.5 6.5l4 4'/>",lock:"<rect x='5' y='11' width='14' height='10' rx='2'/><path d='M8 11V7a4 4 0 0 1 8 0v4'/>",unlock:"<rect x='3.95' y='11' width='11.1' height='10' rx='2'/><path d='M12.8 11V6.3A3.3 3.3 0 0 1 19.4 6.3V9.5'/>",bag:"<path d='M5 8h14l-1 12H6z'/><path d='M9 8V6a3 3 0 0 1 6 0v2'/>",plus:"<path d='M12 5v14M5 12h14'/>",x:"<path d='M6 6l12 12M18 6L6 18'/>",spark:"<path d='M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z'/>",gallery:"<rect x='3' y='4' width='18' height='16' rx='2'/><circle cx='9' cy='10' r='2'/><path d='M21 16l-5-5-8 9'/>"};
 var ORN='<svg width="72" height="10" viewBox="0 0 72 10" fill="none" stroke="#a8864f" stroke-width="1.2"><path d="M0 5h28M44 5h28"/><path d="M36 1l4 4-4 4-4-4z"/></svg>';
@@ -333,8 +333,8 @@ function designHTML(){
  var icons=['curio','ring','coll','spark','gem','bag','plus','x','lock','unlock','pkg','hand','heart','clock','wrench','key','earrings','necklace','bracelet','watch','palette'];
  return '<div style="border:1px solid var(--line);border-radius:12px;padding:12px;text-align:left">'
   +'<h4 class="sub" style="margin:0 0 6px">Color</h4>'
-  +'<div style="display:flex;flex-wrap:wrap;gap:10px">'+swc('--acc','Accent')+swc('--gold','Gold')+swc('--v1','Velvet')+swc('--v2','Deep')+swc('--card','Card')+swc('--line','Line')+swc('--mute','Muted')+swc('--unlock','Unlocked')+'</div>'
-  +rule('Each theme sets accent, velvet and deep. Gold is shared across all themes. Body text uses the text color. Notes use the muted color. Unlocked is the pink behind the key when the Secret Compartment is open.')
+  +'<div style="display:flex;flex-wrap:wrap;gap:10px">'+swc('--acc','Accent')+swc('--unlock','Accent 2')+swc('--v1','Velvet')+swc('--v2','Deep')+'</div><div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:10px">'+swc('--card','Card')+swc('--line','Line')+swc('--mute','Muted')+swc('--gold','Gold')+'</div>'
+  +rule('Each theme sets accent, velvet and deep. Gold is shared across all themes. Body text uses the text color. Notes use the muted color. Accent 2 is the pink behind the key when the Secret Compartment is open.')
   +'<h4 class="sub" style="margin:14px 0 6px">Type</h4>'
   +'<h2 style="margin:0">Title, 28px</h2>'
   +'<h3 style="margin:4px 0 0">Section, 24px</h3>'
@@ -353,7 +353,7 @@ function designHTML(){
   +'<h4 class="sub" style="margin:14px 0 6px">Spacing and Shape</h4>'
   +'<div style="display:flex;flex-direction:column;gap:6px">'+spc(4)+spc(8)+spc(12)+spc(16)+spc(24)+'</div>'
   +'<div style="display:flex;gap:10px;margin-top:10px;align-items:center"><div style="width:60px;height:40px;border-radius:999px;border:1px solid var(--line)"></div><div style="width:60px;height:40px;border-radius:12px;border:1px solid var(--line)"></div><div style="width:60px;height:40px;border-radius:10px;border:1px solid var(--gold)"></div><div style="width:60px;height:40px;border-radius:2px;border:1px solid var(--gold);box-shadow:0 0 0 3px var(--bg),0 0 0 4px var(--gold-soft)"></div></div>'
-  +'<div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:12px"><div class="fsimple" style="width:140px"><div class="mat" style="width:140px;box-sizing:border-box;margin:0"><div class="photo" style="background:var(--v1)"></div></div><p class="meta" style="text-align:center;margin:0">Simple</p></div><div style="width:140px"><div class="mat" style="width:140px;box-sizing:border-box;margin:0"><div class="photo" style="background:var(--v1)"></div></div><p class="meta" style="text-align:center;margin:0">Floral</p></div></div>'
+  +'<div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:12px"><div class="fsimple" style="width:140px"><div class="mat" style="width:140px;box-sizing:border-box;margin:0"><div class="photo" style="background:var(--v1)"></div></div><p class="meta" style="text-align:center;margin:0">Simple</p></div><div style="width:140px"><div class="mat" style="width:140px;box-sizing:border-box;margin:0;padding:24px;border:1px solid transparent"><div class="photo" style="background:var(--v1)"></div></div><p class="meta" style="text-align:center;margin:0">Floral</p></div></div>'
   +rule('Floral is the ornate frame and the default. Simple has a plain gold edge. Photo mats use one of the two.')
   +rule('Spacing steps are 4, 8, 12, 16 and 24. Buttons are pills. Cards have a 12px radius. Tiles have 10px. Photo mats are square with a gold edge.')
   +'<h4 class="sub" style="margin:14px 0 6px">Backgrounds</h4>'+'<div style="display:flex;gap:10px"><div style="flex:1"><div class="box" style="height:90px;border-radius:12px"></div><p class="meta" style="margin:6px 0 0">Velvet</p></div><div style="flex:1"><div class="box pat" style="height:90px;border-radius:12px"></div><p class="meta" style="margin:6px 0 0">Asanoha</p></div></div>'
@@ -397,7 +397,7 @@ var COLOR_ORDER=['Red','Pink','Orange','Brown','Yellow','Green','Light blue','Bl
 var COLOR_SEL=[''].concat(COLOR_ORDER);
 var COLORS={pink:'#f4a7c1',red:'#d03a3a',orange:'#f0892b',brown:'#7b4a2a',yellow:'#f4d03f',green:'#3f9d5a','light blue':'#8fd3f4',blue:'#3d6fd0',purple:'#8a4fc0',black:'#1a1a1a',gray:'#8d8d8d',white:'#ffffff',multi:'conic-gradient(#d03a3a,#f4d03f,#3f9d5a,#3d6fd0,#8a4fc0,#d03a3a)'};
 var HEARTS={Pink:'🩷',Red:'❤️',Orange:'🧡',Brown:'🤎',Yellow:'💛',Green:'💚','Light blue':'🩵',Blue:'💙',Purple:'💜',Black:'🖤',Gray:'🩶',White:'🤍',Multi:'🌈'};
-var THEMES={ruby:{n:'Ruby',l:'#5a1538',d:'#7a2a52',t:'#e8a3c4',v1:'#2a0115',v2:'#2a0115',pf:'%232a0115ff',ps:'%23e052844a'},sapphire:{n:'Sapphire',l:'#2e5aa8',d:'#8fb3ff',v1:'#1f2f5a',v2:'#0c1530',pf:'%230c1530ff',ps:'%238fb3ff4a'},emerald:{n:'Emerald',l:'#1f6b4a',d:'#7fd1a8',v1:'#1d4a37',v2:'#0a2118',pf:'%230a2118ff',ps:'%237fd1a84a'}};
+var THEMES={ruby:{n:'Ruby',l:'#5a1538',d:'#7a2a52',t:'#e8a3c4',u:'#e8a3c4',v1:'#2a0115',v2:'#2a0115',pf:'%232a0115ff',ps:'%23e052844a'},sapphire:{n:'Sapphire',l:'#2e5aa8',d:'#8fb3ff',u:'#b9cdf5',v1:'#1f2f5a',v2:'#0c1530',pf:'%230c1530ff',ps:'%238fb3ff4a'},emerald:{n:'Emerald',l:'#1f6b4a',d:'#7fd1a8',u:'#b5e3cc',v1:'#1d4a37',v2:'#0a2118',pf:'%230a2118ff',ps:'%237fd1a84a'}};
 var PAT_TPL="data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='69.282' height='40' patternTransform='scale(1) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='__FILL__'/><path d='M34.641-20v80m34.64-40L0-20m69.282 80L0 20m69.282 0L0 60m69.282-80L0 20m69.282-40v80M0-20v80M34.64 40l11.547-20m11.547 20l11.547 20M34.641 40h23.094m11.547-20L57.735 40M46.188 20L34.641 40l11.547 20h23.094L80.83 40 69.282 20H46.188zM34.641 40l11.547-20m11.547 20l11.547 20M34.641 40h23.094m11.547-20L57.735 40M46.188 20L34.641 40l11.547 20h23.094L80.83 40 69.282 20H46.188zM34.641 0l11.547-20M57.735 0l11.547 20M34.642 0h23.093m11.547-20L57.735 0M46.188-20L34.641 0l11.547 20h23.094L80.83 0 69.282-20H46.188zM34.641 40L23.094 20M11.547 40L0 60m34.64-20H11.548M0 20l11.547 20m11.547-20l11.547 20-11.547 20H0l-11.547-20L0 20h23.094zM34.641 0L23.094-20M11.547 0L0 20M34.64 0H11.548M0-20L11.547 0m11.547-20L34.641 0 23.094 20H0L-11.547 0 0-20h23.094z'  stroke-width='1' stroke='__STROKE__' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(-139,-80)' fill='url(%23a)'/></svg>";
 var SORTS=[['new','Newest First (Purchase Date)'],['old','Oldest First (Purchase Date)'],['worn','Most Worn'],['rest','Least Recently Worn'],['era','Era'],['grp:colorMain','Group by Color'],['grp:category','Group by Type'],['grp:period','Group by Period'],['custom','My Ordering']];
 var ALIAS={metals:'metal',stones:'stone',hallmarks:'hallmark',measurements:'measurement',tags:'motif',mainColor:'colorMain',pdate:'purchaseDate',platform:'purchasePlatform',dListed:'dateListed',link:'linkSale',shipEst:'shipEstimate',dSold:'dateSold',ship:'shipActual',final:'payout',lastWorn:'wornLast',hearts:'rating',size:'ringSize',channel:'sellPlatform'};
@@ -735,7 +735,7 @@ function renumberIds(){
 function newItem(){return {id:nextId(),_new:1,category:'Ring',period:'Antique',status:'Keep',whereabouts:'In possession',purchaseDate:today(),rating:0,buffer:5,photoshoot:false,motif:[],stone:[],metal:[],cut:[],refs:[],cover:null}}
 function applyTheme(){
  var t=THEMES[theme]||THEMES.ruby,dk=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches,s=document.documentElement.style;
- s.setProperty('--acc',dk?t.d:t.l);s.setProperty('--lnk',dk?(t.t||t.d):t.l);s.setProperty('--v1',t.v1);s.setProperty('--v2',t.v2);s.setProperty('--pat','url("'+PAT_TPL.replace('__FILL__',t.pf).replace('__STROKE__',t.ps)+'")');
+ s.setProperty('--acc',dk?t.d:t.l);s.setProperty('--lnk',dk?(t.t||t.d):t.l);s.setProperty('--unlock',t.u);s.setProperty('--v1',t.v1);s.setProperty('--v2',t.v2);s.setProperty('--pat','url("'+PAT_TPL.replace('__FILL__',t.pf).replace('__STROKE__',t.ps)+'")');
 }
 
 /* ---------- images: one stored copy, crops stored as fractions ---------- */
@@ -1695,7 +1695,7 @@ function renderMain(){
  setupLazyBox();
  updateSummary();setTabs();updateStorage();
 }
-function fadesUpd(){var t=document.getElementById('gfT'),b=document.getElementById('gfB');if(!t||!b)return;var on=['box','coll','wishlist'].indexOf(view)>-1;var max=document.documentElement.scrollHeight-innerHeight;t.style.opacity=on&&scrollY>4?'1':'0';b.style.opacity=on&&scrollY<max-4?'1':'0'}
+function fadesUpd(){var t=document.getElementById('gfT'),b=document.getElementById('gfB');if(!t||!b)return;var tb=document.getElementById('tabbar');b.style.bottom=(tb&&tb.offsetHeight?tb.offsetHeight:0)+'px';var on=['box','coll','wishlist'].indexOf(view)>-1;var max=document.documentElement.scrollHeight-innerHeight;t.style.opacity=on&&scrollY>4?'1':'0';b.style.opacity=on&&scrollY<max-4?'1':'0'}
 function fadesInit(){if(document.getElementById('gfT'))return;['gfT','gfB'].forEach(function(id){var d=document.createElement('div');d.id=id;d.className='gfade';document.body.appendChild(d)});window.addEventListener('scroll',fadesUpd,{passive:true});window.addEventListener('resize',fadesUpd)}
 function render(){document.body.dataset.view=view;renderMain();renderDrawer();wfix();fadesInit();fadesUpd()}
 var wtopRO=window.ResizeObserver?new ResizeObserver(function(){wfix()}):null;
@@ -1713,7 +1713,8 @@ function trailBack(){
  collRo=false;ro=false;wro=false;compShownFor=null;
  drawer(false);render();window.scrollTo(0,s.y||0);
 }
-function show(v){if(v!=='edit')editing=null;view=v;ro=false;wro=false;compShownFor=null;if(v!=='edit')backTo='box';drawer(false);render();if(v==='box'&&keepY!=null){window.scrollTo(0,keepY);keepY=null}else{if(v!=='edit')keepY=null;window.scrollTo(0,0)}}
+function jotdApplyWorn(){var wp=jotdWornPicks();['ring1','ring2','earring','necklace'].forEach(function(k){if(wp[k]&&!jotdLock[k]&&(!jotdSel[k]||jotdSel[k].id!==wp[k].id))jotdSel[k]=wp[k]})}
+function show(v){if(v!=='edit')editing=null;if(v==='jotd'&&jotdSel)jotdApplyWorn();view=v;ro=false;wro=false;compShownFor=null;if(v!=='edit')backTo='box';drawer(false);render();if(v==='box'&&keepY!=null){window.scrollTo(0,keepY);keepY=null}else{if(v!=='edit')keepY=null;window.scrollTo(0,0)}}
 function setTabs(){document.querySelectorAll('#tabbar button').forEach(function(x){x.classList.toggle('on',x.dataset.v===view)})}
 
 /* ---------- pan & zoom on the original image ---------- */
