@@ -302,9 +302,9 @@ header button[data-a="drawer"]{display:flex;align-items:center;justify-content:c
 <script>
 document.getElementById('app').innerHTML=mothLoaderHTML();
 var K='ntts_items_v2',OK='ntts_order_v1',PER=25,MAX_UPLOAD=300*1024;
-var APP_VERSION='2.13.9',APP_DATE='2026-11-15 · 4:04 AM ET',UPDATE_URL='';
+var APP_VERSION='2.14.0',APP_DATE='2026-11-16 · 10:21 PM ET',UPDATE_URL='';
 var EMOJI={ring:'💍',earrings:'✨',necklace:'📿',bracelet:'⭕',watch:'⌚',other:'💎'};
-var ICONS={ring:"<circle cx='12' cy='14' r='6'/><path d='M9.5 8 12 4l2.5 4'/><path d='M12 9.5l1.5 2.5-1.5 2.5-1.5-2.5z'/>",earrings:"<path d='M7 3v3'/><path d='M7 6c-1.6 0-2.5 1.3-2.5 3S6 14 7 17c1-3 2.5-5 2.5-8C9.5 7.3 8.6 6 7 6z'/><path d='M17 3v3'/><path d='M17 6c-1.6 0-2.5 1.3-2.5 3S16 14 17 17c1-3 2.5-5 2.5-8C19.5 7.3 18.6 6 17 6z'/>",necklace:"<path d='M4 5c2 7 14 7 16 0'/><path d='M12 12.5V15'/><circle cx='12' cy='17' r='2.2'/>",bracelet:"<ellipse cx='12' cy='12' rx='8' ry='5.5'/><ellipse cx='12' cy='12' rx='5.5' ry='3'/>",watch:"<circle cx='12' cy='13' r='5.5'/><path d='M9 7.5 10 3h4l1 4.5M9 18.5 10 23h4l1-4.5'/><path d='M12 10.5V13l1.8 1.2'/>",other:"<path d='M7 4h10l4 5-9 11L3 9z'/><path d='M3 9h18M9 4l3 16 3-16'/>",heart:"<path d='M12 20s-7-4.4-7-9.5A4 4 0 0 1 12 8a4 4 0 0 1 7 2.5C19 15.6 12 20 12 20z'/>",wrench:"<path d='M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-.5-.5-2.5z'/>",key:"<g transform='rotate(-45 12.5 12)'><circle cx='8' cy='12' r='4'/><path d='M12 12h9M18 12v3M21 12v2.5'/></g>",curio:"<rect x='4' y='3' width='16' height='18' rx='1'/><path d='M3 3h18M3 21h18'/><path d='M12 3v18'/><path d='M4 11h16'/><path d='M10.5 7v1.5M13.5 7v1.5M10.5 15v1.5M13.5 15v1.5'/>",clock:"<circle cx='12' cy='12' r='9'/><path d='M12 7v5l3 2'/>",pencil:"<path d='M4 20h4L19 9l-4-4L4 16z'/><path d='M13.5 6.5l4 4'/>",lock:"<rect x='5' y='11' width='14' height='10' rx='2'/><path d='M8 11V7a4 4 0 0 1 8 0v4'/>",unlock:"<rect x='3.95' y='11' width='11.1' height='10' rx='2'/><path d='M12.8 11V6.3A3.3 3.3 0 0 1 19.4 6.3V9.5'/>",bag:"<path d='M5 8h14l-1 12H6z'/><path d='M9 8V6a3 3 0 0 1 6 0v2'/>",plus:"<path d='M12 5v14M5 12h14'/>",x:"<path d='M6 6l12 12M18 6L6 18'/>",spark:"<path d='M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z'/>",gallery:"<rect x='3' y='4' width='18' height='16' rx='2'/><circle cx='9' cy='10' r='2'/><path d='M21 16l-5-5-8 9'/>"};
+var ICONS={pkg:"<path d='M3 7.5L12 3l9 4.5v9L12 21l-9-4.5z'/><path d='M3 7.5l9 4.5 9-4.5M12 12v9'/>",hand:"<path d='M5 11V7a1.5 1.5 0 0 1 3 0v4M8 11V5a1.5 1.5 0 0 1 3 0v6M11 11V6a1.5 1.5 0 0 1 3 0v6M14 11V8a1.5 1.5 0 0 1 3 0v7c0 3-2 5-5 5h-1c-2 0-3-1-4-3l-2-4'/>",x:"<path d='M6 6l12 12M18 6L6 18'/>",ring:"<circle cx='12' cy='14' r='6'/><path d='M9.5 8 12 4l2.5 4'/><path d='M12 9.5l1.5 2.5-1.5 2.5-1.5-2.5z'/>",earrings:"<path d='M7 3v3'/><path d='M7 6c-1.6 0-2.5 1.3-2.5 3S6 14 7 17c1-3 2.5-5 2.5-8C9.5 7.3 8.6 6 7 6z'/><path d='M17 3v3'/><path d='M17 6c-1.6 0-2.5 1.3-2.5 3S16 14 17 17c1-3 2.5-5 2.5-8C19.5 7.3 18.6 6 17 6z'/>",necklace:"<path d='M4 5c2 7 14 7 16 0'/><path d='M12 12.5V15'/><circle cx='12' cy='17' r='2.2'/>",bracelet:"<ellipse cx='12' cy='12' rx='8' ry='5.5'/><ellipse cx='12' cy='12' rx='5.5' ry='3'/>",watch:"<circle cx='12' cy='13' r='5.5'/><path d='M9 7.5 10 3h4l1 4.5M9 18.5 10 23h4l1-4.5'/><path d='M12 10.5V13l1.8 1.2'/>",other:"<path d='M7 4h10l4 5-9 11L3 9z'/><path d='M3 9h18M9 4l3 16 3-16'/>",heart:"<path d='M12 20s-7-4.4-7-9.5A4 4 0 0 1 12 8a4 4 0 0 1 7 2.5C19 15.6 12 20 12 20z'/>",wrench:"<path d='M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-.5-.5-2.5z'/>",key:"<g transform='rotate(-45 12.5 12)'><circle cx='8' cy='12' r='4'/><path d='M12 12h9M18 12v3M21 12v2.5'/></g>",curio:"<rect x='4' y='3' width='16' height='18' rx='1'/><path d='M3 3h18M3 21h18'/><path d='M12 3v18'/><path d='M4 11h16'/><path d='M10.5 7v1.5M13.5 7v1.5M10.5 15v1.5M13.5 15v1.5'/>",clock:"<circle cx='12' cy='12' r='9'/><path d='M12 7v5l3 2'/>",pencil:"<path d='M4 20h4L19 9l-4-4L4 16z'/><path d='M13.5 6.5l4 4'/>",lock:"<rect x='5' y='11' width='14' height='10' rx='2'/><path d='M8 11V7a4 4 0 0 1 8 0v4'/>",unlock:"<rect x='3.95' y='11' width='11.1' height='10' rx='2'/><path d='M12.8 11V6.3A3.3 3.3 0 0 1 19.4 6.3V9.5'/>",bag:"<path d='M5 8h14l-1 12H6z'/><path d='M9 8V6a3 3 0 0 1 6 0v2'/>",plus:"<path d='M12 5v14M5 12h14'/>",x:"<path d='M6 6l12 12M18 6L6 18'/>",spark:"<path d='M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z'/>",gallery:"<rect x='3' y='4' width='18' height='16' rx='2'/><circle cx='9' cy='10' r='2'/><path d='M21 16l-5-5-8 9'/>"};
 var ORN='<svg width="72" height="10" viewBox="0 0 72 10" fill="none" stroke="#a8864f" stroke-width="1.2"><path d="M0 5h28M44 5h28"/><path d="M36 1l4 4-4 4-4-4z"/></svg>';
 var ICOFIT_O={"ring":[12,12,16],"earrings":[12,10,15],"necklace":[12,12.1,16],"bracelet":[12,12,16],"watch":[12,13,20],"other":[12,12,18],"heart":[12,13.32,14],"wrench":[10.58,13.42,15.16],"key":[12.5,12,17.68],"curio":[12,12,18],"clock":[12,12,18],"pencil":[11.5,12.5,15],"lock":[12,12,18],"unlock":[12,12,17.99],"bag":[12,11.5,17],"plus":[12,12,14],"x":[12,12,12],"spark":[12,10,14],"gallery":[12,12,18]},ICOFIT_S={"ring":[12,11.5,17],"key":[12.25,12,18.74],"bag":[12,11.5,17],"plus":[12,12,19],"spark":[12,10,14]};
 /* every glyph is scaled so its longest side is 16 units and centered on the 24 grid; stroke width is kept constant */
@@ -353,7 +353,30 @@ function designHTML(){
 var CATS=['Ring','Earrings','Necklace','Pendants & Charms','Chain','Bracelet','Watch','Brooches & Pins','Box','Other'];
 var CAT_ALIAS={'pendant':'Pendants & Charms','brooch':'Brooches & Pins','pin':'Brooches & Pins'};
 function catFix(v){var s=String(v||'').trim().toLowerCase();return CATS.filter(function(c){return c.toLowerCase()===s})[0]||CAT_ALIAS[s]||'Other'}
-var STAT=['Waiting','Benched','Keeping','To Melt','To List','Listed','Returned','Sold'];
+var STAT=['Keep','Selling','Sold','Melted','Returned','Gifted'];
+var EXITS=['Sold','Melted','Returned','Gifted'];
+var WHERE=['Incoming','In possession','With a jeweler','On loan','Gone'];
+function migrateStatus(i){
+ var old=i.status;if(old==='Private Collection'||old==='PC')old='Keeping';
+ var map={'Waiting':['Keep','Incoming'],'Benched':['Keep','With a jeweler'],'Keeping':['Keep','In possession'],'To Melt':['Selling',null],'To List':['Selling',null],'Listed':['Selling',null]};
+ var s=old,w=i.whereabouts;
+ if(map[old]){s=map[old][0];if(!w&&map[old][1])w=map[old][1]}
+ if(STAT.indexOf(s)<0)s='Keep';
+ if(EXITS.indexOf(s)>-1)w='Gone';
+ else if(!w||WHERE.indexOf(w)<0||w==='Gone')w='In possession';
+ i.status=s;i.whereabouts=w;
+}
+function applyStatusRule(o){
+ var st=o.status,wh=o.whereabouts||'In possession';
+ if(EXITS.indexOf(st)>-1){
+  if(wh!=='In possession'&&wh!=='Gone'){if(!confirm('This piece is '+wh+'. Mark it In possession and record '+st+'?'))return false;wh='In possession'}
+  o.whereabouts='Gone';return true;
+ }
+ if(wh==='Gone'){alert('Gone is set by recording an exit. Pick Sold, Melted, Returned or Gifted as the status, or choose another location.');return false}
+ o.whereabouts=wh;return true;
+}
+function linkLabel(u){var h=String(u).replace(/^https?:\/\/(www\.)?/,'').split('/')[0].split('.')[0];return h.charAt(0).toUpperCase()+h.slice(1)}
+function listLinksHTML(i){var L=[i.linkSale,i.linkSale2].filter(Boolean);if(!L.length)return '';return '<div style="font-size:12px;font-weight:normal;margin-top:2px">'+L.map(function(u){return '<a href="'+esc(u)+'" target="_blank" rel="noopener" style="color:var(--lnk,var(--acc));text-decoration:underline;margin-right:10px">'+esc(linkLabel(u))+'</a>'}).join('')+'</div>'}
 var PERIODS=['Ancient','Antique','Mid-Century','Vintage','New'];
 var FINGERS=['Index finger','Middle finger','Ring finger','Pinky'];
 var COLOR_ORDER=['Red','Pink','Orange','Brown','Yellow','Green','Light blue','Blue','Purple','Black','Gray','White','Multi'];
@@ -364,7 +387,7 @@ var THEMES={ruby:{n:'Ruby',l:'#5a1538',d:'#7a2a52',t:'#e8a3c4',v1:'#2a0115',v2:'
 var PAT_TPL="data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='69.282' height='40' patternTransform='scale(1) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='__FILL__'/><path d='M34.641-20v80m34.64-40L0-20m69.282 80L0 20m69.282 0L0 60m69.282-80L0 20m69.282-40v80M0-20v80M34.64 40l11.547-20m11.547 20l11.547 20M34.641 40h23.094m11.547-20L57.735 40M46.188 20L34.641 40l11.547 20h23.094L80.83 40 69.282 20H46.188zM34.641 40l11.547-20m11.547 20l11.547 20M34.641 40h23.094m11.547-20L57.735 40M46.188 20L34.641 40l11.547 20h23.094L80.83 40 69.282 20H46.188zM34.641 0l11.547-20M57.735 0l11.547 20M34.642 0h23.093m11.547-20L57.735 0M46.188-20L34.641 0l11.547 20h23.094L80.83 0 69.282-20H46.188zM34.641 40L23.094 20M11.547 40L0 60m34.64-20H11.548M0 20l11.547 20m11.547-20l11.547 20-11.547 20H0l-11.547-20L0 20h23.094zM34.641 0L23.094-20M11.547 0L0 20M34.64 0H11.548M0-20L11.547 0m11.547-20L34.641 0 23.094 20H0L-11.547 0 0-20h23.094z'  stroke-width='1' stroke='__STROKE__' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(-139,-80)' fill='url(%23a)'/></svg>";
 var SORTS=[['new','Newest First (Purchase Date)'],['old','Oldest First (Purchase Date)'],['worn','Most Worn'],['rest','Least Recently Worn'],['era','Era'],['grp:colorMain','Group by Color'],['grp:category','Group by Type'],['grp:period','Group by Period'],['custom','My Ordering']];
 var ALIAS={metals:'metal',stones:'stone',hallmarks:'hallmark',measurements:'measurement',tags:'motif',mainColor:'colorMain',pdate:'purchaseDate',platform:'purchasePlatform',dListed:'dateListed',link:'linkSale',shipEst:'shipEstimate',dSold:'dateSold',ship:'shipActual',final:'payout',lastWorn:'wornLast',hearts:'rating',size:'ringSize',channel:'sellPlatform'};
-var CSV_COLS=[['id','id'],['title','title'],['category','category'],['motif','motifs'],['period','period'],['era','era'],['decade','decade'],['yearMade','year'],['country','country'],['maker','maker'],['hallmark','hallmark'],['provenance','provenance'],['measurement','measurement'],['weight','weight'],['grams','grams'],['purity','purity'],['stoneCt','stone weight ct'],['ringSize','ring size'],['metal','metal'],['stone','stone'],['cut','cut'],['colorMain','main color'],['condition','condition'],['notes','notes'],['wornLast','last worn'],['wornCount','times worn'],['rating','rating'],['photoshoot','photoshoot'],['status','status'],['seller','seller'],['purchaseDate','purchase date'],['purchasePlatform','platform'],['cost','cost'],['acqShipping','acquisition shipping'],['tariffs','tariffs'],['repairs','repairs'],['shipEstimate','shipping estimate'],['buffer','buffer'],['sellPlatform','selling platform'],['dateListed','date listed'],['linkSale','listing link'],['dateSold','date sold'],['feeFinal','platform fee'],['shipActual','shipping'],['payout','final payout']];
+var CSV_COLS=[['id','id'],['title','title'],['category','category'],['motif','motifs'],['period','period'],['era','era'],['decade','decade'],['yearMade','year'],['country','country'],['maker','maker'],['hallmark','hallmark'],['provenance','provenance'],['measurement','measurement'],['weight','weight'],['grams','grams'],['purity','purity'],['stoneCt','stone weight ct'],['ringSize','ring size'],['metal','metal'],['stone','stone'],['cut','cut'],['colorMain','main color'],['condition','condition'],['notes','notes'],['wornLast','last worn'],['wornCount','times worn'],['rating','rating'],['photoshoot','photoshoot'],['status','status'],['whereabouts','whereabouts'],['seller','seller'],['purchaseDate','purchase date'],['purchasePlatform','platform'],['cost','cost'],['acqShipping','acquisition shipping'],['tariffs','tariffs'],['repairs','repairs'],['shipEstimate','shipping estimate'],['buffer','buffer'],['sellPlatform','selling platform'],['dateListed','date listed'],['linkSale','listing link'],['dateSold','date sold'],['feeFinal','platform fee'],['shipActual','shipping'],['payout','final payout']];
 var FS={
  title:['Title','text'],
  category:['Category','sel',CATS.slice().sort(function(a,b){return a.localeCompare(b)})],
@@ -395,7 +418,7 @@ var FS={
  wornCount:['Times Worn','number'],
  rating:['Rating','rating'],
  photoshoot:['Photoshoot?','check'],
- status:['Status','sel',STAT],
+ status:['Status','sel',STAT],whereabouts:['Whereabouts','sel',WHERE],
  purchaseDate:['Date Acquired','date'],
  seller:['Seller','text'],
  purchasePlatform:['Purchase Platform','text'],
@@ -414,7 +437,7 @@ var FS={
  potentialIG:['Potential Instagram Price','calc','potI'],
  sellPlatform:['Selling Platform','sel',['','eBay','Instagram']],
  dateListed:['Date Listed','date'],
- linkSale:['Listing Link','url'],
+ linkSale:['Listing Link','url'],linkSale2:['Second Listing Link','url'],
  dateSold:['Date Sold','date'],
  turnover:['Turnover (Days)','calc','c-days'],
  feeFinal:['Platform Fee','money'],
@@ -426,29 +449,29 @@ var LISTS=['stone','metal','motif','cut','colorMain'];
 var SUGG_KEYS=['era','country','stone','metal','cut','motif','colorMain','seller'];
 var LOWER_KEYS=['stone','cut','motif','colorMain'];
 var ORDER_PIECE=['title','category','motif','period','era','decade','yearMade','country','maker','hallmark','measurement','grams','purity','ringSize','metal','stone','stoneCt','cut','colorMain','condition','notes'];
-var ORDER_STATS=['wornLast','wornCount','rating','trackUrl','deliveryDate'];
-var ORDER_PURCH=['seller','purchaseDate','purchasePlatform','cost','acqShipping','tariffs','repairs','totalCost','provenance'];
+var ORDER_STATS=['wornLast','wornCount','rating'];
+var ORDER_PURCH=['seller','provenance','purchasePlatform','purchaseDate','cost','acqShipping','tariffs','repairs','totalCost','trackUrl','deliveryDate'];
 var FULL_KEYS=['provenance'];
 var ORDER_PRICE=['shipEstimate','buffer','ebayPct','igPct','suggestedEbay','suggestedIG','potentialEbay','potentialIG'];
-var ORDER_SOLD=['sellPlatform','dateListed','linkSale','dateSold','turnover','feeFinal','shipActual','payout','netProfit'];
+var ORDER_SOLD=['sellPlatform','dateListed','linkSale','linkSale2','dateSold','turnover','feeFinal','shipActual','payout','netProfit'];
 var PIECE_ID=['title','category','motif','colorMain'];
 var PIECE_ORIGIN=['period','era','decade','yearMade','country','maker','hallmark'];
 var PIECE_MAKE=['metal','purity','grams','stone','stoneCt','cut','measurement','ringSize'];
 var PIECE_COND=['condition','notes'];
-var FORM_ORDER=ORDER_PIECE.concat(ORDER_STATS,['status'],ORDER_PURCH,ORDER_PRICE,ORDER_SOLD);
+var FORM_ORDER=ORDER_PIECE.concat(ORDER_STATS,['status','whereabouts'],ORDER_PURCH,ORDER_PRICE,ORDER_SOLD);
 var SUM_SKIP=['shipEstimate','buffer','ebayPct','igPct','potentialEbay','potentialIG'];
 var QA_KEYS=['title','category','period','era','decade','yearMade','country','maker','stone','metal','hallmark','measurement','grams','ringSize','cut','colorMain','motif','notes','purchaseDate','seller','purchasePlatform','cost'];
 var RING_HEAD=['Inside Diameter (mm)','Inside Circumference (mm)','U.S. & Canada (LF sizes)','U.K., Europe & Australia','Italy, Spain, & Switzerland','China, Japan, & South America','India'];
 var RING_TXT=['15.9;50;5.25;J.5;10;;10','16.1;50.6;5.5;K;;10;','16.3;51.2;5.75;K.5;11.75;;11','16.5;51.8;6;L;12.75;11;12','16.7;52.5;6.25;L.5;;12;','16.9;53.1;6.5;M;14;13;13','17.1;53.7;6.75;M.5;;;','17.3;54.3;7;N;15.25;14;14','17.5;55;7.25;N.5;;;15','17.7;55.6;7.5;O;16.5;15;','17.9;56.2;7.75;O.5;;;16','18.1;56.9;8;P;17.75;16;17','18.3;57.5;8.25;P.5;;;','18.5;58.1;8.5;Q;;17;18','18.8;59.1;8.75;Q.5;19;;19','19;59.7;9;R;;18;','19.2;60.3;9.25;R.5;20.25;;20'];
 var seed=[
- {id:1,title:'Georgian paste ring',description:'Georgian paste ring. Closed-back setting.',category:'Ring',status:'Listed',period:'Antique',era:'1790s',yearMade:1795,country:'England',stone:['paste'],metal:['silver','gold'],rating:3,cost:120,sellPlatform:'eBay',purchaseDate:'2026-08-15',dateListed:'2026-09-01'},
- {id:2,title:'Snake bracelet',description:'Snake bracelet with garnet eyes.',category:'Bracelet',status:'Sold',period:'Antique',era:'1870s',yearMade:1870,country:'France',stone:['garnet'],metal:['gold'],motif:['snake'],colorMain:'Red',rating:4,cost:210,payout:480,feeFinal:40,shipActual:12,sellPlatform:'Instagram',purchaseDate:'2026-06-10',dateListed:'2026-07-02',dateSold:'2026-07-20'},
- {id:3,title:'Roman intaglio ring',description:'Roman intaglio ring, carnelian.',category:'Ring',status:'Keeping',period:'Ancient',era:'Roman',country:'Italy',stone:['carnelian'],metal:['gold'],colorMain:'Orange',rating:5,cost:650,purchaseDate:'2026-03-02'},
- {id:4,title:'Emerald-cut drop earrings',description:'Emerald-cut drop earrings.',category:'Earrings',status:'Keeping',period:'Antique',era:'1905',yearMade:1905,country:'USA',stone:['emerald','diamond'],metal:['platinum'],colorMain:'Green',rating:5,cost:380,purchaseDate:'2026-05-20'}
+ {id:1,title:'Georgian paste ring',description:'Georgian paste ring. Closed-back setting.',category:'Ring',status:'Selling',period:'Antique',era:'1790s',yearMade:1795,country:'England',stone:['paste'],metal:['silver','gold'],rating:3,cost:120,sellPlatform:'eBay',purchaseDate:'2026-08-15',dateListed:'2026-09-01'},
+ {id:2,title:'Snake bracelet',description:'Snake bracelet with garnet eyes.',category:'Bracelet',status:'Sold',whereabouts:'Gone',period:'Antique',era:'1870s',yearMade:1870,country:'France',stone:['garnet'],metal:['gold'],motif:['snake'],colorMain:'Red',rating:4,cost:210,payout:480,feeFinal:40,shipActual:12,sellPlatform:'Instagram',purchaseDate:'2026-06-10',dateListed:'2026-07-02',dateSold:'2026-07-20'},
+ {id:3,title:'Roman intaglio ring',description:'Roman intaglio ring, carnelian.',category:'Ring',status:'Keep',period:'Ancient',era:'Roman',country:'Italy',stone:['carnelian'],metal:['gold'],colorMain:'Orange',rating:5,cost:650,purchaseDate:'2026-03-02'},
+ {id:4,title:'Emerald-cut drop earrings',description:'Emerald-cut drop earrings.',category:'Earrings',status:'Keep',period:'Antique',era:'1905',yearMade:1905,country:'USA',stone:['emerald','diamond'],metal:['platinum'],colorMain:'Green',rating:5,cost:380,purchaseDate:'2026-05-20'}
 ];
 
 /* ---------- state ---------- */
-var DEFAULT_STATUS=['Waiting','Benched','Keeping'];
+var DEFAULT_STATUS=['Keep'];
 var items=[],order=[],theme='ruby',hideSold=true,view='box',page=1,editing=null,fsel={status:DEFAULT_STATUS.slice()},rng={},sortBy='new',cols=3,ctab='Piece',vmode='thumbs',q='',ro=false,dragEl=null,overEl=null,ioOpen=false,lastJ=null,CR=null,DB=null,MEM={},shipTouched=false,PS={eb:13,ig:0},showAllF={},gal={imgs:{},refs:[],covers:[],comps:[]},galSel={refs:{},covers:{},comps:{}},galKind='refs',swS=null;
 
 /* ---------- storage ---------- */
@@ -650,8 +673,7 @@ function mig(i){
  var ex=(num(i.fees)||0)+(num(i.promo)||0)+(num(i.feePay)||0);
  if(ex)i.feeFinal=(num(i.feeFinal)||0)+ex;
  delete i.fees;delete i.promo;delete i.feePay;
- if(i.status==='Private Collection')i.status='Keeping';
- if(STAT.indexOf(i.status)<0)i.status='Keeping';
+ migrateStatus(i);
  var PM={Ancient:'Ancient',Georgian:'Antique',Victorian:'Antique',Edwardian:'Antique','Art Deco':'Vintage',Retro:'Vintage',Other:'Vintage','Mid-century':'Mid-Century','Mid-Century':'Mid-Century',Modern:'New',New:'New',Vintage:'Vintage',Antique:'Antique'};
  i.period=PM[i.period]||'Antique';
  if(typeof i.cut==='string')i.cut=i.cut.split(/[;,]/).map(function(s){return s.trim()}).filter(Boolean);
@@ -696,7 +718,7 @@ function renumberIds(){
  order=order.map(function(x){return map[x]}).filter(function(x){return x!==undefined});
  saveItems();saveOrder();
 }
-function newItem(){return {id:nextId(),_new:1,category:'Ring',period:'Antique',status:'Waiting',purchaseDate:today(),rating:0,buffer:5,photoshoot:false,motif:[],stone:[],metal:[],cut:[],refs:[],cover:null}}
+function newItem(){return {id:nextId(),_new:1,category:'Ring',period:'Antique',status:'Keep',whereabouts:'In possession',purchaseDate:today(),rating:0,buffer:5,photoshoot:false,motif:[],stone:[],metal:[],cut:[],refs:[],cover:null}}
 function applyTheme(){
  var t=THEMES[theme]||THEMES.ruby,dk=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches,s=document.documentElement.style;
  s.setProperty('--acc',dk?t.d:t.l);s.setProperty('--lnk',dk?(t.t||t.d):t.l);s.setProperty('--v1',t.v1);s.setProperty('--v2',t.v2);s.setProperty('--pat','url("'+PAT_TPL.replace('__FILL__',t.pf).replace('__STROKE__',t.ps)+'")');
@@ -807,6 +829,7 @@ var FACETS=[
  {k:'refimg',l:'Reference Images',cnt:1,v:function(){return ['Yes','No']},g:function(i){return [(i.refs&&i.refs.length)?'Yes':'No']}},
  {k:'inColl',l:'In a Collection',cnt:1,v:function(){return ['Yes','No']},g:function(i){return [pieceInColl(i)?'Yes':'No']}},
  {k:'status',l:'Status',cnt:1,v:function(){return STAT},g:function(i){return [i.status]}},
+ {k:'where',l:'Whereabouts',cnt:1,v:function(){return WHERE},g:function(i){return [i.whereabouts||'In possession']}},
  {k:'category',l:'Type',cnt:1,counted:1,v:function(){return CATS},g:function(i){return [i.category]}},
  {k:'seller',l:'Seller',counted:1,v:function(){return allOf(function(i){return [i.seller]})},g:function(i){return [i.seller]}},
  {k:'period',l:'Period',cnt:1,v:function(){return PERIODS},g:function(i){return [i.period]}},
@@ -1028,14 +1051,13 @@ function drawer(o){document.getElementById('drawer').classList.toggle('open',o);
 
 /* ---------- rendering ---------- */
 function noThumb(i,sz){var fs=sz<=30?(sz<=22?12:14):16;return '<span class="nt" style="padding:'+(sz<=22?4:8)+'px;gap:'+(sz<=22?3:6)+'px">'+ico(String(i.category).toLowerCase(),sz)+'<span class="tt" style="font-size:'+fs+'px'+(sz<=18?';-webkit-line-clamp:2':'')+'">'+esc(title(i))+'</span></span>'}
-function thumb(i){var sold=i.status==='Sold',wait=i.status==='Waiting',cimg=coverImg(i.cover,true),tsz=cols>=4?18:cols===3?22:cols===2?30:36;
+function thumb(i){var w=i.whereabouts||'In possession',gone=w==='Gone',cimg=coverImg(i.cover,true),tsz=cols>=4?18:cols===3?22:cols===2?30:36;
  var veil='<span aria-hidden="true" style="position:absolute;inset:0;background:rgba(0,0,0,.4);pointer-events:none"></span>';
- var soldBadge='<span aria-hidden="true" style="position:absolute;right:6px;bottom:6px;width:24px;height:24px;border-radius:50%;background:rgba(0,0,0,.35);display:flex;align-items:center;justify-content:center;pointer-events:none;font-size:13px;line-height:1;color:#fff">'+ico('heart',14)+'</span>';
- var benchBadge='<span aria-hidden="true" style="position:absolute;right:6px;bottom:6px;width:24px;height:24px;border-radius:50%;background:rgba(0,0,0,.35);display:flex;align-items:center;justify-content:center;pointer-events:none;font-size:13px;line-height:1;color:#fff">'+ico('wrench',14)+'</span>';
- var clock='<span aria-hidden="true" style="position:absolute;right:6px;bottom:6px;width:24px;height:24px;border-radius:50%;background:rgba(0,0,0,.35);display:flex;align-items:center;justify-content:center;pointer-events:none;font-size:13px;line-height:1;color:#fff">'+ico('clock',14)+'</span>';
- return '<div class="tile" data-a="tilepiece" data-id="'+i.id+'"'+(sold?' style="filter:grayscale(1)"':'')+'>'+(cimg||noThumb(i,tsz))+(sold?veil+soldBadge:'')+(wait?clock:'')+countPill(i)+(i.status==='Benched'?benchBadge:'')+'</div>'}
+ var badge=function(k){return '<span aria-hidden="true" style="position:absolute;right:6px;bottom:6px;width:24px;height:24px;border-radius:50%;background:rgba(0,0,0,.35);display:flex;align-items:center;justify-content:center;pointer-events:none;font-size:13px;line-height:1;color:#fff">'+ico(k,14)+'</span>'};
+ var mark=gone?veil+badge('x'):w==='Incoming'?badge('pkg'):w==='With a jeweler'?badge('wrench'):w==='On loan'?badge('hand'):'';
+ return '<div class="tile" data-a="tilepiece" data-id="'+i.id+'"'+(gone?' style="filter:grayscale(1)"':'')+'>'+(cimg||noThumb(i,tsz))+mark+countPill(i)+'</div>'}
 function daysUntil(s){if(!s)return null;var p=String(s).split('-');if(p.length!==3)return null;var d=new Date(+p[0],+p[1]-1,+p[2]);var t=new Date();t=new Date(t.getFullYear(),t.getMonth(),t.getDate());var n=Math.round((d-t)/86400000);return isNaN(n)?null:n}
-function countPill(i){if(i.status!=='Waiting')return '';var n=daysUntil(i.deliveryDate);if(n==null||n<0)return '';return '<span aria-hidden="true" style="position:absolute;left:6px;bottom:6px;padding:2px 7px;border-radius:999px;background:rgba(0,0,0,.5);color:#fff;font-size:11px;line-height:1.4;pointer-events:none">'+(n===0?'Today':n+'d')+'</span>'}
+function countPill(i){if(i.whereabouts!=='Incoming')return '';var n=daysUntil(i.deliveryDate);if(n==null||n<0)return '';return '<span aria-hidden="true" style="position:absolute;left:6px;bottom:6px;padding:2px 7px;border-radius:999px;background:rgba(0,0,0,.5);color:#fff;font-size:11px;line-height:1.4;pointer-events:none">'+(n===0?'Today':n+'d')+'</span>'}
 function countLine(n){return '<p class="meta" style="text-align:center;margin:16px 0 0">'+n+' piece'+(n===1?'':'s')+(anyFilter()?' (filtered)':'')+'</p>'}
 var TC={
  Piece:[['Category',function(i){return esc(i.category)}],['Period',function(i){return esc(i.period)}],['Era/Movement',function(i){return esc(i.era||'—')}],['Year',function(i){return esc(i.yearMade==null?'—':i.yearMade)}],['Country of Origin',function(i){return esc(i.country||'—')}],['Maker',function(i){return esc(i.maker||'—')}],['Stones',function(i){return esc((i.stone||[]).join(', ')||'—')}],['Metals',function(i){return metalsText(i)}],['Purity',function(i){return purityText(i)}],['Stone weight (ct)',function(i){return esc(i.stoneCt==null||i.stoneCt===''?'—':i.stoneCt+' ct')}],['Hallmarks',function(i){return esc(i.hallmark||'—')}],['Measurements',function(i){return esc(i.measurement||'—')}],['Weight (g)',function(i){return esc(i.grams==null||i.grams===''?(i.weight||'—'):i.grams+' g')}],['Ring Size',function(i){return esc(i.ringSize==null||i.ringSize===''?'—':i.ringSize)}],['Cut',function(i){return esc((i.cut||[]).join(', ')||'—')}],['Color',function(i){return colorsHTML(i.colorMain)}],['Motifs',function(i){return esc((i.motif||[]).join(', ')||'—')}],['Notes',function(i){return esc(i.notes||'—')}]],
@@ -1062,7 +1084,7 @@ function renderBox(){
  var bk=[q,sortBy,JSON.stringify(fsel),JSON.stringify(rng),hideSold,vmode].join('|');
  if(bk!==boxKey){boxKey=bk;boxLim=30}
  var list=ro?sorted(vis()):sorted(items.filter(pass));
- var isTop=function(i){return i.status==='Waiting'||i.status==='Benched'};
+ var isTop=function(i){return i.whereabouts==='Incoming'||i.whereabouts==='With a jeweler'};
  var waitL=ro?[]:list.filter(isTop);
  var mainL=ro?list:list.filter(function(i){return !isTop(i)});
  var lim=ro?Infinity:boxLim;
@@ -1284,7 +1306,7 @@ function renderEdit(){
  var pr=it.shipEstimate!=null&&it.shipEstimate!==''?it.shipEstimate:shipDefault(it.cost);
  shipTouched=false;
  var h='<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:20px"><h2 style="margin:0">Add/Edit a Piece</h2><button type="button" data-a="quickadd">Quick Fill</button></div>'+'<form id="form" autocomplete="off">';
- h+='<details data-sec="stats"'+dOpen('stats',true)+'><summary>Stats</summary><div class="f">'+fieldHTML('status',it.status)+sec(ORDER_STATS)+'</div>'
+ h+='<details data-sec="stats"'+dOpen('stats',true)+'><summary>Stats</summary><div class="f">'+fieldHTML('whereabouts',it.whereabouts||'In possession')+fieldHTML('status',it.status)+sec(ORDER_STATS)+'</div>'
   +'<h4 class="sub" style="margin-top:14px">Collections</h4><div id="collsub">'+collsSubHTML(it)+'</div>'
   +'<h4 class="sub" style="margin-top:14px">Set</h4><div id="setsub">'+setSubHTML(it)+'</div></details>';
  h+='<details data-sec="images"'+dOpen('images',true)+'><summary>Images</summary>'+imagesHTML()+'</details>';
@@ -1550,12 +1572,12 @@ function priceStrip(){
 function renderListing(){
  pricesLoad();
  var sold=lhTab==='sold';
- var melting=lhTab==='melt';
+ var melting=false;
  var sortW=function(a,b){return colorRankOf(a)-colorRankOf(b)||typeRankOf(a)-typeRankOf(b)||title(a).localeCompare(title(b))};
- var want=sold?['Sold']:['To List','Listed'];
+ var want=sold?['Sold']:['Selling'];
  var list=melting?[]:vis().filter(function(i){return want.indexOf(i.status)>-1}).sort(sortW);
  var melt=melting?vis().filter(function(i){return i.status==='To Melt'}).sort(sortW):[];
- var seg='<div class="seg" style="margin:0 0 12px"><button type="button" data-a="lhtab" data-v="to"'+(!sold&&!melting?' class="on"':'')+'>Selling</button><button type="button" data-a="lhtab" data-v="melt"'+(melting?' class="on"':'')+'>Melting</button><button type="button" data-a="lhtab" data-v="sold"'+(sold?' class="on"':'')+'>Sold</button></div>';
+ var seg='<div class="seg" style="margin:0 0 12px"><button type="button" data-a="lhtab" data-v="to"'+(!sold&&!melting?' class="on"':'')+'>Selling</button><button type="button" data-a="lhtab" data-v="sold"'+(sold?' class="on"':'')+'>Sold</button></div>';
  var cost=function(i){return num(i.cost)||0};
  var acq=function(i){return (num(i.acqShipping)||0)+(num(i.tariffs)||0)+(num(i.repairs)||0)};
  var totalCost=function(i){return cost(i)+acq(i)};
@@ -1595,7 +1617,7 @@ function table(rows){
      var img=(i.cover?coverImg(i.cover,true):'')||'<span style="display:flex;align-items:center;justify-content:center;width:100%;height:100%">'+ico(String(i.category||'other').toLowerCase(),20)+'</span>';
      var thumb='<button type="button" data-a="viewpiece" data-id="'+i.id+'" aria-label="Open '+esc(title(i))+'" style="padding:0;border:0;background:transparent;min-height:0;width:var(--wthumb,40px);flex:0 0 var(--wthumb,40px)"><div style="width:var(--wthumb,40px);height:var(--wthumb,40px);border-radius:8px;overflow:hidden;background:var(--acc);position:relative">'+img+'</div></button>';
      return '<tr><td rowspan="2" style="padding:10px 4px 10px 0;border-bottom:1px solid var(--line);vertical-align:middle">'+thumb+'</td>'
-      +'<td colspan="'+(1+NC)+'" style="padding:10px 0 0;border-bottom:0;font-weight:600;font-size:13px;line-height:1.25;overflow-wrap:anywhere">'+esc(title(i))+'</td></tr>'
+      +'<td colspan="'+(1+NC)+'" style="padding:10px 0 0;border-bottom:0;font-weight:600;font-size:13px;line-height:1.25;overflow-wrap:anywhere">'+esc(title(i))+listLinksHTML(i)+'</td></tr>'
       +'<tr><td style="padding:4px 4px 10px 0;border-bottom:1px solid var(--line);vertical-align:middle;font-size:12px;line-height:1.25;overflow-wrap:anywhere">'+esc(metalShort(i))+'</td>'+num5(vec(i))+'</tr>';
    }
    var groups=order.map(function(k){
@@ -1674,8 +1696,8 @@ function wearMany(ids){
  items.forEach(function(i){if(ids.indexOf(i.id)<0)return;if(i.wornLast!==today()){i.wornCount=(Number(i.wornCount)||0)+1;i.wornLast=today();n++}});
  saveItems();return n;
 }
-var jotdSel=null,jotdMsg='',jotdLock={ring1:false,ring2:false,earring:true,necklace:true},jotdColor=null;
-function jotdColorMatch(i,c){if(!c)return true;var v=i.colorMain;if(c==='__none')return String(Array.isArray(v)?v.join(''):(v||'')).trim()==='';var arr=Array.isArray(v)?v:String(v||'').split(/[,;\/]/);return arr.some(function(x){return String(x).trim().toLowerCase()===c})}
+var jotdSel=null,jotdMsg='',jotdLock={ring1:false,ring2:false,earring:true,necklace:true},jotdColors={ring1:null,ring2:null,earring:null,necklace:null},jotdColorKey='ring1';
+function jotdColorMatch(i,c){if(!c)return true;var v=i.colorMain;var arr=Array.isArray(v)?v:String(v||'').split(/[,;\/]/);var p=String(arr[0]||'').trim().toLowerCase();if(c==='__none')return p==='';return p===c}
 function paletteSVG(c,sz){
  return '<svg width="'+sz+'" height="'+sz+'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M12 3C7 3 3 7 3 12s4 9 9 9c1.2 0 2-.8 2-2 0-.5-.2-1-.5-1.3-.3-.3-.5-.7-.5-1.2 0-1.1.9-2 2-2h2.5c2.5 0 4.5-2 4.5-4.5C22 6.5 17.5 3 12 3z"/><circle cx="7.6" cy="9.4" r="1.1"/><circle cx="11.2" cy="6.6" r="1.1"/><circle cx="15.4" cy="7.8" r="1.1"/></svg>';
 }
@@ -1686,18 +1708,20 @@ function jcolorBtnStyle(c){
  var dark=(0.299*r+0.587*g+0.114*b)/255<0.55;
  return 'background:'+h+';color:'+(dark?'#fff':'#5a1538');
 }
+function jotdTileLabel(k){return {ring1:'Primary Ring',ring2:'Secondary Ring',earring:'Earrings',necklace:'Necklace'}[k]}
 function jcolorHTML(){
+ var tk=jotdColorKey,lab=jotdTileLabel(tk),cur=jotdColors[tk];
  var keys=COLOR_ORDER.map(function(c){return c.toLowerCase()}).filter(function(k){return COLORS[k]&&k!=='multi'});
- var sw=function(k,lbl,bg){return '<button type="button" data-a="jcolorset" data-v="'+k+'" style="display:flex;flex-direction:column;align-items:center;gap:4px;padding:8px 4px;min-height:0;height:auto;border-radius:12px;'+(jotdColor===k?'border-color:var(--acc)':'')+'"><span style="width:28px;height:28px;border-radius:50%;background:'+bg+';border:1px solid rgba(128,128,128,.6)"></span><span class="meta" style="font-size:12px">'+lbl+'</span></button>'};
- return '<div class="modal" data-a="backdrop"><div style="max-width:420px;width:94vw"><h3 class="mh" style="margin:0 0 10px">Primary Ring Color</h3><p class="meta" style="margin:0 0 10px">Limits the Primary Ring to rings of this color.</p>'
+ var sw=function(k,lbl,bg){return '<button type="button" data-a="jcolorset" data-v="'+k+'" style="display:flex;flex-direction:column;align-items:center;gap:4px;padding:8px 4px;min-height:0;height:auto;border-radius:12px;'+(cur===k?'border-color:var(--acc)':'')+'"><span style="width:28px;height:28px;border-radius:50%;background:'+bg+';border:1px solid rgba(128,128,128,.6)"></span><span class="meta" style="font-size:12px">'+lbl+'</span></button>'};
+ return '<div class="modal" data-a="backdrop"><div style="max-width:420px;width:94vw"><h3 class="mh" style="margin:0 0 10px">'+lab+' Color</h3><p class="meta" style="margin:0 0 10px">Limits the '+lab+' to pieces of this color.</p>'
   +'<div class="grid" style="grid-template-columns:repeat(3,minmax(0,1fr));gap:8px">'+keys.map(function(k){return sw(k,k.replace(/\b\w/g,function(c){return c.toUpperCase()}),COLORS[k])}).join('')+sw('__none','No Color','linear-gradient(to top right,transparent calc(50% - 1.5px),#b33 calc(50% - 1.5px),#b33 calc(50% + 1.5px),transparent calc(50% + 1.5px))')+sw('','Any','repeating-linear-gradient(45deg,#fff 0 6px,#d9d9d9 6px 12px)')+'</div>'
   +'<div class="bar" style="justify-content:center;margin:14px 0 0"><button type="button" class="pri" data-a="x">Done</button></div></div></div>';
 }
-function jotdPool(cat){return vis().filter(function(i){return i.category===cat&&i.status!=='Waiting'&&i.status!=='Benched'&&i.status!=='To Melt'&&i.status!=='To List'&&i.status!=='Listed'&&i.status!=='Sold'})}
-function jotdPickOther(pool,cur){var c=cur?pool.filter(function(i){return i.id!==cur.id}):pool;if(!c.length)c=pool;return c.length?pickJ(c):null}
+function jotdPool(cat){return vis().filter(function(i){return i.category===cat&&i.status==='Keep'&&(i.whereabouts||'In possession')==='In possession'})}
+function jotdPickOther(pool,cur,col){var p=col?pool.filter(function(i){return jotdColorMatch(i,col)}):pool;var c=cur?p.filter(function(i){return i.id!==cur.id}):p;if(!c.length)c=p;return c.length?pickJ(c):null}
 function jotdRing2Pick(r1){
  if(!r1)return null;var f1=finger(r1);
- var c=jotdPool('Ring').filter(function(i){var f=finger(i);return f&&f!==f1&&i.id!==r1.id});
+ var c=jotdPool('Ring').filter(function(i){var f=finger(i);return f&&f!==f1&&i.id!==r1.id&&jotdColorMatch(i,jotdColors.ring2)});
  return c.length?pickJ(c):null;
 }
 function jotdRoll(k){
@@ -1706,15 +1730,15 @@ function jotdRoll(k){
    var cur=s.ring1,rings=jotdPool('Ring');
    var fs=['Index finger','Middle finger'].filter(function(f){return !(jotdLock.ring2&&s.ring2&&finger(s.ring2)===f)}).sort(function(){return Math.random()-0.5});
    var pick=null;
-   rings=rings.filter(function(i){return jotdColorMatch(i,jotdColor)});
+   rings=rings.filter(function(i){return jotdColorMatch(i,jotdColors.ring1)});
    for(var n=0;n<fs.length&&!pick;n++){var fn=fs[n];var c=rings.filter(function(i){return finger(i)===fn&&(!cur||i.id!==cur.id)});if(c.length)pick=pickJ(c)}
-   if(!pick&&!jotdColor)pick=cur;
+   if(!pick&&cur&&jotdColorMatch(cur,jotdColors.ring1))pick=cur;
       s.ring1=pick;
    if(!jotdLock.ring2)s.ring2=jotdRing2Pick(pick);
  }
  else if(k==='ring2'){s.ring2=jotdRing2Pick(s.ring1)}
- else if(k==='earring'){s.earring=jotdPickOther(jotdPool('Earrings'),s.earring)}
- else if(k==='necklace'){s.necklace=jotdPickOther(jotdPool('Necklace'),s.necklace)}
+ else if(k==='earring'){s.earring=jotdPickOther(jotdPool('Earrings'),s.earring,jotdColors.earring)}
+ else if(k==='necklace'){s.necklace=jotdPickOther(jotdPool('Necklace'),s.necklace,jotdColors.necklace)}
 }
 function jotdLuck(){
  if(!jotdSel)jotdSel={ring1:null,ring2:null,earring:null,necklace:null};
@@ -1726,7 +1750,7 @@ function jotdStart(){
 }
 function jotdCard(label,i,emptyMsg,k){
  var locked=!!jotdLock[k];
- var colorBtn=k==='ring1'?'<button type="button" data-a="jcolor" aria-label="Primary Ring color filter" style="width:36px;height:34px;min-width:0;min-height:0;padding:0;display:flex;align-items:center;justify-content:center;flex:none;'+jcolorBtnStyle(jotdColor)+'">'+paletteSVG(jotdColor,18)+'</button>':'';
+ var colorBtn='<button type="button" data-a="jcolor" data-k="'+k+'" aria-label="'+esc(label)+' color filter" style="width:36px;height:34px;min-width:0;min-height:0;padding:0;display:flex;align-items:center;justify-content:center;flex:none;'+jcolorBtnStyle(jotdColors[k])+'">'+paletteSVG(jotdColors[k],18)+'</button>';
  var lockBtn='<button data-a="jlock" data-k="'+k+'" aria-pressed="'+locked+'" aria-label="'+(locked?'Unlock ':'Lock ')+esc(label)+'"'+(locked?' class="on"':'')+' style="width:36px;height:34px;min-width:0;min-height:0;padding:0;display:flex;align-items:center;justify-content:center;flex:none">'+ico(locked?'lock':'unlock',18)+'</button>';
  var pic=i?(coverImg(i.cover,true)||noThumb(i,40))
   :'<div class="meta" style="padding:10px;text-align:center;display:flex;align-items:center;justify-content:center;height:100%">'+esc(emptyMsg)+'</div>';
@@ -1947,7 +1971,8 @@ function coerce(k,v){
  if(k==='photoshoot')return /^(yes|true|1|y)$/i.test(v);
  if(['wornLast','purchaseDate','dateListed','dateSold'].indexOf(k)>-1)return parseDate(v)||String(v);
  if(k==='category')return catFix(v);
- if(k==='status')return STAT.filter(function(s){return s.toLowerCase()===v.toLowerCase()||(v.toUpperCase()==='PC'&&s==='Keeping')||(v.toLowerCase()==='private collection'&&s==='Keeping')})[0]||'Keeping';
+ if(k==='status'){var mt={status:v};migrateStatus(mt);return mt.status}
+ if(k==='whereabouts'){var wv=WHERE.filter(function(w){return w.toLowerCase()===String(v).toLowerCase()})[0];return wv||'In possession'}
  if(k==='period')return PERIODS.filter(function(p){return p.toLowerCase()===v.toLowerCase()})[0]||'Antique';
  if(k==='colorMain')return String(v).split(/[,;]/).map(function(x){return capColor(x)}).filter(Boolean);
  return v;
@@ -1985,13 +2010,13 @@ function applyCSV(text,dry){
    if(!rec.title){skipped++;return}
    var isNew=rec.id==='-1';
    var existing=isNew?null:((rec.id?items.filter(function(i){return String(i.id)===rec.id})[0]:null)||items.filter(function(i){return String(i.title||'').trim().toLowerCase()===rec.title.trim().toLowerCase()&&(i.purchaseDate||'')===(parseDate(rec.purchaseDate||'')||'')})[0]||null);
-   var out=existing?JSON.parse(JSON.stringify(existing)):{id:nid++,status:'Waiting',category:'Other',period:'Antique',motif:[],stone:[],metal:[],cut:[],rating:0,refs:[],cover:null};
+   var out=existing?JSON.parse(JSON.stringify(existing)):{id:nid++,status:'Keep',whereabouts:'In possession',category:'Other',period:'Antique',motif:[],stone:[],metal:[],cut:[],rating:0,refs:[],cover:null};
    Object.keys(rec).forEach(function(k){
      if(k==='id')return;
      if(rec[k]==='(clear)'){if(k!=='title')out[k]=clearedVal(out[k])}
      else out[k]=coerce(k,rec[k]);
    });
-   out=mig(out);
+   out=mig(out);migrateStatus(out);
    if(existing){items[items.indexOf(existing)]=out;updated++}else{items.push(out);added++;if(!rec.id||rec.id==='-1')noIdNew+=(rec.id==='-1'?0:1)}
    if(rec.id&&rec.id!=='-1')fileIdMap[rec.id]=out.id;
    // Curations column: blank = no change, (clear) = remove from all, names = exact membership
@@ -2304,8 +2329,8 @@ case 'cnew':collCropAbort();collId=Date.now();collDraft=null;collPendingId=null;
   case 'ctogg':{var cg=colls.filter(function(c){return c.id===Number(d.id)})[0];if(cg&&editing&&!editing._new){var pk=cg.pieceIds.indexOf(editing.id);if(pk>-1)cg.pieceIds.splice(pk,1);else cg.pieceIds.push(editing.id);saveColls();var cs=document.getElementById('collsub');if(cs)cs.innerHTML=collsSubHTML(editing)}break}
   case 'cremove':{var cr=curColl();if(cr){cr.pieceIds=cr.pieceIds.filter(function(id){return id!==Number(d.id)});saveColls();render()}break}
   case 'appearance':drawer(false);M.innerHTML=appearanceHTML();break;
-case 'jcolor':M.innerHTML=jcolorHTML();break;
-case 'jcolorset':jotdColor=d.v||null;M.innerHTML='';if(jotdSel){var keep2=jotdSel.ring2,keepE=jotdSel.earring,keepN=jotdSel.necklace;jotdRoll('ring1');var r1=jotdSel.ring1;jotdSel.earring=keepE;jotdSel.necklace=keepN;if(keep2&&r1&&keep2.id!==r1.id&&finger(keep2)!==finger(r1))jotdSel.ring2=keep2;else if(r1&&keep2&&finger(keep2)===finger(r1))jotdSel.ring2=jotdRing2Pick(r1);else jotdSel.ring2=keep2}renderMain();break;
+case 'jcolor':jotdColorKey=d.k||'ring1';M.innerHTML=jcolorHTML();break;
+case 'jcolorset':jotdColors[jotdColorKey]=d.v||null;M.innerHTML='';if(jotdSel&&jotdColorKey!=='ring1'){jotdRoll(jotdColorKey)}else if(jotdSel){var keep2=jotdSel.ring2,keepE=jotdSel.earring,keepN=jotdSel.necklace;jotdRoll('ring1');var r1=jotdSel.ring1;jotdSel.earring=keepE;jotdSel.necklace=keepN;if(keep2&&r1&&keep2.id!==r1.id&&finger(keep2)!==finger(r1))jotdSel.ring2=keep2;else if(r1&&keep2&&finger(keep2)===finger(r1))jotdSel.ring2=jotdRing2Pick(r1);else jotdSel.ring2=keep2}renderMain();break;
   case 'bgs':bgStyle=d.v;kset('bgStyle',bgStyle);renderDrawer();renderMain();refreshAppearance();break;
 case 'frm':frameStyle=d.v;document.documentElement.dataset.frame=frameStyle;kset('frameStyle',frameStyle);renderDrawer();renderMain();refreshAppearance();break;
   case 'export':exportJSON();break;
@@ -2377,7 +2402,7 @@ case 'frm':frameStyle=d.v;document.documentElement.dataset.frame=frameStyle;kset
   case 'cvrm':syncForm();editing.cover=null;renderMain();break;
   case 'fclr':var fx=b.parentNode.querySelector('input,select,textarea');if(fx){if(fx.tagName==='SELECT'){fx.value=[].some.call(fx.options,function(o){return o.value===''})?'':'0'}else fx.value='';var fsg=b.parentNode.parentNode.querySelector('.sg');if(fsg)fsg.hidden=true}break;
   case 'cancel':var cGo=backTo;backTo='box';show(cGo);break;
-  case 'dup':var c=syncForm();['channel','sellPlatform','dateListed','dateSold','feeFinal','shipActual','payout','linkSale','wornLast','trackUrl','deliveryDate'].forEach(function(k){delete c[k]});delete c.wornCount;c.status='Waiting';c.id=nextId();c._new=1;c.title=(c.title||'')+(c.title?' (copy)':'');editing=c;renderMain();window.scrollTo(0,0);break;
+  case 'dup':var c=syncForm();['channel','sellPlatform','dateListed','dateSold','feeFinal','shipActual','payout','linkSale','wornLast','trackUrl','deliveryDate'].forEach(function(k){delete c[k]});delete c.wornCount;c.status='Keep';c.whereabouts='In possession';c.id=nextId();c._new=1;c.title=(c.title||'')+(c.title?' (copy)':'');editing=c;renderMain();window.scrollTo(0,0);break;
   case 'del':if(confirm('Delete this piece?')){items=items.filter(function(i){return i.id!==editing.id});saveItems();show('box')}break;
   case 'slogin':hashKW(((document.getElementById('skw')||{}).value)||'').then(function(h){if(h===secretCfg.hash){secretUnlocked=true;secretReveal()}else alert('Incorrect keyword')});break;
   case 'sset':var kwa=document.getElementById('skw').value.trim();if(!kwa){alert('Enter a keyword');break}hashKW(kwa).then(function(h){secretCfg.hash=h;secretUnlocked=true;saveSecret();secretReveal()});break;
@@ -2445,7 +2470,7 @@ document.addEventListener('submit',function(e){
  if(e.target.id==='kwchangeform'){e.preventDefault();handleKwChange(e.target);return}
  if(e.target.id==='secretform'){e.preventDefault();handleSecretForm(e.target);return}
  e.preventDefault();
- var o=mig(syncForm()),idx=items.findIndex(function(i){return i.id===o.id});
+ var o=mig(syncForm());if(!applyStatusRule(o))return;var idx=items.findIndex(function(i){return i.id===o.id});
  delete o._new;
  idx>-1?items[idx]=o:items.push(o);
  saveItems();var backGo=backTo;backTo='box';show(backGo);
@@ -2621,7 +2646,7 @@ document.querySelector('header').insertAdjacentElement('afterend',document.getEl
 function localISO(d){d=d||new Date();return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2)}
 function arrivalsToday(){
  var t=localISO();
- return items.filter(function(i){return i.deliveryDate===t&&String(i.trackUrl||'').trim()&&i.status!=='Sold'&&i.status!=='Returned'});
+ return items.filter(function(i){return i.deliveryDate===t&&String(i.trackUrl||'').trim()&&i.whereabouts!=='Gone'});
 }
 function arrivalSeen(day){try{return localStorage.getItem('ntts_arrival_seen')===day}catch(e){return false}}
 function arrivalMark(day){try{localStorage.setItem('ntts_arrival_seen',day)}catch(e){}}
