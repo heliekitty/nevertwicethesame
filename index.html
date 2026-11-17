@@ -10,7 +10,7 @@
 <link rel="icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Varta:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'"><noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Varta:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
 <style>
-:root{--bg:#faf7f2;--fg:#2a2420;--mute:#7a6f66;--card:#fff;--line:#e4dcd0;--gold:#a8864f;--gold-soft:#d9c49b;--acc:#5a1538;--v1:#2a0115;--v2:#2a0115;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root{--bg:#faf7f2;--fg:#2a2420;--mute:#7a6f66;--card:#fff;--line:#e4dcd0;--gold:#a8864f;--gold-soft:#d9c49b;--acc:#5a1538;--v1:#2a0115;--v2:#2a0115;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1b1715;--fg:#efe8df;--mute:#a89d92;--card:#262120;--line:#3a3330;--gold:#c9a86a;--gold-soft:#8a7350}}
 *{box-sizing:border-box}
 html{scroll-padding-top:env(safe-area-inset-top,0px);overscroll-behavior-y:none}
@@ -153,7 +153,7 @@ th,td{padding:8px 8px;border-bottom:1px solid var(--line);text-align:left;vertic
 th{color:var(--mute);font-weight:normal;font-size:12px}
 td.stk,th.stk{position:sticky;left:0;z-index:2;background:var(--card);width:156px;min-width:156px;max-width:156px}
 @media (min-width:414px){:root{--wthumb:56px;--wItem:128px}}
-.wtop{position:sticky;top:var(--hdr-h,62px);z-index:4;background:var(--bg);padding-bottom:4px}
+.wtop{position:sticky;top:var(--hdr-h,62px);z-index:4;background:var(--bg);padding-top:20px;padding-bottom:4px}
 table.wtbl th:first-child,table.wtbl td:first-child{padding-left:8px!important}
 table.wtbl th:last-child,table.wtbl td:last-child{padding-right:8px!important}
 tr.tot td{background:color-mix(in srgb,var(--gold-soft) 35%,var(--card))}
@@ -182,7 +182,7 @@ tr.grp td{background:var(--bg);font-weight:bold;letter-spacing:.03em;color:var(-
 @media (max-width:700px){
  .f{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
  .tabbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--card);border-top:1px solid var(--line);padding:6px 12px calc(6px + env(safe-area-inset-bottom,0px));justify-content:space-around}
- .tabbar button{border:0;background:transparent;flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:20px;min-height:50px;padding:2px 0;color:var(--mute);border-radius:0}
+ .tabbar button{border:0;background:transparent;flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:20px;min-height:50px;padding:2px 0 0;color:var(--mute);border-radius:0}
  .tabbar button span{font-size:12px;margin-top:2px;letter-spacing:.02em}
  .tabbar button.big{flex:1 1 0;font-size:24px}
 .tabbar button>span:first-child>.ni-s{display:none}
@@ -190,8 +190,9 @@ tr.grp td{background:var(--bg);font-weight:bold;letter-spacing:.03em;color:var(-
 .tabbar button.on>span:first-child>.ni-o{display:none}
  .tabbar button.big span+span{font-size:12px}
  .tabbar button.on{color:var(--lnk,var(--acc))}
- main{padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
+ main{padding-bottom:calc(69px + env(safe-area-inset-bottom,0px))}
 main>:first-child{margin-top:6px}
+main>.wtop{margin-top:-14px}
 main>h2:first-child{margin-bottom:14px}
 }
 .floatbar{transition:opacity .25s ease;display:none;position:fixed;left:0;right:0;bottom:0;z-index:25;background:transparent;padding:8px 14px calc(8px + env(safe-area-inset-bottom,0px));justify-content:center;gap:8px;margin:0}
@@ -267,8 +268,8 @@ table.spec td{padding:7px 0;border-bottom:1px solid var(--line);font-size:14px;t
 .note-b{text-align:left;margin-top:14px}
 .note-b p{white-space:pre-line;margin:2px 0 0;font-size:14px}
 @media (max-width:700px){
-.tabbar{padding-top:0;padding-bottom:calc(2px + env(safe-area-inset-bottom,0px))}
-.tabbar button{justify-content:flex-start;padding-top:8px;align-self:stretch}
+.tabbar{padding-top:2px;padding-bottom:env(safe-area-inset-bottom,0px)}
+.tabbar button{justify-content:flex-start;padding-top:4px;align-self:stretch}
 .tabbar button.on{color:var(--lnk,var(--acc));font-weight:600;box-shadow:inset 0 3px 0 var(--gold)}
 .tabbar button>span:first-child{display:flex;align-items:center;justify-content:center;height:26px;font-size:20px;flex:none}
 .tabbar button>span:first-child svg{display:block}
@@ -305,7 +306,7 @@ header button[data-a="drawer"]{display:flex;align-items:center;justify-content:c
 <script>
 document.getElementById('app').innerHTML=mothLoaderHTML();
 var K='ntts_items_v2',OK='ntts_order_v1',PER=25,MAX_UPLOAD=300*1024;
-var APP_VERSION='2.14.3',APP_DATE='2026-11-17 · 12:14 AM ET',UPDATE_URL='';
+var APP_VERSION='2.14.4',APP_DATE='2026-11-17 · 12:42 AM ET',UPDATE_URL='';
 var EMOJI={ring:'💍',earrings:'✨',necklace:'📿',bracelet:'⭕',watch:'⌚',other:'💎'};
 var ICONS={coll:"<rect x='3' y='4' width='18' height='16' rx='2'/><path d='M3 10h18M8 14h8'/>",gem:"<path d='M7 4h10l4 5-9 11L3 9z'/><path d='M3 9h18M9 4l-1.5 5L12 20l4.5-11L15 4'/>",pkg:"<path d='M3 7.5L12 3l9 4.5v9L12 21l-9-4.5z'/><path d='M3 7.5l9 4.5 9-4.5M12 12v9'/>",hand:"<path d='M5 11V7a1.5 1.5 0 0 1 3 0v4M8 11V5a1.5 1.5 0 0 1 3 0v6M11 11V6a1.5 1.5 0 0 1 3 0v6M14 11V8a1.5 1.5 0 0 1 3 0v7c0 3-2 5-5 5h-1c-2 0-3-1-4-3l-2-4'/>",x:"<path d='M6 6l12 12M18 6L6 18'/>",ring:"<circle cx='12' cy='14' r='6'/><path d='M9.5 8 12 4l2.5 4'/><path d='M12 9.5l1.5 2.5-1.5 2.5-1.5-2.5z'/>",earrings:"<path d='M7 3v3'/><path d='M7 6c-1.6 0-2.5 1.3-2.5 3S6 14 7 17c1-3 2.5-5 2.5-8C9.5 7.3 8.6 6 7 6z'/><path d='M17 3v3'/><path d='M17 6c-1.6 0-2.5 1.3-2.5 3S16 14 17 17c1-3 2.5-5 2.5-8C19.5 7.3 18.6 6 17 6z'/>",necklace:"<path d='M4 5c2 7 14 7 16 0'/><path d='M12 12.5V15'/><circle cx='12' cy='17' r='2.2'/>",bracelet:"<ellipse cx='12' cy='12' rx='8' ry='5.5'/><ellipse cx='12' cy='12' rx='5.5' ry='3'/>",watch:"<circle cx='12' cy='13' r='5.5'/><path d='M9 7.5 10 3h4l1 4.5M9 18.5 10 23h4l1-4.5'/><path d='M12 10.5V13l1.8 1.2'/>",heart:"<path d='M12 20s-7-4.4-7-9.5A4 4 0 0 1 12 8a4 4 0 0 1 7 2.5C19 15.6 12 20 12 20z'/>",wrench:"<path d='M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-.5-.5-2.5z'/>",key:"<g transform='rotate(-45 12.5 12)'><circle cx='8' cy='12' r='4'/><path d='M12 12h9M18 12v3M21 12v2.5'/></g>",curio:"<rect x='4' y='3' width='16' height='18' rx='1'/><path d='M3 3h18M3 21h18'/><path d='M12 3v18'/><path d='M4 11h16'/><path d='M10.5 7v1.5M13.5 7v1.5M10.5 15v1.5M13.5 15v1.5'/>",clock:"<circle cx='12' cy='12' r='9'/><path d='M12 7v5l3 2'/>",pencil:"<path d='M4 20h4L19 9l-4-4L4 16z'/><path d='M13.5 6.5l4 4'/>",lock:"<rect x='5' y='11' width='14' height='10' rx='2'/><path d='M8 11V7a4 4 0 0 1 8 0v4'/>",unlock:"<rect x='3.95' y='11' width='11.1' height='10' rx='2'/><path d='M12.8 11V6.3A3.3 3.3 0 0 1 19.4 6.3V9.5'/>",bag:"<path d='M5 8h14l-1 12H6z'/><path d='M9 8V6a3 3 0 0 1 6 0v2'/>",plus:"<path d='M12 5v14M5 12h14'/>",x:"<path d='M6 6l12 12M18 6L6 18'/>",spark:"<path d='M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z'/>",gallery:"<rect x='3' y='4' width='18' height='16' rx='2'/><circle cx='9' cy='10' r='2'/><path d='M21 16l-5-5-8 9'/>"};
 var ORN='<svg width="72" height="10" viewBox="0 0 72 10" fill="none" stroke="#a8864f" stroke-width="1.2"><path d="M0 5h28M44 5h28"/><path d="M36 1l4 4-4 4-4-4z"/></svg>';
@@ -1651,6 +1652,7 @@ function renderMain(){
 function render(){renderMain();renderDrawer();wfix()}
 var wtopRO=window.ResizeObserver?new ResizeObserver(function(){wfix()}):null;
 function wfix(){var st=document.documentElement.style;var h=document.querySelector('header');if(h){st.setProperty('--hdr-h','calc(env(safe-area-inset-top,0px) + '+Math.ceil(h.offsetHeight)+'px)');if(wtopRO)wtopRO.observe(h)}var w=document.querySelector('.wtop');st.setProperty('--wtop-h',(w?Math.floor(w.getBoundingClientRect().height):0)+'px');if(wtopRO&&w)wtopRO.observe(w)}
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){wfix()});window.addEventListener('load',function(){wfix()});
 window.addEventListener('resize',wfix);
 var keepY=null;
 var trail=[];
@@ -1778,7 +1780,7 @@ function renderJotd(){
   +'</div>';
  return '<h2>Jewelry of the Day</h2>'
   +cards
-  +'<div class="bar" style="margin-top:12px;justify-content:space-between;align-items:center"><span style="display:flex;gap:8px;flex-wrap:wrap"><button data-a="jlucky">Leave it to fate</button><button data-a="jreset">Start anew</button></span><button class="pri" data-a="jwear"'+(ids.length?'':' disabled')+'>Adorn</button></div>'
+  +'<div class="bar" style="margin:20px 0 0;justify-content:space-between;align-items:center"><span style="display:flex;gap:8px;flex-wrap:wrap"><button data-a="jlucky">Leave it to fate</button><button data-a="jreset">Start anew</button></span><button class="pri" data-a="jwear"'+(ids.length?'':' disabled')+'>Adorn</button></div>'
   +(jotdMsg?'<p class="meta">'+esc(jotdMsg)+'</p>':'');
 }
 function trackLinkHTML(i){var u=String(i.trackUrl||'').trim();if(!/^https?:\/\//i.test(u))return '';return '<p class="meta" style="text-align:center;margin:10px 0 0"><a class="link" href="'+esc(u)+'" target="_blank" rel="noopener">Track package<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-left:6px;vertical-align:-2px"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></p>'}
