@@ -65,7 +65,6 @@ main{max-width:1100px;margin:0 auto;padding:14px}
 .box .tile{box-shadow:0 3px 9px rgba(0,0,0,.55);transform:translateZ(0);-webkit-backface-visibility:hidden;backface-visibility:hidden}
 .box{transform:translateZ(0);-webkit-backface-visibility:hidden;backface-visibility:hidden}
 .box .grid{gap:8px}
-#app>.box{padding:0}
 .tile{aspect-ratio:1;border-radius:10px;overflow:hidden;background:var(--acc);display:flex;align-items:center;justify-content:center;font-size:32px;cursor:pointer;position:relative}
 .ro .tile{touch-action:none;cursor:grab;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;outline:2px dashed rgba(255,255,255,.45);outline-offset:-3px}
 .tile .tt{font-size:12px;line-height:1.2;text-align:center;padding:8px;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.6);word-break:break-word;overflow:hidden;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical}
@@ -96,7 +95,7 @@ h4.sub{margin:14px 0 6px;letter-spacing:.03em;grid-column:1/-1}
 @keyframes jfxgem{0%{opacity:0}10%{opacity:1}80%{opacity:1}100%{opacity:0}}
 .gfade{position:fixed;left:0;right:0;height:40px;pointer-events:none;z-index:3;opacity:0;transition:opacity .35s ease}
 #gfT{top:var(--hdr-h,62px);background:linear-gradient(to bottom,var(--bg) 0%,color-mix(in srgb,var(--bg) 85%,transparent) 25%,color-mix(in srgb,var(--bg) 45%,transparent) 55%,color-mix(in srgb,var(--bg) 12%,transparent) 85%,transparent 100%)}
-#gfB{bottom:0;background:linear-gradient(to top,var(--bg) 0%,color-mix(in srgb,var(--bg) 85%,transparent) 25%,color-mix(in srgb,var(--bg) 45%,transparent) 55%,color-mix(in srgb,var(--bg) 12%,transparent) 85%,transparent 100%)}
+#gfB{bottom:0;background:linear-gradient(to top,var(--card) 0%,color-mix(in srgb,var(--card) 85%,transparent) 25%,color-mix(in srgb,var(--card) 45%,transparent) 55%,color-mix(in srgb,var(--card) 12%,transparent) 85%,transparent 100%)}
 .modal{position:fixed;inset:0;background:rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center;padding:20px;z-index:40}
 .modal>div{background:var(--card);border-radius:14px;padding:16px;max-width:420px;width:100%;max-height:85vh;overflow:auto}
 .drawer{position:fixed;top:0;bottom:0;left:0;width:min(86vw,320px);background:var(--card);border-right:1px solid var(--line);transform:translateX(-102%);transition:transform .25s;z-index:30;display:flex;flex-direction:column;overflow:hidden;padding:0}
@@ -311,9 +310,9 @@ header button[data-a="drawer"]{display:flex;align-items:center;justify-content:c
 <input type="file" id="fjson" accept=".json,application/json" multiple hidden>
 <input type="file" id="gfile" accept="image/*" multiple hidden>
 <script>
-document.getElementById('app').innerHTML=mothLoaderHTML();
+document.getElementById('app').innerHTML='<div style="position:fixed;inset:0;z-index:50;background:var(--bg);display:flex;align-items:center;justify-content:center">'+mothLoaderHTML()+'</div>';
 var K='ntts_items_v2',OK='ntts_order_v1',PER=25,MAX_UPLOAD=300*1024;
-var APP_VERSION='2.17.0',APP_DATE='2026-11-17 · 1:56 PM ET',UPDATE_URL='';
+var APP_VERSION='2.17.1',APP_DATE='2026-11-17 · 6:06 PM ET',UPDATE_URL='';
 var EMOJI={ring:'💍',earrings:'✨',necklace:'📿',bracelet:'⭕',watch:'⌚',other:'💎'};
 var ICONS={coll:"<rect x='3' y='4' width='18' height='16' rx='2'/><path d='M3 10h18M8 14h8'/>",gem:"<path d='M7 4h10l4 5-9 11L3 9z'/><path d='M3 9h18M9 4l-1.5 5L12 20l4.5-11L15 4'/>",pkg:"<path d='M3 7.5L12 3l9 4.5v9L12 21l-9-4.5z'/><path d='M3 7.5l9 4.5 9-4.5M12 12v9'/>",hand:"<path d='M5 11V7a1.5 1.5 0 0 1 3 0v4M8 11V5a1.5 1.5 0 0 1 3 0v6M11 11V6a1.5 1.5 0 0 1 3 0v6M14 11V8a1.5 1.5 0 0 1 3 0v7c0 3-2 5-5 5h-1c-2 0-3-1-4-3l-2-4'/>",x:"<path d='M6 6l12 12M18 6L6 18'/>",ring:"<circle cx='12' cy='14' r='6'/><path d='M9.5 8 12 4l2.5 4'/><path d='M12 9.5l1.5 2.5-1.5 2.5-1.5-2.5z'/>",earrings:"<path d='M7 3v3'/><path d='M7 6c-1.6 0-2.5 1.3-2.5 3S6 14 7 17c1-3 2.5-5 2.5-8C9.5 7.3 8.6 6 7 6z'/><path d='M17 3v3'/><path d='M17 6c-1.6 0-2.5 1.3-2.5 3S16 14 17 17c1-3 2.5-5 2.5-8C19.5 7.3 18.6 6 17 6z'/>",necklace:"<path d='M4 5c2 7 14 7 16 0'/><path d='M12 12.5V15'/><circle cx='12' cy='17' r='2.2'/>",bracelet:"<ellipse cx='12' cy='12' rx='8' ry='5.5'/><ellipse cx='12' cy='12' rx='5.5' ry='3'/>",watch:"<circle cx='12' cy='13' r='5.5'/><path d='M9 7.5 10 3h4l1 4.5M9 18.5 10 23h4l1-4.5'/><path d='M12 10.5V13l1.8 1.2'/>",heart:"<path d='M12 20s-7-4.4-7-9.5A4 4 0 0 1 12 8a4 4 0 0 1 7 2.5C19 15.6 12 20 12 20z'/>",wrench:"<path d='M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-.5-.5-2.5z'/>",key:"<g transform='rotate(-45 12.5 12)'><circle cx='8' cy='12' r='4'/><path d='M12 12h9M18 12v3M21 12v2.5'/></g>",curio:"<rect x='4' y='3' width='16' height='18' rx='1'/><path d='M3 3h18M3 21h18'/><path d='M12 3v18'/><path d='M4 11h16'/><path d='M10.5 7v1.5M13.5 7v1.5M10.5 15v1.5M13.5 15v1.5'/>",clock:"<circle cx='12' cy='12' r='9'/><path d='M12 7v5l3 2'/>",pencil:"<path d='M4 20h4L19 9l-4-4L4 16z'/><path d='M13.5 6.5l4 4'/>",lock:"<rect x='5' y='11' width='14' height='10' rx='2'/><path d='M8 11V7a4 4 0 0 1 8 0v4'/>",unlock:"<rect x='3.95' y='11' width='11.1' height='10' rx='2'/><path d='M12.8 11V6.3A3.3 3.3 0 0 1 19.4 6.3V9.5'/>",bag:"<path d='M5 8h14l-1 12H6z'/><path d='M9 8V6a3 3 0 0 1 6 0v2'/>",plus:"<path d='M12 5v14M5 12h14'/>",x:"<path d='M6 6l12 12M18 6L6 18'/>",spark:"<path d='M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z'/>",gallery:"<rect x='3' y='4' width='18' height='16' rx='2'/><circle cx='9' cy='10' r='2'/><path d='M21 16l-5-5-8 9'/>"};
 var ORN='<svg width="72" height="10" viewBox="0 0 72 10" fill="none" stroke="#a8864f" stroke-width="1.2"><path d="M0 5h28M44 5h28"/><path d="M36 1l4 4-4 4-4-4z"/></svg>';
@@ -2742,7 +2741,7 @@ function confettiBurst(){
  })();
 }
 /* ---------- update banner with What's new CTA (no popup) ---------- */
-var WHATS_NEW='The Wares seller chart now splits each seller into held pieces and pieces sold or gone, in both Count and Spend. Page fades are softer, and page titles sit the same distance above their content on every page. The Box grid lines up with the other pages.';
+var WHATS_NEW='The app opens straight away with no signal, and the launch curio is centered. The bottom page fade sits right against the tab bar with no gap.';
 function updateBannerCheck(){
  var seen=null;try{seen=localStorage.getItem('ntts_seen_ver')}catch(e){}
  try{localStorage.setItem('ntts_seen_ver',APP_VERSION)}catch(e){}

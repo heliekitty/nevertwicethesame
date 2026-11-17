@@ -1,8 +1,10 @@
 // Never Twice the Same: offline cache for the app page.
 // Only the app page (index.html) is cached. Icons, images and every other file go straight to the network
 // and are never replaced by the page, so a missing icon can no longer come back as HTML.
-// The cache name changed in 2.0.12, so the old cache (with older copies of files) is cleared on the next load.
-const CACHE = 'ntts-shell-2';
+// The cache name changed in 2.17.1, so the old cache is cleared on the next load.
+// The app page opens from the cache straight away, so a launch with no signal does not wait on the network.
+// The network copy is fetched in the background and saved for the next launch.
+const CACHE = 'ntts-shell-3';
 const SHELL = ['./', 'index.html'];
 
 self.addEventListener('install', function (e) {
@@ -25,17 +27,19 @@ self.addEventListener('fetch', function (e) {
   // Only the app page is handled here. Anything else (icons, images, other files) is not touched.
   var isPage = req.mode === 'navigate' || u.pathname.endsWith('/') || u.pathname.endsWith('.html');
   if (!isPage) return;
-  // Network first, so online users always get the latest page; fall back to the cached page when offline.
+  // Start the network copy now. It refreshes the cached page for the next launch.
+  // cache: 'no-cache' asks the server to confirm the copy, so the phone never reuses an old HTTP-cached page.
+  var net = fetch(new Request(req, { cache: 'no-cache' })).then(function (r) {
+    if (r && r.ok) {
+      return caches.open(CACHE).then(function (c) { return c.put('index.html', r.clone()); }).then(function () { return r; });
+    }
+    return r;
+  });
+  e.waitUntil(net.catch(function () {}));
+  // Answer from the cached page at once. Fall back to the network only if nothing is cached yet.
   e.respondWith(
-    // cache: 'no-cache' asks the server to confirm the copy, so the phone never reuses an old HTTP-cached page.
-    fetch(new Request(req, { cache: 'no-cache' })).then(function (r) {
-      if (r && r.ok) {
-        var copy = r.clone();
-        caches.open(CACHE).then(function (c) { c.put(req, copy); });
-      }
-      return r;
-    }).catch(function () {
-      return caches.match(req).then(function (m) { return m || caches.match('index.html'); });
+    caches.match('index.html').then(function (m) {
+      return m || net.catch(function () { return new Response('Offline', { status: 503, headers: { 'Content-Type': 'text/plain' } }); });
     })
   );
 });
