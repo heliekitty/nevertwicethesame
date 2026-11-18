@@ -167,7 +167,7 @@ tr.grp td{background:var(--bg);font-weight:bold;letter-spacing:.03em;color:var(-
 .ringtbl th.us,.ringtbl td.us{font-weight:bold}
 .ringtbl th{hyphens:manual}
 .upd{position:relative;left:0;right:0;z-index:20;background:var(--acc);color:#fff;padding:6px 12px;display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap;font-size:13px}
-#upd{padding-top:calc(8px + env(safe-area-inset-top,0px))}
+#upd{margin-top:env(safe-area-inset-top,0px);padding-top:8px}
 .upd>span{flex:1 1 auto;min-width:0;text-align:left;padding-top:0}
 .upd[hidden]{display:none}
 .upd button{border-color:#fff;background:transparent;color:#fff;min-height:28px;padding:6px 10px 4px;font-size:13px}
@@ -312,7 +312,7 @@ header button[data-a="drawer"]{display:flex;align-items:center;justify-content:c
 <script>
 document.getElementById('app').innerHTML='<div style="position:fixed;inset:0;z-index:50;background:var(--bg);display:flex;align-items:center;justify-content:center">'+mothLoaderHTML()+'</div>';
 var K='ntts_items_v2',OK='ntts_order_v1',PER=25,MAX_UPLOAD=300*1024;
-var APP_VERSION='2.17.7',APP_DATE='2026-11-17 · 10:25 PM ET',UPDATE_URL='';
+var APP_VERSION='2.18',APP_DATE='2026-11-17 · 11:13 PM ET',UPDATE_URL='';
 var EMOJI={ring:'💍',earrings:'✨',necklace:'📿',bracelet:'⭕',watch:'⌚',other:'💎'};
 var ICONS={coll:"<rect x='3' y='4' width='18' height='16' rx='2'/><path d='M3 10h18M8 14h8'/>",gem:"<path d='M7 4h10l4 5-9 11L3 9z'/><path d='M3 9h18M9 4l-1.5 5L12 20l4.5-11L15 4'/>",pkg:"<path d='M3 7.5L12 3l9 4.5v9L12 21l-9-4.5z'/><path d='M3 7.5l9 4.5 9-4.5M12 12v9'/>",hand:"<path d='M5 11V7a1.5 1.5 0 0 1 3 0v4M8 11V5a1.5 1.5 0 0 1 3 0v6M11 11V6a1.5 1.5 0 0 1 3 0v6M14 11V8a1.5 1.5 0 0 1 3 0v7c0 3-2 5-5 5h-1c-2 0-3-1-4-3l-2-4'/>",x:"<path d='M6 6l12 12M18 6L6 18'/>",ring:"<circle cx='12' cy='14' r='6'/><path d='M9.5 8 12 4l2.5 4'/><path d='M12 9.5l1.5 2.5-1.5 2.5-1.5-2.5z'/>",earrings:"<path d='M7 3v3'/><path d='M7 6c-1.6 0-2.5 1.3-2.5 3S6 14 7 17c1-3 2.5-5 2.5-8C9.5 7.3 8.6 6 7 6z'/><path d='M17 3v3'/><path d='M17 6c-1.6 0-2.5 1.3-2.5 3S16 14 17 17c1-3 2.5-5 2.5-8C19.5 7.3 18.6 6 17 6z'/>",necklace:"<path d='M4 5c2 7 14 7 16 0'/><path d='M12 12.5V15'/><circle cx='12' cy='17' r='2.2'/>",bracelet:"<ellipse cx='12' cy='12' rx='8' ry='5.5'/><ellipse cx='12' cy='12' rx='5.5' ry='3'/>",watch:"<circle cx='12' cy='13' r='5.5'/><path d='M9 7.5 10 3h4l1 4.5M9 18.5 10 23h4l1-4.5'/><path d='M12 10.5V13l1.8 1.2'/>",heart:"<path d='M12 20s-7-4.4-7-9.5A4 4 0 0 1 12 8a4 4 0 0 1 7 2.5C19 15.6 12 20 12 20z'/>",wrench:"<path d='M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-.5-.5-2.5z'/>",key:"<g transform='rotate(-45 12.5 12)'><circle cx='8' cy='12' r='4'/><path d='M12 12h9M18 12v3M21 12v2.5'/></g>",curio:"<rect x='4' y='3' width='16' height='18' rx='1'/><path d='M3 3h18M3 21h18'/><path d='M12 3v18'/><path d='M4 11h16'/><path d='M10.5 7v1.5M13.5 7v1.5M10.5 15v1.5M13.5 15v1.5'/>",clock:"<circle cx='12' cy='12' r='9'/><path d='M12 7v5l3 2'/>",pencil:"<path d='M4 20h4L19 9l-4-4L4 16z'/><path d='M13.5 6.5l4 4'/>",lock:"<rect x='5' y='11' width='14' height='10' rx='2'/><path d='M8 11V7a4 4 0 0 1 8 0v4'/>",unlock:"<rect x='3.95' y='11' width='11.1' height='10' rx='2'/><path d='M12.8 11V6.3A3.3 3.3 0 0 1 19.4 6.3V9.5'/>",bag:"<path d='M5 8h14l-1 12H6z'/><path d='M9 8V6a3 3 0 0 1 6 0v2'/>",plus:"<path d='M12 5v14M5 12h14'/>",x:"<path d='M6 6l12 12M18 6L6 18'/>",spark:"<path d='M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z'/>",gallery:"<rect x='3' y='4' width='18' height='16' rx='2'/><circle cx='9' cy='10' r='2'/><path d='M21 16l-5-5-8 9'/>"};
 var ORN='<svg width="72" height="10" viewBox="0 0 72 10" fill="none" stroke="#a8864f" stroke-width="1.2"><path d="M0 5h28M44 5h28"/><path d="M36 1l4 4-4 4-4-4z"/></svg>';
@@ -635,6 +635,7 @@ async function init(){var _t0=Date.now();
 function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
 function cap(s){s=String(s||'');return s.charAt(0).toUpperCase()+s.slice(1)}
 function capColor(s){s=String(s||'').trim().toLowerCase();return COLOR_ORDER.filter(function(c){return c.toLowerCase()===s})[0]||''}
+function fmtWhole(n){if(n==null||n==='')return '';var v=Number(n);if(isNaN(v))return '';v=Math.round(v);return (v<0?'-':'')+'$'+Math.abs(v).toLocaleString('en-US',{maximumFractionDigits:0})}
 function fmtMoney(n){if(n==null||n==='')return '';var v=Number(n);if(isNaN(v))return '';return (v<0?'-':'')+'$'+Math.abs(v).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})}
 function parseMoney(s){s=String(s==null?'':s).replace(/[^0-9.\-]/g,'');if(s===''||s==='-'||s==='.')return '';var n=Number(s);return isNaN(n)?'':n}
 function money(n){return n==null||n===''||isNaN(Number(n))?'—':fmtMoney(n)}
@@ -1097,7 +1098,7 @@ function appearanceHTML(){
 function refreshAppearance(){var ab=document.getElementById('appBody');if(ab)ab.innerHTML=themeHTML()}
 function renderDrawer(){
  var dEl=document.getElementById('drawer'),keepY=(dEl.querySelector('.dbody')||{}).scrollTop||0;
- dEl.innerHTML='<div class="dbody"><h3 class="mh" style="margin:0 0 10px">Menu</h3>'+(view!=='box'?'':'<div style="margin:0 0 10px"><button data-a="nav" data-v="edit" data-new="1" style="width:100%;justify-content:center">'+ico('plus',18)+' Add Piece</button></div>')+(view==='wishlist'?'<div style="margin:0 0 10px"><button data-a="wadd" style="width:100%;justify-content:center">'+ico('plus',18)+' Add Coveted Piece</button></div>':'')+(view==='coll'&&collTab==='cur'&&collId==null?'<div style="margin:0 0 10px"><button data-a="cnew" style="width:100%;justify-content:center">'+ico('plus',18)+' Add Collection</button></div>':'')+('<div style="margin:0 0 10px"><button data-a="sgopen" style="width:100%;justify-content:center">'+ico('ring',18)+' Size Guide</button></div>')+('<div style="margin:0 0 10px"><button data-a="nav" data-v="gallery" style="width:100%;justify-content:center"'+(view==='gallery'?' class="on"':'')+'>'+ico('gallery',18)+' Manage Gallery</button></div>'+(view==='jotd'||view==='sizeguide'?appBtnHTML():'<div class="dv"><span>'+ORN+'</span></div>'+viewControls()))+(view==='jotd'||view==='sizeguide'?'':'<div class="dv"><span>'+ORN+'</span></div>')+(view==='jotd'||view==='coll'||view==='sizeguide'?'':view==='wishlist'?wishFilterHTML():filtersHTML())+'</div><div class="dfoot"><p class="meta" style="text-align:center;margin:0">'+verLine()+'</p></div>';
+ dEl.innerHTML='<div class="dbody"><h3 class="mh" style="margin:0 0 10px">Menu</h3>'+(view!=='box'?'':'<div style="margin:0 0 10px"><button data-a="nav" data-v="edit" data-new="1" style="width:100%;justify-content:center">'+ico('plus',18)+' Add Piece</button></div>')+(view==='wishlist'?'<div style="margin:0 0 10px"><button data-a="wadd" style="width:100%;justify-content:center">'+ico('plus',18)+' Add Coveted Piece</button></div>':'')+(view==='coll'&&collId!=null&&curColl()?'<div style="margin:0 0 10px"><button data-a="cpicker" style="width:100%;justify-content:center">'+ico('plus',18)+' Add pieces</button></div>':'')+(view==='coll'&&collTab==='cur'&&collId==null?'<div style="margin:0 0 10px"><button data-a="cnew" style="width:100%;justify-content:center">'+ico('plus',18)+' Add Collection</button></div>':'')+('<div style="margin:0 0 10px"><button data-a="sgopen" style="width:100%;justify-content:center">'+ico('ring',18)+' Size Guide</button></div>')+('<div style="margin:0 0 10px"><button data-a="nav" data-v="gallery" style="width:100%;justify-content:center"'+(view==='gallery'?' class="on"':'')+'>'+ico('gallery',18)+' Manage Gallery</button></div>'+(view==='jotd'||view==='sizeguide'?appBtnHTML():'<div class="dv"><span>'+ORN+'</span></div>'+viewControls()))+(view==='jotd'||view==='sizeguide'?'':'<div class="dv"><span>'+ORN+'</span></div>')+(view==='jotd'||view==='coll'||view==='sizeguide'?'':view==='wishlist'?wishFilterHTML():filtersHTML())+'</div><div class="dfoot"><p class="meta" style="text-align:center;margin:0">'+verLine()+'</p></div>';
 
  var nb=dEl.querySelector('.dbody');if(nb)nb.scrollTop=keepY;
 }
@@ -1526,8 +1527,7 @@ function renderCollDetail(c){
   if(!collRo)return t;
   var x=xBtn('data-a="cremove" data-id="'+i.id+'"','Remove from collection');
   return t.slice(0,-6)+x+'</div>'}).join('');
- return '<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:12px"><button data-a="cback">Back</button><div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><button data-a="cedit">Edit</button><button class="pri" data-a="cpicker">+ Add pieces</button></div></div>'
-  +'<h2 style="margin:0 0 6px">'+esc(c.title||'Untitled collection')+'</h2>'
+ return '<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin:6px 0 14px"><div style="display:flex;align-items:center;gap:8px;min-width:0"><button data-a="cback" aria-label="Back" title="Back" style="width:40px;height:40px;min-width:0;min-height:0;padding:0;border-radius:50%;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button><h2 style="margin:0;min-width:0;overflow-wrap:anywhere">'+esc(c.title||'Untitled collection')+'</h2></div><div style="display:flex;gap:6px;flex:none"><button data-a="cedit">Edit</button></div></div>'
   +(c.note?'<p class="meta" style="margin:0 0 12px;white-space:pre-wrap">'+esc(c.note)+'</p>':'')
   +(p.length?'<div class="box'+(bgStyle==='pattern'?' pat':'')+'" style="overflow:hidden;min-width:0"><div class="grid'+(collRo?' ro':'')+'" style="grid-template-columns:repeat('+cols+',1fr);gap:8px">'+tiles+'</div></div>':'<p class="meta">No pieces yet.</p>');
 }
@@ -1698,7 +1698,7 @@ function renderMain(){
  setupLazyBox();
  updateSummary();setTabs();updateStorage();
 }
-function fadesUpd(){var t=document.getElementById('gfT'),b=document.getElementById('gfB');if(!t||!b)return;var tb=document.getElementById('tabbar');b.style.bottom=(tb&&tb.offsetHeight?tb.offsetHeight-1:0)+'px';var on=['box','coll','wishlist'].indexOf(view)>-1;var ubOn=!!document.querySelector('.upd:not([hidden])');var max=document.documentElement.scrollHeight-innerHeight;var bn=0;document.querySelectorAll('.upd:not([hidden])').forEach(function(x){bn+=x.offsetHeight});t.style.opacity=on&&!ubOn&&scrollY>bn+4?'1':'0';b.style.opacity=on&&scrollY<max-4?'1':'0'}
+function fadesUpd(){var t=document.getElementById('gfT'),b=document.getElementById('gfB');if(!t||!b)return;var tb=document.getElementById('tabbar');b.style.bottom=(tb&&tb.offsetHeight?tb.offsetHeight-1:0)+'px';var on=['box','coll','wishlist','gallery','manage','about','edit','listing','jotd','secret','sizeguide'].indexOf(view)>-1;var ubOn=!!document.querySelector('.upd:not([hidden])');var max=document.documentElement.scrollHeight-innerHeight;var bn=0;document.querySelectorAll('.upd:not([hidden])').forEach(function(x){bn+=x.offsetHeight});var hd=document.querySelector('header'),stuck=!!hd&&hd.getBoundingClientRect().top<=(parseFloat(getComputedStyle(hd).top)||0)+1;t.style.opacity=on&&stuck?'1':'0';b.style.opacity=on&&scrollY<max-4?'1':'0'}
 function fadesInit(){if(document.getElementById('gfT'))return;['gfT','gfB'].forEach(function(id){var d=document.createElement('div');d.id=id;d.className='gfade';document.body.appendChild(d)});window.addEventListener('scroll',fadesUpd,{passive:true});window.addEventListener('resize',fadesUpd)}
 function render(){document.body.dataset.view=view;renderMain();renderDrawer();wfix();fadesInit();fadesUpd()}
 var wtopRO=window.ResizeObserver?new ResizeObserver(function(){wfix()}):null;
@@ -1769,7 +1769,7 @@ function jcolorBtnStyle(c){
  var dark=(0.299*r+0.587*g+0.114*b)/255<0.55;
  return 'background:'+h+';color:'+(dark?'#fff':'#5a1538');
 }
-function jotdTileLabel(k){return {ring1:'Primary Ring',ring2:'Secondary Ring',earring:'Earrings',necklace:'Necklace'}[k]}
+function jotdTileLabel(k){return {ring1:'Ring',ring2:'Ring',earring:'Earrings',necklace:'Necklace'}[k]}
 function jcolorHTML(){
  var tk=jotdColorKey,lab=jotdTileLabel(tk),cur=jotdColors[tk];
  var keys=COLOR_ORDER.map(function(c){return c.toLowerCase()}).filter(function(k){return COLORS[k]&&k!=='multi'});
@@ -1845,7 +1845,7 @@ function jotdCard(label,i,emptyMsg,k){
   :'<div class="meta" style="padding:10px;text-align:center;display:flex;align-items:center;justify-content:center;height:100%">'+esc(emptyMsg)+'</div>';
  var picWrap='<div '+(i?'data-a="open" data-id="'+i.id+'" style="cursor:zoom-in;':'style="')+'position:relative;width:100%;aspect-ratio:1;overflow:hidden;border-radius:10px;margin:0 0 6px;background:var(--acc)">'+pic+'</div>';
  return '<div style="border:1px solid '+(locked?'var(--acc)':'var(--line)')+';border-radius:12px;padding:8px;display:flex;flex-direction:column;min-width:0">'
-  +'<div style="display:flex;align-items:center;justify-content:space-between;gap:4px;margin-bottom:4px"><span class="meta">'+label+'</span><span style="display:flex;gap:2px">'+colorBtn+lockBtn+'</span></div>'
+  +'<div style="display:flex;align-items:center;justify-content:space-between;gap:4px;margin-bottom:4px"><span style="font-family:Cormorant Garamond,Georgia,serif;font-weight:600;font-size:18px;letter-spacing:.02em;line-height:1.2;color:var(--fg);min-width:0;overflow-wrap:anywhere">'+label+'</span><span style="display:flex;gap:2px">'+colorBtn+lockBtn+'</span></div>'
   +picWrap
   +'<div class="meta" style="display:flex;flex-wrap:wrap;align-items:center;column-gap:8px;margin:0"><span style="display:inline-flex;align-items:center">'+(i?jotdRateHTML(i):'—')+'</span><span style="display:inline-flex;align-items:center">'+(i?keycap(Number(i.wornCount)||0)+' • '+esc(agoText(i.wornLast)):'—')+'</span></div></div>';
 }
@@ -1853,8 +1853,8 @@ function renderJotd(){
  if(!jotdSel){jotdSel={ring1:null,ring2:null,earring:null,necklace:null};var wp=jotdLaunch?jotdWornPicks():{};jotdLaunch=false;['ring1','ring2','earring','necklace'].forEach(function(k){if(wp[k])jotdSel[k]=wp[k]});['ring1','ring2','earring','necklace'].forEach(function(k){if(!jotdSel[k])jotdRoll(k)});jotdMsg=''}
  var s=jotdSel,ids=[s.ring1,s.ring2,s.earring,s.necklace].filter(Boolean).map(function(i){return i.id});
  var cards='<div class="grid" style="grid-template-columns:repeat(2,minmax(0,1fr));align-items:start">'
-  +jotdCard('Primary Ring',s.ring1,'Pick an index or middle finger ring.','ring1')
-  +jotdCard('Secondary Ring',s.ring2,s.ring1?'No other ring on a different finger is available.':'Pick the Primary Ring first.','ring2')
+  +jotdCard('Ring',s.ring1,'Pick an index or middle finger ring.','ring1')
+  +jotdCard('Ring',s.ring2,s.ring1?'No other ring on a different finger is available.':'Pick the other ring first.','ring2')
   +jotdCard('Earrings',s.earring,'Not wearing earrings today.','earring')
   +jotdCard('Necklace',s.necklace,'Not wearing a necklace today.','necklace')
   +'</div>';
@@ -1865,8 +1865,10 @@ function renderJotd(){
 function trackLinkHTML(i){var u=String(i.trackUrl||'').trim();if(!/^https?:\/\//i.test(u))return '';return '<p class="meta" style="text-align:center;margin:10px 0 0"><a class="link" href="'+esc(u)+'" target="_blank" rel="noopener">Track package<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-left:6px;vertical-align:-2px"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></p>'}
 function popup(i){
  if(!i)return;
- document.getElementById('modal').innerHTML='<div class="modal" data-a="backdrop"><div style="max-width:520px;width:94vw;max-height:88vh;display:flex;flex-direction:column;text-align:left"><div style="overflow:auto;flex:1;min-height:0;padding:4px 4px 0">'+pieceBodyHTML(i)+'</div><div class="bar" style="flex:none;justify-content:center;gap:12px;margin:0;padding:12px 4px 4px;border-top:1px solid var(--line);background:var(--card)"><button class="pri" data-a="edit" data-id="'+i.id+'">Edit</button><button data-a="x">Close</button></div></div></div>';
+ document.getElementById('modal').innerHTML='<div class="modal" data-a="backdrop"><div style="max-width:520px;width:94vw;max-height:88vh;display:flex;flex-direction:column;text-align:left"><div style="position:relative;flex:1;min-height:0;display:flex;flex-direction:column"><div id="pscroll" style="overflow:auto;flex:1;min-height:0;padding:4px 4px 0">'+pieceBodyHTML(i)+'</div><div id="pfT" style="position:absolute;top:0;left:0;right:0;height:28px;pointer-events:none;opacity:0;background:linear-gradient(to bottom,var(--card) 0%,color-mix(in srgb,var(--card) 45%,transparent) 55%,transparent 100%)"></div><div id="pfB" style="position:absolute;bottom:0;left:0;right:0;height:28px;pointer-events:none;opacity:0;background:linear-gradient(to top,var(--card) 0%,color-mix(in srgb,var(--card) 45%,transparent) 55%,transparent 100%)"></div></div><div class="bar" style="flex:none;justify-content:center;gap:12px;margin:0;padding:12px 4px 4px;border-top:1px solid var(--line);background:var(--card)"><button class="pri" data-a="edit" data-id="'+i.id+'">Edit</button><button data-a="x">Close</button></div></div></div>';
+ var ps=document.getElementById('pscroll');if(ps){ps.addEventListener('scroll',pfUpd,{passive:true});pfUpd()}
 }
+function pfUpd(){var s=document.getElementById('pscroll'),t=document.getElementById('pfT'),b=document.getElementById('pfB');if(!s||!t||!b)return;var max=s.scrollHeight-s.clientHeight;t.style.opacity=s.scrollTop>4?'1':'0';b.style.opacity=s.scrollTop<max-4?'1':'0'}
 var pieceId=null;
 function pieceSpecs(title,rows,i,skip){
  var html=rows.filter(function(r){return skip.indexOf(r[0])<0}).map(function(r){var v=r[1](i);return {l:r[0],v:v}}).filter(function(r){var t=String(r.v==null?'':r.v).replace(/<[^>]*>/g,'').trim();return t!==''&&t!=='—'});
@@ -1962,6 +1964,98 @@ function handleSecretForm(form){
 }
 var dashAll=false,dashYrsAll=false,dashSort='count';
 function compactMoney(n){n=Number(n)||0;return n>=1000?'$'+(n/1000).toFixed(n>=10000?0:1).replace(/\.0$/,'')+'k':'$'+Math.round(n)}
+function medOf(a){if(!a||!a.length)return null;var s=a.slice().sort(function(x,y){return x-y}),m=Math.floor(s.length/2);return s.length%2?s[m]:(s[m-1]+s[m])/2}
+function dashLineChart(win,yrs){
+ var W=320,H=170,L=12,R=12,T=18,B=26,n=win.length,mx=1;
+ win.forEach(function(y){mx=Math.max(mx,yrs[y].spend,yrs[y].sales)});
+ var X=function(i){return n<2?W/2:L+i*(W-L-R)/(n-1)};
+ var Y=function(v){return H-B-(v/mx)*(H-T-B)};
+ var pts=function(k){return win.map(function(y,i){return X(i).toFixed(1)+','+Y(yrs[y][k]).toFixed(1)}).join(' ')};
+ var dots=function(k,c){return win.map(function(y,i){return '<circle cx="'+X(i).toFixed(1)+'" cy="'+Y(yrs[y][k]).toFixed(1)+'" r="3.5" style="fill:'+c+'"><title>'+esc(y+' '+(k==='spend'?'spend':'sales')+': '+fmtMoney(yrs[y][k]))+'</title></circle>'}).join('')};
+ var labs=win.map(function(y,i){return '<text x="'+X(i).toFixed(1)+'" y="'+(H-6)+'" text-anchor="middle" font-size="11" style="fill:var(--mute)">'+y+'</text>'}).join('');
+ return '<svg viewBox="0 0 '+W+' '+H+'" style="width:100%;height:auto;display:block" role="img" aria-label="Spend and sales by year">'
+  +'<polyline points="'+pts('spend')+'" fill="none" stroke="#e07a9b" stroke-width="2"/>'
+  +'<polyline points="'+pts('sales')+'" fill="none" style="stroke:var(--gold)" stroke-width="2"/>'
+  +dots('spend','#e07a9b')+dots('sales','var(--gold)')+labs+'</svg>';
+}
+function quantOf(s,p){var pos=(s.length-1)*p,lo=Math.floor(pos),hi=Math.ceil(pos);return s[lo]+(s[hi]-s[lo])*(pos-lo)}
+function dashBoxChart(win,pc){
+ var W=320,H=200,L=12,R=12,T=22,B=40,n=win.length,maxV=1;
+ var stats={};
+ win.forEach(function(y){
+  var c=((pc[y]||{}).costs||[]).slice().sort(function(a,b){return a-b});
+  if(!c.length){stats[y]=null;return}
+  var q1=quantOf(c,0.25),med=quantOf(c,0.5),q3=quantOf(c,0.75),iqr=q3-q1;
+  var loF=q1-1.5*iqr,hiF=q3+1.5*iqr;
+  var inside=c.filter(function(v){return v>=loF&&v<=hiF});
+  var out=c.filter(function(v){return v<loF||v>hiF});
+  stats[y]={n:c.length,q1:q1,med:med,q3:q3,lo:inside[0],hi:inside[inside.length-1],out:out};
+  maxV=Math.max(maxV,c[c.length-1]);
+ });
+ var slot=(W-L-R)/n,bw=Math.min(40,slot*0.5);
+ var cx=function(i){return L+slot*(i+0.5)};
+ var Y=function(v){return H-B-(v/maxV)*(H-T-B)};
+ var out='';
+ win.forEach(function(y,i){
+  var x=cx(i),s=stats[y];
+  if(!s){out+='<text x="'+x.toFixed(1)+'" y="'+(H-B-8)+'" text-anchor="middle" font-size="11" style="fill:var(--mute)">—</text>';}
+  else{
+   var c=x.toFixed(1),cap=bw*0.3;
+   out+='<line x1="'+c+'" x2="'+c+'" y1="'+Y(s.hi).toFixed(1)+'" y2="'+Y(s.q3).toFixed(1)+'" style="stroke:var(--mute)" stroke-width="1.5"/>';
+   out+='<line x1="'+c+'" x2="'+c+'" y1="'+Y(s.q1).toFixed(1)+'" y2="'+Y(s.lo).toFixed(1)+'" style="stroke:var(--mute)" stroke-width="1.5"/>';
+   out+='<line x1="'+(x-cap).toFixed(1)+'" x2="'+(x+cap).toFixed(1)+'" y1="'+Y(s.hi).toFixed(1)+'" y2="'+Y(s.hi).toFixed(1)+'" style="stroke:var(--mute)" stroke-width="1.5"/>';
+   out+='<line x1="'+(x-cap).toFixed(1)+'" x2="'+(x+cap).toFixed(1)+'" y1="'+Y(s.lo).toFixed(1)+'" y2="'+Y(s.lo).toFixed(1)+'" style="stroke:var(--mute)" stroke-width="1.5"/>';
+   var top=Y(s.q3),h=Math.max(1,Y(s.q1)-Y(s.q3));
+   out+='<rect x="'+(x-bw/2).toFixed(1)+'" y="'+top.toFixed(1)+'" width="'+bw.toFixed(1)+'" height="'+h.toFixed(1)+'" rx="3" style="fill:var(--acc);fill-opacity:.25;stroke:var(--acc)" stroke-width="1.5"><title>'+esc(y+': middle half '+fmtMoney(s.q1)+' to '+fmtMoney(s.q3))+'</title></rect>';
+   out+='<line x1="'+(x-bw/2).toFixed(1)+'" x2="'+(x+bw/2).toFixed(1)+'" y1="'+Y(s.med).toFixed(1)+'" y2="'+Y(s.med).toFixed(1)+'" style="stroke:var(--gold)" stroke-width="2.5"><title>'+esc(y+' median: '+fmtMoney(s.med))+'</title></line>';
+   s.out.forEach(function(v){out+='<circle cx="'+c+'" cy="'+Y(v).toFixed(1)+'" r="3" style="fill:var(--acc)"><title>'+esc(y+' outlier: '+fmtMoney(v))+'</title></circle>'});
+   out+='<text x="'+(x+bw/2+3).toFixed(1)+'" y="'+(Y(s.med)+4).toFixed(1)+'" font-size="10" style="fill:var(--fg)">'+compactMoney(s.med)+'</text>';
+   out+='<text x="'+c+'" y="'+(H-B+14)+'" text-anchor="middle" font-size="10" style="fill:var(--mute)">n = '+s.n+'</text>';
+  }
+  out+='<text x="'+x.toFixed(1)+'" y="'+(H-6)+'" text-anchor="middle" font-size="11" style="fill:var(--mute)">'+y+'</text>';
+ });
+ return '<svg viewBox="0 0 '+W+' '+H+'" style="width:100%;height:auto;display:block" role="img" aria-label="Price range per piece by year">'+out+'</svg>';
+}
+function dashCountHTML(){
+ var vs=vis();
+ var listOf=function(v){return Array.isArray(v)?v:String(v||'').split(/[;,]/)};
+ var tc=function(s){return String(s).trim().replace(/\b\w/g,function(c){return c.toUpperCase()})};
+ var sec=function(title,note,body){return '<h4 class="sub" style="margin:18px 0 4px">'+title+'</h4>'+(note?'<p class="meta" style="margin:0 0 6px">'+note+'</p>':'')+body};
+ var hbars=function(rows){
+  var mx=Math.max.apply(null,rows.map(function(r){return r.n}).concat([1]));
+  return rows.map(function(r){return '<div style="display:grid;grid-template-columns:118px minmax(0,1fr) 34px;gap:8px;align-items:center;margin:5px 0"><span style="font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+(r.swatch?r.swatch+' ':'')+esc(r.label)+'</span><span style="display:block;height:12px;background:var(--line);border-radius:6px;overflow:hidden"><span style="display:block;height:100%;width:'+(r.n/mx*100).toFixed(1)+'%;background:'+r.fill+';border-radius:6px"></span></span><span class="meta" style="text-align:right">'+r.n+'</span></div>'}).join('');
+ };
+ // Category x purchase year heat map
+ var hc={},hyrs={},hmax=1;
+ vs.forEach(function(i){var py=(i.purchaseDate||'').slice(0,4);if(!/^\d{4}$/.test(py))return;var c=i.category||'Other';hc[c]=hc[c]||{};hc[c][py]=(hc[c][py]||0)+1;hyrs[py]=1;hmax=Math.max(hmax,hc[c][py])});
+ var yrsH=Object.keys(hyrs).sort();
+ var catRows=Object.keys(hc).sort(function(a,b){var ia=CATS.indexOf(a),ib=CATS.indexOf(b);return (ia<0?99:ia)-(ib<0?99:ib)||a.localeCompare(b)});
+ var heat=yrsH.length&&catRows.length
+  ?'<div class="tw"><table style="width:100%;border-collapse:collapse;font-size:13px"><thead><tr><th style="text-align:left;padding:4px">Category</th>'+yrsH.map(function(y){return '<th style="text-align:center;padding:4px 2px;font-weight:normal;color:var(--mute)">'+y+'</th>'}).join('')+'</tr></thead><tbody>'
+    +catRows.map(function(c){return '<tr><td style="padding:4px;white-space:nowrap">'+esc(c)+'</td>'+yrsH.map(function(y){var n=(hc[c]||{})[y]||0;if(!n)return '<td style="text-align:center;padding:6px 2px;color:var(--mute)">·</td>';var p=Math.max(12,Math.round(n/hmax*100));return '<td title="'+esc(c+' '+y+': '+n)+'" style="text-align:center;padding:6px 2px;background:color-mix(in srgb,var(--acc) '+p+'%,transparent);color:'+(p>55?'#fff':'var(--fg)')+'">'+n+'</td>'}).join('')+'</tr>'}).join('')
+    +'</tbody></table></div>'
+  :'<p class="meta">No dated purchases yet.</p>';
+ // Color (fixed list, multi-color pieces count in each)
+ var colorM={},colorNone=0;COLOR_ORDER.forEach(function(c){colorM[c]=0});
+ vs.forEach(function(i){var a=listOf(i.colorMain).map(capColor).filter(Boolean);if(!a.length){colorNone++;return}a.forEach(function(c){colorM[c]=(colorM[c]||0)+1})});
+ var colorRows=COLOR_ORDER.filter(function(c){return colorM[c]}).map(function(c){return {label:c,n:colorM[c],fill:(COLORS[c.toLowerCase()]||'var(--acc)'),swatch:sw(c)}});
+ if(colorNone)colorRows.push({label:'Not recorded',n:colorNone,fill:'var(--line)'});
+ // Free-text and list fields, grouped without regard to case
+ var tally=function(vals){var m={};vals.forEach(function(k){var t=String(k).trim();if(!t)return;var key=t.toLowerCase();if(!m[key])m[key]={label:tc(t),n:0};m[key].n++});return Object.keys(m).map(function(k){return {label:m[k].label,n:m[k].n,fill:'var(--acc)'}})};
+ var withBlank=function(rows,blank){if(blank)rows.push({label:'Not recorded',n:blank,fill:'var(--line)'});return rows};
+ var countryRows=tally(vs.map(function(i){return i.country||''})).sort(function(a,b){return b.n-a.n||a.label.localeCompare(b.label)});
+ countryRows=withBlank(countryRows,vs.filter(function(i){return !String(i.country||'').trim()}).length);
+ var eraRows=tally(vs.map(function(i){return i.era||''})).sort(function(a,b){return eraRank(a.label)-eraRank(b.label)||a.label.localeCompare(b.label)});
+ eraRows=withBlank(eraRows,vs.filter(function(i){return !String(i.era||'').trim()}).length);
+ var stoneVals=[];var stoneBlank=0;vs.forEach(function(i){var a=listOf(i.stone).map(function(x){return String(x).trim()}).filter(Boolean);if(!a.length)stoneBlank++;a.forEach(function(x){stoneVals.push(x)})});
+ var stoneRows=withBlank(tally(stoneVals).sort(function(a,b){return b.n-a.n||a.label.localeCompare(b.label)}),stoneBlank);
+ return '<hr style="border:0;border-top:1px solid var(--line);margin:18px 0">'
+  +sec('Pieces by Category and Year','Darker means more pieces bought that year.',heat)
+  +sec('Pieces by Color','A piece with several colors counts once in each.',hbars(colorRows))
+  +sec('Pieces by Country of Origin','Spellings are matched regardless of capital letters.',hbars(countryRows))
+  +sec('Pieces by Era','In period order, oldest first.',hbars(eraRows))
+  +sec('Pieces by Stone','A piece with several stones counts once for each.',hbars(stoneRows));
+}
 function dashHTML(){
  var yrs={};
  vis().forEach(function(i){
@@ -1971,18 +2065,12 @@ function dashHTML(){
  });
  var years=Object.keys(yrs).sort(),shownYrs=years.slice(-3),max=1;
  shownYrs.forEach(function(y){max=Math.max(max,yrs[y].spend,yrs[y].sales)});
- var bars=shownYrs.map(function(y){
-   var hs=Math.round(yrs[y].spend/max*100),ha=Math.round(yrs[y].sales/max*100);
-   var lab='position:absolute;bottom:100%;left:50%;transform:translateX(-50%);font-size:12px;white-space:nowrap;color:var(--mute)';
-   return '<div style="flex:1;min-width:0;display:flex;flex-direction:column;align-items:center">'
-    +'<div style="display:flex;align-items:flex-end;gap:6px;height:140px;width:100%;justify-content:center">'
-    +'<div title="Spend '+esc(fmtMoney(yrs[y].spend))+'" style="width:34%;max-width:34px;height:'+hs+'%;background:#e07a9b;border-radius:4px 4px 0 0;position:relative"><span style="'+lab+'">'+compactMoney(yrs[y].spend)+'</span></div>'
-    +'<div title="Sales '+esc(fmtMoney(yrs[y].sales))+'" style="width:34%;max-width:34px;height:'+ha+'%;background:var(--gold);border-radius:4px 4px 0 0;position:relative"><span style="'+lab+'">'+compactMoney(yrs[y].sales)+'</span></div>'
-    +'</div><div class="meta" style="margin-top:4px">'+y+'</div></div>';
- }).join('');
- var allTable=dashYrsAll&&years.length?'<div class="tw" style="margin-top:8px"><table style="width:100%;font-size:14px;border-collapse:collapse"><thead><tr><th style="text-align:left;padding:4px 6px">Year</th><th style="text-align:right;padding:4px 6px">Spend</th><th style="text-align:right;padding:4px 6px">Sales</th></tr></thead><tbody>'+years.map(function(y){return '<tr style="border-top:1px solid var(--line)"><td style="padding:4px 6px">'+y+'</td><td style="text-align:right;padding:4px 6px">'+esc(fmtMoney(yrs[y].spend))+'</td><td style="text-align:right;padding:4px 6px">'+esc(fmtMoney(yrs[y].sales))+'</td></tr>'}).join('')+'</tbody></table></div>':'';
+ var win=years.slice(-4);
+ var pc={};vis().forEach(function(i){var py=(i.purchaseDate||'').slice(0,4);if(/^\d{4}$/.test(py)){pc[py]=pc[py]||{n:0,costs:[]};pc[py].n++;if(num(i.cost)!=null)pc[py].costs.push(num(i.cost))}});
+ var allTable=dashYrsAll&&years.length?'<div class="tw" style="margin-top:8px"><table style="width:100%;font-size:13px;border-collapse:collapse"><thead><tr><th style="text-align:left;padding:4px 3px">Year</th><th style="text-align:right;padding:4px 3px">Spend</th><th style="text-align:right;padding:4px 3px">Sales</th><th style="text-align:right;padding:4px 3px">Pieces</th><th style="text-align:right;padding:4px 3px">Median</th></tr></thead><tbody>'+years.map(function(y){var p=pc[y]||{n:0,costs:[]},m=medOf(p.costs);return '<tr style="border-top:1px solid var(--line)"><td style="padding:4px 3px">'+y+'</td><td style="text-align:right;padding:4px 3px">'+esc(fmtMoney(yrs[y].spend))+'</td><td style="text-align:right;padding:4px 3px">'+esc(fmtMoney(yrs[y].sales))+'</td><td style="text-align:right;padding:4px 3px">'+p.n+'</td><td style="text-align:right;padding:4px 3px">'+(m==null?'—':esc(fmtMoney(m)))+'</td></tr>'}).join('')+'</tbody></table></div>':'';
  var chart=years.length
-  ?'<div style="display:flex;gap:10px;align-items:stretch;padding-top:20px">'+bars+'</div>'+(years.length>3?'<button class="link" data-a="dashyrs">'+(dashYrsAll?'Hide all time':'Show all time ('+years.length+' years)')+'</button>':'')+allTable
+  ?'<div style="padding-top:8px">'+dashLineChart(win,yrs)+'</div>'
+   +'<h4 class="sub" style="margin:18px 0 6px">Price Range per Piece</h4>'+'<p class="meta" style="margin:0 0 6px">Box: middle half of prices. Gold line: median. Whiskers: typical range. Dots: outliers.</p>'+dashBoxChart(win,pc)+allTable
   :'<p class="meta">No dated purchases or sales yet.</p>';
  var sel={};
  var SELLER_GONE=['Sold','Melted','Returned','Gifted'];
@@ -1991,26 +2079,27 @@ function dashHTML(){
  var metric=function(r){return dashSort==='spend'?r.spend:r.count};
  var shown=dashAll?rows:rows.slice(0,5),mx=rows.length?Math.max.apply(null,rows.map(metric)):1;if(!mx)mx=1;
  var legend='<div class="meta" style="display:flex;gap:12px;margin:0 0 6px"><span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:var(--acc);margin-right:4px"></span>Held</span><span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:var(--gold);margin-right:4px"></span>Gone</span></div>';
- var sellers=shown.map(function(r){var bar=dashSort==='spend'?'<span style="display:flex;height:100%;width:'+(r.spend/mx*100)+'%"><span style="display:block;height:100%;width:'+(r.spend?r.heldSpend/r.spend*100:0)+'%;background:var(--acc)"></span><span style="display:block;height:100%;flex:1;background:var(--gold)"></span></span>':'<span style="display:flex;height:100%;width:'+(r.count/mx*100)+'%"><span style="display:block;height:100%;width:'+(r.count?r.held/r.count*100:0)+'%;background:var(--acc)"></span><span style="display:block;height:100%;flex:1;background:var(--gold)"></span></span>';return '<div style="display:grid;grid-template-columns:140px minmax(0,1fr) 108px;gap:6px;align-items:center;height:42px;margin:2px 0"><span style="min-width:0;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;line-height:1.2;overflow-wrap:anywhere">'+esc(r.name)+'</span><span style="background:var(--line);border-radius:6px;height:12px;display:block;overflow:hidden">'+bar+'</span><span class="meta" style="white-space:nowrap;text-align:right;overflow:hidden;line-height:1.2">'+r.count+' · '+esc(fmtMoney(r.spend))+'</span></div>'}).join('');
+ var sellers=shown.map(function(r){var bar=dashSort==='spend'?'<span style="display:flex;height:100%;width:'+(r.spend/mx*100)+'%"><span style="display:block;height:100%;width:'+(r.spend?r.heldSpend/r.spend*100:0)+'%;background:var(--acc)"></span><span style="display:block;height:100%;flex:1;background:var(--gold)"></span></span>':'<span style="display:flex;height:100%;width:'+(r.count/mx*100)+'%"><span style="display:block;height:100%;width:'+(r.count?r.held/r.count*100:0)+'%;background:var(--acc)"></span><span style="display:block;height:100%;flex:1;background:var(--gold)"></span></span>';return '<div style="display:grid;grid-template-columns:140px minmax(0,1fr) 108px;gap:6px;align-items:center;height:42px;margin:2px 0"><span style="min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;line-height:1.2">'+esc(r.name)+'</span><span style="background:var(--line);border-radius:6px;height:12px;display:block;overflow:hidden">'+bar+'</span><span class="meta" style="white-space:nowrap;text-align:right;overflow:hidden;line-height:1.2">'+r.count+' · '+esc(fmtMoney(r.spend))+'</span></div>'}).join('');
  var tb=function(v,l){var on=dashSort===v;return '<button type="button" data-a="dashsort" data-v="'+v+'" aria-pressed="'+on+'" style="border:0;border-radius:0;margin:0;min-height:30px;padding:4px 12px;font-size:14px;background:'+(on?'var(--acc)':'transparent')+';color:'+(on?'#fff':'var(--fg)')+'">'+l+'</button>'};
  var toggle='<div style="display:inline-flex;border:1px solid var(--acc);border-radius:999px;overflow:hidden;flex:none">'+tb('count','Count')+tb('spend','Spend')+'</div>';
  return '<h4 class="sub" style="margin:0 0 6px">Spend vs. Sales by Year</h4>'+(years.length?'<div class="meta" style="display:flex;gap:12px;margin:0 0 6px"><span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#e07a9b;margin-right:4px"></span>Spend</span><span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:var(--gold);margin-right:4px"></span>Sales</span></div>':'')+chart
   +'<hr style="border:0;border-top:1px solid var(--line);margin:18px 0">'
   +'<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin:0 0 6px"><h4 class="sub" style="margin:0">Sellers by Count and Spend</h4>'+toggle+'</div>'+(rows.length?legend+sellers:'<p class="meta">No pieces yet.</p>')
-  +(rows.length>5?'<button class="link" data-a="dashall">'+(dashAll?'Show top 5':'View all ('+rows.length+')')+'</button>':'');
+  +dashCountHTML()
+  +((years.length>4||rows.length>5)?'<div style="margin-top:12px"><button class="link" data-a="dashexp">'+(dashAll&&dashYrsAll?'Collapse all':'Expand all')+'</button></div>':'');
 }
 function renderSecret(){
  if(!secretUnlocked)return '<h2>Secret Compartment</h2><p class="meta">Locked.</p>';
  var hidden=items.filter(isHidden).sort(function(a,b){return num(b.cost)-num(a.cost)});
  var on=!!(secretCfg.on&&secretCfg.threshold!=null);
- var thr=on?fmtMoney(secretCfg.threshold):'';
+ var thr=on?fmtWhole(secretCfg.threshold):'';
  var status=!on?'No threshold set. Nothing is hidden.'
   :!hidden.length?'No pieces are above '+esc(thr)+'. Nothing is hidden.'
   :hidden.length+' piece'+(hidden.length===1?' above ':'s above ')+esc(thr)+(hidden.length===1?' is':' are')+' hidden while the compartment is locked.';
  return '<div style="display:flex;align-items:center;justify-content:space-between;gap:12px"><h2 style="margin:0">Secret Compartment</h2><button type="button" data-a="slock" class="pri" aria-label="Lock secret compartment" title="Lock" style="width:40px;height:40px;min-width:0;min-height:0;padding:0;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none">'+ico('lock',18)+'</button></div>'
   +'<form id="secretform" autocomplete="on"><input type="text" name="username" autocomplete="username" value="Never Twice the Same" style="position:absolute;left:-9999px" tabindex="-1" aria-hidden="true">'
   +(secretCfg.hash?'<p class="meta" style="margin:14px 0 12px">Keyword is set. <button type="button" class="link" data-a="kwchange" style="font-size:inherit;margin:0">Change keyword</button></p>':'')
-  +'<div style="display:flex;align-items:flex-end;gap:10px;margin:0 0 12px"><div style="flex:1;min-width:0"><label><span class="sechdr">Hide pieces above</span><span style="position:relative;display:block"><input type="text" inputmode="decimal" name="threshold" data-a="sthr" data-money="1" value="'+esc(secretCfg.threshold==null?'':fmtMoney(secretCfg.threshold))+'" placeholder="$0.00" style="padding-right:38px"><button type="button" data-a="sclear" aria-label="Clear threshold" style="position:absolute;right:6px;top:50%;transform:translateY(-50%);width:26px;height:26px;min-width:0;min-height:0;padding:0;border-radius:50%;display:flex;align-items:center;justify-content:center;line-height:1;font-size:12px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></span></label></label></div><button type="button" class="pri" data-a="sthrset" style="flex:none">Save</button></div>'
+  +'<div style="display:flex;align-items:flex-end;gap:10px;margin:0 0 12px"><div style="flex:1;min-width:0"><label><span class="sechdr">Hide pieces above</span><span style="position:relative;display:block"><input type="text" inputmode="decimal" name="threshold" data-a="sthr" data-money="1" value="'+esc(secretCfg.threshold==null?'':fmtWhole(secretCfg.threshold))+'" placeholder="$0" style="padding-right:38px"><button type="button" data-a="sclear" aria-label="Clear threshold" style="position:absolute;right:6px;top:50%;transform:translateY(-50%);width:26px;height:26px;min-width:0;min-height:0;padding:0;border-radius:50%;display:flex;align-items:center;justify-content:center;line-height:1;font-size:12px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></span></label></label></div><button type="button" class="pri" data-a="sthrset" style="flex:none">Save</button></div>'
   +'<p class="meta" style="margin:0 0 12px">'+status+'</p>'
   +'<div class="grid" style="grid-template-columns:repeat('+cols+',1fr)">'+hidden.map(function(i){return '<div>'+thumb(i)+'<div class="meta">'+esc(title(i))+' · '+money(num(i.cost))+'</div></div>'}).join('')+'</div>'
   +'</form>';
@@ -2399,7 +2488,7 @@ case 'cnew':drawer(false);collCropAbort();collId=Date.now();collDraft=null;collP
   case 'csave':{var ct=document.getElementById('cedt').value.trim(),cn=document.getElementById('cedn').value.trim();if(!ct){alert('Give it a title.');break}if(collCropOn&&CR&&cropV()){collCropNow()}var cc=curColl();var oldCov=cc?cc.cover:null;var newCov=(collDraft&&collDraft.cover)||oldCov;if(!cc){cc={id:collId,title:'',note:'',pieceIds:[]};colls.push(cc)}cc.title=ct;cc.note=cn;cc.cover=newCov||null;if(oldCov&&(!newCov||oldCov.id!==newCov.id))collPruneImg(oldCov.id);if(collPendingId)collPruneImg(collPendingId);collDraft=null;collPendingId=null;saveColls();saveGallery();document.getElementById('modal').innerHTML='';render();break}
   case 'cdelete':if(curColl())document.getElementById('modal').innerHTML=collConfirmHTML();break;
   case 'cdeleteyes':if(curColl()){var cdel=curColl();colls=colls.filter(function(x){return x.id!==collId});collId=null;if(cdel.cover)collPruneImg(cdel.cover.id);saveColls();saveGallery();document.getElementById('modal').innerHTML='';render()}break;
-  case 'cpicker':if(curColl()){collPickSel=[];document.getElementById('modal').innerHTML=collPickerHTML(curColl())}break;
+  case 'cpicker':if(curColl()){drawer(false);collPickSel=[];document.getElementById('modal').innerHTML=collPickerHTML(curColl())}break;
   case 'cptoggle':{var tid=Number(d.id),tk=collPickSel.indexOf(tid);if(tk>-1)collPickSel.splice(tk,1);else collPickSel.push(tid);var sq=document.querySelector('#modal input[type=search]');collPickRender(sq?sq.value:'');break}
   case 'cpsave':{var cp=curColl();if(!cp)break;var added=collPickSel.filter(function(id){return cp.pieceIds.indexOf(id)<0});cp.pieceIds=cp.pieceIds.concat(added);saveColls();document.getElementById('modal').innerHTML='';render();break}
   case 'cup':case 'cdown':{var cm=curColl();if(cm){collMove(cm,Number(d.id),d.a==='cup'?-1:1);saveColls();render()}break}
@@ -2433,6 +2522,7 @@ case 'frm':frameStyle=d.v;document.documentElement.dataset.frame=frameStyle;kset
   case 'csvdown':exportCSV();break;
   case 'quickadd':syncForm();M.innerHTML=quickHTML();break;
   case 'qaapply':var raw=document.getElementById('qaIn').value.trim();var za=raw.indexOf('{'),zb=raw.lastIndexOf('}');var txt=za>=0&&zb>za?raw.slice(za,zb+1):raw;var data=null;try{data=JSON.parse(txt)}catch(err){alert('That does not look like JSON. Paste the output exactly as Claude returns it.');break}syncForm();var cnt=applyQuick(data);M.innerHTML='';renderMain();alert('Filled '+cnt+' field'+(cnt===1?'':'s')+'. Review, then Save.');break;
+  case 'dashexp':var dashNext=!(dashAll&&dashYrsAll);dashAll=dashNext;dashYrsAll=dashNext;renderMain();break;
   case 'dashall':dashAll=!dashAll;renderMain();break;
   case 'copy':{var cel=document.getElementById(d.id);var ctxt=cel?cel.value:'';var cbtn=b;copyText(ctxt).then(function(ok){if(cbtn){cbtn.textContent=ok?'Copied':'Copy failed';setTimeout(function(){cbtn.textContent='Copy'},1500)}});break}
   case 'sgopen':drawer(false);if(view!=='sizeguide')sgFrom=view;sgTab='ring';show('sizeguide');break;
@@ -2494,7 +2584,7 @@ case 'frm':frameStyle=d.v;document.documentElement.dataset.frame=frameStyle;kset
   case 'secretkey':secretGate();break;
   case 'sclear':{secretCfg.threshold=null;secretCfg.on=false;saveSecret();render();break}
   case 'slock':secretUnlocked=false;show('box');break;
-  case 'sthrset':{var sf=document.getElementById('secretform');var sv=sf?sf.querySelector('input[name=threshold]').value:'';secretCfg.threshold=num(parseMoney(sv));secretCfg.on=secretCfg.threshold!=null;saveSecret();render();break}
+  case 'sthrset':{var sf=document.getElementById('secretform');var sv=sf?sf.querySelector('input[name=threshold]').value:'';var tvs=num(parseMoney(sv));secretCfg.threshold=tvs==null?null:Math.round(tvs);secretCfg.on=secretCfg.threshold!=null;saveSecret();render();break}
   case 'dashyrs':dashYrsAll=!dashYrsAll;renderMain();break;
   case 'dashsort':dashSort=d.v;renderMain();break;
   case 'dashtog':dashSort=dashSort==='count'?'spend':'count';renderMain();break;
@@ -2508,7 +2598,7 @@ document.addEventListener('change',function(e){
  var a=t.getAttribute('data-a');
  if(t.id==='sort'){sortBy=t.value;render();return}
  if(a==='smode'){secretCfg.on=t.checked;saveSecret();render();return}
- if(a==='sthr'){var tv=num(parseMoney(t.value));t.value=tv==null?'':fmtMoney(tv);return}
+ if(a==='sthr'){var tv=num(parseMoney(t.value));t.value=tv==null?'':fmtWhole(tv);return}
  if(a==='fc'){toggleFilter(t.getAttribute('data-k'),t.getAttribute('data-val'));render();return}
  if(a==='hidesold'){hideSold=t.checked;saveSettings();render();return}
  if(t.id==='fcsv'&&t.files[0]){readFile(t.files[0],importCSV);t.value='';return}
@@ -2764,7 +2854,7 @@ function confettiBurst(){
  })();
 }
 /* ---------- update banner with What's new CTA (no popup) ---------- */
-var WHATS_NEW='JOTD: Rating hearts rise one at a time, one for each heart rated. They shrink near the top and pop into small sparkles.\nJOTD: Tapping Adorn floats an icon for each piece you adorn, larger than the hearts. The gem sparkle beside Adorn is gone.\nJOTD: The wear text sits centered beside the hearts, and only moves to a second line when it has to. Cards size to their own content.\nSecret Compartment: The keyword line sits 14px below the title, matching the other pages.\nPages: The top fade stays hidden while an update banner is showing.\nDates: Dates show as today, yesterday, 3 days ago, last week, 3 weeks ago, last month, 3 months ago, or long, long time ago after a year.';
+var WHATS_NEW='Collections: Add pieces moved to the drawer menu. Back is now an arrow.\nCollections: The title lines up with the other pages, with Edit on the same row.\nSecret Compartment: The price threshold is in whole dollars.\nPages: Top and bottom fades on every page and on the piece details popup.\nUpdate banner: Sits below the status bar, and the top fade stays hidden under it.\nWares Dashboard: Spend vs. Sales is a line chart for the last 4 years. Expand all shows the full table.\nWares Dashboard: Pieces and Price is now a box plot of price range by year, with the count under each box.\nWares Dashboard: Expand all replaces the separate show-all links.\nWares Dashboard: New charts for pieces by category and year, color, country of origin, era and stone.\nWares Dashboard: Seller names fit on one line.\nJOTD: Card titles use the heading font. Both ring cards are titled Ring.\nJOTD: The empty second ring card says Pick the other ring first.';
 function updateBannerCheck(){
  var seen=null;try{seen=localStorage.getItem('ntts_seen_ver')}catch(e){}
  try{localStorage.setItem('ntts_seen_ver',APP_VERSION)}catch(e){}
