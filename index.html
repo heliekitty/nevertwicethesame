@@ -312,7 +312,7 @@ header button[data-a="drawer"]{display:flex;align-items:center;justify-content:c
 <script>
 document.getElementById('app').innerHTML='<div style="position:fixed;inset:0;z-index:50;background:var(--bg);display:flex;align-items:center;justify-content:center">'+mothLoaderHTML()+'</div>';
 var K='ntts_items_v2',OK='ntts_order_v1',PER=25,MAX_UPLOAD=300*1024;
-var APP_VERSION='2.17.6',APP_DATE='2026-11-17 · 9:31 PM ET',UPDATE_URL='';
+var APP_VERSION='2.17.7',APP_DATE='2026-11-17 · 10:25 PM ET',UPDATE_URL='';
 var EMOJI={ring:'💍',earrings:'✨',necklace:'📿',bracelet:'⭕',watch:'⌚',other:'💎'};
 var ICONS={coll:"<rect x='3' y='4' width='18' height='16' rx='2'/><path d='M3 10h18M8 14h8'/>",gem:"<path d='M7 4h10l4 5-9 11L3 9z'/><path d='M3 9h18M9 4l-1.5 5L12 20l4.5-11L15 4'/>",pkg:"<path d='M3 7.5L12 3l9 4.5v9L12 21l-9-4.5z'/><path d='M3 7.5l9 4.5 9-4.5M12 12v9'/>",hand:"<path d='M5 11V7a1.5 1.5 0 0 1 3 0v4M8 11V5a1.5 1.5 0 0 1 3 0v6M11 11V6a1.5 1.5 0 0 1 3 0v6M14 11V8a1.5 1.5 0 0 1 3 0v7c0 3-2 5-5 5h-1c-2 0-3-1-4-3l-2-4'/>",x:"<path d='M6 6l12 12M18 6L6 18'/>",ring:"<circle cx='12' cy='14' r='6'/><path d='M9.5 8 12 4l2.5 4'/><path d='M12 9.5l1.5 2.5-1.5 2.5-1.5-2.5z'/>",earrings:"<path d='M7 3v3'/><path d='M7 6c-1.6 0-2.5 1.3-2.5 3S6 14 7 17c1-3 2.5-5 2.5-8C9.5 7.3 8.6 6 7 6z'/><path d='M17 3v3'/><path d='M17 6c-1.6 0-2.5 1.3-2.5 3S16 14 17 17c1-3 2.5-5 2.5-8C19.5 7.3 18.6 6 17 6z'/>",necklace:"<path d='M4 5c2 7 14 7 16 0'/><path d='M12 12.5V15'/><circle cx='12' cy='17' r='2.2'/>",bracelet:"<ellipse cx='12' cy='12' rx='8' ry='5.5'/><ellipse cx='12' cy='12' rx='5.5' ry='3'/>",watch:"<circle cx='12' cy='13' r='5.5'/><path d='M9 7.5 10 3h4l1 4.5M9 18.5 10 23h4l1-4.5'/><path d='M12 10.5V13l1.8 1.2'/>",heart:"<path d='M12 20s-7-4.4-7-9.5A4 4 0 0 1 12 8a4 4 0 0 1 7 2.5C19 15.6 12 20 12 20z'/>",wrench:"<path d='M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-.5-.5-2.5z'/>",key:"<g transform='rotate(-45 12.5 12)'><circle cx='8' cy='12' r='4'/><path d='M12 12h9M18 12v3M21 12v2.5'/></g>",curio:"<rect x='4' y='3' width='16' height='18' rx='1'/><path d='M3 3h18M3 21h18'/><path d='M12 3v18'/><path d='M4 11h16'/><path d='M10.5 7v1.5M13.5 7v1.5M10.5 15v1.5M13.5 15v1.5'/>",clock:"<circle cx='12' cy='12' r='9'/><path d='M12 7v5l3 2'/>",pencil:"<path d='M4 20h4L19 9l-4-4L4 16z'/><path d='M13.5 6.5l4 4'/>",lock:"<rect x='5' y='11' width='14' height='10' rx='2'/><path d='M8 11V7a4 4 0 0 1 8 0v4'/>",unlock:"<rect x='3.95' y='11' width='11.1' height='10' rx='2'/><path d='M12.8 11V6.3A3.3 3.3 0 0 1 19.4 6.3V9.5'/>",bag:"<path d='M5 8h14l-1 12H6z'/><path d='M9 8V6a3 3 0 0 1 6 0v2'/>",plus:"<path d='M12 5v14M5 12h14'/>",x:"<path d='M6 6l12 12M18 6L6 18'/>",spark:"<path d='M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z'/>",gallery:"<rect x='3' y='4' width='18' height='16' rx='2'/><circle cx='9' cy='10' r='2'/><path d='M21 16l-5-5-8 9'/>"};
 var ORN='<svg width="72" height="10" viewBox="0 0 72 10" fill="none" stroke="#a8864f" stroke-width="1.2"><path d="M0 5h28M44 5h28"/><path d="M36 1l4 4-4 4-4-4z"/></svg>';
@@ -1698,7 +1698,7 @@ function renderMain(){
  setupLazyBox();
  updateSummary();setTabs();updateStorage();
 }
-function fadesUpd(){var t=document.getElementById('gfT'),b=document.getElementById('gfB');if(!t||!b)return;var tb=document.getElementById('tabbar');b.style.bottom=(tb&&tb.offsetHeight?tb.offsetHeight-1:0)+'px';var on=['box','coll','wishlist'].indexOf(view)>-1;var max=document.documentElement.scrollHeight-innerHeight;var bn=0;document.querySelectorAll('.upd:not([hidden])').forEach(function(x){bn+=x.offsetHeight});t.style.opacity=on&&scrollY>bn+4?'1':'0';b.style.opacity=on&&scrollY<max-4?'1':'0'}
+function fadesUpd(){var t=document.getElementById('gfT'),b=document.getElementById('gfB');if(!t||!b)return;var tb=document.getElementById('tabbar');b.style.bottom=(tb&&tb.offsetHeight?tb.offsetHeight-1:0)+'px';var on=['box','coll','wishlist'].indexOf(view)>-1;var ubOn=!!document.querySelector('.upd:not([hidden])');var max=document.documentElement.scrollHeight-innerHeight;var bn=0;document.querySelectorAll('.upd:not([hidden])').forEach(function(x){bn+=x.offsetHeight});t.style.opacity=on&&!ubOn&&scrollY>bn+4?'1':'0';b.style.opacity=on&&scrollY<max-4?'1':'0'}
 function fadesInit(){if(document.getElementById('gfT'))return;['gfT','gfB'].forEach(function(id){var d=document.createElement('div');d.id=id;d.className='gfade';document.body.appendChild(d)});window.addEventListener('scroll',fadesUpd,{passive:true});window.addEventListener('resize',fadesUpd)}
 function render(){document.body.dataset.view=view;renderMain();renderDrawer();wfix();fadesInit();fadesUpd()}
 var wtopRO=window.ResizeObserver?new ResizeObserver(function(){wfix()}):null;
@@ -1816,12 +1816,26 @@ function jotdStart(){
 var jotdLaunch=true,jotdFx=false;
 function jotdWornPicks(){var t=today(),ws=vis().filter(function(i){return i.wornLast===t&&i.status==='Keep'&&(i.whereabouts||'In possession')==='In possession'}),out={};ws.forEach(function(i){var k=i.category==='Ring'?(out.ring1?(out.ring2?null:'ring2'):'ring1'):i.category==='Earrings'?'earring':i.category==='Necklace'?'necklace':null;if(k&&!out[k])out[k]=i});return out}
 function jotdRateHTML(i){var r=Number(i.rating)||0,h='';var HP='M12 20.3s-7.4-4.5-7.4-10A4.2 4.2 0 0 1 12 7.6a4.2 4.2 0 0 1 7.4 2.7c0 5.5-7.4 10-7.4 10z';for(var n=1;n<=5;n++){var on=n<=r;h+='<button type="button" data-a="jrate" data-id="'+i.id+'" data-n="'+n+'" aria-label="Rate '+n+' heart'+(n>1?'s':'')+'" style="padding:0 2px;min-height:0;min-width:0;border:0;background:none;width:20px;height:24px;display:inline-flex;align-items:center;justify-content:center;color:'+(on?'var(--gold)':'var(--mute)')+'"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" style="display:block"><path d="'+HP+'" fill="'+(on?'currentColor':'none')+'" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></button>'}return '<span style="display:inline-flex;align-items:center">'+h+'</span>'}
-function jrateBurst(el){
- if(!document.getElementById('jfloatcss')){var st=document.createElement('style');st.id='jfloatcss';st.textContent='@keyframes jbub{0%{transform:translate(0,0) scale(.5);opacity:0}15%{opacity:1}70%{transform:translate(var(--dx),-40px) scale(1.05);opacity:1}88%{transform:translate(var(--dx),-52px) scale(1.25);opacity:.9}100%{transform:translate(var(--dx),-58px) scale(0);opacity:0}}';document.head.appendChild(st)}
- var r=el.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2;
- [[-14,0],[0,120],[13,-40],[-6,260]].forEach(function(b){var h=document.createElement('div');h.innerHTML='<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.3s-7.4-4.5-7.4-10A4.2 4.2 0 0 1 12 7.6a4.2 4.2 0 0 1 7.4 2.7c0 5.5-7.4 10-7.4 10z" fill="currentColor"/></svg>';
- h.style.cssText='position:fixed;left:'+(cx+b[0]-7)+'px;top:'+(cy-7)+'px;color:var(--gold);pointer-events:none;z-index:999;--dx:'+(b[0]*0.6)+'px;animation:jbub 1s ease-out '+(b[1]/1000)+'s forwards;opacity:0';
- document.body.appendChild(h);setTimeout(function(){h.remove()},1400)});
+var HEART_IC='<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" style="display:block"><path d="M12 20.3s-7.4-4.5-7.4-10A4.2 4.2 0 0 1 12 7.6a4.2 4.2 0 0 1 7.4 2.7c0 5.5-7.4 10-7.4 10z" fill="currentColor"/></svg>';
+function jrateBurstIco(i){var k=String(i.category||'').toLowerCase();return ico(ICONS[k]?k:'gem',28)}
+function jrateBurst(el,htmls){
+ if(!htmls||!htmls.length)return;
+ if(!document.getElementById('jfloatcss')){var st=document.createElement('style');st.id='jfloatcss';st.textContent='@keyframes jrise{0%{transform:translate(0,0) scale(.4);opacity:0}12%{opacity:1;transform:translate(0,-6px) scale(1)}80%{opacity:1;transform:translate(var(--dx),var(--dy)) scale(.6)}100%{opacity:0;transform:translate(var(--dx),var(--dy)) scale(0)}}@keyframes jpart{0%{transform:translate(0,0) scale(1);opacity:1}100%{transform:translate(var(--px),var(--py)) scale(.2);opacity:0}}';document.head.appendChild(st)}
+ var r=el.getBoundingClientRect(),cx=Math.round(r.left+r.width/2),cy=Math.round(r.top+r.height/2);
+ var rnd=function(a,b){return a+Math.random()*(b-a)};
+ htmls.forEach(function(html,k){
+   var spread=Math.round(rnd(-30,30)),lift=Math.round(rnd(44,84)),RISE=Math.round(rnd(850,1300)),delay=Math.round(rnd(0,380));
+   var h=document.createElement('div');h.innerHTML=html;var sz=parseInt((h.querySelector('svg')||{}).getAttribute&&h.querySelector('svg').getAttribute('width'),10)||16;
+   h.style.cssText='position:fixed;left:'+(cx-Math.round(sz/2))+'px;top:'+(cy-Math.round(sz/2))+'px;width:'+sz+'px;height:'+sz+'px;color:var(--gold);pointer-events:none;z-index:999;will-change:transform,opacity;--dx:'+spread+'px;--dy:-'+lift+'px;opacity:0;animation:jrise '+RISE+'ms cubic-bezier(.25,.7,.35,1) '+delay+'ms forwards';
+   document.body.appendChild(h);
+   var ex=cx+spread,ey=cy-lift;
+   setTimeout(function(){
+     h.remove();
+     for(var j=0;j<6;j++){var a=j*Math.PI/3,d=14,q=document.createElement('div');
+       q.style.cssText='position:fixed;left:'+(ex-2)+'px;top:'+(ey-2)+'px;width:4px;height:4px;border-radius:50%;background:var(--gold);pointer-events:none;z-index:999;will-change:transform,opacity;--px:'+Math.round(Math.cos(a)*d)+'px;--py:'+Math.round(Math.sin(a)*d)+'px;animation:jpart 500ms ease-out forwards';
+       document.body.appendChild(q);setTimeout(function(){q.remove()},600)}
+   },delay+RISE);
+ });
 }
 function jotdCard(label,i,emptyMsg,k){
  var locked=!!jotdLock[k];
@@ -1833,12 +1847,12 @@ function jotdCard(label,i,emptyMsg,k){
  return '<div style="border:1px solid '+(locked?'var(--acc)':'var(--line)')+';border-radius:12px;padding:8px;display:flex;flex-direction:column;min-width:0">'
   +'<div style="display:flex;align-items:center;justify-content:space-between;gap:4px;margin-bottom:4px"><span class="meta">'+label+'</span><span style="display:flex;gap:2px">'+colorBtn+lockBtn+'</span></div>'
   +picWrap
-  +'<div class="meta" style="display:flex;flex-wrap:wrap;column-gap:8px;margin:0"><span>'+(i?jotdRateHTML(i):'—')+'</span><span>'+(i?keycap(Number(i.wornCount)||0)+' • '+esc(agoText(i.wornLast)):'—')+'</span></div></div>';
+  +'<div class="meta" style="display:flex;flex-wrap:wrap;align-items:center;column-gap:8px;margin:0"><span style="display:inline-flex;align-items:center">'+(i?jotdRateHTML(i):'—')+'</span><span style="display:inline-flex;align-items:center">'+(i?keycap(Number(i.wornCount)||0)+' • '+esc(agoText(i.wornLast)):'—')+'</span></div></div>';
 }
 function renderJotd(){
  if(!jotdSel){jotdSel={ring1:null,ring2:null,earring:null,necklace:null};var wp=jotdLaunch?jotdWornPicks():{};jotdLaunch=false;['ring1','ring2','earring','necklace'].forEach(function(k){if(wp[k])jotdSel[k]=wp[k]});['ring1','ring2','earring','necklace'].forEach(function(k){if(!jotdSel[k])jotdRoll(k)});jotdMsg=''}
  var s=jotdSel,ids=[s.ring1,s.ring2,s.earring,s.necklace].filter(Boolean).map(function(i){return i.id});
- var cards='<div class="grid" style="grid-template-columns:repeat(2,minmax(0,1fr))">'
+ var cards='<div class="grid" style="grid-template-columns:repeat(2,minmax(0,1fr));align-items:start">'
   +jotdCard('Primary Ring',s.ring1,'Pick an index or middle finger ring.','ring1')
   +jotdCard('Secondary Ring',s.ring2,s.ring1?'No other ring on a different finger is available.':'Pick the Primary Ring first.','ring2')
   +jotdCard('Earrings',s.earring,'Not wearing earrings today.','earring')
@@ -1846,7 +1860,7 @@ function renderJotd(){
   +'</div>';
  return '<h2>Jewelry of the Day</h2>'
   +cards
-  +'<div class="bar" style="margin:20px 0 0;justify-content:space-between;align-items:center"><span style="display:flex;gap:8px;flex-wrap:wrap"><button data-a="jlucky">Leave it to fate</button><button data-a="jreset">Start anew</button></span><span style="display:flex;align-items:center;gap:8px"><span aria-hidden="true" style="display:inline-flex;color:var(--gold);opacity:0;'+(jotdFx?'animation:jfxgem 3s ease forwards;':'')+'">'+ico('gem',20)+'</span><button class="pri" data-a="jwear"'+(ids.length?'':' disabled')+'>Adorn</button></span></div>';
+  +'<div class="bar" style="margin:20px 0 0;justify-content:space-between;align-items:center"><span style="display:flex;gap:8px;flex-wrap:wrap"><button data-a="jlucky">Leave it to fate</button><button data-a="jreset">Start anew</button></span><span style="display:flex;align-items:center;gap:8px"><button class="pri" data-a="jwear"'+(ids.length?'':' disabled')+'>Adorn</button></span></div>';
 }
 function trackLinkHTML(i){var u=String(i.trackUrl||'').trim();if(!/^https?:\/\//i.test(u))return '';return '<p class="meta" style="text-align:center;margin:10px 0 0"><a class="link" href="'+esc(u)+'" target="_blank" rel="noopener">Track package<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-left:6px;vertical-align:-2px"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></p>'}
 function popup(i){
@@ -1995,7 +2009,7 @@ function renderSecret(){
   :hidden.length+' piece'+(hidden.length===1?' above ':'s above ')+esc(thr)+(hidden.length===1?' is':' are')+' hidden while the compartment is locked.';
  return '<div style="display:flex;align-items:center;justify-content:space-between;gap:12px"><h2 style="margin:0">Secret Compartment</h2><button type="button" data-a="slock" class="pri" aria-label="Lock secret compartment" title="Lock" style="width:40px;height:40px;min-width:0;min-height:0;padding:0;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none">'+ico('lock',18)+'</button></div>'
   +'<form id="secretform" autocomplete="on"><input type="text" name="username" autocomplete="username" value="Never Twice the Same" style="position:absolute;left:-9999px" tabindex="-1" aria-hidden="true">'
-  +(secretCfg.hash?'<p class="meta" style="margin:0 0 12px">Keyword is set. <button type="button" class="link" data-a="kwchange" style="font-size:inherit;margin:0">Change keyword</button></p>':'')
+  +(secretCfg.hash?'<p class="meta" style="margin:14px 0 12px">Keyword is set. <button type="button" class="link" data-a="kwchange" style="font-size:inherit;margin:0">Change keyword</button></p>':'')
   +'<div style="display:flex;align-items:flex-end;gap:10px;margin:0 0 12px"><div style="flex:1;min-width:0"><label><span class="sechdr">Hide pieces above</span><span style="position:relative;display:block"><input type="text" inputmode="decimal" name="threshold" data-a="sthr" data-money="1" value="'+esc(secretCfg.threshold==null?'':fmtMoney(secretCfg.threshold))+'" placeholder="$0.00" style="padding-right:38px"><button type="button" data-a="sclear" aria-label="Clear threshold" style="position:absolute;right:6px;top:50%;transform:translateY(-50%);width:26px;height:26px;min-width:0;min-height:0;padding:0;border-radius:50%;display:flex;align-items:center;justify-content:center;line-height:1;font-size:12px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></span></label></label></div><button type="button" class="pri" data-a="sthrset" style="flex:none">Save</button></div>'
   +'<p class="meta" style="margin:0 0 12px">'+status+'</p>'
   +'<div class="grid" style="grid-template-columns:repeat('+cols+',1fr)">'+hidden.map(function(i){return '<div>'+thumb(i)+'<div class="meta">'+esc(title(i))+' · '+money(num(i.cost))+'</div></div>'}).join('')+'</div>'
@@ -2183,7 +2197,7 @@ function expPanelHTML(){
 function refreshExpPanel(){var pe=document.getElementById('expPanel');if(pe){pe.outerHTML=expPanelHTML()}else renderMain()}
 function keycap(n){return String(n)}
 function backupText(iso){if(!iso)return 'never';var t=new Date(iso),tm=t.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'}).replace(' ','').toLowerCase();return agoText(iso)+' @ '+tm}
-function agoText(iso){if(!iso)return 'never';var n=new Date(),t=/^\d{4}-\d{2}-\d{2}$/.test(iso)?new Date(+iso.slice(0,4),+iso.slice(5,7)-1,+iso.slice(8,10)):new Date(iso);var a=new Date(n.getFullYear(),n.getMonth(),n.getDate()),b=new Date(t.getFullYear(),t.getMonth(),t.getDate());var d=Math.round((a-b)/864e5);return d<=0?'today':d===1?'yesterday':d+' days ago'}
+function agoText(iso){if(!iso)return 'never';var n=new Date(),t=/^\d{4}-\d{2}-\d{2}$/.test(iso)?new Date(+iso.slice(0,4),+iso.slice(5,7)-1,+iso.slice(8,10)):new Date(iso);var a=new Date(n.getFullYear(),n.getMonth(),n.getDate()),b=new Date(t.getFullYear(),t.getMonth(),t.getDate());var d=Math.round((a-b)/864e5);if(d<=0)return 'today';if(d===1)return 'yesterday';if(d<7)return d+' days ago';if(d<14)return 'last week';if(d<30)return Math.round(d/7)+' weeks ago';if(d<60)return 'last month';if(d<365)return Math.round(d/30)+' months ago';return 'long, long time ago'}
 function backupBanner(){
  var b=document.getElementById('bkp');if(!b)return '';
  var days=lastExport?(Date.now()-new Date(lastExport).getTime())/864e5:Infinity;
@@ -2344,10 +2358,10 @@ document.addEventListener('click',function(e){
   case 'nav':if(d.new)editing=newItem();if(d.v==='secret'){secretGate();break}trailReset();collId=null;show(d.v);break;
   case 'jotd':show('jotd');break;
   case 'jlock':if(!jotdSel)jotdSel={ring1:null,ring2:null,earring:null,necklace:null};jotdLock[d.k]=!jotdLock[d.k];if(!jotdLock[d.k]&&!jotdSel[d.k]&&(d.k!=='ring2'||jotdSel.ring1))jotdRoll(d.k);renderMain();break;
-  case 'jrate':{var rit=itemOf(Number(d.id));if(!rit)break;var rn=Number(d.n);var was=Number(rit.rating)||0;rit.rating=(was===rn)?0:rn;saveItems();if(rit.rating>was)jrateBurst(b);renderMain();break}
+  case 'jrate':{var rit=itemOf(Number(d.id));if(!rit)break;var rn=Number(d.n);var was=Number(rit.rating)||0;rit.rating=(was===rn)?0:rn;saveItems();if(rit.rating>was){var hs=HEART_IC;jrateBurst(b,Array(rit.rating).fill(hs))};renderMain();break}
   case 'jlucky':jotdLuck();renderMain();break;
   case 'jreset':jotdStart();renderMain();break;
-  case 'jwear':wearMany([jotdSel.ring1,jotdSel.ring2,jotdSel.earring,jotdSel.necklace].filter(Boolean).map(function(i){return i.id}));jotdMsg='';jotdFx=true;jrateBurst(b);renderMain();jotdFx=false;break;
+  case 'jwear':wearMany([jotdSel.ring1,jotdSel.ring2,jotdSel.earring,jotdSel.necklace].filter(Boolean).map(function(i){return i.id}));jotdMsg='';jotdFx=true;jrateBurst(b,[jotdSel.ring1,jotdSel.ring2,jotdSel.earring,jotdSel.necklace].filter(Boolean).map(jrateBurstIco));renderMain();jotdFx=false;break;
   case 'showall':showAllF[d.k]=!showAllF[d.k];renderDrawer();break;
   case 'f':toggleFilter(d.k,d.val);render();break;
   case 'clear':fsel={};rng={};render();break;
@@ -2750,7 +2764,7 @@ function confettiBurst(){
  })();
 }
 /* ---------- update banner with What's new CTA (no popup) ---------- */
-var WHATS_NEW='Dashboard: Sales bars on Spend vs. Sales by Year are gold instead of green. Spend stays pink.\nMenu: The View heading is now Display. Choose Appearance sits directly under the Display heading. The Grid and Table switch and the grid size buttons are full width. The Grid Size heading is removed. Reorder pieces is a full-width button above the Appearance order.\nDesign page: The Simple frame sample is smaller and fits the Floral size.\nWares: Dashboard is a tab after Sold, so it no longer sits under the list. The category bar is hidden on that tab.\nDashboard: Spend vs. Sales by Year has a legend. Spend is pink and Sales is gold.\nPages: The top fade no longer shows over the update banner.\nTitles: The My Jewelry Box and Size Guide titles and the space below them now match the other pages.\nSecret Compartment: Lock is an icon button next to the title. The keyword line sits above the threshold. The field has a clear X that removes the threshold straight away, with Save beside it. A line under the field says how many pieces are hidden.\nChange keyword: The close button is round.\nDashboard: Sellers by Count and Spend shows the top 5 sellers. View all shows the rest.\nJOTD: The rating hearts are a little closer together. Tapping Adorn sends hearts up and pops them. The hearts show even when Reduce Motion is on.\nSecret Compartment: The status line says how many pieces are hidden while the compartment is locked.';
+var WHATS_NEW='JOTD: Rating hearts rise one at a time, one for each heart rated. They shrink near the top and pop into small sparkles.\nJOTD: Tapping Adorn floats an icon for each piece you adorn, larger than the hearts. The gem sparkle beside Adorn is gone.\nJOTD: The wear text sits centered beside the hearts, and only moves to a second line when it has to. Cards size to their own content.\nSecret Compartment: The keyword line sits 14px below the title, matching the other pages.\nPages: The top fade stays hidden while an update banner is showing.\nDates: Dates show as today, yesterday, 3 days ago, last week, 3 weeks ago, last month, 3 months ago, or long, long time ago after a year.';
 function updateBannerCheck(){
  var seen=null;try{seen=localStorage.getItem('ntts_seen_ver')}catch(e){}
  try{localStorage.setItem('ntts_seen_ver',APP_VERSION)}catch(e){}
@@ -2760,6 +2774,7 @@ function updateBannerCheck(){
   +'<button type="button" data-a="whatsnew">What\'s new</button>'
   +'<button type="button" class="xb" data-a="updclose" aria-label="Dismiss"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>';
  u.hidden=false;
+ if(typeof fadesUpd==='function')fadesUpd();
 }
 function whatsNewHTML(){
  return '<div class="modal" data-a="backdrop"><div style="max-width:420px;width:100%;text-align:center;position:relative;background:var(--card);border-radius:16px;padding:20px">'
