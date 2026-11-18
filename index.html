@@ -312,7 +312,7 @@ header button[data-a="drawer"]{display:flex;align-items:center;justify-content:c
 <script>
 document.getElementById('app').innerHTML='<div style="position:fixed;inset:0;z-index:50;background:var(--bg);display:flex;align-items:center;justify-content:center">'+mothLoaderHTML()+'</div>';
 var K='ntts_items_v2',OK='ntts_order_v1',PER=25,MAX_UPLOAD=300*1024;
-var APP_VERSION='2.17.3',APP_DATE='2026-11-17 · 7:01 PM ET',UPDATE_URL='';
+var APP_VERSION='2.17.4',APP_DATE='2026-11-17 · 7:47 PM ET',UPDATE_URL='';
 var EMOJI={ring:'💍',earrings:'✨',necklace:'📿',bracelet:'⭕',watch:'⌚',other:'💎'};
 var ICONS={coll:"<rect x='3' y='4' width='18' height='16' rx='2'/><path d='M3 10h18M8 14h8'/>",gem:"<path d='M7 4h10l4 5-9 11L3 9z'/><path d='M3 9h18M9 4l-1.5 5L12 20l4.5-11L15 4'/>",pkg:"<path d='M3 7.5L12 3l9 4.5v9L12 21l-9-4.5z'/><path d='M3 7.5l9 4.5 9-4.5M12 12v9'/>",hand:"<path d='M5 11V7a1.5 1.5 0 0 1 3 0v4M8 11V5a1.5 1.5 0 0 1 3 0v6M11 11V6a1.5 1.5 0 0 1 3 0v6M14 11V8a1.5 1.5 0 0 1 3 0v7c0 3-2 5-5 5h-1c-2 0-3-1-4-3l-2-4'/>",x:"<path d='M6 6l12 12M18 6L6 18'/>",ring:"<circle cx='12' cy='14' r='6'/><path d='M9.5 8 12 4l2.5 4'/><path d='M12 9.5l1.5 2.5-1.5 2.5-1.5-2.5z'/>",earrings:"<path d='M7 3v3'/><path d='M7 6c-1.6 0-2.5 1.3-2.5 3S6 14 7 17c1-3 2.5-5 2.5-8C9.5 7.3 8.6 6 7 6z'/><path d='M17 3v3'/><path d='M17 6c-1.6 0-2.5 1.3-2.5 3S16 14 17 17c1-3 2.5-5 2.5-8C19.5 7.3 18.6 6 17 6z'/>",necklace:"<path d='M4 5c2 7 14 7 16 0'/><path d='M12 12.5V15'/><circle cx='12' cy='17' r='2.2'/>",bracelet:"<ellipse cx='12' cy='12' rx='8' ry='5.5'/><ellipse cx='12' cy='12' rx='5.5' ry='3'/>",watch:"<circle cx='12' cy='13' r='5.5'/><path d='M9 7.5 10 3h4l1 4.5M9 18.5 10 23h4l1-4.5'/><path d='M12 10.5V13l1.8 1.2'/>",heart:"<path d='M12 20s-7-4.4-7-9.5A4 4 0 0 1 12 8a4 4 0 0 1 7 2.5C19 15.6 12 20 12 20z'/>",wrench:"<path d='M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-.5-.5-2.5z'/>",key:"<g transform='rotate(-45 12.5 12)'><circle cx='8' cy='12' r='4'/><path d='M12 12h9M18 12v3M21 12v2.5'/></g>",curio:"<rect x='4' y='3' width='16' height='18' rx='1'/><path d='M3 3h18M3 21h18'/><path d='M12 3v18'/><path d='M4 11h16'/><path d='M10.5 7v1.5M13.5 7v1.5M10.5 15v1.5M13.5 15v1.5'/>",clock:"<circle cx='12' cy='12' r='9'/><path d='M12 7v5l3 2'/>",pencil:"<path d='M4 20h4L19 9l-4-4L4 16z'/><path d='M13.5 6.5l4 4'/>",lock:"<rect x='5' y='11' width='14' height='10' rx='2'/><path d='M8 11V7a4 4 0 0 1 8 0v4'/>",unlock:"<rect x='3.95' y='11' width='11.1' height='10' rx='2'/><path d='M12.8 11V6.3A3.3 3.3 0 0 1 19.4 6.3V9.5'/>",bag:"<path d='M5 8h14l-1 12H6z'/><path d='M9 8V6a3 3 0 0 1 6 0v2'/>",plus:"<path d='M12 5v14M5 12h14'/>",x:"<path d='M6 6l12 12M18 6L6 18'/>",spark:"<path d='M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z'/>",gallery:"<rect x='3' y='4' width='18' height='16' rx='2'/><circle cx='9' cy='10' r='2'/><path d='M21 16l-5-5-8 9'/>"};
 var ORN='<svg width="72" height="10" viewBox="0 0 72 10" fill="none" stroke="#a8864f" stroke-width="1.2"><path d="M0 5h28M44 5h28"/><path d="M36 1l4 4-4 4-4-4z"/></svg>';
@@ -1627,12 +1627,13 @@ function priceStrip(){
 function renderListing(){
  pricesLoad();
  var sold=lhTab==='sold';
+ var dash=lhTab==='dash';
  var melting=false;
  var sortW=function(a,b){return colorRankOf(a)-colorRankOf(b)||typeRankOf(a)-typeRankOf(b)||title(a).localeCompare(title(b))};
  var want=sold?['Sold']:['Selling'];
  var list=melting?[]:vis().filter(function(i){return want.indexOf(i.status)>-1}).sort(sortW);
  var melt=melting?vis().filter(function(i){return i.status==='To Melt'}).sort(sortW):[];
- var seg='<div class="seg" style="margin:0 0 12px"><button type="button" data-a="lhtab" data-v="to"'+(!sold&&!melting?' class="on"':'')+'>Selling</button><button type="button" data-a="lhtab" data-v="sold"'+(sold?' class="on"':'')+'>Sold</button></div>';
+ var seg='<div class="seg" style="margin:0 0 12px"><button type="button" data-a="lhtab" data-v="to"'+(!sold&&!melting&&!dash?' class="on"':'')+'>Selling</button><button type="button" data-a="lhtab" data-v="sold"'+(sold?' class="on"':'')+'>Sold</button><button type="button" data-a="lhtab" data-v="dash"'+(dash?' class="on"':'')+'>Dashboard</button></div>';
  var cost=function(i){return num(i.cost)||0};
  var acq=function(i){return (num(i.acqShipping)||0)+(num(i.tariffs)||0)+(num(i.repairs)||0)};
  var totalCost=function(i){return cost(i)+acq(i)};
@@ -1683,10 +1684,10 @@ function table(rows){
    }).join('');
    return '<table class="wtbl" style="width:100%;table-layout:fixed;border-collapse:separate;border-spacing:0">'+colgroup+thead+'<tbody>'+totRow+groups+'</tbody></table>';
  }
- var out='<div class="wtop"><h2 style="margin:0 0 14px">Wares</h2>'+priceStrip()+'<div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap">'+seg+catBar(melting?melt:list,sold?'s':melting?'m':'t')+'</div></div>';
+ var out='<div class="wtop"><h2 style="margin:0 0 14px">Wares</h2>'+priceStrip()+'<div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap">'+seg+(dash?'':catBar(melting?melt:list,sold?'s':melting?'m':'t'))+'</div></div>';
+ if(dash)return out+dashHTML();
  if(melting)out+=melt.length?table(melt):'<p class="meta">Nothing to melt.</p>';
  else out+=(list.length?table(list):'<p class="meta">'+(sold?'Nothing sold yet.':'Nothing selling yet.')+'</p>');
- out+='<details data-sec="dash" style="margin-top:22px"'+dOpen('dash',false)+'><summary>Dashboard</summary>'+dashHTML()+'</details>';
  return out;
 }
 function renderMain(){
@@ -1697,7 +1698,7 @@ function renderMain(){
  setupLazyBox();
  updateSummary();setTabs();updateStorage();
 }
-function fadesUpd(){var t=document.getElementById('gfT'),b=document.getElementById('gfB');if(!t||!b)return;var tb=document.getElementById('tabbar');b.style.bottom=(tb&&tb.offsetHeight?tb.offsetHeight-1:0)+'px';var on=['box','coll','wishlist'].indexOf(view)>-1;var max=document.documentElement.scrollHeight-innerHeight;t.style.opacity=on&&scrollY>4?'1':'0';b.style.opacity=on&&scrollY<max-4?'1':'0'}
+function fadesUpd(){var t=document.getElementById('gfT'),b=document.getElementById('gfB');if(!t||!b)return;var tb=document.getElementById('tabbar');b.style.bottom=(tb&&tb.offsetHeight?tb.offsetHeight-1:0)+'px';var on=['box','coll','wishlist'].indexOf(view)>-1;var max=document.documentElement.scrollHeight-innerHeight;var bn=0;document.querySelectorAll('.upd:not([hidden])').forEach(function(x){bn+=x.offsetHeight});t.style.opacity=on&&scrollY>bn+4?'1':'0';b.style.opacity=on&&scrollY<max-4?'1':'0'}
 function fadesInit(){if(document.getElementById('gfT'))return;['gfT','gfB'].forEach(function(id){var d=document.createElement('div');d.id=id;d.className='gfade';document.body.appendChild(d)});window.addEventListener('scroll',fadesUpd,{passive:true});window.addEventListener('resize',fadesUpd)}
 function render(){document.body.dataset.view=view;renderMain();renderDrawer();wfix();fadesInit();fadesUpd()}
 var wtopRO=window.ResizeObserver?new ResizeObserver(function(){wfix()}):null;
@@ -1980,7 +1981,7 @@ function dashHTML(){
  var sellers=shown.map(function(r){var bar=dashSort==='spend'?'<span style="display:flex;height:100%;width:'+(r.spend/mx*100)+'%"><span style="display:block;height:100%;width:'+(r.spend?r.heldSpend/r.spend*100:0)+'%;background:var(--acc)"></span><span style="display:block;height:100%;flex:1;background:var(--gold)"></span></span>':'<span style="display:flex;height:100%;width:'+(r.count/mx*100)+'%"><span style="display:block;height:100%;width:'+(r.count?r.held/r.count*100:0)+'%;background:var(--acc)"></span><span style="display:block;height:100%;flex:1;background:var(--gold)"></span></span>';return '<div style="display:grid;grid-template-columns:140px minmax(0,1fr) 108px;gap:6px;align-items:center;height:42px;margin:2px 0"><span style="min-width:0;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;line-height:1.2;overflow-wrap:anywhere">'+esc(r.name)+'</span><span style="background:var(--line);border-radius:6px;height:12px;display:block;overflow:hidden">'+bar+'</span><span class="meta" style="white-space:nowrap;text-align:right;overflow:hidden;line-height:1.2">'+r.count+' · '+esc(fmtMoney(r.spend))+'</span></div>'}).join('');
  var tb=function(v,l){var on=dashSort===v;return '<button type="button" data-a="dashsort" data-v="'+v+'" aria-pressed="'+on+'" style="border:0;border-radius:0;margin:0;min-height:30px;padding:4px 12px;font-size:14px;background:'+(on?'var(--acc)':'transparent')+';color:'+(on?'#fff':'var(--fg)')+'">'+l+'</button>'};
  var toggle='<div style="display:inline-flex;border:1px solid var(--acc);border-radius:999px;overflow:hidden;flex:none">'+tb('count','Count')+tb('spend','Spend')+'</div>';
- return '<h4 class="sub" style="margin:0 0 6px">Spend vs. Sales by Year</h4>'+chart
+ return '<h4 class="sub" style="margin:0 0 6px">Spend vs. Sales by Year</h4>'+(years.length?'<div class="meta" style="display:flex;gap:12px;margin:0 0 6px"><span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#e07a9b;margin-right:4px"></span>Spend</span><span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:var(--gold);margin-right:4px"></span>Sales</span></div>':'')+chart
   +'<hr style="border:0;border-top:1px solid var(--line);margin:18px 0">'
   +'<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin:0 0 6px"><h4 class="sub" style="margin:0">Sellers by Count and Spend</h4>'+toggle+'</div>'+(rows.length?legend+sellers:'<p class="meta">No pieces yet.</p>')
   +(rows.length>10?'<button class="link" data-a="dashall">'+(dashAll?'Show top 10':'View all ('+rows.length+')')+'</button>':'');
@@ -2357,7 +2358,7 @@ document.addEventListener('click',function(e){
 case 'pback':trailBack();break;
   case 'catall':JSON.parse(d.cats).forEach(function(k){catOpen[d.k+'|'+k]=d.v==='expand'});renderMain();break;
   case 'cattog':catOpen[d.k]=!catOpen[d.k];renderMain();break;
-  case 'lhtab':lhTab=d.v==='sold'?'sold':d.v==='melt'?'melt':'to';renderMain();break;
+  case 'lhtab':lhTab=d.v==='sold'?'sold':d.v==='dash'?'dash':d.v==='melt'?'melt':'to';renderMain();break;
 case 'edit':M.innerHTML='';keepY=view==='box'?window.pageYOffset:null;editing=JSON.parse(JSON.stringify(items.filter(function(i){return String(i.id)===d.id})[0]));if(view==='piece')backTo='piece';show('edit');break;
   case 'wear':wear(Number(d.id));break;
   case 'x':if(document.getElementById('lhPrice'))syncForm();collCropAbort();if(document.getElementById('curtain'))secretAbort();M.innerHTML='';break;
@@ -2744,7 +2745,7 @@ function confettiBurst(){
  })();
 }
 /* ---------- update banner with What's new CTA (no popup) ---------- */
-var WHATS_NEW='Dashboard: Sales bars on Spend vs. Sales by Year are gold instead of green. Spend stays pink.\nMenu: The View heading is now Display. Choose Appearance sits directly under the Display heading. The Grid and Table switch and the grid size buttons are full width. The Grid Size heading is removed. Reorder pieces is a full-width button above the Appearance order.\nDesign page: The Simple frame sample is smaller and fits the Floral size.';
+var WHATS_NEW='Dashboard: Sales bars on Spend vs. Sales by Year are gold instead of green. Spend stays pink.\nMenu: The View heading is now Display. Choose Appearance sits directly under the Display heading. The Grid and Table switch and the grid size buttons are full width. The Grid Size heading is removed. Reorder pieces is a full-width button above the Appearance order.\nDesign page: The Simple frame sample is smaller and fits the Floral size.\nWares: Dashboard is a tab after Sold, so it no longer sits under the list. The category bar is hidden on that tab.\nDashboard: Spend vs. Sales by Year has a legend. Spend is pink and Sales is gold.\nPages: The top fade no longer shows over the update banner.';
 function updateBannerCheck(){
  var seen=null;try{seen=localStorage.getItem('ntts_seen_ver')}catch(e){}
  try{localStorage.setItem('ntts_seen_ver',APP_VERSION)}catch(e){}
