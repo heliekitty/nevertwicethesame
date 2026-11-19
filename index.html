@@ -235,8 +235,8 @@ main>h2:first-child{margin-bottom:14px}
 .floatbar.on{display:flex}
 .floatbar.scrolling{opacity:0;pointer-events:none}
 @media (max-width:700px){.floatbar{bottom:calc(62px + env(safe-area-inset-bottom,0px))}}
-.jrate-big>*{flex:1 1 auto;min-width:0;justify-content:space-between!important;width:100%}
-.jrate-big button{width:auto!important;height:28px!important;padding:0 2px!important;flex:1 1 0;justify-content:center}
+.jrate-big>*{flex:0 0 auto;min-width:0;justify-content:center!important;width:auto}
+.jrate-big button{width:24px!important;height:28px!important;padding:0!important;flex:0 0 24px;justify-content:center}
 .jrate-big svg{width:24px!important;height:24px!important}
 #savecue{position:fixed;left:50%;transform:translateX(-50%);top:calc(var(--hdr-h,62px) + 10px);z-index:50;padding:6px 14px;border-radius:999px;font-size:14px;background:var(--card);color:var(--mute);border:1px solid var(--line);box-shadow:0 2px 8px rgba(0,0,0,.15);pointer-events:none;opacity:0;transition:opacity .25s;max-width:92vw;text-align:center}
 #savecue.show{opacity:1}
@@ -348,7 +348,7 @@ header button[data-a="drawer"]{display:flex;align-items:center;justify-content:c
 <script>
 document.getElementById('app').innerHTML='<div style="position:fixed;inset:0;z-index:50;background:var(--bg);display:flex;align-items:center;justify-content:center">'+mothLoaderHTML()+'</div>';
 var K='ntts_items_v2',OK='ntts_order_v1',PER=25,MAX_UPLOAD=300*1024;
-var APP_VERSION='2.21.1',APP_DATE='2026-11-18 · 11:08 PM ET',UPDATE_URL='';
+var APP_VERSION='2.22.0',APP_DATE='2026-11-18 · 11:45 PM ET',UPDATE_URL='';
 var EMOJI={ring:'💍',earrings:'✨',necklace:'📿',bracelet:'⭕',watch:'⌚',other:'💎'};
 var ICONS={coll:"<rect x='3' y='4' width='18' height='16' rx='2'/><path d='M3 10h18M8 14h8'/>",gem:"<path d='M7 4h10l4 5-9 11L3 9z'/><path d='M3 9h18M9 4l-1.5 5L12 20l4.5-11L15 4'/>",pkg:"<path d='M3 7.5L12 3l9 4.5v9L12 21l-9-4.5z'/><path d='M3 7.5l9 4.5 9-4.5M12 12v9'/>",hand:"<path d='M5 11V7a1.5 1.5 0 0 1 3 0v4M8 11V5a1.5 1.5 0 0 1 3 0v6M11 11V6a1.5 1.5 0 0 1 3 0v6M14 11V8a1.5 1.5 0 0 1 3 0v7c0 3-2 5-5 5h-1c-2 0-3-1-4-3l-2-4'/>",x:"<path d='M6 6l12 12M18 6L6 18'/>",ring:"<circle cx='12' cy='14' r='6'/><path d='M9.5 8 12 4l2.5 4'/><path d='M12 9.5l1.5 2.5-1.5 2.5-1.5-2.5z'/>",earrings:"<path d='M7 3v3'/><path d='M7 6c-1.6 0-2.5 1.3-2.5 3S6 14 7 17c1-3 2.5-5 2.5-8C9.5 7.3 8.6 6 7 6z'/><path d='M17 3v3'/><path d='M17 6c-1.6 0-2.5 1.3-2.5 3S16 14 17 17c1-3 2.5-5 2.5-8C19.5 7.3 18.6 6 17 6z'/>",necklace:"<path d='M4 5c2 7 14 7 16 0'/><path d='M12 12.5V15'/><circle cx='12' cy='17' r='2.2'/>",bracelet:"<ellipse cx='12' cy='12' rx='8' ry='5.5'/><ellipse cx='12' cy='12' rx='5.5' ry='3'/>",watch:"<circle cx='12' cy='13' r='5.5'/><path d='M9 7.5 10 3h4l1 4.5M9 18.5 10 23h4l1-4.5'/><path d='M12 10.5V13l1.8 1.2'/>",heart:"<path d='M12 20s-7-4.4-7-9.5A4 4 0 0 1 12 8a4 4 0 0 1 7 2.5C19 15.6 12 20 12 20z'/>",wrench:"<path d='M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-.5-.5-2.5z'/>",key:"<g transform='rotate(-45 12.5 12)'><circle cx='8' cy='12' r='4'/><path d='M12 12h9M18 12v3M21 12v2.5'/></g>",curio:"<rect x='4' y='3' width='16' height='18' rx='1'/><path d='M3 3h18M3 21h18'/><path d='M12 3v18'/><path d='M4 11h16'/><path d='M10.5 7v1.5M13.5 7v1.5M10.5 15v1.5M13.5 15v1.5'/>",clock:"<circle cx='12' cy='12' r='9'/><path d='M12 7v5l3 2'/>",pencil:"<path d='M4 20h4L19 9l-4-4L4 16z'/><path d='M13.5 6.5l4 4'/>",lock:"<rect x='5' y='11' width='14' height='10' rx='2'/><path d='M8 11V7a4 4 0 0 1 8 0v4'/>",unlock:"<rect x='3.95' y='11' width='11.1' height='10' rx='2'/><path d='M12.8 11V6.3A3.3 3.3 0 0 1 19.4 6.3V9.5'/>",bag:"<path d='M5 8h14l-1 12H6z'/><path d='M9 8V6a3 3 0 0 1 6 0v2'/>",plus:"<path d='M12 5v14M5 12h14'/>",x:"<path d='M6 6l12 12M18 6L6 18'/>",spark:"<path d='M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z'/>",gallery:"<rect x='3' y='4' width='18' height='16' rx='2'/><circle cx='9' cy='10' r='2'/><path d='M21 16l-5-5-8 9'/>"};
 var ORN='<svg width="72" height="10" viewBox="0 0 72 10" fill="none" stroke="#a8864f" stroke-width="1.2"><path d="M0 5h28M44 5h28"/><path d="M36 1l4 4-4 4-4-4z"/></svg>';
@@ -1128,11 +1128,18 @@ function necklaceSizesHTML(){
  var art='<svg viewBox="-12 -9 54 36" width="100%" role="img" aria-label="Necklace lengths drawn on a torso, in inches">'+torso+chains+labels+'</svg>';
  return '<h4 class="sub" style="margin:12px 0 4px;text-align:left">Where chains fall</h4>'+art+'<p class="meta" style="font-size:12px;margin:8px 0 0">Lengths are full chain length, clasp to clasp. Drop depths are approximate.</p>';
 }
+/* Jewelry quotes for the Coveted page. Add one line per quote: { q: 'the quote', by: 'who said it (optional)' }. The strip is hidden while the list is empty. */
+var JEWELRY_QUOTES=[
+  { q: "Nothing haunts you like the jewelry you didn't buy. AND THEN IT GETS SOLD OUT." },
+  { q: "No, that's my FRIEND's niche interest that i'm obsessed with on their behalf… that's my interest-in-law.", by: "@bnaps38" }
+];
+var WISH_QUOTE=-1;
+function quoteHTML(){if(!JEWELRY_QUOTES.length)return '';if(WISH_QUOTE<0||WISH_QUOTE>=JEWELRY_QUOTES.length)WISH_QUOTE=Math.floor(Math.random()*JEWELRY_QUOTES.length);var x=JEWELRY_QUOTES[WISH_QUOTE];return '<div style="width:90%;margin:0 auto 14px;text-align:center"><p style="margin:0;font-style:italic;color:var(--mute)">'+esc(x.q)+'</p>'+(x.by?'<p class="meta" style="margin:4px 0 0">'+esc(x.by)+'</p>':'')+'</div>'}
 function renderWishlist(){
  var list=wish.filter(function(w){return (!wishType.length||wishType.indexOf(w.category)>-1)&&(!q||((w.category||'')+' '+(w.link||'')).toLowerCase().indexOf(q)>-1)});
  var tiles=list.map(function(w){return '<div class="'+(wro?'tile':'')+'" data-id="'+w.id+'" style="position:relative"><button type="button" data-a="wopen" data-id="'+w.id+'" style="padding:0;border:0;border-radius:10px;overflow:hidden;aspect-ratio:1;width:100%;display:block;min-height:0;background:var(--acc);position:relative">'+coverImg(wishCover(w),true)+'</button>'+(wro?xBtn('data-a="wdel" data-id="'+w.id+'"','Remove from coveted'):'')+(wro?'':'<div class="meta" style="margin-top:4px;text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:'+(bgStyle==="pattern"?'#f3ece2':'#2a2420')+'">'+esc(wishDomain(w.link))+'</div>')+'</div>'}).join('');
  return '<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:14px"><h2 style="margin:0">Coveted Pieces</h2>'+ADDB('wadd','Add Coveted Piece')+'</div>'
-  +(list.length?'<div class="box'+(bgStyle==="pattern"?' pat':'')+'" style="overflow:hidden;min-width:0;'+(bgStyle==="pattern"?'background-color:var(--v1);background-image:var(--wpat);background-repeat:repeat;background-size:69.282px 40px':'background:var(--unlock)')+';box-shadow:inset 0 0 22px rgba(90,70,50,.12),inset 0 0 0 1px var(--line)"><div class="grid'+(wro?' ro':'')+'" style="grid-template-columns:repeat('+cols+',minmax(0,1fr))">'+tiles+'</div></div>':'<p class="meta">'+(wish.length?'No coveted items match this type.':'Nothing coveted yet.')+'</p>')
+  +quoteHTML()+(list.length?'<div class="box'+(bgStyle==="pattern"?' pat':'')+'" style="overflow:hidden;min-width:0;'+(bgStyle==="pattern"?'background-color:var(--v1);background-image:var(--wpat);background-repeat:repeat;background-size:69.282px 40px':'background:var(--unlock)')+';box-shadow:inset 0 0 22px rgba(90,70,50,.12),inset 0 0 0 1px var(--line)"><div class="grid'+(wro?' ro':'')+'" style="grid-template-columns:repeat('+cols+',minmax(0,1fr))">'+tiles+'</div></div>':'<p class="meta">'+(wish.length?'No coveted items match this type.':'Nothing coveted yet.')+'</p>')
   ;
 }
 function wishAddHTML(){
@@ -1804,7 +1811,7 @@ function trailBack(){
  drawer(false);render();window.scrollTo(0,s.y||0);
 }
 function jotdApplyWorn(){var wp=jotdWornPicks();['ring1','ring2','earring','necklace'].forEach(function(k){if(wp[k]&&!jotdLock[k]&&(!jotdSel[k]||jotdSel[k].id!==wp[k].id))jotdSel[k]=wp[k]})}
-function show(v){if(v!=='edit')editing=null;if(v==='jotd'&&jotdSel)jotdApplyWorn();view=v;cols=colsBy[v]||3;ro=false;wro=false;compShownFor=null;if(v!=='edit')backTo='box';drawer(false);render();if(v==='box'&&keepY!=null){window.scrollTo(0,keepY);keepY=null}else{if(v!=='edit')keepY=null;window.scrollTo(0,0)}}
+function show(v){if(v!=='edit')editing=null;if(v==='wishlist')WISH_QUOTE=-1;if(v==='jotd'&&jotdSel)jotdApplyWorn();view=v;cols=colsBy[v]||3;ro=false;wro=false;compShownFor=null;if(v!=='edit')backTo='box';drawer(false);render();if(v==='box'&&keepY!=null){window.scrollTo(0,keepY);keepY=null}else{if(v!=='edit')keepY=null;window.scrollTo(0,0)}}
 function setTabs(){var t=document.getElementById('tabbar'),bs=t.querySelectorAll('button');bs.forEach(function(x){x.classList.toggle('on',x.dataset.v===view)});tabBar()}
 function tabBar(){var t=document.getElementById('tabbar'),el=t.querySelector('button.on');if(!el)return;t.style.setProperty('--tl',el.offsetLeft+'px');t.style.setProperty('--tw',el.offsetWidth+'px')}
 window.addEventListener('resize',tabBar);
@@ -1937,7 +1944,7 @@ function jotdCard(label,i,emptyMsg,k){
  return '<div style="border:1px solid '+(locked?'var(--acc)':'var(--line)')+';border-radius:12px;padding:8px 8px 4px;display:flex;flex-direction:column;min-width:0">'
   +'<div style="display:flex;align-items:center;justify-content:space-between;gap:4px;margin-bottom:4px"><span style="font-family:Cormorant Garamond,Georgia,serif;font-weight:600;font-size:18px;letter-spacing:.02em;line-height:1.2;color:var(--fg);min-width:0;overflow-wrap:anywhere">'+label+'</span><span style="display:flex;gap:2px">'+colorBtn+lockBtn+'</span></div>'
   +picWrap
-  +'<div class="jrate-big" style="display:flex;justify-content:space-between;align-items:center;width:100%;min-height:28px;margin:0">'+(i?jotdRateHTML(i):'—')+'</div></div>';
+  +'<div class="jrate-big" style="display:flex;justify-content:center;align-items:center;width:100%;min-height:28px;margin:0">'+(i?jotdRateHTML(i):'—')+'</div></div>';
 }
 function renderJotd(){
  if(!jotdSel){jotdSel={ring1:null,ring2:null,earring:null,necklace:null};var wp=jotdLaunch?jotdWornPicks():{};jotdLaunch=false;['ring1','ring2','earring','necklace'].forEach(function(k){if(wp[k])jotdSel[k]=wp[k]});['ring1','ring2','earring','necklace'].forEach(function(k){if(!jotdSel[k])jotdRoll(k)});jotdMsg=''}
@@ -1950,7 +1957,7 @@ function renderJotd(){
   +'</div>';
  return '<h2>Jewelry of the Day</h2>'
   +cards
-  +'<div class="bar" style="margin:12px 0 0;justify-content:space-between;align-items:center"><span style="display:flex;gap:8px;flex-wrap:wrap"><button data-a="jlucky">Leave it to fate</button><button data-a="jreset">Start anew</button></span><span style="display:flex;align-items:center;gap:8px"><button class="pri" data-a="jwear"'+(ids.length?'':' disabled')+'>Adorn</button></span></div>';
+  +'<div class="bar" style="margin:16px 0 0;justify-content:space-between;align-items:center"><span style="display:flex;gap:8px;flex-wrap:wrap"><button data-a="jlucky">Leave it to fate</button><button data-a="jreset">Start anew</button></span><span style="display:flex;align-items:center;gap:8px"><button class="pri" data-a="jwear"'+(ids.length?'':' disabled')+'>Adorn</button></span></div>';
 }
 function trackLinkHTML(i){var u=String(i.trackUrl||'').trim();if(!/^https?:\/\//i.test(u))return '';return '<p class="meta" style="text-align:center;margin:10px 0 0"><a class="link" href="'+esc(u)+'" target="_blank" rel="noopener">Track package<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-left:6px;vertical-align:-2px"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></p>'}
 function popup(i){
@@ -2142,12 +2149,14 @@ function dashBoxChart(win,pc){
  return '<svg viewBox="0 0 '+W+' '+H+'" style="width:100%;height:auto;display:block" role="img" aria-label="Price range per piece by year">'+out+'</svg>';
 }
 function pieHTML(rows,expanded){
+ if(!rows.length)return '<p class="meta">No countries recorded yet.</p>';
  var tot=rows.reduce(function(a,r){return a+r.n},0);
  if(!tot)return '<p class="meta">No pieces yet.</p>';
  var blank=rows.filter(function(r){return r.label==='Not recorded'});
  var named=rows.filter(function(r){return r.label!=='Not recorded'});
+ if(!named.length)return '<p class="meta">No countries recorded yet.</p>';
  var top=named.slice(0,5),restN=named.slice(5).reduce(function(a,r){return a+r.n},0);
- var pal=['var(--acc)','var(--gold)','#e07a9b','#3f9d5a','#3d6fd0'];
+ var pal=['var(--acc)','var(--unlock)','var(--gold)','var(--mute)','var(--v2)'];
  var slices=top.map(function(r,k){return {label:r.label,n:r.n,fill:pal[k]}});
  if(restN)slices.push({label:'Other',n:restN,fill:'var(--mute)'});
  if(blank.length)slices.push({label:'Not recorded',n:blank[0].n,fill:'var(--line)'});
@@ -2188,17 +2197,17 @@ function dashCountHTML(){
  var tally=function(vals){var m={};vals.forEach(function(k){var t=String(k).trim();if(!t)return;var key=t.toLowerCase();if(!m[key])m[key]={label:tc(t),n:0};m[key].n++});return Object.keys(m).map(function(k){return {label:m[k].label,n:m[k].n,fill:'var(--acc)'}})};
  var withBlank=function(rows,blank){if(blank)rows.push({label:'Not recorded',n:blank,fill:'var(--line)'});return rows};
  var countryRows=tally(vs.map(function(i){return i.country||''})).sort(function(a,b){return b.n-a.n||a.label.localeCompare(b.label)});
- countryRows=withBlank(countryRows,vs.filter(function(i){return !String(i.country||'').trim()}).length);
+ var countryBlank=vs.filter(function(i){return !String(i.country||'').trim()}).length;
  var eraRows=tally(vs.map(function(i){return i.era||''})).sort(function(a,b){return eraRank(a.label)-eraRank(b.label)||a.label.localeCompare(b.label)});
- eraRows=withBlank(eraRows,vs.filter(function(i){return !String(i.era||'').trim()}).length);
+ var eraBlank=vs.filter(function(i){return !String(i.era||'').trim()}).length;
  var stoneVals=[];var stoneBlank=0;vs.forEach(function(i){var a=listOf(i.stone).map(function(x){return String(x).trim()}).filter(Boolean);if(!a.length)stoneBlank++;else stoneVals.push(a[0])});
- var stoneRows=withBlank(tally(stoneVals).sort(function(a,b){return b.n-a.n||a.label.localeCompare(b.label)}),stoneBlank);
+ var stoneRows=tally(stoneVals).sort(function(a,b){return b.n-a.n||a.label.localeCompare(b.label)});
  return ''
   +sec('Pieces by Category and Year','Darker means more pieces bought that year.',heat)
   +DASH_HR+sec('Pieces by Color','A piece with several colors counts once in each.',hbars(colorRows))
-  +DASH_HR+sec('Pieces by Country of Origin','Spellings are matched regardless of capital letters. Top 5 countries until expanded.',pieHTML(countryRows,dashAll&&dashYrsAll))
-  +DASH_HR+sec('Pieces by Era','In period order, oldest first.',hbars(eraRows))
-  +DASH_HR+sec('Pieces by Stone','Counts the first stone listed on each piece.',hbars(stoneRows,CL));
+  +DASH_HR+sec('Pieces by Country of Origin','Spellings are matched regardless of capital letters. Top 5 countries until expanded.'+(countryBlank?' '+countryBlank+' '+(countryBlank===1?'piece has':'pieces have')+' no country on record.':''),pieHTML(countryRows,dashAll&&dashYrsAll))
+  +DASH_HR+sec('Pieces by Era','In period order, oldest first.'+(eraBlank?' '+eraBlank+' '+(eraBlank===1?'piece has':'pieces have')+' no era on record.':''),hbars(eraRows))
+  +DASH_HR+sec('Pieces by Stone','Counts the first stone listed on each piece.'+(stoneBlank?' '+stoneBlank+' '+(stoneBlank===1?'piece has':'pieces have')+' no stone on record.':''),hbars(stoneRows,CL));
 }
 function dashHTML(){
  var yrs={};
@@ -2546,9 +2555,11 @@ function updateStorage(){
  if(navigator.storage&&navigator.storage.estimate){navigator.storage.estimate().then(function(e){lines[bi]='Browser data: '+fmtBytes(e.usage||0)+' used of about '+fmtBytes(e.quota||0)+' allowed';show()}).catch(function(){lines[bi]='Browser data: unavailable';show()})}
  else{lines[bi]='Browser data: unavailable';show()}
 }
+var CONFIRM_FN=null;
+function askConfirm(title,msg,label,fn){CONFIRM_FN=fn;document.getElementById('modal').innerHTML='<div class="modal kwm" data-a="backdrop"><div class="kwbox"><h3>'+title+'</h3><p class="meta">'+msg+'</p><div class="bar" style="justify-content:center;margin:12px 0 0;flex-wrap:wrap"><button type="button" class="dan" data-a="confirmyes">'+label+'</button><button type="button" data-a="x">Cancel</button></div></div></div>'}
+function collDelete(){var cdel=curColl();if(!cdel)return;colls=colls.filter(function(x){return x.id!==collId});collId=null;if(cdel.cover)collPruneImg(cdel.cover.id);saveColls();saveGallery();document.getElementById('modal').innerHTML='';render()}
+function eraseOpen(){document.getElementById('modal').innerHTML='<div class="modal kwm" data-a="backdrop"><div class="kwbox"><h3>Erase everything?</h3><p class="meta">This erases every piece, photo, and setting on this device. Type DELETE to confirm.</p><input id="eraseIn" autocomplete="off" autocapitalize="characters" maxlength="10" style="text-align:left;padding-left:16px"><div class="bar" style="justify-content:center;margin:12px 0 0;flex-wrap:wrap"><button type="button" class="dan" data-a="eraseyes">Erase</button><button type="button" data-a="x">Cancel</button></div></div></div>';setTimeout(function(){var e=document.getElementById("eraseIn");if(e)e.focus()},50)}
 function deleteAll(){
- var t=prompt('This erases every piece, photo, and setting on this device. Type DELETE to confirm.');
- if(t!=='DELETE')return;
  items=[];frameStyle='floral';document.documentElement.dataset.frame='floral';gal={imgs:{},refs:[],covers:[],comps:[]};galSel={refs:{},covers:{},comps:{}};secretCfg={on:false,hash:'',threshold:null};secretUnlocked=false;wish=[];order=[];theme='ruby';bgStyle='velvet';hideSold=true;fsel={status:DEFAULT_STATUS.slice()};rng={};q='';document.getElementById('q').value='';sortBy='new';ro=false;view='box';
  kclear().then(function(){return Promise.all([saveItems(),saveOrder(),saveSettings(),saveGallery()])}).then(function(){applyTheme();render();alert('Everything has been reset.')});
 }
@@ -2629,8 +2640,10 @@ case 'cnew':drawer(false);collCropAbort();collId=Date.now();collDraft=null;collP
   case 'cro':collRo=!collRo;render();break;
   case 'cedit':if(curColl()){collCropAbort();collDraft=null;collPendingId=null;document.getElementById('modal').innerHTML=collEditHTML(curColl())}break;
   case 'csave':{var ct=document.getElementById('cedt').value.trim(),cn=document.getElementById('cedn').value.trim();if(!ct){alert('Give it a title.');break}if(collCropOn&&CR&&cropV()){collCropNow()}var cc=curColl();var oldCov=cc?cc.cover:null;var newCov=(collDraft&&collDraft.cover)||oldCov;if(!cc){cc={id:collId,title:'',note:'',pieceIds:[]};colls.push(cc)}cc.title=ct;cc.note=cn;cc.cover=newCov||null;if(oldCov&&(!newCov||oldCov.id!==newCov.id))collPruneImg(oldCov.id);if(collPendingId)collPruneImg(collPendingId);collDraft=null;collPendingId=null;saveColls();saveGallery();document.getElementById('modal').innerHTML='';render();break}
-  case 'cdelete':if(curColl())document.getElementById('modal').innerHTML=collConfirmHTML();break;
-  case 'cdeleteyes':if(curColl()){var cdel=curColl();colls=colls.filter(function(x){return x.id!==collId});collId=null;if(cdel.cover)collPruneImg(cdel.cover.id);saveColls();saveGallery();document.getElementById('modal').innerHTML='';render()}break;
+  case 'cdelete':if(curColl())askConfirm('Delete collection?','This removes the collection and its cover photo. Its pieces stay in your collection. It cannot be undone.','Delete',collDelete);break;
+  case 'confirmyes':{var cf=CONFIRM_FN;CONFIRM_FN=null;document.getElementById('modal').innerHTML='';if(cf)cf();break}
+  case 'eraseyes':{var ev=((document.getElementById('eraseIn')||{}).value||'').trim();if(ev!=='DELETE'){var ei=document.getElementById('eraseIn');if(ei){ei.focus();ei.style.borderColor='#a4262c'}break}document.getElementById('modal').innerHTML='';deleteAll();break}
+  case 'cdeleteyes':collDelete();break;
   case 'cpicker':if(curColl()){drawer(false);collPickSel=[];document.getElementById('modal').innerHTML=collPickerHTML(curColl())}break;
   case 'cptoggle':{var tid=Number(d.id),tk=collPickSel.indexOf(tid);if(tk>-1)collPickSel.splice(tk,1);else collPickSel.push(tid);var sq=document.querySelector('#modal input[type=search]');collPickRender(sq?sq.value:'');break}
   case 'cpsave':{var cp=curColl();if(!cp)break;var added=collPickSel.filter(function(id){return cp.pieceIds.indexOf(id)<0});cp.pieceIds=cp.pieceIds.concat(added);saveColls();document.getElementById('modal').innerHTML='';render();break}
@@ -2657,7 +2670,7 @@ case 'frm':frameStyle=d.v;document.documentElement.dataset.frame=frameStyle;kset
   case 'kwforgot':M.innerHTML='<div class="modal kwm" data-a="backdrop"><div class="kwbox"><h3>Delete keyword and settings?</h3><p class="meta">This clears the keyword and the price threshold. Your pieces are not deleted, and nothing will be hidden anymore.</p><div class="bar" style="justify-content:center;margin:12px 0 0;flex-wrap:wrap"><button type="button" class="dan" data-a="kwforgotyes">Delete keyword and settings</button><button type="button" data-a="kwforgotno">Cancel</button></div></div></div>';break;
   case 'kwforgotno':M.innerHTML='';break;
   case 'kwforgotyes':secretCfg.hash='';secretCfg.threshold=null;secretCfg.on=false;secretUnlocked=false;saveSecret();M.innerHTML='';render();cue('Keyword and settings deleted. No pieces were deleted.');break;
-  case 'delete':deleteAll();break;
+  case 'delete':eraseOpen();break;
   case 'csvup':document.getElementById('fcsv').click();break;
   case 'renumPreview':renumS.a=document.getElementById('renumA').value;renumS.b=document.getElementById('renumB').value;renumS.msg='';renumS.prev=renumPlan(renumS.a,renumS.b);renderMain();break;
   case 'renumApply':{var rpa=document.getElementById('renumA').value,rpb=document.getElementById('renumB').value,rpP=renumPlan(rpa,rpb);renumS.a=rpa;renumS.b=rpb;renumS.prev=rpP;renumS.msg='';if(rpP.err){renderMain();break}var rpok=document.getElementById('renumOK');if(!rpok||!rpok.checked){renumS.msg='Tick the backup box before applying.';renderMain();break}renumApply(rpP);break}
@@ -2684,8 +2697,8 @@ case 'frm':frameStyle=d.v;document.documentElement.dataset.frame=frameStyle;kset
   case 'gtog':galSel[d.kind][d.id]=!galSel[d.kind][d.id];renderMain();break;
   case 'gall':gal[d.kind].forEach(function(id){galSel[d.kind][id]=true});renderMain();break;
   case 'gnone':galSel[d.kind]={};renderMain();break;
-  case 'gdel':if(confirm('Delete this image from the gallery?'))galRemove(d.kind,[d.id]);break;
-  case 'gdelsel':var gids=Object.keys(galSel[d.kind]).filter(function(k){return galSel[d.kind][k]});if(gids.length&&confirm('Delete '+gids.length+' selected image(s) from the gallery?'))galRemove(d.kind,gids);break;
+  case 'gdel':askConfirm('Delete image?','This removes the image from the gallery.','Delete',function(){galRemove(d.kind,[d.id])});break;
+  case 'gdelsel':{var gids=Object.keys(galSel[d.kind]).filter(function(k){return galSel[d.kind][k]});if(gids.length)askConfirm('Delete images?','Delete '+gids.length+' selected image(s) from the gallery?','Delete',function(){galRemove(d.kind,gids)});break}
   case 'previewc':M.innerHTML=previewHTML(gal.imgs[d.id]);break;
   case 'compadd':document.getElementById('compfile').click();break;
   case 'galcomp':galPick={};M.innerHTML=galPickHTML('galaddcomp');fillThumbs();break;
@@ -2706,7 +2719,7 @@ case 'frm':frameStyle=d.v;document.documentElement.dataset.frame=frameStyle;kset
   case 'wclear':wishType=[];render();break;
   case 'wcols':wishCols=Number(d.v);renderMain();break;
   case 'wopen':var wo=wish.filter(function(x){return x.id===d.id})[0];if(wo){var wa=document.createElement('a');wa.href=wo.link;wa.target='_blank';wa.rel='noopener';document.body.appendChild(wa);wa.click();wa.remove()}break;
-  case 'wdel':if(!confirm('Remove this from coveted?'))break;var wd=wish.filter(function(x){return x.id===d.id})[0];wish=wish.filter(function(x){return x.id!==d.id});if(wd&&!isUsed(wd.img)){gal.refs=gal.refs.filter(function(x){return x!==wd.img});gal.covers=gal.covers.filter(function(x){return x!==wd.img});delete gal.imgs[wd.img]}saveWish();saveGallery();renderMain();break;
+  case 'wdel':askConfirm('Remove from coveted?','This removes the piece from Coveted Pieces.','Remove',function(){var wd=wish.filter(function(x){return x.id===d.id})[0];wish=wish.filter(function(x){return x.id!==d.id});if(wd&&!isUsed(wd.img)){gal.refs=gal.refs.filter(function(x){return x!==wd.img});gal.covers=gal.covers.filter(function(x){return x!==wd.img});delete gal.imgs[wd.img]}saveWish();saveGallery();renderMain()});break;
   case 'covadd':document.getElementById('cvfile').click();break;
   case 'refadd':document.getElementById('reffile').click();break;
   case 'listmodal':e.preventDefault();syncForm();var pr2=editing.shipEstimate!=null&&editing.shipEstimate!==''?editing.shipEstimate:shipDefault(editing.cost);var ph=ORDER_PRICE.map(function(k){return fieldHTML(k,k==='shipEstimate'?pr2:editing[k])}).join('').replace(/<(input|select|textarea) /g,'<$1 form="form" ');M.innerHTML='<div class="modal" data-a="backdrop"><div id="lhPrice" style="max-width:520px;width:94vw;max-height:88vh;overflow:auto"><h3 style="margin:0 0 8px">Listing Helper</h3>'+listingBlock(editing)+'<div class="f">'+ph+'</div>'+'<div class="bar" style="justify-content:center;margin:12px 0 0"><button data-a="x">Close</button></div></div></div>';break;
@@ -3017,7 +3030,7 @@ function confettiBurst(){
  })();
 }
 /* ---------- update banner with What's new CTA (no popup) ---------- */
-var WHATS_NEW='Secret Compartment: Set up keyword popup has a simpler title and no intro text or placeholder. Keyword fields are left aligned.\nMy Jewelry Box: The keyhole sits centred vertically and is a little bigger.\nJewelry of the Day: Cards show the rating full width, with the times worn count (for example 2x) and last worn age as pills on the photo. Adorn icons are bigger.\nDesign page: Plus buttons on Box, Collections and Coveted use the secondary style. Ruby velvet is now #3d0d26 and #1a0412, and colour swatches sit in one row of eight. Keyhole and back icons are added, and the icon order is tidied.\nThemes: New Timeless theme, listed first. Parchment and ivory with walnut accents. Light mode has an ivory-beige velvet box, and dark mode has a deep brown velvet box.\nCoveted Pieces: The panel behind the grid follows the theme. Velvet is solid Accent 2 with a Line edge, and Asanoha is theme Velvet with the theme pattern lines.';
+var WHATS_NEW='Appearance: New Timeless theme, an ivory-beige satin box with a fine linen weave. It sits first in the Appearance list and works in light and dark.\nCoveted: The panel background uses the theme colours, velvet or Asanoha. A quote strip sits above the panel once quotes are added.\nJewelry of the Day: Rating hearts are smaller and centred under each card. Leave it to fate, Start anew and Adorn have more space above them.\nDelete: Collection delete works. Gallery image delete, Coveted Remove and Erase all data use the in-app confirm. Erase needs DELETE typed.\nWares Dashboard: Pieces by Era, Pieces by Stone and Pieces by Country of Origin no longer show a Not recorded slice. The count sits in the description under each title. The country pie uses theme colours.';
 function updateBannerCheck(){
  var seen=null;try{seen=localStorage.getItem('ntts_seen_ver')}catch(e){}
  try{localStorage.setItem('ntts_seen_ver',APP_VERSION)}catch(e){}
