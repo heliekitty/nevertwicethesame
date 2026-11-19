@@ -250,7 +250,9 @@ main>h2:first-child{margin-bottom:14px}
 .modal.kwm .kwbox h3{margin:0 0 6px;text-align:center}
 .modal.kwm .kwbox input{width:100%;box-sizing:border-box;text-align:center}
 .modal.kwm .kwbox .meta{text-align:center}
-.modal.kwm .kwx{position:absolute;top:6px;right:6px;width:32px;height:32px;min-height:0;border:0;background:none;padding:0;font-size:22px;line-height:1;color:var(--muted,#8a7d6e);cursor:pointer}
+.modal.kwm .kwbox h3{padding:0 22px}
+.modal.kwm .kwx svg{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);margin:0}
+.modal.kwm .kwx{position:absolute;top:8px;right:8px;width:40px;height:40px;min-width:0;min-height:0;padding:0;border:0;border-radius:50%;background:rgba(0,0,0,.6);color:#fff;z-index:2;cursor:pointer;display:flex;align-items:center;justify-content:center}
 .modal.kwm .kwopen{color:var(--gold);border-color:var(--gold);width:40px;height:40px;min-width:0;min-height:0;padding:0;border-radius:50%;display:inline-flex;align-items:center;justify-content:center}
 .modal.kwm .kwopen svg{vertical-align:-5px}
 .savest{display:none;width:20px;height:20px;align-items:center;justify-content:center;flex:none;color:var(--mute)}
@@ -341,7 +343,7 @@ header button[data-a="drawer"]{display:flex;align-items:center;justify-content:c
 <script>
 document.getElementById('app').innerHTML='<div style="position:fixed;inset:0;z-index:50;background:var(--bg);display:flex;align-items:center;justify-content:center">'+mothLoaderHTML()+'</div>';
 var K='ntts_items_v2',OK='ntts_order_v1',PER=25,MAX_UPLOAD=300*1024;
-var APP_VERSION='2.20',APP_DATE='2026-11-18 · 1:20 PM ET',UPDATE_URL='';
+var APP_VERSION='2.21',APP_DATE='2026-11-18 · 7:58 PM ET',UPDATE_URL='';
 var EMOJI={ring:'💍',earrings:'✨',necklace:'📿',bracelet:'⭕',watch:'⌚',other:'💎'};
 var ICONS={coll:"<rect x='3' y='4' width='18' height='16' rx='2'/><path d='M3 10h18M8 14h8'/>",gem:"<path d='M7 4h10l4 5-9 11L3 9z'/><path d='M3 9h18M9 4l-1.5 5L12 20l4.5-11L15 4'/>",pkg:"<path d='M3 7.5L12 3l9 4.5v9L12 21l-9-4.5z'/><path d='M3 7.5l9 4.5 9-4.5M12 12v9'/>",hand:"<path d='M5 11V7a1.5 1.5 0 0 1 3 0v4M8 11V5a1.5 1.5 0 0 1 3 0v6M11 11V6a1.5 1.5 0 0 1 3 0v6M14 11V8a1.5 1.5 0 0 1 3 0v7c0 3-2 5-5 5h-1c-2 0-3-1-4-3l-2-4'/>",x:"<path d='M6 6l12 12M18 6L6 18'/>",ring:"<circle cx='12' cy='14' r='6'/><path d='M9.5 8 12 4l2.5 4'/><path d='M12 9.5l1.5 2.5-1.5 2.5-1.5-2.5z'/>",earrings:"<path d='M7 3v3'/><path d='M7 6c-1.6 0-2.5 1.3-2.5 3S6 14 7 17c1-3 2.5-5 2.5-8C9.5 7.3 8.6 6 7 6z'/><path d='M17 3v3'/><path d='M17 6c-1.6 0-2.5 1.3-2.5 3S16 14 17 17c1-3 2.5-5 2.5-8C19.5 7.3 18.6 6 17 6z'/>",necklace:"<path d='M4 5c2 7 14 7 16 0'/><path d='M12 12.5V15'/><circle cx='12' cy='17' r='2.2'/>",bracelet:"<ellipse cx='12' cy='12' rx='8' ry='5.5'/><ellipse cx='12' cy='12' rx='5.5' ry='3'/>",watch:"<circle cx='12' cy='13' r='5.5'/><path d='M9 7.5 10 3h4l1 4.5M9 18.5 10 23h4l1-4.5'/><path d='M12 10.5V13l1.8 1.2'/>",heart:"<path d='M12 20s-7-4.4-7-9.5A4 4 0 0 1 12 8a4 4 0 0 1 7 2.5C19 15.6 12 20 12 20z'/>",wrench:"<path d='M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-.5-.5-2.5z'/>",key:"<g transform='rotate(-45 12.5 12)'><circle cx='8' cy='12' r='4'/><path d='M12 12h9M18 12v3M21 12v2.5'/></g>",curio:"<rect x='4' y='3' width='16' height='18' rx='1'/><path d='M3 3h18M3 21h18'/><path d='M12 3v18'/><path d='M4 11h16'/><path d='M10.5 7v1.5M13.5 7v1.5M10.5 15v1.5M13.5 15v1.5'/>",clock:"<circle cx='12' cy='12' r='9'/><path d='M12 7v5l3 2'/>",pencil:"<path d='M4 20h4L19 9l-4-4L4 16z'/><path d='M13.5 6.5l4 4'/>",lock:"<rect x='5' y='11' width='14' height='10' rx='2'/><path d='M8 11V7a4 4 0 0 1 8 0v4'/>",unlock:"<rect x='3.95' y='11' width='11.1' height='10' rx='2'/><path d='M12.8 11V6.3A3.3 3.3 0 0 1 19.4 6.3V9.5'/>",bag:"<path d='M5 8h14l-1 12H6z'/><path d='M9 8V6a3 3 0 0 1 6 0v2'/>",plus:"<path d='M12 5v14M5 12h14'/>",x:"<path d='M6 6l12 12M18 6L6 18'/>",spark:"<path d='M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z'/>",gallery:"<rect x='3' y='4' width='18' height='16' rx='2'/><circle cx='9' cy='10' r='2'/><path d='M21 16l-5-5-8 9'/>"};
 var ORN='<svg width="72" height="10" viewBox="0 0 72 10" fill="none" stroke="#a8864f" stroke-width="1.2"><path d="M0 5h28M44 5h28"/><path d="M36 1l4 4-4 4-4-4z"/></svg>';
@@ -1219,8 +1221,8 @@ function renderBox(){
  var waitS=waitL.slice(0,lim),mainS=mainL.slice(0,Math.max(0,lim-waitS.length));
  var waitGrid=waitS.length?'<div class="grid" style="grid-template-columns:repeat('+cols+',1fr)">'+waitS.map(thumb).join('')+'</div>'+(mainS.length?'<hr style="border:0;height:1px;background:var(--gold);opacity:.6;margin:16px 0">':''):'';
  var more=(!ro&&list.length>boxLim)?'<div id="boxSent" style="height:1px"></div>':'';
- return '<div class="box'+(bgStyle==='pattern'?' pat':'')+'">'+keyholeHTML()+waitGrid+'<div class="grid'+(ro?' ro':'')+'" style="grid-template-columns:repeat('+cols+',1fr)">'+mainS.map(thumb).join('')+'</div></div>'+more
-  +(list.length?'':'<p class="meta">No pieces match.</p>')+countLine(list.length);
+ return '<div class="box'+(bgStyle==='pattern'?' pat':'')+'">'+keyholeHTML()+waitGrid+(list.length?'':'<p class="meta" style="margin:0;padding:28px 16px;text-align:center">No pieces match.</p>')+'<div class="grid'+(ro?' ro':'')+'" style="grid-template-columns:repeat('+cols+',1fr)">'+mainS.map(thumb).join('')+'</div></div>'+more
+  +countLine(list.length);
 }
 function valOf(v){return v==null?'':Array.isArray(v)?v.join(', '):String(v)}
 var WIDE_KEYS=['title','seller','link','notes','description','condition'];
@@ -1473,7 +1475,9 @@ function updateSummary(){
  if(!editing)return;
  var tb=document.getElementById('sumtb'),f=document.getElementById('form');if(!tb||!f)return;
  var td1='<td style="color:var(--mute);width:42%;padding:6px 8px;border-bottom:1px solid var(--line)">',td2='<td style="padding:6px 8px;border-bottom:1px solid var(--line)">';
- var rows=FORM_ORDER.filter(function(k){return SUM_SKIP.indexOf(k)<0}).map(function(k){
+ var SUM_ORDER=PIECE_ID.concat(PIECE_ORIGIN,PIECE_MAKE,PIECE_COND,ORDER_PURCH,ORDER_SOLD,['whereabouts','status'],ORDER_STATS);
+ var SUM_KEYS=SUM_ORDER.concat(FORM_ORDER.filter(function(k){return SUM_ORDER.indexOf(k)<0}));
+ var rows=SUM_KEYS.filter(function(k){return SUM_SKIP.indexOf(k)<0}).map(function(k){
    var s=FS[k],v='';
    if(s[1]==='calc'){var el=document.getElementById(s[2]);v=el?el.textContent:''}
    else if(k==='colorMain'){v=Array.from(f.querySelectorAll('[name="colorMain"]:checked')).map(function(x){return x.value}).join(', ')}else if(k==='metal'){var md=f.querySelector('.mdd');try{v=JSON.parse(md.dataset.sel||'[]').map(metalLabel).join(', ')}catch(err){}}else{var el2=f.querySelector('[name="'+k+'"]');if(el2){if(el2.type==='checkbox')v=el2.checked?'Yes':'No';else if(el2.tagName==='SELECT')v=el2.options[el2.selectedIndex]?el2.options[el2.selectedIndex].text:'';else v=el2.value}}
@@ -1959,8 +1963,8 @@ function setCollBlock(i){
  var tray=setTrays().filter(function(t){return t.some(function(x){return String(x.id)===String(i.id)})})[0];
  var cs=colls.filter(function(c){return (c.pieceIds||[]).some(function(x){return String(x)===String(i.id)})}).map(function(c){return esc(c.title||'Untitled collection')});
  var h='';
- if(tray&&tray.length)h+='<h4 class="sub" style="margin:18px 0 6px;text-align:left">Set</h4><div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px">'+tray.map(function(x){return thumb(x)}).join('')+'</div>';
  if(cs.length)h+='<h4 class="sub" style="margin:18px 0 6px;text-align:left">Collections</h4><p style="margin:0;text-align:left">'+cs.join(', ')+'</p>';
+ if(tray&&tray.length)h+='<h4 class="sub" style="margin:18px 0 6px;text-align:left">Set</h4><div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px">'+tray.map(function(x){return thumb(x)}).join('')+'</div>';
  return h;
 }
 function renderPiece(){
@@ -1973,7 +1977,7 @@ function pieceBodyHTML(i){
  var notes=[['Provenance',i.provenance],['Condition',i.condition]].filter(function(n){return n[1]&&String(n[1]).trim()});
  var ALL=TC.Transaction.concat(TC.Stats);
  var STATS_ROWS=[['Whereabouts',function(x){return esc(x.whereabouts||'—')}]].concat(rowsBy(ALL,['Status','Last Worn','Times Worn','Rating','Photoshoot?']));
- var PIECE_ROWS=rowsBy(TC.Piece,['Motifs','Era/Movement','Year','Country of Origin','Maker','Hallmarks','Measurements','Weight (g)','Purity','Ring Size','Metals','Stones','Stone weight (ct)','Cut','Color','Notes']);
+ var PIECE_ROWS=rowsBy(TC.Piece,['Motifs','Color','Era/Movement','Year','Country of Origin','Maker','Hallmarks','Metals','Purity','Weight (g)','Stones','Stone weight (ct)','Cut','Measurements','Ring Size','Notes']);
  var di=PIECE_ROWS.map(function(r){return r[0]}).indexOf('Era/Movement');PIECE_ROWS.splice(di+1,0,['Decade',function(x){return esc(x.decade==null||x.decade===''?'—':x.decade)}]);
  var ACQ_ROWS=rowsBy(ALL,['Seller','Purchase Platform','Date Acquired','Cost','Shipping (acquired)','Tariffs','Repairs','Total Cost','Tracking link','Expected delivery']);
  var SALE_ROWS=rowsBy(ALL,['Selling Platform','Date Listed','Listing Link','Date Sold','Turnover','Platform Fee','Shipping (sold)','Final Payout','Net Profit']);
@@ -1988,20 +1992,24 @@ function pieceBodyHTML(i){
   +'<h2 class="ttl" style="margin:12px 0 4px">'+esc(title(i))+'</h2>'
   +'<p class="cat">'+esc([i.category,i.period].filter(Boolean).join(' · '))+'</p>'
   +'<div class="rule"></div>'
-  +pieceSpecs('Stats',STATS_ROWS,i,[])
-  +setCollBlock(i)
-  +refBlock
   +pieceSpecs('Piece',PIECE_ROWS,i,[])
   +cond
   +pieceSpecs('Acquisition',ACQ_ROWS,i,[])
   +prov
   +pieceSpecs('Sale',SALE_ROWS,i,[])
+  +pieceSpecs('Stats',STATS_ROWS,i,[])
+  +setCollBlock(i)
+  +refBlock
   +'</div>';
 }
 
 
 /* ---------- secret compartment ---------- */
 function saveSecret(){return track(kset('secret',secretCfg))}
+var thrT=null,thrFT=null,thrFlash=false;
+function thrCommit(){var el=document.querySelector('input[name=threshold]');if(!el)return;var tv=num(parseMoney(el.value));var nt=tv==null?null:Math.round(tv);if(nt===secretCfg.threshold&&secretCfg.on===(nt!=null))return;var foc=document.activeElement===el;secretCfg.threshold=nt;secretCfg.on=nt!=null;saveSecret();thrFlash=true;render();if(foc){var n=document.querySelector('input[name=threshold]');if(n){n.focus();var l=n.value.length;try{n.setSelectionRange(l,l)}catch(e){}}}clearTimeout(thrFT);thrFT=setTimeout(function(){thrFlash=false;var x=document.getElementById('thrSaved');if(x)x.style.opacity='0'},1500)}
+document.addEventListener('input',function(e){if(e.target&&e.target.name==='threshold'){clearTimeout(thrT);thrT=setTimeout(thrCommit,1000)}});
+document.addEventListener('focusout',function(e){if(e.target&&e.target.name==='threshold'){clearTimeout(thrT);thrCommit()}},true);
 function hashKW(kw){
  var s='ntts-salt-v1|'+String(kw).trim().toLowerCase();
  if(window.crypto&&crypto.subtle){return crypto.subtle.digest('SHA-256',new TextEncoder().encode(s)).then(function(buf){return Array.prototype.map.call(new Uint8Array(buf),function(b){return ('0'+b.toString(16)).slice(-2)}).join('')})}
@@ -2013,11 +2021,18 @@ function curtainOff(){var c=document.getElementById('curtain');if(!c)return;c.cl
 function curtainDrop(){var c=document.getElementById('curtain');if(c&&c.parentNode)c.parentNode.removeChild(c)}
 function secretReveal(){document.getElementById('modal').innerHTML='';render();curtainOff()}
 function secretAbort(){curtainDrop();if(view==='secret'&&!secretUnlocked)show('box')}
-function showKwChange(){document.getElementById('modal').innerHTML='<div class="modal kwm" data-a="backdrop"><div class="kwbox"><button type="button" class="kwx" data-a="x" aria-label="Close">×</button><h3>Change keyword</h3><form id="kwchangeform" autocomplete="off"><input type="password" name="current" autocomplete="off" placeholder="current keyword" style="margin-bottom:8px"><input type="password" name="next" autocomplete="off" placeholder="new keyword"><div class="bar" style="justify-content:center;margin:12px 0 0"><button type="submit" class="pri">Save</button></div></form></div></div>'}
-function handleKwChange(form){var cur=form.querySelector('input[name=current]').value,nxt=form.querySelector('input[name=next]').value.trim();if(!nxt){alert('Enter a new keyword');return}hashKW(cur).then(function(h){if(h!==secretCfg.hash){alert('Incorrect keyword');return}return hashKW(nxt).then(function(nh){secretCfg.hash=nh;saveSecret();document.getElementById('modal').innerHTML='';render();cue('Keyword changed.')})})}
+function showKwChange(){document.getElementById('modal').innerHTML='<div class="modal kwm" data-a="backdrop"><div class="kwbox" style="width:min(340px,90vw)"><button type="button" class="kwx" data-a="x" aria-label="Close">'+KWX_ICON+'</button><h3>Change keyword</h3><form id="kwchangeform" autocomplete="off">'+pwField('current','off','current keyword',1)+pwField('next','off','new keyword')+KWERR_P+'</form><div class="bar" style="justify-content:space-between;margin:12px 0 0"><button type="submit" form="kwchangeform" class="pri">Save</button><button type="button" class="dan" data-a="kwforgot">Delete</button></div></div></div>'}
+var EYE_ICON='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-7.5 11-7.5S23 12 23 12s-4 7.5-11 7.5S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg>';
+var EYE_OFF_ICON='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 19.5C5 19.5 1 12 1 12a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4.5c7 0 11 7.5 11 7.5a18.5 18.5 0 0 1-2.16 3.19"/><path d="M14.12 14.12a3 3 0 1 1-4.24-4.24"/><path d="M1 1l22 22"/></svg>';
+function pwField(name,ac,ph,mb){return '<span style="position:relative;display:block'+(mb?';margin-bottom:8px':'')+'"><input type="password" name="'+name+'" autocomplete="'+ac+'" placeholder="'+ph+'" maxlength="40" style="padding-right:46px"><button type="button" data-a="peek" aria-label="Show keyword" aria-pressed="false" style="position:absolute;right:6px;top:50%;transform:translateY(-50%);width:34px;height:34px;min-width:0;min-height:0;padding:0;border-radius:50%;display:flex;align-items:center;justify-content:center;background:transparent;border:0;color:var(--mute)">'+EYE_ICON+'</button></span>'}
+function kwErr(form,msg,inp){var box=form.querySelector('.kwerr');if(!box)return;box.textContent=msg;if(inp){inp.value='';inp.focus();var clr=function(){box.textContent='';inp.removeEventListener('input',clr)};inp.addEventListener('input',clr)}}
+var KWX_ICON='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true" style="display:block"><path d="M6 6l12 12M18 6L6 18"/></svg>';
+var KWERR_P='<p class="kwerr" role="alert" style="min-height:20px;margin:8px 0 0;text-align:center;font-size:14px;line-height:20px;color:#a4262c"></p>';
+function handleKwChange(form){var cur=form.querySelector('input[name=current]').value,nxt=form.querySelector('input[name=next]').value.trim();if(!nxt){kwErr(form,'Enter a new keyword.',form.querySelector('input[name=next]'));return}hashKW(cur).then(function(h){if(h!==secretCfg.hash){kwErr(form,'Current keyword is not right.',form.querySelector('input[name=current]'));return}return hashKW(nxt).then(function(nh){secretCfg.hash=nh;saveSecret();document.getElementById('modal').innerHTML='';render();cue('Keyword changed.')})})}
 var KEY_SVG='<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="6" r="4"/><path d="M12 10v12M12 17h4M12 21h3"/></svg>';
 function keyTurn(btn){
  if(!btn||btn.dataset.busy)return;
+ if(secretUnlocked){secretGate();return}
  btn.dataset.busy='1';btn.classList.add('busy');
  var k=document.createElement('span');k.className='keyturn';k.setAttribute('aria-hidden','true');k.innerHTML=KEY_SVG;
  btn.appendChild(k);
@@ -2029,18 +2044,18 @@ function secretGate(){
  show('secret');curtainOn();
  var user='<input type="text" name="username" autocomplete="username" value="Never Twice the Same" style="position:absolute;left:-9999px" tabindex="-1" aria-hidden="true">';
  if(!secretCfg.hash){
-   M.innerHTML='<div class="modal kwm" data-a="backdrop"><div class="kwbox"><button type="button" class="kwx" data-a="x" aria-label="Close">×</button><h3>Set a Keyword</h3><p class="meta">Choose a keyword to open the Secret Compartment. There is no reset, so remember it.</p><form id="kwform" data-mode="set" autocomplete="on">'+user+'<input type="password" name="keyword" autocomplete="new-password" placeholder="Set a keyword"><div class="bar" style="justify-content:center;margin:12px 0 0"><button type="submit" class="pri">Save</button></div></form></div></div>';
+   M.innerHTML='<div class="modal kwm" data-a="backdrop"><div class="kwbox" style="width:min(340px,90vw)"><button type="button" class="kwx" data-a="x" aria-label="Close">'+KWX_ICON+'</button><h3>Set a Keyword</h3><p class="meta">Choose a keyword to open the Secret Compartment. There is no reset, so remember it.</p><form id="kwform" data-mode="set" autocomplete="on">'+user+''+pwField('keyword','new-password','Set a keyword')+KWERR_P+'<div class="bar" style="justify-content:center;margin:12px 0 0"><button type="submit" class="pri">Save</button></div></form></div></div>';
  }else{
-   M.innerHTML='<div class="modal kwm" data-a="backdrop"><div class="kwbox"><button type="button" class="kwx" data-a="x" aria-label="Close">×</button><h3>Secret Compartment</h3><form id="kwform" data-mode="unlock" autocomplete="on">'+user+'<input type="password" name="keyword" autocomplete="current-password" placeholder="unlock"><div class="bar" style="justify-content:center;margin:12px 0 0"><button type="submit" class="pri kwopen" aria-label="Open"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g transform="rotate(-45 12.5 12)"><circle cx="8" cy="12" r="4"/><path d="M12 12h9M18 12v3M21 12v2.5"/></g></svg></button></div></form></div></div>';
+   M.innerHTML='<div class="modal kwm" data-a="backdrop"><div class="kwbox" style="width:min(340px,90vw)"><button type="button" class="kwx" data-a="x" aria-label="Close">'+KWX_ICON+'</button><h3>Secret Compartment</h3><form id="kwform" data-mode="unlock" autocomplete="on">'+user+''+pwField('keyword','current-password','')+KWERR_P+'<div class="bar" style="justify-content:center;margin:12px 0 0"><button type="submit" class="pri kwopen" aria-label="Open"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g transform="rotate(-45 12.5 12)"><circle cx="8" cy="12" r="4"/><path d="M12 12h9M18 12v3M21 12v2.5"/></g></svg></button></div></form></div></div>';
  }
 }
 function handleKeywordForm(form){
  var pw=form.querySelector('input[name=keyword]').value;
  var M=document.getElementById('modal');
  if(form.dataset.mode==='unlock'){
-   hashKW(pw).then(function(h){if(h===secretCfg.hash){saveSecret();secretUnlocked=true;secretReveal()}else alert('Incorrect keyword')});
+   hashKW(pw).then(function(h){if(h===secretCfg.hash){saveSecret();secretUnlocked=true;secretReveal()}else kwErr(form,'Incorrect keyword.',form.querySelector('input[name=keyword]'))});
  }else{
-   if(!pw.trim()){alert('Enter a keyword.');return}
+   if(!pw.trim()){kwErr(form,'Enter a keyword.',form.querySelector('input[name=keyword]'));return}
    hashKW(pw).then(function(h){secretCfg.hash=h;secretUnlocked=true;saveSecret();secretReveal()});
  }
 }
@@ -2218,12 +2233,11 @@ function renderSecret(){
  var status=!on?'No threshold set. Nothing is hidden.'
   :!hidden.length?'No pieces are above '+esc(thr)+'. Nothing is hidden.'
   :hidden.length+' piece'+(hidden.length===1?' above ':'s above ')+esc(thr)+(hidden.length===1?' is':' are')+' hidden while the compartment is locked.';
- return '<div style="display:flex;align-items:center;justify-content:space-between;gap:12px"><h2 style="margin:0">Secret Compartment</h2><button type="button" data-a="slock" class="pri" aria-label="Lock secret compartment" title="Lock" style="width:40px;height:40px;min-width:0;min-height:0;padding:0;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none">'+ico('lock',18)+'</button></div>'
+ return '<div style="display:flex;align-items:center;justify-content:space-between;gap:12px"><h2 style="margin:0">Secret Compartment</h2>'+'<button type="button" data-a="slock" class="pri" aria-label="Lock secret compartment" title="Lock" style="width:40px;height:40px;min-width:0;min-height:0;padding:0;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none">'+ico('lock',18)+'</button></div>'
   +'<form id="secretform" autocomplete="on"><input type="text" name="username" autocomplete="username" value="Never Twice the Same" style="position:absolute;left:-9999px" tabindex="-1" aria-hidden="true">'
-  +(secretCfg.hash?'<p class="meta" style="margin:14px 0 12px">Keyword is set. <button type="button" class="link" data-a="kwchange" style="font-size:inherit;margin:0">Change keyword</button></p>':'')
-  +'<div style="display:flex;align-items:flex-end;gap:10px;margin:0 0 12px"><div style="flex:1;min-width:0"><label><span class="sechdr">Hide pieces above</span><span style="position:relative;display:block"><input type="text" inputmode="decimal" name="threshold" data-a="sthr" data-money="1" value="'+esc(secretCfg.threshold==null?'':fmtWhole(secretCfg.threshold))+'" placeholder="$0" style="padding-right:38px"><button type="button" data-a="sclear" aria-label="Clear threshold" style="position:absolute;right:6px;top:50%;transform:translateY(-50%);width:26px;height:26px;min-width:0;min-height:0;padding:0;border-radius:50%;display:flex;align-items:center;justify-content:center;line-height:1;font-size:12px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></span></label></label></div><button type="button" class="pri" data-a="sthrset" style="flex:none">Save</button></div>'
-  +'<p class="meta" style="margin:0 0 12px">'+status+'</p>'
-  +'<div class="grid" style="grid-template-columns:repeat('+cols+',1fr)">'+hidden.map(function(i){return '<div>'+thumb(i)+'<div class="meta">'+esc(title(i))+' · '+money(num(i.cost))+'</div></div>'}).join('')+'</div>'
+  +'<div style="display:flex;align-items:flex-end;gap:18px;margin:0 0 12px"><div style="flex:1;min-width:0">'+'<div style="display:flex;align-items:baseline;gap:10px;margin:0 0 6px;white-space:nowrap"><span class="sechdr" style="margin:0">Hide pieces above</span>'+(secretCfg.hash?'<button type="button" class="link" data-a="kwchange" style="font-size:13px;line-height:1;margin:0;padding:0">change keyword</button>':'')+'<span id="thrSaved" aria-live="polite" style="margin-left:auto;font-size:12px;line-height:1;color:var(--mute);transition:opacity .3s;opacity:'+(thrFlash?1:0)+'">Saved</span></div>'+'<span style="position:relative;display:block"><input type="text" inputmode="decimal" name="threshold" aria-label="Hide pieces above" data-a="sthr" data-money="1" value="'+esc(secretCfg.threshold==null?'':fmtWhole(secretCfg.threshold))+'" placeholder="enter amount" style="padding-right:38px">'+(secretCfg.threshold==null?'':'<button type="button" data-a="sclear" aria-label="Clear threshold" style="position:absolute;right:6px;top:50%;transform:translateY(-50%);width:26px;height:26px;min-width:0;min-height:0;padding:0;border-radius:50%;display:flex;align-items:center;justify-content:center;line-height:1;font-size:12px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>')+'</span></div>'+'<div aria-label="'+hidden.length+' pieces hidden" title="'+hidden.length+' pieces hidden" style="display:flex;flex-direction:column;align-items:center;gap:8px;flex:none;padding-bottom:10px;color:var(--mute);font-size:20px;line-height:1;font-variant-numeric:tabular-nums"><svg width="36" height="20" viewBox="0 0 122.88 66.56" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M0,3.27c0.2-2.04,1.28-2.86,3.36-2.32c2.9,0.71,5.87,0.98,8.91,0.79c7.02-0.44,9.14-3.14,17.05-0.79 C40.2,4.39,50.95,7.59,60.83,9.22C74.79,8.2,84.61,2.25,94.54,0.69c8.65-2.18,14.2,3,25.18,0c2.51-0.21,3.41,0.17,3.1,3.36 c-0.66,12.31-2.38,32.36-12.06,43.11c-7.91,8.78-22.25,8.78-33.7,13.96l-14.67,5.44c-6.72-0.84-13.33-3.32-19.89-6.59 c-8.38-3.24-14.94-4.91-21.05-6.2C2.86,45.53,1.2,20.98,0,3.27L0,3.27z M15.4,14.96c11.08-0.19,30.75,0.11,35.08,13.25 c0.8,2.43,0.8,4.91-0.03,7.55C27.99,37.02,20.87,30.28,15.4,14.96L15.4,14.96z M107.48,18.23c-11.85-4.66-35.98-5.8-39.86,9.98 c-0.61,2.49-1.16,4.91-0.34,7.55C89.2,36.06,99.96,32.88,107.48,18.23L107.48,18.23z"/></svg>'+hidden.length+'</div></div>'
+  
+  +'<div class="box'+(bgStyle==='pattern'?' pat':'')+'" style="overflow:hidden;min-width:0">'+(hidden.length?'':'<p class="meta" style="margin:0;padding:28px 16px;text-align:center">'+status+'</p>')+'<div class="grid" style="grid-template-columns:repeat('+cols+',1fr)">'+hidden.map(function(i){return '<div>'+thumb(i)+'<div class="meta" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;line-height:1.3">'+esc(title(i))+'</div><div class="meta">'+esc(fmtWhole(num(i.cost))||'—')+'</div></div>'}).join('')+'</div></div>'
   +'</form>';
 }
 
@@ -2699,11 +2713,14 @@ case 'frm':frameStyle=d.v;document.documentElement.dataset.frame=frameStyle;kset
   case 'fclr':var fx=b.parentNode.querySelector('input,select,textarea');if(fx){if(fx.tagName==='SELECT'){fx.value=[].some.call(fx.options,function(o){return o.value===''})?'':'0'}else fx.value='';var fsg=b.parentNode.parentNode.querySelector('.sg');if(fsg)fsg.hidden=true}break;
   case 'cancel':var cGo=backTo;backTo='box';show(cGo);break;
   case 'dup':var c=syncForm();['channel','sellPlatform','dateListed','dateSold','feeFinal','shipActual','payout','linkSale','wornLast','trackUrl','deliveryDate'].forEach(function(k){delete c[k]});delete c.wornCount;c.status='Keep';c.whereabouts='In possession';c.id=nextId();c._new=1;c.title=(c.title||'')+(c.title?' (copy)':'');editing=c;renderMain();window.scrollTo(0,0);break;
-  case 'del':if(confirm('Delete this piece?')){items=items.filter(function(i){return i.id!==editing.id});saveItems();show('box')}break;
+  case 'del':M.innerHTML='<div class="modal kwm" data-a="backdrop"><div class="kwbox"><h3>Delete this piece?</h3><p class="meta">This removes the piece from your collection. It cannot be undone.</p><div class="bar" style="justify-content:center;margin:12px 0 0;flex-wrap:wrap"><button type="button" class="dan" data-a="delyes">Delete</button><button type="button" data-a="delno">Cancel</button></div></div></div>';break;
+  case 'delno':M.innerHTML='';break;
+  case 'delyes':M.innerHTML='';items=items.filter(function(i){return String(i.id)!==String(editing.id)});saveItems();show('box');break;
   case 'slogin':hashKW(((document.getElementById('skw')||{}).value)||'').then(function(h){if(h===secretCfg.hash){secretUnlocked=true;secretReveal()}else alert('Incorrect keyword')});break;
   case 'sset':var kwa=document.getElementById('skw').value.trim();if(!kwa){alert('Enter a keyword');break}hashKW(kwa).then(function(h){secretCfg.hash=h;secretUnlocked=true;saveSecret();secretReveal()});break;
   case 'slock':secretUnlocked=false;show('box');break;
   case 'secretkey':keyTurn(b);break;
+  case 'peek':{var pin=b.parentNode.querySelector('input');if(!pin)break;var pShow=pin.type==='password';pin.type=pShow?'text':'password';b.innerHTML=pShow?EYE_OFF_ICON:EYE_ICON;b.setAttribute('aria-pressed',String(pShow));b.setAttribute('aria-label',pShow?'Hide keyword':'Show keyword');break}
   case 'sclear':{secretCfg.threshold=null;secretCfg.on=false;saveSecret();render();break}
   case 'slock':secretUnlocked=false;show('box');break;
   case 'sthrset':{var sf=document.getElementById('secretform');var sv=sf?sf.querySelector('input[name=threshold]').value:'';var tvs=num(parseMoney(sv));secretCfg.threshold=tvs==null?null:Math.round(tvs);secretCfg.on=secretCfg.threshold!=null;saveSecret();render();break}
@@ -2993,7 +3010,7 @@ function confettiBurst(){
  })();
 }
 /* ---------- update banner with What's new CTA (no popup) ---------- */
-var WHATS_NEW='My Jewelry Box: The key is now a keyhole clasp at the top centre of the box. Tap it and the key turns in the lock before the Secret Compartment keyword box opens. The Add Piece plus sits alone on the title row.\nDetails popup: Incoming pieces with a tracking link show a Track button flush left, next to Edit. Sections follow the Edit page order, with tracking under Acquisition.\nMenu filters: Rating filter lists 5 to 1 hearts and Unrated, with counts.\nEdit page: Piece, Provenance, Stats and Images, in that order.\nI/O page: The backup confirmation checkbox sits on one line with its text.';
+var WHATS_NEW='Secret Compartment: Keywords can be up to 40 characters. Eye icon shows or hides the keyword. A wrong keyword shows a message in the popup without moving the buttons. Change keyword has Save and Delete on one row, and Delete clears the keyword and threshold after confirmation.\nSecret page: The threshold clear X only shows when a value is set. Change keyword sits on the Hide pieces above line. The hidden count sits under the mask icon. When nothing is hidden, the status message shows inside the grid.\nMy Jewelry Box: No pieces match. shows inside the grid when filters match nothing.\nEdit page: Delete asks for confirmation inside the app. Summary follows the Edit page order.\nDetails popup: Sections and fields follow the Edit page order. Collections sits above Set.';
 function updateBannerCheck(){
  var seen=null;try{seen=localStorage.getItem('ntts_seen_ver')}catch(e){}
  try{localStorage.setItem('ntts_seen_ver',APP_VERSION)}catch(e){}
