@@ -353,7 +353,7 @@ header button[data-a="drawer"]{display:flex;align-items:center;justify-content:c
 <script>
 document.getElementById('app').innerHTML='<div style="position:fixed;inset:0;z-index:50;background:var(--bg);display:flex;align-items:center;justify-content:center">'+mothLoaderHTML()+'</div>';
 var K='ntts_items_v2',OK='ntts_order_v1',PER=25,MAX_UPLOAD=300*1024;
-var APP_VERSION='2.23.0',APP_DATE='2026-11-20 · 10:37 AM ET',UPDATE_URL='';
+var APP_VERSION='2.23.1',APP_DATE='2026-11-20 · 10:59 AM ET',UPDATE_URL='';
 var EMOJI={ring:'💍',earrings:'✨',necklace:'📿',bracelet:'⭕',watch:'⌚',other:'💎'};
 var ICONS={coll:"<rect x='3' y='4' width='18' height='16' rx='2'/><path d='M3 10h18M8 14h8'/>",gem:"<path d='M7 4h10l4 5-9 11L3 9z'/><path d='M3 9h18M9 4l-1.5 5L12 20l4.5-11L15 4'/>",pkg:"<path d='M3 7.5L12 3l9 4.5v9L12 21l-9-4.5z'/><path d='M3 7.5l9 4.5 9-4.5M12 12v9'/>",hand:"<path d='M5 11V7a1.5 1.5 0 0 1 3 0v4M8 11V5a1.5 1.5 0 0 1 3 0v6M11 11V6a1.5 1.5 0 0 1 3 0v6M14 11V8a1.5 1.5 0 0 1 3 0v7c0 3-2 5-5 5h-1c-2 0-3-1-4-3l-2-4'/>",x:"<path d='M6 6l12 12M18 6L6 18'/>",ring:"<circle cx='12' cy='14' r='6'/><path d='M9.5 8 12 4l2.5 4'/><path d='M12 9.5l1.5 2.5-1.5 2.5-1.5-2.5z'/>",earrings:"<path d='M7 3v3'/><path d='M7 6c-1.6 0-2.5 1.3-2.5 3S6 14 7 17c1-3 2.5-5 2.5-8C9.5 7.3 8.6 6 7 6z'/><path d='M17 3v3'/><path d='M17 6c-1.6 0-2.5 1.3-2.5 3S16 14 17 17c1-3 2.5-5 2.5-8C19.5 7.3 18.6 6 17 6z'/>",necklace:"<path d='M4 5c2 7 14 7 16 0'/><path d='M12 12.5V15'/><circle cx='12' cy='17' r='2.2'/>",bracelet:"<ellipse cx='12' cy='12' rx='8' ry='5.5'/><ellipse cx='12' cy='12' rx='5.5' ry='3'/>",watch:"<circle cx='12' cy='13' r='5.5'/><path d='M9 7.5 10 3h4l1 4.5M9 18.5 10 23h4l1-4.5'/><path d='M12 10.5V13l1.8 1.2'/>",heart:"<path d='M12 20s-7-4.4-7-9.5A4 4 0 0 1 12 8a4 4 0 0 1 7 2.5C19 15.6 12 20 12 20z'/>",wrench:"<path d='M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-.5-.5-2.5z'/>",key:"<g transform='rotate(-45 12.5 12)'><circle cx='8' cy='12' r='4'/><path d='M12 12h9M18 12v3M21 12v2.5'/></g>",curio:"<rect x='4' y='3' width='16' height='18' rx='1'/><path d='M3 3h18M3 21h18'/><path d='M12 3v18'/><path d='M4 11h16'/><path d='M10.5 7v1.5M13.5 7v1.5M10.5 15v1.5M13.5 15v1.5'/>",clock:"<circle cx='12' cy='12' r='9'/><path d='M12 7v5l3 2'/>",pencil:"<path d='M4 20h4L19 9l-4-4L4 16z'/><path d='M13.5 6.5l4 4'/>",lock:"<rect x='5' y='11' width='14' height='10' rx='2'/><path d='M8 11V7a4 4 0 0 1 8 0v4'/>",unlock:"<rect x='3.95' y='11' width='11.1' height='10' rx='2'/><path d='M12.8 11V6.3A3.3 3.3 0 0 1 19.4 6.3V9.5'/>",bag:"<path d='M5 8h14l-1 12H6z'/><path d='M9 8V6a3 3 0 0 1 6 0v2'/>",plus:"<path d='M12 5v14M5 12h14'/>",x:"<path d='M6 6l12 12M18 6L6 18'/>",spark:"<path d='M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z'/>",gallery:"<rect x='3' y='4' width='18' height='16' rx='2'/><circle cx='9' cy='10' r='2'/><path d='M21 16l-5-5-8 9'/>"};
 var ORN='<svg width="72" height="10" viewBox="0 0 72 10" fill="none" stroke="#a8864f" stroke-width="1.2"><path d="M0 5h28M44 5h28"/><path d="M36 1l4 4-4 4-4-4z"/></svg>';
@@ -914,7 +914,6 @@ var FACETS=[
  {k:'where',l:'Whereabouts',cnt:1,v:function(){return WHERE},g:function(i){return [i.whereabouts||'In possession']}},
  {k:'status',l:'Status',cnt:1,v:function(){return STAT},g:function(i){return [i.status]}},
  {k:'category',l:'Type',cnt:1,counted:1,v:function(){return CATS},g:function(i){return [i.category]}},
- {k:'seller',l:'Seller',counted:1,v:function(){return allOf(function(i){return [i.seller]})},g:function(i){return [i.seller]}},
  {k:'period',l:'Period',cnt:1,v:function(){return PERIODS},g:function(i){return [i.period]}},
  {k:'era',l:'Era',counted:1,v:function(){return allOf(function(i){return [i.era||'N/A']})},g:function(i){return [i.era||'N/A']}},
  {k:'style',l:'Style',counted:1,v:function(){return allOf(function(i){return [i.style||'N/A']})},g:function(i){return [i.style||'N/A']}},
@@ -922,7 +921,8 @@ var FACETS=[
  {k:'stone',l:'Stone',counted:1,v:function(){return allOf(function(i){return i.stone})},g:function(i){return i.stone||[]}},
  {k:'colorMain',l:'Color',sw:1,v:function(){return COLOR_ORDER.concat(['No color'])},g:function(i){var c=i.colorMain||[];return c.length?c:['No color']}},
  {k:'finger',l:'Ring Size by Finger',cnt:1,v:function(){return FINGERS},g:function(i){return [finger(i)]}},
- {k:'rating',l:'Rating',cnt:1,v:function(){return ['\u2665\u2665\u2665\u2665\u2665','\u2665\u2665\u2665\u2665','\u2665\u2665\u2665','\u2665\u2665','\u2665','Unrated']},g:function(i){var r=Number(i.rating);return [r>0?stars(Math.min(5,Math.round(r))):'Unrated']}}
+ {k:'rating',l:'Rating',cnt:1,v:function(){return ['\u2665\u2665\u2665\u2665\u2665','\u2665\u2665\u2665\u2665','\u2665\u2665\u2665','\u2665\u2665','\u2665','Unrated']},g:function(i){var r=Number(i.rating);return [r>0?stars(Math.min(5,Math.round(r))):'Unrated']}},
+ {k:'seller',l:'Seller',counted:1,v:function(){return allOf(function(i){return [i.seller]})},g:function(i){return [i.seller]}}
 ];
 function pieceInColl(i){return colls.some(function(c){return (c.pieceIds||[]).indexOf(i.id)>-1})}
 document.addEventListener('scroll',function(e){var t=e.target;if(!t||!t.getAttribute||t.getAttribute('data-fade')!=='1')return;var atTop=t.scrollTop<=4,atEnd=t.scrollTop+t.clientHeight>=t.scrollHeight-4;var top=atTop?'#000 0':'transparent 0,#000 28px',bot=atEnd?'#000 100%':'#000 calc(100% - 28px),transparent 100%';var m='linear-gradient(to bottom,'+top+','+bot+')';t.style.webkitMaskImage=m;t.style.maskImage=m;},true);
@@ -1907,11 +1907,12 @@ function jcolorHTML(){
 var jotdBag={ring1:[],ring2:[],earring:[],necklace:[]};
 function jotdCycle(k,arr){var seen=jotdBag[k];var u=arr.filter(function(i){return seen.indexOf(i.id)<0});if(!u.length){seen.length=0;u=arr}var p=pickJ(u);if(p)seen.push(p.id);return p}
 function weddingIds(){var ids={};colls.forEach(function(c){if(/wedding/i.test(c.title||''))(c.pieceIds||[]).forEach(function(id){ids[id]=1})});return ids}
-function jotdPool(cat){var wed=cat==='Ring'?weddingIds():{};return vis().filter(function(i){return i.category===cat&&i.status==='Keep'&&(i.whereabouts||'In possession')==='In possession'&&!wed[i.id]})}
+function jotdPool(cat){var cats=Array.isArray(cat)?cat:[cat],wed=cats.indexOf('Ring')>-1?weddingIds():{};return vis().filter(function(i){return cats.indexOf(i.category)>-1&&i.status==='Keep'&&(i.whereabouts||'In possession')==='In possession'&&!wed[i.id]})}
 function jotdPickOther(pool,cur,col,k){var p=col?pool.filter(function(i){return jotdColorMatch(i,col)}):pool;var c=cur?p.filter(function(i){return i.id!==cur.id}):p;if(!c.length)c=p;return c.length?jotdCycle(k,c):null}
+var JOTD_R2=['Index finger','Middle finger','Ring finger'];
 function jotdRing2Pick(r1){
  if(!r1)return null;var f1=finger(r1);
- var c=jotdPool('Ring').filter(function(i){var f=finger(i);return f&&f!==f1&&i.id!==r1.id&&jotdColorMatch(i,jotdColors.ring2)});
+ var c=jotdPool('Ring').filter(function(i){var f=finger(i);return JOTD_R2.indexOf(f)>-1&&f!==f1&&i.id!==r1.id&&jotdColorMatch(i,jotdColors.ring2)});
  var cur2=jotdSel&&jotdSel.ring2;if(cur2){var nc2=c.filter(function(i){return i.id!==cur2.id});if(nc2.length)c=nc2}
  return c.length?jotdCycle('ring2',c):null;
 }
@@ -1919,17 +1920,17 @@ function jotdRoll(k){
  var s=jotdSel;if(!s||jotdLock[k])return;jotdMsg='';
  if(k==='ring1'){
    var cur=s.ring1,rings=jotdPool('Ring');
-   var fs=['Index finger','Middle finger'].filter(function(f){return !(jotdLock.ring2&&s.ring2&&finger(s.ring2)===f)}).sort(function(){return Math.random()-0.5});
+   var f2=(jotdLock.ring2&&s.ring2)?finger(s.ring2):null;
    var pick=null;
    rings=rings.filter(function(i){return jotdColorMatch(i,jotdColors.ring1)});
-   var allC=rings.filter(function(i){return fs.indexOf(finger(i))>=0&&(!cur||i.id!==cur.id)});if(allC.length)pick=jotdCycle('ring1',allC);
+   var allC=rings.filter(function(i){return (!f2||finger(i)!==f2)&&(!s.ring2||!jotdLock.ring2||i.id!==s.ring2.id)&&(!cur||i.id!==cur.id)});if(allC.length)pick=jotdCycle('ring1',allC);
    if(!pick&&cur&&jotdColorMatch(cur,jotdColors.ring1))pick=cur;
       s.ring1=pick;
    if(!jotdLock.ring2)s.ring2=jotdRing2Pick(pick);
  }
  else if(k==='ring2'){s.ring2=jotdRing2Pick(s.ring1)}
  else if(k==='earring'){s.earring=jotdPickOther(jotdPool('Earrings'),s.earring,jotdColors.earring,'earring')}
- else if(k==='necklace'){s.necklace=jotdPickOther(jotdPool('Necklace'),s.necklace,jotdColors.necklace,'necklace')}
+ else if(k==='necklace'){s.necklace=jotdPickOther(jotdPool(['Necklace','Pendants & Charms']),s.necklace,jotdColors.necklace,'necklace')}
 }
 function jotdLuck(){
  if(!jotdSel)jotdSel={ring1:null,ring2:null,earring:null,necklace:null};
@@ -1941,7 +1942,7 @@ function jotdStart(){
  jotdLock={ring1:false,ring2:false,earring:false,necklace:false};jotdColors={ring1:null,ring2:null,earring:null,necklace:null};jotdMsg='';
 }
 var jotdLaunch=true,jotdFx=false;
-function jotdWornPicks(){var t=today(),ws=vis().filter(function(i){return i.wornLast===t&&i.status==='Keep'&&(i.whereabouts||'In possession')==='In possession'}),out={};ws.forEach(function(i){var k=i.category==='Ring'?(out.ring1?(out.ring2?null:'ring2'):'ring1'):i.category==='Earrings'?'earring':i.category==='Necklace'?'necklace':null;if(k&&!out[k])out[k]=i});return out}
+function jotdWornPicks(){var t=today(),ws=vis().filter(function(i){return i.wornLast===t&&i.status==='Keep'&&(i.whereabouts||'In possession')==='In possession'}),out={};ws.forEach(function(i){var k=i.category==='Ring'?(out.ring1?(out.ring2?null:'ring2'):'ring1'):i.category==='Earrings'?'earring':(i.category==='Necklace'||i.category==='Pendants & Charms')?'necklace':null;if(k&&!out[k])out[k]=i});return out}
 function jotdRateHTML(i){var r=Number(i.rating)||0,h='';var HP='M12 20.3s-7.4-4.5-7.4-10A4.2 4.2 0 0 1 12 7.6a4.2 4.2 0 0 1 7.4 2.7c0 5.5-7.4 10-7.4 10z';for(var n=1;n<=5;n++){var on=n<=r;h+='<button type="button" data-a="jrate" data-id="'+i.id+'" data-n="'+n+'" aria-label="Rate '+n+' heart'+(n>1?'s':'')+'" style="padding:0 1px;min-height:0;min-width:0;border:0;background:none;width:18px;height:24px;display:inline-flex;align-items:center;justify-content:center;color:'+(on?'var(--acc)':'var(--mute)')+'"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" style="display:block"><path d="'+HP+'" fill="'+(on?'currentColor':'none')+'" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></button>'}return '<span style="display:inline-flex;align-items:center">'+h+'</span>'}
 var HEART_IC='<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" style="display:block"><path d="M12 20.3s-7.4-4.5-7.4-10A4.2 4.2 0 0 1 12 7.6a4.2 4.2 0 0 1 7.4 2.7c0 5.5-7.4 10-7.4 10z" fill="currentColor"/></svg>';
 function jrateBurstIco(i){var k=String(i.category||'').toLowerCase();return ico(ICONS[k]?k:'gem',42)}
@@ -1980,7 +1981,7 @@ function renderJotd(){
  if(!jotdSel){jotdSel={ring1:null,ring2:null,earring:null,necklace:null};var wp=jotdLaunch?jotdWornPicks():{};jotdLaunch=false;['ring1','ring2','earring','necklace'].forEach(function(k){if(wp[k])jotdSel[k]=wp[k]});['ring1','ring2','earring','necklace'].forEach(function(k){if(!jotdSel[k])jotdRoll(k)});jotdMsg=''}
  var s=jotdSel,ids=[s.ring1,s.ring2,s.earring,s.necklace].filter(Boolean).map(function(i){return i.id});
  var cards='<div class="grid" style="grid-template-columns:repeat(2,minmax(0,1fr));align-items:start">'
-  +jotdCard('Ring',s.ring1,'Pick an index or middle finger ring.','ring1')
+  +jotdCard('Ring',s.ring1,'No ring is available.','ring1')
   +jotdCard('Ring',s.ring2,s.ring1?'No other ring on a different finger is available.':'Pick the other ring first.','ring2')
   +jotdCard('Earrings',s.earring,'Not wearing earrings today.','earring')
   +jotdCard('Necklace',s.necklace,'Not wearing a necklace today.','necklace')
@@ -3066,7 +3067,7 @@ function confettiBurst(){
  })();
 }
 /* ---------- update banner with What's new CTA (no popup) ---------- */
-var WHATS_NEW='Era and Style: Era is now a dropdown, and there is a new Style dropdown, so one piece can carry both. Your existing values are sorted into them when the app opens. Anything that does not match stays as it was.\nPeriod: Mid-Century is gone. Those pieces are now Vintage with the Mid-century era.\nSecret Compartment: Panel text is white on Ruby, Sapphire and Emerald.\nWares: White, Colorless, Multi and None bars on Pieces by Color have a thin border.\nCoveted: The Velvet panel has a velvet texture.';
+var WHATS_NEW='Menu: The Seller filter now sits just above Year Purchased.\nJOTD: The first ring can be any ring, and the second ring is always a different finger (index, middle or ring). The necklace tile now draws from necklaces and pendants, never chains.';
 function updateBannerCheck(){
  var seen=null;try{seen=localStorage.getItem('ntts_seen_ver')}catch(e){}
  try{localStorage.setItem('ntts_seen_ver',APP_VERSION)}catch(e){}
