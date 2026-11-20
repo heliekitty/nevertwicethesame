@@ -1,14 +1,15 @@
 // Never Twice the Same: offline cache for the app page.
-// Only the app page (index.html) is cached. Icons, images and every other file go straight to the network
+// The app page (index.html) and the fonts are cached. Icons, images and every other file go straight to the network
 // and are never replaced by the page, so a missing icon can no longer come back as HTML.
-// The cache name changed in 2.17.1, so the old cache is cleared on the next load.
+// The cache name changed in 2.22.1 (fonts added), so the old cache is cleared on the next load.
 // The app page opens from the cache straight away, so a launch with no signal does not wait on the network.
 // The network copy is fetched in the background and saved for the next launch.
-const CACHE = 'ntts-shell-3';
+const CACHE = 'ntts-shell-4';
 const SHELL = ['./', 'index.html'];
+const FONTS = ['cormorant-garamond-v21-latin-regular.woff2','cormorant-garamond-v21-latin-500.woff2','cormorant-garamond-v21-latin-600.woff2','cormorant-garamond-v21-latin-500italic.woff2','varta-v25-latin-regular.woff2','varta-v25-latin-500.woff2','varta-v25-latin-600.woff2'].map(function (f) { return 'fonts/' + f; });
 
 self.addEventListener('install', function (e) {
-  e.waitUntil(caches.open(CACHE).then(function (c) { return c.addAll(SHELL.map(function (u) { return new Request(u, { cache: 'reload' }); })); }).then(function () { return self.skipWaiting(); }));
+  e.waitUntil(caches.open(CACHE).then(function (c) { return c.addAll(SHELL.map(function (u) { return new Request(u, { cache: 'reload' }); })); }).then(function () { return caches.open(CACHE).then(function (c) { return Promise.all(FONTS.map(function (u) { return c.add(u).catch(function () {}); })); }); }).then(function () { return self.skipWaiting(); }));
 });
 
 self.addEventListener('activate', function (e) {
@@ -22,6 +23,13 @@ self.addEventListener('activate', function (e) {
 self.addEventListener('fetch', function (e) {
   var req = e.request, u = new URL(req.url);
   if (req.method !== 'GET' || u.origin !== self.location.origin) return;
+  // Fonts: answer from the cache first, then the network. They never change under the same name.
+  if (u.pathname.indexOf('/fonts/') > -1) {
+    e.respondWith(caches.match(req).then(function (m) {
+      return m || fetch(req).then(function (r) { if (r && r.ok) { var cp = r.clone(); caches.open(CACHE).then(function (c) { c.put(req, cp); }); } return r; });
+    }));
+    return;
+  }
   // The update check always goes to the network so new versions are seen.
   if (u.pathname.endsWith('/version.json')) return;
   // Only the app page is handled here. Anything else (icons, images, other files) is not touched.

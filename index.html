@@ -8,8 +8,14 @@
 <meta name="theme-color" content="#5a1538">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Varta:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'"><noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Varta:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
 <style>
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/cormorant-garamond-v21-latin-regular.woff2') format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:500;font-display:swap;src:url('fonts/cormorant-garamond-v21-latin-500.woff2') format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:600;font-display:swap;src:url('fonts/cormorant-garamond-v21-latin-600.woff2') format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:500;font-display:swap;src:url('fonts/cormorant-garamond-v21-latin-500italic.woff2') format('woff2')}
+@font-face{font-family:'Varta';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/varta-v25-latin-regular.woff2') format('woff2')}
+@font-face{font-family:'Varta';font-style:normal;font-weight:500;font-display:swap;src:url('fonts/varta-v25-latin-500.woff2') format('woff2')}
+@font-face{font-family:'Varta';font-style:normal;font-weight:600;font-display:swap;src:url('fonts/varta-v25-latin-600.woff2') format('woff2')}
 :root{--bg:#faf7f2;--fg:#2a2420;--mute:#7a6f66;--card:#fff;--line:#e4dcd0;--gold:#a8864f;--gold-soft:#d9c49b;--acc:#5a1538;--v1:#3d0d26;--v2:#1a0412;--unlock:#e8a3c4;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1b1715;--fg:#efe8df;--mute:#a89d92;--card:#262120;--line:#3a3330;--gold:#c9a86a;--gold-soft:#8a7350}}
 *{box-sizing:border-box}
@@ -72,10 +78,10 @@ h4.sub button{font-family:Varta,Georgia,"Times New Roman",serif;font-size:16px;f
 .fw select{padding-right:64px}
 #drawer select{color:var(--fg);height:40px;min-height:40px;padding-top:9px;padding-bottom:5px}
 .fw{position:relative}.fw input[type=date]{padding-right:36px;position:relative}.fw input[type=date]::-webkit-calendar-picker-indicator{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}
-.bgb{color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.8);border-color:rgba(255,255,255,.25)}
+.bgb{color:var(--bgt,#fff);text-shadow:var(--bgsh,0 1px 2px rgba(0,0,0,.8));border-color:rgba(255,255,255,.25)}
 .bgb.v{background:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.25'/%3E%3C/svg%3E"),radial-gradient(120% 90% at 30% 8%,rgba(255,255,255,.16),transparent 55%),radial-gradient(100% 80% at 85% 100%,rgba(0,0,0,.45),transparent 60%),linear-gradient(160deg,var(--v1),var(--v2))}
 .bgb.p{background-image:var(--pat);background-repeat:repeat;background-size:69.282px 40px;background-color:var(--v2)}
-.seg button.bgb.on{color:#fff;border-color:var(--gold);box-shadow:inset 0 0 0 2px var(--gold)}
+.seg button.bgb.on{color:var(--bgt,#fff);border-color:var(--gold);box-shadow:inset 0 0 0 2px var(--gold)}
 #appBody .seg button.on:not(.bgb){background:var(--card);color:var(--fg);border-color:var(--gold);box-shadow:inset 0 0 0 2px var(--gold)}
 .bgb.v.on{background:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.25'/%3E%3C/svg%3E"),radial-gradient(120% 90% at 30% 8%,rgba(255,255,255,.16),transparent 55%),radial-gradient(100% 80% at 85% 100%,rgba(0,0,0,.45),transparent 60%),linear-gradient(160deg,var(--v1),var(--v2))}
 .bgb.p.on{background-image:var(--pat);background-color:var(--v2)}
@@ -89,6 +95,7 @@ main{max-width:1100px;margin:0 auto;padding:14px}
 .box .tile{box-shadow:0 3px 9px rgba(0,0,0,.55);transform:translateZ(0);-webkit-backface-visibility:hidden;backface-visibility:hidden}
 .box{transform:translateZ(0);-webkit-backface-visibility:hidden;backface-visibility:hidden}
 .box .grid{gap:8px}
+.box .meta{color:var(--onm,var(--mute))}
 .box{position:relative}
 .keyhole.busy>svg{opacity:0}
 .keyturn{position:absolute;left:50%;top:50%;width:26px;height:26px;margin:-13px 0 0 -13px;color:inherit;pointer-events:none;animation:keyIn .9s ease-in-out forwards;transform-style:preserve-3d}
@@ -348,7 +355,7 @@ header button[data-a="drawer"]{display:flex;align-items:center;justify-content:c
 <script>
 document.getElementById('app').innerHTML='<div style="position:fixed;inset:0;z-index:50;background:var(--bg);display:flex;align-items:center;justify-content:center">'+mothLoaderHTML()+'</div>';
 var K='ntts_items_v2',OK='ntts_order_v1',PER=25,MAX_UPLOAD=300*1024;
-var APP_VERSION='2.22.0',APP_DATE='2026-11-18 · 11:45 PM ET',UPDATE_URL='';
+var APP_VERSION='2.22.1',APP_DATE='2026-11-19 · 10:56 PM ET',UPDATE_URL='';
 var EMOJI={ring:'💍',earrings:'✨',necklace:'📿',bracelet:'⭕',watch:'⌚',other:'💎'};
 var ICONS={coll:"<rect x='3' y='4' width='18' height='16' rx='2'/><path d='M3 10h18M8 14h8'/>",gem:"<path d='M7 4h10l4 5-9 11L3 9z'/><path d='M3 9h18M9 4l-1.5 5L12 20l4.5-11L15 4'/>",pkg:"<path d='M3 7.5L12 3l9 4.5v9L12 21l-9-4.5z'/><path d='M3 7.5l9 4.5 9-4.5M12 12v9'/>",hand:"<path d='M5 11V7a1.5 1.5 0 0 1 3 0v4M8 11V5a1.5 1.5 0 0 1 3 0v6M11 11V6a1.5 1.5 0 0 1 3 0v6M14 11V8a1.5 1.5 0 0 1 3 0v7c0 3-2 5-5 5h-1c-2 0-3-1-4-3l-2-4'/>",x:"<path d='M6 6l12 12M18 6L6 18'/>",ring:"<circle cx='12' cy='14' r='6'/><path d='M9.5 8 12 4l2.5 4'/><path d='M12 9.5l1.5 2.5-1.5 2.5-1.5-2.5z'/>",earrings:"<path d='M7 3v3'/><path d='M7 6c-1.6 0-2.5 1.3-2.5 3S6 14 7 17c1-3 2.5-5 2.5-8C9.5 7.3 8.6 6 7 6z'/><path d='M17 3v3'/><path d='M17 6c-1.6 0-2.5 1.3-2.5 3S16 14 17 17c1-3 2.5-5 2.5-8C19.5 7.3 18.6 6 17 6z'/>",necklace:"<path d='M4 5c2 7 14 7 16 0'/><path d='M12 12.5V15'/><circle cx='12' cy='17' r='2.2'/>",bracelet:"<ellipse cx='12' cy='12' rx='8' ry='5.5'/><ellipse cx='12' cy='12' rx='5.5' ry='3'/>",watch:"<circle cx='12' cy='13' r='5.5'/><path d='M9 7.5 10 3h4l1 4.5M9 18.5 10 23h4l1-4.5'/><path d='M12 10.5V13l1.8 1.2'/>",heart:"<path d='M12 20s-7-4.4-7-9.5A4 4 0 0 1 12 8a4 4 0 0 1 7 2.5C19 15.6 12 20 12 20z'/>",wrench:"<path d='M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-.5-.5-2.5z'/>",key:"<g transform='rotate(-45 12.5 12)'><circle cx='8' cy='12' r='4'/><path d='M12 12h9M18 12v3M21 12v2.5'/></g>",curio:"<rect x='4' y='3' width='16' height='18' rx='1'/><path d='M3 3h18M3 21h18'/><path d='M12 3v18'/><path d='M4 11h16'/><path d='M10.5 7v1.5M13.5 7v1.5M10.5 15v1.5M13.5 15v1.5'/>",clock:"<circle cx='12' cy='12' r='9'/><path d='M12 7v5l3 2'/>",pencil:"<path d='M4 20h4L19 9l-4-4L4 16z'/><path d='M13.5 6.5l4 4'/>",lock:"<rect x='5' y='11' width='14' height='10' rx='2'/><path d='M8 11V7a4 4 0 0 1 8 0v4'/>",unlock:"<rect x='3.95' y='11' width='11.1' height='10' rx='2'/><path d='M12.8 11V6.3A3.3 3.3 0 0 1 19.4 6.3V9.5'/>",bag:"<path d='M5 8h14l-1 12H6z'/><path d='M9 8V6a3 3 0 0 1 6 0v2'/>",plus:"<path d='M12 5v14M5 12h14'/>",x:"<path d='M6 6l12 12M18 6L6 18'/>",spark:"<path d='M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z'/>",gallery:"<rect x='3' y='4' width='18' height='16' rx='2'/><circle cx='9' cy='10' r='2'/><path d='M21 16l-5-5-8 9'/>"};
 var ORN='<svg width="72" height="10" viewBox="0 0 72 10" fill="none" stroke="#a8864f" stroke-width="1.2"><path d="M0 5h28M44 5h28"/><path d="M36 1l4 4-4 4-4-4z"/></svg>';
@@ -774,7 +781,7 @@ function renumberIds(){
 function newItem(){return {id:nextId(),_new:1,category:'Ring',period:'Antique',status:'Keep',whereabouts:'In possession',purchaseDate:today(),rating:0,buffer:5,photoshoot:false,motif:[],stone:[],metal:[],cut:[],refs:[],cover:null}}
 function applyTheme(){
  var t=THEMES[theme]||THEMES.ruby,dk=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches,s=document.documentElement.style;
- s.setProperty('--acc',dk?t.d:t.l);s.setProperty('--lnk',dk?(t.t||t.d):t.l);s.setProperty('--unlock',t.u);document.documentElement.dataset.bx=theme==='timeless'?'satin':'';s.setProperty('--v1',dk&&t.v1d?t.v1d:t.v1);s.setProperty('--v2',dk&&t.v2d?t.v2d:t.v2);s.setProperty('--wpat','url("'+PAT_TPL.replace('__FILL__',(dk&&t.v1d?t.v1d:t.v1).replace('#','%23')).replace('__STROKE__',t.ps)+'")');s.setProperty('--pat','url("'+PAT_TPL.replace('__FILL__',dk&&t.pfd?t.pfd:t.pf).replace('__STROKE__',t.ps)+'")');
+ s.setProperty('--acc',dk?t.d:t.l);s.setProperty('--lnk',dk?(t.t||t.d):t.l);s.setProperty('--unlock',t.u);var tl=theme==='timeless'&&!dk;s.setProperty('--bgt',tl?'#2a2420':'#fff');s.setProperty('--bgsh',tl?'none':'0 1px 2px rgba(0,0,0,.8)');s.setProperty('--ont',tl?'#2a2420':'#f3ece2');s.setProperty('--onm',tl?'#2a2420':'');document.documentElement.dataset.bx=theme==='timeless'?'satin':'';s.setProperty('--v1',dk&&t.v1d?t.v1d:t.v1);s.setProperty('--v2',dk&&t.v2d?t.v2d:t.v2);s.setProperty('--wpat','url("'+PAT_TPL.replace('__FILL__',(dk&&t.v1d?t.v1d:t.v1).replace('#','%23')).replace('__STROKE__',t.ps)+'")');s.setProperty('--pat','url("'+PAT_TPL.replace('__FILL__',dk&&t.pfd?t.pfd:t.pf).replace('__STROKE__',t.ps)+'")');
 }
 
 /* ---------- images: one stored copy, crops stored as fractions ---------- */
@@ -1137,7 +1144,7 @@ var WISH_QUOTE=-1;
 function quoteHTML(){if(!JEWELRY_QUOTES.length)return '';if(WISH_QUOTE<0||WISH_QUOTE>=JEWELRY_QUOTES.length)WISH_QUOTE=Math.floor(Math.random()*JEWELRY_QUOTES.length);var x=JEWELRY_QUOTES[WISH_QUOTE];return '<div style="width:90%;margin:0 auto 14px;text-align:center"><p style="margin:0;font-style:italic;color:var(--mute)">'+esc(x.q)+'</p>'+(x.by?'<p class="meta" style="margin:4px 0 0">'+esc(x.by)+'</p>':'')+'</div>'}
 function renderWishlist(){
  var list=wish.filter(function(w){return (!wishType.length||wishType.indexOf(w.category)>-1)&&(!q||((w.category||'')+' '+(w.link||'')).toLowerCase().indexOf(q)>-1)});
- var tiles=list.map(function(w){return '<div class="'+(wro?'tile':'')+'" data-id="'+w.id+'" style="position:relative"><button type="button" data-a="wopen" data-id="'+w.id+'" style="padding:0;border:0;border-radius:10px;overflow:hidden;aspect-ratio:1;width:100%;display:block;min-height:0;background:var(--acc);position:relative">'+coverImg(wishCover(w),true)+'</button>'+(wro?xBtn('data-a="wdel" data-id="'+w.id+'"','Remove from coveted'):'')+(wro?'':'<div class="meta" style="margin-top:4px;text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:'+(bgStyle==="pattern"?'#f3ece2':'#2a2420')+'">'+esc(wishDomain(w.link))+'</div>')+'</div>'}).join('');
+ var tiles=list.map(function(w){return '<div class="'+(wro?'tile':'')+'" data-id="'+w.id+'" style="position:relative"><button type="button" data-a="wopen" data-id="'+w.id+'" style="padding:0;border:0;border-radius:10px;overflow:hidden;aspect-ratio:1;width:100%;display:block;min-height:0;background:var(--acc);position:relative">'+coverImg(wishCover(w),true)+'</button>'+(wro?xBtn('data-a="wdel" data-id="'+w.id+'"','Remove from coveted'):'')+(wro?'':'<div class="meta" style="margin-top:4px;text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:'+(bgStyle==="pattern"?'var(--ont,#f3ece2)':'#2a2420')+'">'+esc(wishDomain(w.link))+'</div>')+'</div>'}).join('');
  return '<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:14px"><h2 style="margin:0">Coveted Pieces</h2>'+ADDB('wadd','Add Coveted Piece')+'</div>'
   +quoteHTML()+(list.length?'<div class="box'+(bgStyle==="pattern"?' pat':'')+'" style="overflow:hidden;min-width:0;'+(bgStyle==="pattern"?'background-color:var(--v1);background-image:var(--wpat);background-repeat:repeat;background-size:69.282px 40px':'background:var(--unlock)')+';box-shadow:inset 0 0 22px rgba(90,70,50,.12),inset 0 0 0 1px var(--line)"><div class="grid'+(wro?' ro':'')+'" style="grid-template-columns:repeat('+cols+',minmax(0,1fr))">'+tiles+'</div></div>':'<p class="meta">'+(wish.length?'No coveted items match this type.':'Nothing coveted yet.')+'</p>')
   ;
@@ -2957,7 +2964,10 @@ document.getElementById('qb').addEventListener('click',function(){qtoggle(!docum
 document.getElementById('q').addEventListener('focus',function(){qArm()});
 document.getElementById('qx').addEventListener('mousedown',function(e){e.preventDefault()});
 document.getElementById('qx').addEventListener('click',function(){var i=document.getElementById('q');i.value='';q='';page=1;renderMain();i.focus();qArm()});
-document.getElementById('q').addEventListener('blur',function(){clearTimeout(qIdle);if(document.querySelector('header').classList.contains('sq'))qtoggle(false)});
+/* Tapping an action inside the page (such as a grid tile) must not reset the search: the input blurs before the click lands, so remember the tap and skip the reset for that blur. */
+var qTapping=false;
+document.addEventListener('pointerdown',function(e){qTapping=!!(e.target&&e.target.closest&&e.target.closest('#app [data-a]'))},true);
+document.getElementById('q').addEventListener('blur',function(){clearTimeout(qIdle);if(qTapping){qTapping=false;return}if(document.querySelector('header').classList.contains('sq'))qtoggle(false)});
 document.getElementById('q').addEventListener('input',function(e){q=e.target.value.trim().toLowerCase();page=1;renderMain();qArm()});
 var pendingUpd=null;
 function applyUpdateIfSafe(){
@@ -3030,7 +3040,7 @@ function confettiBurst(){
  })();
 }
 /* ---------- update banner with What's new CTA (no popup) ---------- */
-var WHATS_NEW='Appearance: New Timeless theme, an ivory-beige satin box with a fine linen weave. It sits first in the Appearance list and works in light and dark.\nCoveted: The panel background uses the theme colours, velvet or Asanoha. A quote strip sits above the panel once quotes are added.\nJewelry of the Day: Rating hearts are smaller and centred under each card. Leave it to fate, Start anew and Adorn have more space above them.\nDelete: Collection delete works. Gallery image delete, Coveted Remove and Erase all data use the in-app confirm. Erase needs DELETE typed.\nWares Dashboard: Pieces by Era, Pieces by Stone and Pieces by Country of Origin no longer show a Not recorded slice. The count sits in the description under each title. The country pie uses theme colours.';
+var WHATS_NEW='Search: Tapping a piece in your search results opens its details and keeps your search.\nFonts: The app now carries its own fonts, so it looks the same with no signal.\nTimeless: Text on the Appearance background buttons, the Coveted page and the Secret Compartment panel is now dark and easy to read on the ivory box.';
 function updateBannerCheck(){
  var seen=null;try{seen=localStorage.getItem('ntts_seen_ver')}catch(e){}
  try{localStorage.setItem('ntts_seen_ver',APP_VERSION)}catch(e){}
