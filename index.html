@@ -20,8 +20,6 @@
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1b1715;--fg:#efe8df;--mute:#a89d92;--card:#262120;--line:#3a3330;--gold:#c9a86a;--gold-soft:#8a7350}}
 *{box-sizing:border-box}
 html{scroll-padding-top:env(safe-area-inset-top,0px);overscroll-behavior-y:none}
-#offline{position:fixed;inset:0;z-index:100;background:var(--bg);display:flex;align-items:center;justify-content:center;padding:24px;text-align:center;font-size:24px;color:var(--fg);cursor:pointer}
-#offline[hidden]{display:none}
 body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.45 Varta,Georgia,"Times New Roman",serif}
 .box.pat{background-image:var(--pat);background-repeat:repeat;background-size:69.282px 40px;background-color:var(--v2)}
 html[data-bx=satin] .box.pat{box-shadow:inset 0 0 22px rgba(90,70,50,.2)}
@@ -333,7 +331,6 @@ header button[data-a="drawer"]{display:flex;align-items:center;justify-content:c
 </style>
 </head>
 <body>
-<div id="offline" hidden><p>Out treasure hunting…</p></div>
 <div id="upd" class="upd" hidden></div>
 <div id="bkp" class="upd" hidden></div>
 <header>
@@ -355,7 +352,7 @@ header button[data-a="drawer"]{display:flex;align-items:center;justify-content:c
 <script>
 document.getElementById('app').innerHTML='<div style="position:fixed;inset:0;z-index:50;background:var(--bg);display:flex;align-items:center;justify-content:center">'+mothLoaderHTML()+'</div>';
 var K='ntts_items_v2',OK='ntts_order_v1',PER=25,MAX_UPLOAD=300*1024;
-var APP_VERSION='2.22.1',APP_DATE='2026-11-19 · 10:56 PM ET',UPDATE_URL='';
+var APP_VERSION='2.22.2',APP_DATE='2026-11-19 · 11:15 PM ET',UPDATE_URL='';
 var EMOJI={ring:'💍',earrings:'✨',necklace:'📿',bracelet:'⭕',watch:'⌚',other:'💎'};
 var ICONS={coll:"<rect x='3' y='4' width='18' height='16' rx='2'/><path d='M3 10h18M8 14h8'/>",gem:"<path d='M7 4h10l4 5-9 11L3 9z'/><path d='M3 9h18M9 4l-1.5 5L12 20l4.5-11L15 4'/>",pkg:"<path d='M3 7.5L12 3l9 4.5v9L12 21l-9-4.5z'/><path d='M3 7.5l9 4.5 9-4.5M12 12v9'/>",hand:"<path d='M5 11V7a1.5 1.5 0 0 1 3 0v4M8 11V5a1.5 1.5 0 0 1 3 0v6M11 11V6a1.5 1.5 0 0 1 3 0v6M14 11V8a1.5 1.5 0 0 1 3 0v7c0 3-2 5-5 5h-1c-2 0-3-1-4-3l-2-4'/>",x:"<path d='M6 6l12 12M18 6L6 18'/>",ring:"<circle cx='12' cy='14' r='6'/><path d='M9.5 8 12 4l2.5 4'/><path d='M12 9.5l1.5 2.5-1.5 2.5-1.5-2.5z'/>",earrings:"<path d='M7 3v3'/><path d='M7 6c-1.6 0-2.5 1.3-2.5 3S6 14 7 17c1-3 2.5-5 2.5-8C9.5 7.3 8.6 6 7 6z'/><path d='M17 3v3'/><path d='M17 6c-1.6 0-2.5 1.3-2.5 3S16 14 17 17c1-3 2.5-5 2.5-8C19.5 7.3 18.6 6 17 6z'/>",necklace:"<path d='M4 5c2 7 14 7 16 0'/><path d='M12 12.5V15'/><circle cx='12' cy='17' r='2.2'/>",bracelet:"<ellipse cx='12' cy='12' rx='8' ry='5.5'/><ellipse cx='12' cy='12' rx='5.5' ry='3'/>",watch:"<circle cx='12' cy='13' r='5.5'/><path d='M9 7.5 10 3h4l1 4.5M9 18.5 10 23h4l1-4.5'/><path d='M12 10.5V13l1.8 1.2'/>",heart:"<path d='M12 20s-7-4.4-7-9.5A4 4 0 0 1 12 8a4 4 0 0 1 7 2.5C19 15.6 12 20 12 20z'/>",wrench:"<path d='M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-.5-.5-2.5z'/>",key:"<g transform='rotate(-45 12.5 12)'><circle cx='8' cy='12' r='4'/><path d='M12 12h9M18 12v3M21 12v2.5'/></g>",curio:"<rect x='4' y='3' width='16' height='18' rx='1'/><path d='M3 3h18M3 21h18'/><path d='M12 3v18'/><path d='M4 11h16'/><path d='M10.5 7v1.5M13.5 7v1.5M10.5 15v1.5M13.5 15v1.5'/>",clock:"<circle cx='12' cy='12' r='9'/><path d='M12 7v5l3 2'/>",pencil:"<path d='M4 20h4L19 9l-4-4L4 16z'/><path d='M13.5 6.5l4 4'/>",lock:"<rect x='5' y='11' width='14' height='10' rx='2'/><path d='M8 11V7a4 4 0 0 1 8 0v4'/>",unlock:"<rect x='3.95' y='11' width='11.1' height='10' rx='2'/><path d='M12.8 11V6.3A3.3 3.3 0 0 1 19.4 6.3V9.5'/>",bag:"<path d='M5 8h14l-1 12H6z'/><path d='M9 8V6a3 3 0 0 1 6 0v2'/>",plus:"<path d='M12 5v14M5 12h14'/>",x:"<path d='M6 6l12 12M18 6L6 18'/>",spark:"<path d='M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z'/>",gallery:"<rect x='3' y='4' width='18' height='16' rx='2'/><circle cx='9' cy='10' r='2'/><path d='M21 16l-5-5-8 9'/>"};
 var ORN='<svg width="72" height="10" viewBox="0 0 72 10" fill="none" stroke="#a8864f" stroke-width="1.2"><path d="M0 5h28M44 5h28"/><path d="M36 1l4 4-4 4-4-4z"/></svg>';
@@ -781,7 +778,7 @@ function renumberIds(){
 function newItem(){return {id:nextId(),_new:1,category:'Ring',period:'Antique',status:'Keep',whereabouts:'In possession',purchaseDate:today(),rating:0,buffer:5,photoshoot:false,motif:[],stone:[],metal:[],cut:[],refs:[],cover:null}}
 function applyTheme(){
  var t=THEMES[theme]||THEMES.ruby,dk=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches,s=document.documentElement.style;
- s.setProperty('--acc',dk?t.d:t.l);s.setProperty('--lnk',dk?(t.t||t.d):t.l);s.setProperty('--unlock',t.u);var tl=theme==='timeless'&&!dk;s.setProperty('--bgt',tl?'#2a2420':'#fff');s.setProperty('--bgsh',tl?'none':'0 1px 2px rgba(0,0,0,.8)');s.setProperty('--ont',tl?'#2a2420':'#f3ece2');s.setProperty('--onm',tl?'#2a2420':'');document.documentElement.dataset.bx=theme==='timeless'?'satin':'';s.setProperty('--v1',dk&&t.v1d?t.v1d:t.v1);s.setProperty('--v2',dk&&t.v2d?t.v2d:t.v2);s.setProperty('--wpat','url("'+PAT_TPL.replace('__FILL__',(dk&&t.v1d?t.v1d:t.v1).replace('#','%23')).replace('__STROKE__',t.ps)+'")');s.setProperty('--pat','url("'+PAT_TPL.replace('__FILL__',dk&&t.pfd?t.pfd:t.pf).replace('__STROKE__',t.ps)+'")');
+ s.setProperty('--acc',dk?t.d:t.l);s.setProperty('--lnk',dk?(t.t||t.d):t.l);s.setProperty('--unlock',t.u);var tl=theme==='timeless'&&!dk;s.setProperty('--bgt',tl?'#2a2420':'#fff');s.setProperty('--bgsh',tl?'none':'0 1px 2px rgba(0,0,0,.8)');s.setProperty('--ont',tl?'#2a2420':'#f3ece2');s.setProperty('--onm',tl?'#2a2420':(theme==='timeless'?'#efe8df':''));document.documentElement.dataset.bx=theme==='timeless'?'satin':'';s.setProperty('--v1',dk&&t.v1d?t.v1d:t.v1);s.setProperty('--v2',dk&&t.v2d?t.v2d:t.v2);s.setProperty('--wpat','url("'+PAT_TPL.replace('__FILL__',(dk&&t.v1d?t.v1d:t.v1).replace('#','%23')).replace('__STROKE__',t.ps)+'")');s.setProperty('--pat','url("'+PAT_TPL.replace('__FILL__',dk&&t.pfd?t.pfd:t.pf).replace('__STROKE__',t.ps)+'")');
 }
 
 /* ---------- images: one stored copy, crops stored as fractions ---------- */
@@ -1137,7 +1134,7 @@ function necklaceSizesHTML(){
 }
 /* Jewelry quotes for the Coveted page. Add one line per quote: { q: 'the quote', by: 'who said it (optional)' }. The strip is hidden while the list is empty. */
 var JEWELRY_QUOTES=[
-  { q: "Nothing haunts you like the jewelry you didn't buy. AND THEN IT GETS SOLD OUT." },
+  { q: "Nothing haunts you like the jewelry you didn't buy. AND THEN IT GETS SOLD OUT.", by: "Unknown" },
   { q: "No, that's my FRIEND's niche interest that i'm obsessed with on their behalf… that's my interest-in-law.", by: "@bnaps38" }
 ];
 var WISH_QUOTE=-1;
@@ -3040,7 +3037,7 @@ function confettiBurst(){
  })();
 }
 /* ---------- update banner with What's new CTA (no popup) ---------- */
-var WHATS_NEW='Search: Tapping a piece in your search results opens its details and keeps your search.\nFonts: The app now carries its own fonts, so it looks the same with no signal.\nTimeless: Text on the Appearance background buttons, the Coveted page and the Secret Compartment panel is now dark and easy to read on the ivory box.';
+var WHATS_NEW='Offline: With no signal the app opens straight away. The Out treasure hunting screen is gone.\nSecret Compartment: In the Timeless dark theme, the text in the panel is now light and easy to read.\nCoveted: The first quote now credits Unknown.';
 function updateBannerCheck(){
  var seen=null;try{seen=localStorage.getItem('ntts_seen_ver')}catch(e){}
  try{localStorage.setItem('ntts_seen_ver',APP_VERSION)}catch(e){}
@@ -3071,13 +3068,6 @@ function arrivalCheck(){
 init().then(function(){booted=true;setTimeout(arrivalCheck,400);updateBannerCheck();if(!DB)cue('Storage unavailable. Changes will not be kept.','err');window.addEventListener('error',function(e){logEv('ERROR',(e.message||'')+' @'+(e.lineno||''))});window.addEventListener('unhandledrejection',function(e){logEv('ERROR','promise: '+(e.reason&&e.reason.message||e.reason))});window.addEventListener('pagehide',function(){logEv('pagehide','pending '+pending)});document.addEventListener('visibilitychange',function(){if(document.hidden){logEv('hidden','pending '+pending+(dirty?' · unconfirmed changes':''));if(dirty&&DB){kset('items',items);kset('order',order);kset('wseq',wseq)}}else logEv('visible','')});checkUpdate();setInterval(checkUpdate,3600000);document.addEventListener('visibilitychange',function(){if(!document.hidden)checkUpdate()});applyTheme();try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',applyTheme)}catch(e){}render()})
  .catch(function(e){document.getElementById('app').innerHTML='<p class="meta">Could not start storage: '+esc(e&&e.message||e)+'</p>'});
 (function(){
- var o=document.getElementById('offline');
- if(o&&navigator.onLine===false){
-  o.hidden=false;
-  var hide=function(){o.hidden=true};
-  o.addEventListener('click',hide);
-  window.addEventListener('online',hide);
- }
  if('serviceWorker' in navigator){
   window.addEventListener('load',function(){try{navigator.serviceWorker.register('sw.js').catch(function(){})}catch(e){}});
  }
