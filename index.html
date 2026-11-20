@@ -95,6 +95,7 @@ main{max-width:1100px;margin:0 auto;padding:14px}
 .box .grid{gap:8px}
 .box .meta{color:var(--onm,var(--mute))}
 .box{position:relative}
+.box.vtx:not(.pat),html .box.vtx:not(.pat){background:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.3'/%3E%3C/svg%3E"),url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='m'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' seed='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23m)' opacity='.22'/%3E%3C/svg%3E"),radial-gradient(120% 90% at 30% 8%,rgba(255,255,255,.22),transparent 55%),radial-gradient(100% 80% at 85% 100%,rgba(0,0,0,.16),transparent 60%),var(--unlock)}
 .keyhole.busy>svg{opacity:0}
 .keyturn{position:absolute;left:50%;top:50%;width:26px;height:26px;margin:-13px 0 0 -13px;color:inherit;pointer-events:none;animation:keyIn .9s ease-in-out forwards;transform-style:preserve-3d}
 @keyframes keyIn{0%{transform:translateZ(380px);opacity:0}30%{transform:translateZ(180px);opacity:1}60%{transform:translateZ(0) rotateY(0deg);opacity:1}100%{transform:translateZ(0) rotateY(70deg);opacity:1}}
@@ -352,7 +353,7 @@ header button[data-a="drawer"]{display:flex;align-items:center;justify-content:c
 <script>
 document.getElementById('app').innerHTML='<div style="position:fixed;inset:0;z-index:50;background:var(--bg);display:flex;align-items:center;justify-content:center">'+mothLoaderHTML()+'</div>';
 var K='ntts_items_v2',OK='ntts_order_v1',PER=25,MAX_UPLOAD=300*1024;
-var APP_VERSION='2.22.2',APP_DATE='2026-11-19 · 11:15 PM ET',UPDATE_URL='';
+var APP_VERSION='3.0.0',APP_DATE='2026-11-20 · 10:37 AM ET',UPDATE_URL='';
 var EMOJI={ring:'💍',earrings:'✨',necklace:'📿',bracelet:'⭕',watch:'⌚',other:'💎'};
 var ICONS={coll:"<rect x='3' y='4' width='18' height='16' rx='2'/><path d='M3 10h18M8 14h8'/>",gem:"<path d='M7 4h10l4 5-9 11L3 9z'/><path d='M3 9h18M9 4l-1.5 5L12 20l4.5-11L15 4'/>",pkg:"<path d='M3 7.5L12 3l9 4.5v9L12 21l-9-4.5z'/><path d='M3 7.5l9 4.5 9-4.5M12 12v9'/>",hand:"<path d='M5 11V7a1.5 1.5 0 0 1 3 0v4M8 11V5a1.5 1.5 0 0 1 3 0v6M11 11V6a1.5 1.5 0 0 1 3 0v6M14 11V8a1.5 1.5 0 0 1 3 0v7c0 3-2 5-5 5h-1c-2 0-3-1-4-3l-2-4'/>",x:"<path d='M6 6l12 12M18 6L6 18'/>",ring:"<circle cx='12' cy='14' r='6'/><path d='M9.5 8 12 4l2.5 4'/><path d='M12 9.5l1.5 2.5-1.5 2.5-1.5-2.5z'/>",earrings:"<path d='M7 3v3'/><path d='M7 6c-1.6 0-2.5 1.3-2.5 3S6 14 7 17c1-3 2.5-5 2.5-8C9.5 7.3 8.6 6 7 6z'/><path d='M17 3v3'/><path d='M17 6c-1.6 0-2.5 1.3-2.5 3S16 14 17 17c1-3 2.5-5 2.5-8C19.5 7.3 18.6 6 17 6z'/>",necklace:"<path d='M4 5c2 7 14 7 16 0'/><path d='M12 12.5V15'/><circle cx='12' cy='17' r='2.2'/>",bracelet:"<ellipse cx='12' cy='12' rx='8' ry='5.5'/><ellipse cx='12' cy='12' rx='5.5' ry='3'/>",watch:"<circle cx='12' cy='13' r='5.5'/><path d='M9 7.5 10 3h4l1 4.5M9 18.5 10 23h4l1-4.5'/><path d='M12 10.5V13l1.8 1.2'/>",heart:"<path d='M12 20s-7-4.4-7-9.5A4 4 0 0 1 12 8a4 4 0 0 1 7 2.5C19 15.6 12 20 12 20z'/>",wrench:"<path d='M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-.5-.5-2.5z'/>",key:"<g transform='rotate(-45 12.5 12)'><circle cx='8' cy='12' r='4'/><path d='M12 12h9M18 12v3M21 12v2.5'/></g>",curio:"<rect x='4' y='3' width='16' height='18' rx='1'/><path d='M3 3h18M3 21h18'/><path d='M12 3v18'/><path d='M4 11h16'/><path d='M10.5 7v1.5M13.5 7v1.5M10.5 15v1.5M13.5 15v1.5'/>",clock:"<circle cx='12' cy='12' r='9'/><path d='M12 7v5l3 2'/>",pencil:"<path d='M4 20h4L19 9l-4-4L4 16z'/><path d='M13.5 6.5l4 4'/>",lock:"<rect x='5' y='11' width='14' height='10' rx='2'/><path d='M8 11V7a4 4 0 0 1 8 0v4'/>",unlock:"<rect x='3.95' y='11' width='11.1' height='10' rx='2'/><path d='M12.8 11V6.3A3.3 3.3 0 0 1 19.4 6.3V9.5'/>",bag:"<path d='M5 8h14l-1 12H6z'/><path d='M9 8V6a3 3 0 0 1 6 0v2'/>",plus:"<path d='M12 5v14M5 12h14'/>",x:"<path d='M6 6l12 12M18 6L6 18'/>",spark:"<path d='M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z'/>",gallery:"<rect x='3' y='4' width='18' height='16' rx='2'/><circle cx='9' cy='10' r='2'/><path d='M21 16l-5-5-8 9'/>"};
 var ORN='<svg width="72" height="10" viewBox="0 0 72 10" fill="none" stroke="#a8864f" stroke-width="1.2"><path d="M0 5h28M44 5h28"/><path d="M36 1l4 4-4 4-4-4z"/></svg>';
@@ -433,7 +434,28 @@ function applyStatusRule(o){
 }
 function linkLabel(u){var h=String(u).replace(/^https?:\/\/(www\.)?/,'').split('/')[0].split('.')[0];return h.charAt(0).toUpperCase()+h.slice(1)}
 function listLinksHTML(i){var L=[i.linkSale,i.linkSale2].filter(Boolean);if(!L.length)return '';return '<div style="font-size:12px;font-weight:normal;margin-top:2px">'+L.map(function(u){return '<a href="'+esc(u)+'" target="_blank" rel="noopener" style="color:var(--lnk,var(--acc));text-decoration:underline;margin-right:10px">'+esc(linkLabel(u))+'</a>'}).join('')+'</div>'}
-var PERIODS=['Ancient','Antique','Mid-Century','Vintage','New'];
+var PERIODS=['Ancient','Antique','Vintage','New'];
+var ERAS=['Roman','Renaissance','Georgian','Regency','Napoleon III','Victorian','Belle \u00c9poque','Edwardian','Mid-century','Contemporary'];
+var STYLES=['Rococo','Neoclassical','Gothic Revival','Etruscan Revival','Egyptian Revival','Art Nouveau','Arts & Crafts','Art Deco','Victorian Revival','Retro'];
+var ERA_ALIAS={'napoleon':'Napoleon III','napoleon 3':'Napoleon III','napoleon iii':'Napoleon III','second empire':'Napoleon III','belle epoch':'Belle \u00c9poque','belle epoque':'Belle \u00c9poque','la belle epoque':'Belle \u00c9poque','mid century':'Mid-century','midcentury':'Mid-century','mid-century modern':'Mid-century','mid century modern':'Mid-century','modern':'','edwardiian':'Edwardian','roman empire':'Roman'};
+var STYLE_ALIAS={'neo-classical':'Neoclassical','neo classical':'Neoclassical','neoclassic':'Neoclassical','gothic':'Gothic Revival','etruscan':'Etruscan Revival','egyptian':'Egyptian Revival','deco':'Art Deco','art-deco':'Art Deco','arts and crafts':'Arts & Crafts','arts & crafts movement':'Arts & Crafts','arts and crafts movement':'Arts & Crafts','art and crafts':'Arts & Crafts','nouveau':'Art Nouveau','art-nouveau':'Art Nouveau','retro modern':'Retro'};
+function eraKey(s){return String(s==null?'':s).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/\s+/g,' ').trim()}
+function matchList(list,alias,v){var k=eraKey(v);if(!k)return '';for(var n=0;n<list.length;n++)if(eraKey(list[n])===k)return list[n];return alias[k]||''}
+function eraMatch(v){return matchList(ERAS,ERA_ALIAS,v)}
+function styleMatch(v){return matchList(STYLES,STYLE_ALIAS,v)}
+function splitEraStyle(i){
+ var raw=String(i.era==null?'':i.era).trim();
+ if(i.style==null)i.style='';
+ i.style=styleMatch(i.style)||String(i.style).trim();
+ if(!raw)return;
+ var e=eraMatch(raw),st=styleMatch(raw);
+ if(e){i.era=e;return}
+ if(st){if(!i.style||i.style===st){i.style=st;i.era=''}return}
+ var parts=raw.split(/\s*(?:,|\/|;|\band\b|\+)\s*/).filter(Boolean);
+ if(parts.length>1){var pe='',ps='',ok=true;parts.forEach(function(x){var a=eraMatch(x),b=styleMatch(x);if(a&&!pe)pe=a;else if(b&&!ps)ps=b;else ok=false});
+  if(ok&&(pe||ps)&&(!ps||!i.style||i.style===ps)){i.era=pe;if(ps)i.style=ps}}
+}
+function eraRank(x){var k=eraKey(x);if(k==='n/a')return 998;if(!k)return 999;var m=eraMatch(x)||styleMatch(x);if(m){for(var n=0;n<PERIOD_TL.length;n++)if(PERIOD_TL[n][0]===m)return PERIOD_TL[n][4]}return 990000}
 var FINGERS=['Index finger','Middle finger','Ring finger','Pinky'];
 var COLOR_ORDER=['Red','Pink','Orange','Brown','Yellow','Green','Light blue','Blue','Purple','Black','Gray','White','Colorless','Multi'];
 var COLOR_SEL=[''].concat(COLOR_ORDER);
@@ -443,12 +465,13 @@ var THEMES={timeless:{n:'Timeless',l:'#5b4636',d:'#8a6a3e',t:'#e0c79a',u:'#f3ead
 var PAT_TPL="data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='69.282' height='40' patternTransform='scale(1) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='__FILL__'/><path d='M34.641-20v80m34.64-40L0-20m69.282 80L0 20m69.282 0L0 60m69.282-80L0 20m69.282-40v80M0-20v80M34.64 40l11.547-20m11.547 20l11.547 20M34.641 40h23.094m11.547-20L57.735 40M46.188 20L34.641 40l11.547 20h23.094L80.83 40 69.282 20H46.188zM34.641 40l11.547-20m11.547 20l11.547 20M34.641 40h23.094m11.547-20L57.735 40M46.188 20L34.641 40l11.547 20h23.094L80.83 40 69.282 20H46.188zM34.641 0l11.547-20M57.735 0l11.547 20M34.642 0h23.093m11.547-20L57.735 0M46.188-20L34.641 0l11.547 20h23.094L80.83 0 69.282-20H46.188zM34.641 40L23.094 20M11.547 40L0 60m34.64-20H11.548M0 20l11.547 20m11.547-20l11.547 20-11.547 20H0l-11.547-20L0 20h23.094zM34.641 0L23.094-20M11.547 0L0 20M34.64 0H11.548M0-20L11.547 0m11.547-20L34.641 0 23.094 20H0L-11.547 0 0-20h23.094z'  stroke-width='1' stroke='__STROKE__' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(-139,-80)' fill='url(%23a)'/></svg>";
 var SORTS=[['new','Newest First (Purchase Date)'],['old','Oldest First (Purchase Date)'],['worn','Most Worn'],['rest','Least Recently Worn'],['era','Era'],['grp:colorMain','Group by Color'],['grp:category','Group by Type'],['grp:period','Group by Period'],['custom','My Ordering']];
 var ALIAS={metals:'metal',stones:'stone',hallmarks:'hallmark',measurements:'measurement',tags:'motif',mainColor:'colorMain',pdate:'purchaseDate',platform:'purchasePlatform',dListed:'dateListed',link:'linkSale',shipEst:'shipEstimate',dSold:'dateSold',ship:'shipActual',final:'payout',lastWorn:'wornLast',hearts:'rating',size:'ringSize',channel:'sellPlatform'};
-var CSV_COLS=[['id','id'],['title','title'],['category','category'],['motif','motifs'],['period','period'],['era','era'],['decade','decade'],['yearMade','year'],['country','country'],['maker','maker'],['hallmark','hallmark'],['provenance','provenance'],['measurement','measurement'],['weight','weight'],['grams','grams'],['purity','purity'],['stoneCt','stone weight ct'],['ringSize','ring size'],['metal','metal'],['stone','stone'],['cut','cut'],['colorMain','main color'],['condition','condition'],['notes','notes'],['wornLast','last worn'],['wornCount','times worn'],['rating','rating'],['photoshoot','photoshoot'],['status','status'],['whereabouts','whereabouts'],['seller','seller'],['purchaseDate','purchase date'],['purchasePlatform','platform'],['cost','cost'],['acqShipping','acquisition shipping'],['tariffs','tariffs'],['repairs','repairs'],['shipEstimate','shipping estimate'],['buffer','buffer'],['sellPlatform','selling platform'],['dateListed','date listed'],['linkSale','listing link'],['dateSold','date sold'],['feeFinal','platform fee'],['shipActual','shipping'],['payout','final payout']];
+var CSV_COLS=[['id','id'],['title','title'],['category','category'],['motif','motifs'],['period','period'],['era','era'],['style','style'],['decade','decade'],['yearMade','year'],['country','country'],['maker','maker'],['hallmark','hallmark'],['provenance','provenance'],['measurement','measurement'],['weight','weight'],['grams','grams'],['purity','purity'],['stoneCt','stone weight ct'],['ringSize','ring size'],['metal','metal'],['stone','stone'],['cut','cut'],['colorMain','main color'],['condition','condition'],['notes','notes'],['wornLast','last worn'],['wornCount','times worn'],['rating','rating'],['photoshoot','photoshoot'],['status','status'],['whereabouts','whereabouts'],['seller','seller'],['purchaseDate','purchase date'],['purchasePlatform','platform'],['cost','cost'],['acqShipping','acquisition shipping'],['tariffs','tariffs'],['repairs','repairs'],['shipEstimate','shipping estimate'],['buffer','buffer'],['sellPlatform','selling platform'],['dateListed','date listed'],['linkSale','listing link'],['dateSold','date sold'],['feeFinal','platform fee'],['shipActual','shipping'],['payout','final payout']];
 var FS={
  title:['Title','text'],
  category:['Category','sel',CATS.slice().sort(function(a,b){return a.localeCompare(b)})],
  period:['Period','sel',PERIODS],
- era:['Era/Movement','text'],
+ era:['Era','sel',[''].concat(ERAS)],
+ style:['Style','sel',[''].concat(STYLES)],
  decade:['Decade','text'],
  yearMade:['Year','number'],
  country:['Country of Origin','text'],
@@ -502,28 +525,28 @@ var FS={
  netProfit:['Net Profit','calc','c-net']
 };
 var LISTS=['stone','metal','motif','cut','colorMain'];
-var SUGG_KEYS=['era','country','stone','metal','cut','motif','colorMain','seller','purchasePlatform'];
+var SUGG_KEYS=['country','stone','metal','cut','motif','colorMain','seller','purchasePlatform'];
 var LOWER_KEYS=['stone','cut','motif','colorMain'];
-var ORDER_PIECE=['title','category','motif','period','era','decade','yearMade','country','maker','hallmark','measurement','grams','purity','ringSize','metal','stone','stoneCt','cut','colorMain','condition','notes'];
+var ORDER_PIECE=['title','category','motif','period','era','style','decade','yearMade','country','maker','hallmark','measurement','grams','purity','ringSize','metal','stone','stoneCt','cut','colorMain','condition','notes'];
 var ORDER_STATS=['wornLast','wornCount','rating'];
 var ORDER_PURCH=['seller','provenance','purchasePlatform','purchaseDate','cost','acqShipping','tariffs','repairs','totalCost','trackUrl','deliveryDate'];
 var FULL_KEYS=['provenance'];
 var ORDER_PRICE=['shipEstimate','buffer','ebayPct','igPct','suggestedEbay','suggestedIG','potentialEbay','potentialIG'];
 var ORDER_SOLD=['sellPlatform','dateListed','linkSale','linkSale2','dateSold','turnover','feeFinal','shipActual','payout','netProfit'];
 var PIECE_ID=['title','category','motif','colorMain'];
-var PIECE_ORIGIN=['period','era','decade','yearMade','country','maker','hallmark'];
+var PIECE_ORIGIN=['period','era','style','decade','yearMade','country','maker','hallmark'];
 var PIECE_MAKE=['metal','purity','grams','stone','stoneCt','cut','measurement','ringSize'];
 var PIECE_COND=['condition','notes'];
 var FORM_ORDER=ORDER_PIECE.concat(ORDER_STATS,['status','whereabouts'],ORDER_PURCH,ORDER_PRICE,ORDER_SOLD);
 var SUM_SKIP=['shipEstimate','buffer','ebayPct','igPct','potentialEbay','potentialIG'];
-var QA_KEYS=['title','category','period','era','decade','yearMade','country','maker','stone','metal','hallmark','measurement','grams','ringSize','cut','colorMain','motif','notes','purchaseDate','seller','purchasePlatform','cost'];
+var QA_KEYS=['title','category','period','era','style','decade','yearMade','country','maker','stone','metal','hallmark','measurement','grams','ringSize','cut','colorMain','motif','notes','purchaseDate','seller','purchasePlatform','cost'];
 var RING_HEAD=['Inside Diameter (mm)','Inside Circum\u00ADference (mm)','U.S. & Canada (LF sizes)','U.K., Europe & Australia','Italy, Spain, & Switzer\u00ADland','China, Japan, & South America','India'];
 var RING_TXT=['15.9;50;5.25;J.5;10;;10','16.1;50.6;5.5;K;;10;','16.3;51.2;5.75;K.5;11.75;;11','16.5;51.8;6;L;12.75;11;12','16.7;52.5;6.25;L.5;;12;','16.9;53.1;6.5;M;14;13;13','17.1;53.7;6.75;M.5;;;','17.3;54.3;7;N;15.25;14;14','17.5;55;7.25;N.5;;;15','17.7;55.6;7.5;O;16.5;15;','17.9;56.2;7.75;O.5;;;16','18.1;56.9;8;P;17.75;16;17','18.3;57.5;8.25;P.5;;;','18.5;58.1;8.5;Q;;17;18','18.8;59.1;8.75;Q.5;19;;19','19;59.7;9;R;;18;','19.2;60.3;9.25;R.5;20.25;;20'];
 var seed=[
- {id:1,title:'Georgian paste ring',description:'Georgian paste ring. Closed-back setting.',category:'Ring',status:'Selling',period:'Antique',era:'1790s',yearMade:1795,country:'England',stone:['paste'],metal:['silver','gold'],rating:3,cost:120,sellPlatform:'eBay',purchaseDate:'2026-08-15',dateListed:'2026-09-01'},
- {id:2,title:'Snake bracelet',description:'Snake bracelet with garnet eyes.',category:'Bracelet',status:'Sold',whereabouts:'Gone',period:'Antique',era:'1870s',yearMade:1870,country:'France',stone:['garnet'],metal:['gold'],motif:['snake'],colorMain:'Red',rating:4,cost:210,payout:480,feeFinal:40,shipActual:12,sellPlatform:'Instagram',purchaseDate:'2026-06-10',dateListed:'2026-07-02',dateSold:'2026-07-20'},
+ {id:1,title:'Georgian paste ring',description:'Georgian paste ring. Closed-back setting.',category:'Ring',status:'Selling',period:'Antique',era:'Georgian',yearMade:1795,country:'England',stone:['paste'],metal:['silver','gold'],rating:3,cost:120,sellPlatform:'eBay',purchaseDate:'2026-08-15',dateListed:'2026-09-01'},
+ {id:2,title:'Snake bracelet',description:'Snake bracelet with garnet eyes.',category:'Bracelet',status:'Sold',whereabouts:'Gone',period:'Antique',era:'Victorian',yearMade:1870,country:'France',stone:['garnet'],metal:['gold'],motif:['snake'],colorMain:'Red',rating:4,cost:210,payout:480,feeFinal:40,shipActual:12,sellPlatform:'Instagram',purchaseDate:'2026-06-10',dateListed:'2026-07-02',dateSold:'2026-07-20'},
  {id:3,title:'Roman intaglio ring',description:'Roman intaglio ring, carnelian.',category:'Ring',status:'Keep',period:'Ancient',era:'Roman',country:'Italy',stone:['carnelian'],metal:['gold'],colorMain:'Orange',rating:5,cost:650,purchaseDate:'2026-03-02'},
- {id:4,title:'Emerald-cut drop earrings',description:'Emerald-cut drop earrings.',category:'Earrings',status:'Keep',period:'Antique',era:'1905',yearMade:1905,country:'USA',stone:['emerald','diamond'],metal:['platinum'],colorMain:'Green',rating:5,cost:380,purchaseDate:'2026-05-20'}
+ {id:4,title:'Emerald-cut drop earrings',description:'Emerald-cut drop earrings.',category:'Earrings',status:'Keep',period:'Antique',era:'Edwardian',yearMade:1905,country:'USA',stone:['emerald','diamond'],metal:['platinum'],colorMain:'Green',rating:5,cost:380,purchaseDate:'2026-05-20'}
 ];
 
 /* ---------- state ---------- */
@@ -731,8 +754,11 @@ function mig(i){
  if(ex)i.feeFinal=(num(i.feeFinal)||0)+ex;
  delete i.fees;delete i.promo;delete i.feePay;
  migrateStatus(i);
- var PM={Ancient:'Ancient',Georgian:'Antique',Victorian:'Antique',Edwardian:'Antique','Art Deco':'Vintage',Retro:'Vintage',Other:'Vintage','Mid-century':'Mid-Century','Mid-Century':'Mid-Century',Modern:'New',New:'New',Vintage:'Vintage',Antique:'Antique'};
+ var PM={Ancient:'Ancient',Georgian:'Antique',Victorian:'Antique',Edwardian:'Antique','Art Deco':'Vintage',Retro:'Vintage',Other:'Vintage','Mid-century':'Vintage','Mid-Century':'Vintage','Mid Century':'Vintage',Modern:'New',New:'New',Vintage:'Vintage',Antique:'Antique'};
+ var wasMid=/^mid[- ]?century$/i.test(String(i.period||'').trim());
  i.period=PM[i.period]||'Antique';
+ splitEraStyle(i);
+ if(wasMid&&!String(i.era||'').trim())i.era='Mid-century';
  if(typeof i.cut==='string')i.cut=i.cut.split(/[;,]/).map(function(s){return s.trim()}).filter(Boolean);
  if(!Array.isArray(i.cut))i.cut=[];
  if(!Array.isArray(i.stone))i.stone=[];
@@ -778,7 +804,7 @@ function renumberIds(){
 function newItem(){return {id:nextId(),_new:1,category:'Ring',period:'Antique',status:'Keep',whereabouts:'In possession',purchaseDate:today(),rating:0,buffer:5,photoshoot:false,motif:[],stone:[],metal:[],cut:[],refs:[],cover:null}}
 function applyTheme(){
  var t=THEMES[theme]||THEMES.ruby,dk=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches,s=document.documentElement.style;
- s.setProperty('--acc',dk?t.d:t.l);s.setProperty('--lnk',dk?(t.t||t.d):t.l);s.setProperty('--unlock',t.u);var tl=theme==='timeless'&&!dk;s.setProperty('--bgt',tl?'#2a2420':'#fff');s.setProperty('--bgsh',tl?'none':'0 1px 2px rgba(0,0,0,.8)');s.setProperty('--ont',tl?'#2a2420':'#f3ece2');s.setProperty('--onm',tl?'#2a2420':(theme==='timeless'?'#efe8df':''));document.documentElement.dataset.bx=theme==='timeless'?'satin':'';s.setProperty('--v1',dk&&t.v1d?t.v1d:t.v1);s.setProperty('--v2',dk&&t.v2d?t.v2d:t.v2);s.setProperty('--wpat','url("'+PAT_TPL.replace('__FILL__',(dk&&t.v1d?t.v1d:t.v1).replace('#','%23')).replace('__STROKE__',t.ps)+'")');s.setProperty('--pat','url("'+PAT_TPL.replace('__FILL__',dk&&t.pfd?t.pfd:t.pf).replace('__STROKE__',t.ps)+'")');
+ s.setProperty('--acc',dk?t.d:t.l);s.setProperty('--lnk',dk?(t.t||t.d):t.l);s.setProperty('--unlock',t.u);var tl=theme==='timeless'&&!dk;s.setProperty('--bgt',tl?'#2a2420':'#fff');s.setProperty('--bgsh',tl?'none':'0 1px 2px rgba(0,0,0,.8)');s.setProperty('--ont',tl?'#2a2420':'#f3ece2');s.setProperty('--onm',tl?'#2a2420':(theme==='timeless'?'#efe8df':'#ffffff'));document.documentElement.dataset.bx=theme==='timeless'?'satin':'';s.setProperty('--v1',dk&&t.v1d?t.v1d:t.v1);s.setProperty('--v2',dk&&t.v2d?t.v2d:t.v2);s.setProperty('--wpat','url("'+PAT_TPL.replace('__FILL__',(dk&&t.v1d?t.v1d:t.v1).replace('#','%23')).replace('__STROKE__',t.ps)+'")');s.setProperty('--pat','url("'+PAT_TPL.replace('__FILL__',dk&&t.pfd?t.pfd:t.pf).replace('__STROKE__',t.ps)+'")');
 }
 
 /* ---------- images: one stored copy, crops stored as fractions ---------- */
@@ -890,7 +916,8 @@ var FACETS=[
  {k:'category',l:'Type',cnt:1,counted:1,v:function(){return CATS},g:function(i){return [i.category]}},
  {k:'seller',l:'Seller',counted:1,v:function(){return allOf(function(i){return [i.seller]})},g:function(i){return [i.seller]}},
  {k:'period',l:'Period',cnt:1,v:function(){return PERIODS},g:function(i){return [i.period]}},
- {k:'era',l:'Era/Movement',counted:1,v:function(){return allOf(function(i){return [i.era||'N/A']})},g:function(i){return [i.era||'N/A']}},
+ {k:'era',l:'Era',counted:1,v:function(){return allOf(function(i){return [i.era||'N/A']})},g:function(i){return [i.era||'N/A']}},
+ {k:'style',l:'Style',counted:1,v:function(){return allOf(function(i){return [i.style||'N/A']})},g:function(i){return [i.style||'N/A']}},
  {k:'motif',l:'Motif',cloud:1,cnt:1,v:function(){return allOf(function(i){return i.motif})},g:function(i){return i.motif||[]}},
  {k:'stone',l:'Stone',counted:1,v:function(){return allOf(function(i){return i.stone})},g:function(i){return i.stone||[]}},
  {k:'colorMain',l:'Color',sw:1,v:function(){return COLOR_ORDER.concat(['No color'])},g:function(i){var c=i.colorMain||[];return c.length?c:['No color']}},
@@ -903,12 +930,10 @@ function facetOf(k){return FACETS.filter(function(F){return F.k===k})[0]}
 function vis(){return secretCfg.on&&!secretUnlocked?items.filter(function(i){return !isHidden(i)}):items}
 function cntColor(c){var F=facetOf('colorMain');return vis().filter(function(i){return F.g(i).indexOf(c)>-1}).length}
 function cntF(F,v){var lv=String(v).toLowerCase();return vis().filter(function(i){return F.g(i).map(function(x){return String(x==null?'':x).toLowerCase()}).indexOf(lv)>-1}).length}
-var ERA_ORDER=['roman','renaissance','georgian','rococo','napoleon','regency','gothic revival','etruscan revival','egyptian revival','victorian','belle epoch','belle epoque','art nouveau','arts & crafts','edwardian','art deco','victorian revival','mid-century','retro','contemporary'];
-function eraRank(x){var t=String(x).toLowerCase();if(t==='n/a')return 998;var r=ERA_ORDER.indexOf(t);return r<0?990:r}
-function facetVals(F){var v=F.v();if(F.counted)v=v.map(function(x){return {x:x,c:cntF(F,x)}}).sort(function(a,b){return b.c-a.c||String(a.x).localeCompare(String(b.x))}).map(function(o){return o.x});if(F.k==='era')v=v.slice().sort(function(a,b){return eraRank(a)-eraRank(b)||String(a).localeCompare(String(b))});if(F.k==='colorMain')v=v.slice().sort(function(a,b){var ra=COLOR_ORDER.indexOf(a),rb=COLOR_ORDER.indexOf(b);return (ra<0?99:ra)-(rb<0?99:rb)});return v}
+function facetVals(F){var v=F.v();if(F.counted)v=v.map(function(x){return {x:x,c:cntF(F,x)}}).sort(function(a,b){return b.c-a.c||String(a.x).localeCompare(String(b.x))}).map(function(o){return o.x});if(F.k==='era'||F.k==='style')v=v.slice().sort(function(a,b){return eraRank(a)-eraRank(b)||String(a).localeCompare(String(b))});if(F.k==='colorMain')v=v.slice().sort(function(a,b){var ra=COLOR_ORDER.indexOf(a),rb=COLOR_ORDER.indexOf(b);return (ra<0?99:ra)-(rb<0?99:rb)});return v}
 function matchQ(i){
  if(!q)return true;
- var h=[title(i),i.notes,i.category,i.status,i.period,i.era,i.country,(i.stone||[]).join(' '),(i.metal||[]).join(' '),(i.motif||[]).join(' '),(i.cut||[]).join(' '),i.colorMain,i.hallmark,i.seller,i.purchasePlatform,i.sellPlatform,i.provenance,i.condition].join(' ').toLowerCase();
+ var h=[title(i),i.notes,i.category,i.status,i.period,i.era,i.style,i.country,(i.stone||[]).join(' '),(i.metal||[]).join(' '),(i.motif||[]).join(' '),(i.cut||[]).join(' '),i.colorMain,i.hallmark,i.seller,i.purchasePlatform,i.sellPlatform,i.provenance,i.condition].join(' ').toLowerCase();
  return q.split(/\s+/).every(function(w){return h.indexOf(w)>-1});
 }
 function purchYear(i){var y=(i.purchaseDate||'').slice(0,4);return /^\d{4}$/.test(y)?Number(y):null}
@@ -938,7 +963,8 @@ else if(sortBy==='old')a.sort(function(x,y){var dx=x.purchaseDate||'',dy=y.purch
  else if(sortBy==='worn')a.sort(function(x,y){return (Number(y.wornCount)||0)-(Number(x.wornCount)||0)});
  else if(sortBy==='rest')a.sort(function(x,y){return (x.wornLast||'').localeCompare(y.wornLast||'')});
  else if(sortBy==='custom')a.sort(function(x,y){return (order.indexOf(x.id)-order.indexOf(y.id))||(y.id-x.id)});
- else if(sortBy==='era'||sortBy==='status')a.sort(function(x,y){return String(x[sortBy]||'~').localeCompare(String(y[sortBy]||'~'))});
+ else if(sortBy==='era')a.sort(function(x,y){return eraRank(x.era)-eraRank(y.era)||String(x.era||'').localeCompare(String(y.era||''))||title(x).localeCompare(title(y))});
+ else if(sortBy==='status')a.sort(function(x,y){return String(x[sortBy]||'~').localeCompare(String(y[sortBy]||'~'))});
  else if(sortBy.indexOf('grp:')===0){var p=sortBy.slice(4);a.sort(function(x,y){var kx=gKey(x,p),ky=gKey(y,p);return kx<ky?-1:kx>ky?1:y.id-x.id})}
  return a;
 }
@@ -963,7 +989,7 @@ function filtersHTML(){
    var vals=facetVals(F).filter(function(v){return facetCount(F,v)>0||(fsel[F.k]||[]).indexOf(v)>-1});
    if(['photoshoot','refimg','inColl'].indexOf(F.k)>-1&&vals.length<2&&!(fsel[F.k]||[]).length)return;
    if(vals.length){
-     var cntS=(F.counted||F.k==='status')?vals.slice().sort(function(a,b){return cntF(F,b)-cntF(F,a)||String(a).localeCompare(String(b))}):vals;var top5=cntS.slice(0,5);if(F.k==='era'||F.k==='status')top5=top5.slice().sort(function(a,b){return vals.indexOf(a)-vals.indexOf(b)});var sel=fsel[F.k]||[],allC=F.k==='colorMain',open=allC||!!showAllF[F.k],shown=open?((F.k==='era'||F.k==='category'||F.k==='status'||allC)?vals:vals.slice().sort(function(x,y){return String(x).localeCompare(String(y))})):top5;
+     var cntS=(F.counted||F.k==='status')?vals.slice().sort(function(a,b){return cntF(F,b)-cntF(F,a)||String(a).localeCompare(String(b))}):vals;var top5=cntS.slice(0,5);if(F.k==='era'||F.k==='style'||F.k==='status')top5=top5.slice().sort(function(a,b){return vals.indexOf(a)-vals.indexOf(b)});var sel=fsel[F.k]||[],allC=F.k==='colorMain',open=allC||!!showAllF[F.k],shown=open?((F.k==='era'||F.k==='style'||F.k==='category'||F.k==='status'||allC)?vals:vals.slice().sort(function(x,y){return String(x).localeCompare(String(y))})):top5;
      var chips=shown.map(function(v){
        var on=sel.indexOf(v)>-1;
        if(F.cloud)return '<button data-a="f" data-k="'+F.k+'" data-val="'+esc(v)+'"'+(on?' class="on"':'')+'>'+esc(v)+((F.counted||F.cnt)?' ('+cntF(F,v)+')':'')+'</button>';
@@ -1143,7 +1169,7 @@ function renderWishlist(){
  var list=wish.filter(function(w){return (!wishType.length||wishType.indexOf(w.category)>-1)&&(!q||((w.category||'')+' '+(w.link||'')).toLowerCase().indexOf(q)>-1)});
  var tiles=list.map(function(w){return '<div class="'+(wro?'tile':'')+'" data-id="'+w.id+'" style="position:relative"><button type="button" data-a="wopen" data-id="'+w.id+'" style="padding:0;border:0;border-radius:10px;overflow:hidden;aspect-ratio:1;width:100%;display:block;min-height:0;background:var(--acc);position:relative">'+coverImg(wishCover(w),true)+'</button>'+(wro?xBtn('data-a="wdel" data-id="'+w.id+'"','Remove from coveted'):'')+(wro?'':'<div class="meta" style="margin-top:4px;text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:'+(bgStyle==="pattern"?'var(--ont,#f3ece2)':'#2a2420')+'">'+esc(wishDomain(w.link))+'</div>')+'</div>'}).join('');
  return '<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:14px"><h2 style="margin:0">Coveted Pieces</h2>'+ADDB('wadd','Add Coveted Piece')+'</div>'
-  +quoteHTML()+(list.length?'<div class="box'+(bgStyle==="pattern"?' pat':'')+'" style="overflow:hidden;min-width:0;'+(bgStyle==="pattern"?'background-color:var(--v1);background-image:var(--wpat);background-repeat:repeat;background-size:69.282px 40px':'background:var(--unlock)')+';box-shadow:inset 0 0 22px rgba(90,70,50,.12),inset 0 0 0 1px var(--line)"><div class="grid'+(wro?' ro':'')+'" style="grid-template-columns:repeat('+cols+',minmax(0,1fr))">'+tiles+'</div></div>':'<p class="meta">'+(wish.length?'No coveted items match this type.':'Nothing coveted yet.')+'</p>')
+  +quoteHTML()+(list.length?'<div class="box'+(bgStyle==="pattern"?' pat':' vtx')+'" style="overflow:hidden;min-width:0;'+(bgStyle==="pattern"?'background-color:var(--v1);background-image:var(--wpat);background-repeat:repeat;background-size:69.282px 40px':'')+';box-shadow:inset 0 0 22px rgba(90,70,50,.12),inset 0 0 0 1px var(--line)"><div class="grid'+(wro?' ro':'')+'" style="grid-template-columns:repeat('+cols+',minmax(0,1fr))">'+tiles+'</div></div>':'<p class="meta">'+(wish.length?'No coveted items match this type.':'Nothing coveted yet.')+'</p>')
   ;
 }
 function wishAddHTML(){
@@ -1206,7 +1232,7 @@ function daysUntil(s){if(!s)return null;var p=String(s).split('-');if(p.length!=
 function countPill(i){if(i.whereabouts!=='Incoming')return '';var n=daysUntil(i.deliveryDate);if(n==null||n<0)return '';return '<span aria-hidden="true" style="position:absolute;left:6px;bottom:6px;padding:2px 7px;border-radius:999px;background:rgba(0,0,0,.5);color:#fff;font-size:11px;line-height:1.4;pointer-events:none">'+(n===0?'Today':n+'d')+'</span>'}
 function countLine(n){return '<p class="meta" style="text-align:center;margin:16px 0 0">'+n+' piece'+(n===1?'':'s')+(anyFilter()?' (filtered)':'')+'</p>'}
 var TC={
- Piece:[['Category',function(i){return esc(i.category)}],['Period',function(i){return esc(i.period)}],['Era/Movement',function(i){return esc(i.era||'—')}],['Year',function(i){return esc(i.yearMade==null?'—':i.yearMade)}],['Country of Origin',function(i){return esc(i.country||'—')}],['Maker',function(i){return esc(i.maker||'—')}],['Stones',function(i){return esc((i.stone||[]).join(', ')||'—')}],['Metals',function(i){return metalsText(i)}],['Purity',function(i){return purityText(i)}],['Stone weight (ct)',function(i){return esc(i.stoneCt==null||i.stoneCt===''?'—':i.stoneCt+' ct')}],['Hallmarks',function(i){return esc(i.hallmark||'—')}],['Measurements',function(i){return esc(i.measurement||'—')}],['Weight (g)',function(i){return esc(i.grams==null||i.grams===''?(i.weight||'—'):i.grams+' g')}],['Ring Size',function(i){return esc(i.ringSize==null||i.ringSize===''?'—':i.ringSize)}],['Cut',function(i){return esc((i.cut||[]).join(', ')||'—')}],['Color',function(i){return colorsHTML(i.colorMain)}],['Motifs',function(i){return esc((i.motif||[]).join(', ')||'—')}],['Notes',function(i){return esc(i.notes||'—')}]],
+ Piece:[['Category',function(i){return esc(i.category)}],['Period',function(i){return esc(i.period)}],['Era',function(i){return esc(i.era||'—')}],['Style',function(i){return esc(i.style||'—')}],['Year',function(i){return esc(i.yearMade==null?'—':i.yearMade)}],['Country of Origin',function(i){return esc(i.country||'—')}],['Maker',function(i){return esc(i.maker||'—')}],['Stones',function(i){return esc((i.stone||[]).join(', ')||'—')}],['Metals',function(i){return metalsText(i)}],['Purity',function(i){return purityText(i)}],['Stone weight (ct)',function(i){return esc(i.stoneCt==null||i.stoneCt===''?'—':i.stoneCt+' ct')}],['Hallmarks',function(i){return esc(i.hallmark||'—')}],['Measurements',function(i){return esc(i.measurement||'—')}],['Weight (g)',function(i){return esc(i.grams==null||i.grams===''?(i.weight||'—'):i.grams+' g')}],['Ring Size',function(i){return esc(i.ringSize==null||i.ringSize===''?'—':i.ringSize)}],['Cut',function(i){return esc((i.cut||[]).join(', ')||'—')}],['Color',function(i){return colorsHTML(i.colorMain)}],['Motifs',function(i){return esc((i.motif||[]).join(', ')||'—')}],['Notes',function(i){return esc(i.notes||'—')}]],
  Transaction:[['Status',function(i){return esc(i.status)}],['Date Acquired',function(i){return esc(fmtDate(i.purchaseDate)||'—')}],['Seller',function(i){return esc(i.seller||'—')}],['Purchase Platform',function(i){return esc(i.purchasePlatform||'—')}],['Cost',function(i){return money(num(i.cost))}],['Shipping (acquired)',function(i){return money(num(i.acqShipping))}],['Tariffs',function(i){return money(num(i.tariffs))}],['Repairs',function(i){return money(num(i.repairs))}],['Total Cost',function(i){return (num(i.acqShipping)==null&&num(i.tariffs)==null&&num(i.repairs)==null)?'—':calcs(i).totCost}],['Selling Platform',function(i){return esc(i.sellPlatform||'—')}],['Date Listed',function(i){return esc(fmtDate(i.dateListed)||'—')}],['Listing Link',function(i){return i.linkSale?'<a href="'+esc(i.linkSale)+'" target="_blank" rel="noopener">open</a>':'—'}],['Date Sold',function(i){return esc(fmtDate(i.dateSold)||'—')}],['Turnover',function(i){return days(i)==null?'—':days(i)+' days'}],['Platform Fee',function(i){return fees(i)?money(fees(i)):'—'}],['Shipping (sold)',function(i){return money(num(i.shipActual))}],['Final Payout',function(i){return money(num(i.payout))}],['Net Profit',function(i){return calcs(i)['c-net']}]],
  Stats:[['Last Worn',function(i){return esc(fmtDate(i.wornLast)||'—')}],['Times Worn',function(i){return esc(i.wornCount==null||i.wornCount===''?'—':i.wornCount)}],['Rating',function(i){return stars(i.rating)||'—'}],['Photoshoot?',function(i){return i.photoshoot?'Yes':'No'}],['Tracking link',function(i){var u=String(i.trackUrl||'').trim();return /^https?:\/\//i.test(u)?'<a href="'+esc(u)+'" target="_blank" rel="noopener">open</a>':'—'}],['Expected delivery',function(i){return esc(fmtDate(i.deliveryDate)||'—')}]]
 };
@@ -1253,7 +1279,7 @@ function fieldHTML(k,v,opts){
  if(t==='check')return '<label class="swl"><input type="checkbox" name="'+k+'"'+(v?' checked':'')+'> '+s[0]+'</label>';
  if(t==='calc')return '<label>'+s[0]+'<div class="calc" id="'+s[2]+'">'+esc(calcs(editing)[s[2]])+'</div></label>';
  if(t==='pct')return '<label>'+s[0]+'<input name="'+k+'" type="number" step="0.1" inputmode="decimal" value="'+(k==='ebayPct'?PS.eb:PS.ig)+'"></label>';
- if(t==='sel')c='<select name="'+k+'">'+(opts||s[2]).map(function(o){return '<option value="'+esc(o)+'"'+(o===val?' selected':'')+'>'+esc(o||'—')+'</option>'}).join('')+'</select>';
+ if(t==='sel'){var sopts=opts||s[2];if((k==='era'||k==='style')&&val&&sopts.indexOf(val)<0)sopts=sopts.concat([val]);c='<select name="'+k+'">'+sopts.map(function(o){return '<option value="'+esc(o)+'"'+(o===val?' selected':'')+'>'+esc(o||'—')+'</option>'}).join('')+'</select>'}
  else if(t==='ringsz')c='<select name="ringSize"><option value="">—</option>'+ringOpts(val)+'</select>';
  else if(t==='textarea')c='<textarea name="'+k+'" rows="3">'+esc(val)+'</textarea>';
  else if(t==='rating')c='<select name="'+k+'">'+[0,1,2,3,4,5].map(function(n){return '<option value="'+n+'"'+(Number(val)===n?' selected':'')+'>'+(n?stars(n):'No rating')+'</option>'}).join('')+'</select>';
@@ -1292,7 +1318,7 @@ function recordSearchHTML(kind,img){
   +'<div class="bar" style="justify-content:center;margin-top:12px"><button data-a="x">Cancel</button></div></div></div>';
 }
 function matchRank(list,q,n){
- return list.filter(function(it){var hay=[title(it),it.id,it.category,it.period,it.era,it.country,it.seller,(it.stone||[]).join(' '),(it.motif||[]).join(' '),(it.metal||[]).join(' ')].join(' ').toLowerCase();return hay.indexOf(q)>-1})
+ return list.filter(function(it){var hay=[title(it),it.id,it.category,it.period,it.era,it.style,it.country,it.seller,(it.stone||[]).join(' '),(it.motif||[]).join(' '),(it.metal||[]).join(' ')].join(' ').toLowerCase();return hay.indexOf(q)>-1})
   .sort(function(x,y){var tx=title(x).toLowerCase(),ty=title(y).toLowerCase();var sx=tx.indexOf(q)===0?0:tx.indexOf(q)>-1?1:2,sy=ty.indexOf(q)===0?0:ty.indexOf(q)>-1?1:2;return sx-sy||tx.localeCompare(ty)})
   .slice(0,n);
 }
@@ -1314,7 +1340,7 @@ function listingTexts(g){
  var headline=[g('period'),g('era'),mat,g('title'),ring].filter(function(x){return x}).join(' ');
  var d=[];if(headline)d.push(headline);
  var L=[];if(place)L.push('• '+place);
- var eraDec=[g('era'),g('decade')].filter(function(x){return x}).join(' ');if(eraDec)L.push('• '+eraDec);
+ var eraDec=[g('era'),g('style'),g('decade')].filter(function(x){return x}).join(' ');if(eraDec)L.push('• '+eraDec);
  if(metal)L.push('• Metal: '+metal);
  if(ring)L.push('• Size: '+ring);
  if(meas)L.push('• Measurement: '+meas);
@@ -1361,10 +1387,10 @@ function imagesHTML(){
 }
 function firstRefCover(){if(!editing.cover&&(editing.refs||[]).length)editing.cover={id:editing.refs[0],l:null,t:null,w:null,h:null}}
 function quickPrompt(){
- return "Read the attached jewelry listing screenshots and output ONLY a JSON object with the keys below. Omit any key you cannot find. No commentary.\n\nKeys and rules:\n- \"title\": text. Shorten to the core descriptive name, dropping the brand, the era, and the carat/date phrasing. Example: \"Rose Cut Diamond Cluster Ring\" (not \"Victorian Rose Cut Diamond Cluster Ring in 18 Carat Gold; Circa 1880\").\n- \"category\": one of Ring, Earrings, Necklace, Bracelet, Watch, Other\n- \"period\": one of Ancient, Antique, Mid-Century, Vintage, New\n- \"era\": text (era or movement), copied from the listing only. Do not infer it from the year.\n- \"decade\": text. If the listing names a decade (for example \"1880s\") or gives a circa year (for example \"Circa 1880\"), output the decade (for example \"1880s\"). Do not derive it from \"yearMade\" when the listing gives neither.\n- \"yearMade\": number, only when the listing gives an exact year. Leave it out for \"circa\" or ranges. Put circa dates in \"decade\" instead.\n- \"country\": text (country of origin)\n- \"maker\": text\n- \"stone\": array of strings\n- \"metal\": array of strings. Choose only from: Yellow gold, White gold, Rose gold, Silver, Platinum, Base metal, Other. Put the primary metal first. Base metal means brass, copper, steel, or similar. Other means anything else.\n- \"purity\": number. For gold, the karat only (18 for 18k). For silver or platinum, the fineness (925, 950). Gold stamps convert to karat: 585 = 14, 750 = 18. Omit if the listing gives no purity.\n- \"hallmark\": text\n- \"measurement\": text\n- \"grams\": number, the metal weight in grams with no unit. Example: \"2.2 grams approximately\" becomes 2.2.\n- \"stoneCt\": number, total stone weight in carats with no unit. Omit if the listing gives none.\n- \"ringSize\": number from 1 to 13 in steps of 0.25 (rings only). Convert to US using the chart below and round to the nearest 0.25. The chart overrides any size stated in the listing, including a US size the listing gives. If the listing uses a system not on the chart, omit this key.\n- \"cut\": array of strings\n- \"colorMain\": array of strings. Choose only from: Red, Pink, Orange, Brown, Yellow, Green, Light blue, Blue, Purple, Black, Gray, White, Multi. Ignore emoji and numbers.\n- \"motif\": array of strings\n- \"notes\": text. Include only for a special circumstance, such as a defect, repair, missing part, or a discrepancy between the listing and the item. Seller policies (shipping, returns, payment) are not notes. Omit otherwise.\n- \"provenance\": text. Copy only what the listing says about earlier owners or history. Omit if the listing says none.\n- \"condition\": text. Copy only what the listing states about condition, such as \"good\". Omit if not stated.\n- \"purchaseDate\": YYYY-MM-DD. Omit if the listing has no purchase date.\n- \"seller\": text\n- \"purchasePlatform\": \"Etsy\", \"1stDibs\", or \"Seller\". Any other platform is \"Seller\".\n- \"cost\": number with no currency symbol or code\n\nSource priority: the listing text is primary. Use the photos to confirm or fill in color, stone, and cut only when the text is silent. If text and photos conflict, use the text, and record the conflict in \"notes\" only if it is a special circumstance.\n\nRing size chart (US & Canada column):\n5.25 = J.5 (UK); 5.5 = K; 5.75 = K.5; 6 = L; 6.25 = L.5; 6.5 = M; 6.75 = M.5; 7 = N; 7.25 = N.5; 7.5 = O; 7.75 = O.5; 8 = P; 8.25 = P.5; 8.5 = Q; 8.75 = Q.5; 9 = R; 9.25 = R.5\n\nExample: for a ring listed as \"M (UK)\" with \"18k rose gold\" in the text, output:\n{\"title\": \"Rose Cut Diamond Cluster Ring\", \"category\": \"Ring\", \"period\": \"Antique\", \"decade\": \"1880s\", \"metal\": [\"Rose gold\"], \"purity\": 18, \"ringSize\": 6.5, \"colorMain\": [\"Yellow\"], \"purchasePlatform\": \"Seller\"}";
+ return "Read the attached jewelry listing screenshots and output ONLY a JSON object with the keys below. Omit any key you cannot find. No commentary.\n\nKeys and rules:\n- \"title\": text. Shorten to the core descriptive name, dropping the brand, the era, and the carat/date phrasing. Example: \"Rose Cut Diamond Cluster Ring\" (not \"Victorian Rose Cut Diamond Cluster Ring in 18 Carat Gold; Circa 1880\").\n- \"category\": one of Ring, Earrings, Necklace, Bracelet, Watch, Other\n- \"period\": one of Ancient, Antique, Vintage, New\n- \"era\": one of Roman, Renaissance, Georgian, Regency, Napoleon III, Victorian, Belle \u00c9poque, Edwardian, Mid-century, Contemporary. Use it only when the listing names it. Do not infer it from the year. Omit if none fits.\n- \"style\": one of Rococo, Neoclassical, Gothic Revival, Etruscan Revival, Egyptian Revival, Art Nouveau, Arts & Crafts, Art Deco, Victorian Revival, Retro. Use it only when the listing names it. Omit if none fits.\n- \"decade\": text. If the listing names a decade (for example \"1880s\") or gives a circa year (for example \"Circa 1880\"), output the decade (for example \"1880s\"). Do not derive it from \"yearMade\" when the listing gives neither.\n- \"yearMade\": number, only when the listing gives an exact year. Leave it out for \"circa\" or ranges. Put circa dates in \"decade\" instead.\n- \"country\": text (country of origin)\n- \"maker\": text\n- \"stone\": array of strings\n- \"metal\": array of strings. Choose only from: Yellow gold, White gold, Rose gold, Silver, Platinum, Base metal, Other. Put the primary metal first. Base metal means brass, copper, steel, or similar. Other means anything else.\n- \"purity\": number. For gold, the karat only (18 for 18k). For silver or platinum, the fineness (925, 950). Gold stamps convert to karat: 585 = 14, 750 = 18. Omit if the listing gives no purity.\n- \"hallmark\": text\n- \"measurement\": text\n- \"grams\": number, the metal weight in grams with no unit. Example: \"2.2 grams approximately\" becomes 2.2.\n- \"stoneCt\": number, total stone weight in carats with no unit. Omit if the listing gives none.\n- \"ringSize\": number from 1 to 13 in steps of 0.25 (rings only). Convert to US using the chart below and round to the nearest 0.25. The chart overrides any size stated in the listing, including a US size the listing gives. If the listing uses a system not on the chart, omit this key.\n- \"cut\": array of strings\n- \"colorMain\": array of strings. Choose only from: Red, Pink, Orange, Brown, Yellow, Green, Light blue, Blue, Purple, Black, Gray, White, Multi. Ignore emoji and numbers.\n- \"motif\": array of strings\n- \"notes\": text. Include only for a special circumstance, such as a defect, repair, missing part, or a discrepancy between the listing and the item. Seller policies (shipping, returns, payment) are not notes. Omit otherwise.\n- \"provenance\": text. Copy only what the listing says about earlier owners or history. Omit if the listing says none.\n- \"condition\": text. Copy only what the listing states about condition, such as \"good\". Omit if not stated.\n- \"purchaseDate\": YYYY-MM-DD. Omit if the listing has no purchase date.\n- \"seller\": text\n- \"purchasePlatform\": \"Etsy\", \"1stDibs\", or \"Seller\". Any other platform is \"Seller\".\n- \"cost\": number with no currency symbol or code\n\nSource priority: the listing text is primary. Use the photos to confirm or fill in color, stone, and cut only when the text is silent. If text and photos conflict, use the text, and record the conflict in \"notes\" only if it is a special circumstance.\n\nRing size chart (US & Canada column):\n5.25 = J.5 (UK); 5.5 = K; 5.75 = K.5; 6 = L; 6.25 = L.5; 6.5 = M; 6.75 = M.5; 7 = N; 7.25 = N.5; 7.5 = O; 7.75 = O.5; 8 = P; 8.25 = P.5; 8.5 = Q; 8.75 = Q.5; 9 = R; 9.25 = R.5\n\nExample: for a ring listed as \"M (UK)\" with \"18k rose gold\" in the text, output:\n{\"title\": \"Rose Cut Diamond Cluster Ring\", \"category\": \"Ring\", \"period\": \"Antique\", \"decade\": \"1880s\", \"metal\": [\"Rose gold\"], \"purity\": 18, \"ringSize\": 6.5, \"colorMain\": [\"Yellow\"], \"purchasePlatform\": \"Seller\"}";
 }
 function quickReviewPrompt(){
- return "I've attached a zip exported from my jewelry app for one piece. It has piece.json (the saved data, plus calculated prices) and an images/ folder with the cover, reference, and comparison photos.\n\nTask: check the saved data against the photos and find data entry errors. The photos are the source of truth for what the piece looks like. Don't change fields the photos can't confirm (for example, cost, seller, or purchase date).\n\nOutput, in this order:\n\n1. A table of every proposed change, with these columns:\n   Field | Before (saved) | After (proposed) | Confidence (High / Medium / Low) | Evidence (which photo or text)\n   Only include fields you'd change. If nothing needs changing, say so and skip the table.\n\n2. One JSON object with ONLY the \"After\" values, using these keys: title, category, period, era, decade, yearMade, country, maker, stone, stoneCt, metal, purity, hallmark, measurement, grams, ringSize, cut, colorMain, motif, notes, purchaseDate, seller, purchasePlatform, cost.\n   - Lists (stone, metal, cut, colorMain, motif) are arrays of strings.\n   - colorMain may only be: Red, Pink, Orange, Brown, Yellow, Green, Light blue, Blue, Purple, Black, Gray, White, Multi.\n   - Metal: one or more of Yellow gold, White gold, Rose gold, Silver, Platinum, Base metal, Other. Primary first.\n   - Purity: gold karat as a number (18), or silver or platinum fineness (925, 950).\n   - Grams: number, no unit. StoneCt: carats as a number, no unit.\n   - Dates: YYYY-MM-DD.\n   - The app overwrites any key I include, so include only keys from the table.\n\nDon't guess. If a Confidence is Low, put it in the table but leave it out of the JSON."; }
+ return "I've attached a zip exported from my jewelry app for one piece. It has piece.json (the saved data, plus calculated prices) and an images/ folder with the cover, reference, and comparison photos.\n\nTask: check the saved data against the photos and find data entry errors. The photos are the source of truth for what the piece looks like. Don't change fields the photos can't confirm (for example, cost, seller, or purchase date).\n\nOutput, in this order:\n\n1. A table of every proposed change, with these columns:\n   Field | Before (saved) | After (proposed) | Confidence (High / Medium / Low) | Evidence (which photo or text)\n   Only include fields you'd change. If nothing needs changing, say so and skip the table.\n\n2. One JSON object with ONLY the \"After\" values, using these keys: title, category, period, era, style, decade, yearMade, country, maker, stone, stoneCt, metal, purity, hallmark, measurement, grams, ringSize, cut, colorMain, motif, notes, purchaseDate, seller, purchasePlatform, cost.\n   - Lists (stone, metal, cut, colorMain, motif) are arrays of strings.\n   - colorMain may only be: Red, Pink, Orange, Brown, Yellow, Green, Light blue, Blue, Purple, Black, Gray, White, Multi.\n   - Metal: one or more of Yellow gold, White gold, Rose gold, Silver, Platinum, Base metal, Other. Primary first.\n   - Purity: gold karat as a number (18), or silver or platinum fineness (925, 950).\n   - Grams: number, no unit. StoneCt: carats as a number, no unit.\n   - Dates: YYYY-MM-DD.\n   - The app overwrites any key I include, so include only keys from the table.\n\nDon't guess. If a Confidence is Low, put it in the table but leave it out of the JSON."; }
 function quickHTML(){
  var box=function(id,txt){return '<div class="seg" style="justify-content:space-between;margin-top:6px"><span class="meta">Prompt</span><button type="button" class="link" data-a="copy" data-id="'+id+'" style="margin-top:0">Copy</button></div><textarea id="'+id+'" rows="2" readonly style="height:56px;font-size:14px;resize:none">'+esc(txt)+'</textarea>'};
  return '<div class="modal" data-a="backdrop"><div style="max-width:520px;width:94vw"><h3 style="margin:0 0 4px">Quick Fill</h3>'
@@ -1995,8 +2021,8 @@ function pieceBodyHTML(i){
  var notes=[['Provenance',i.provenance],['Condition',i.condition]].filter(function(n){return n[1]&&String(n[1]).trim()});
  var ALL=TC.Transaction.concat(TC.Stats);
  var STATS_ROWS=[['Whereabouts',function(x){return esc(x.whereabouts||'—')}]].concat(rowsBy(ALL,['Status','Last Worn','Times Worn','Rating','Photoshoot?']));
- var PIECE_ROWS=rowsBy(TC.Piece,['Motifs','Color','Era/Movement','Year','Country of Origin','Maker','Hallmarks','Metals','Purity','Weight (g)','Stones','Stone weight (ct)','Cut','Measurements','Ring Size','Notes']);
- var di=PIECE_ROWS.map(function(r){return r[0]}).indexOf('Era/Movement');PIECE_ROWS.splice(di+1,0,['Decade',function(x){return esc(x.decade==null||x.decade===''?'—':x.decade)}]);
+ var PIECE_ROWS=rowsBy(TC.Piece,['Motifs','Color','Era','Style','Year','Country of Origin','Maker','Hallmarks','Metals','Purity','Weight (g)','Stones','Stone weight (ct)','Cut','Measurements','Ring Size','Notes']);
+ var di=PIECE_ROWS.map(function(r){return r[0]}).indexOf('Style');PIECE_ROWS.splice(di+1,0,['Decade',function(x){return esc(x.decade==null||x.decade===''?'—':x.decade)}]);
  var ACQ_ROWS=rowsBy(ALL,['Seller','Purchase Platform','Date Acquired','Cost','Shipping (acquired)','Tariffs','Repairs','Total Cost','Tracking link','Expected delivery']);
  var SALE_ROWS=rowsBy(ALL,['Selling Platform','Date Listed','Listing Link','Date Sold','Turnover','Platform Fee','Shipping (sold)','Final Payout','Net Profit']);
  var refImgs=(i.refs||[]).filter(function(id){return !!gal.imgs[id]});
@@ -2179,7 +2205,7 @@ function dashCountHTML(){
  var hbars=function(rows,lim){
   if(lim)rows=rows.slice(0,lim);
   var mx=Math.max.apply(null,rows.map(function(r){return r.n}).concat([1]));
-  return rows.map(function(r){return '<div style="display:grid;grid-template-columns:118px minmax(0,1fr) 34px;gap:8px;align-items:center;margin:5px 0"><span style="font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+(r.swatch?r.swatch+' ':'')+esc(r.label)+'</span><span style="display:block;height:12px;background:var(--line);border-radius:6px;overflow:hidden"><span style="display:block;height:100%;width:'+(r.n/mx*100).toFixed(1)+'%;background:'+r.fill+';border-radius:6px"></span></span><span class="meta" style="text-align:right">'+r.n+'</span></div>'}).join('');
+  return rows.map(function(r){return '<div style="display:grid;grid-template-columns:118px minmax(0,1fr) 34px;gap:8px;align-items:center;margin:5px 0"><span style="font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+(r.swatch?r.swatch+' ':'')+esc(r.label)+'</span><span style="display:block;height:12px;background:var(--line);border-radius:6px;overflow:hidden"><span style="display:block;height:100%;width:'+(r.n/mx*100).toFixed(1)+'%;background:'+r.fill+';border-radius:6px'+(r.edge?';box-sizing:border-box;border:1px solid var(--mute)':'')+'"></span></span><span class="meta" style="text-align:right">'+r.n+'</span></div>'}).join('');
  };
  // Category x purchase year heat map
  var hc={},hyrs={},hmax=1;
@@ -2195,8 +2221,8 @@ function dashCountHTML(){
  // Color (fixed list, multi-color pieces count in each)
  var colorM={},colorNone=0;COLOR_ORDER.forEach(function(c){colorM[c]=0});
  vs.forEach(function(i){var a=listOf(i.colorMain).map(capColor).filter(Boolean);if(!a.length){colorNone++;return}a.forEach(function(c){colorM[c]=(colorM[c]||0)+1})});
- var colorRows=COLOR_ORDER.filter(function(c){return colorM[c]}).map(function(c){return {label:c,n:colorM[c],fill:(COLORS[c.toLowerCase()]||'var(--acc)'),swatch:sw(c)}});
- if(colorNone)colorRows.push({label:'None',n:colorNone,fill:'var(--line)'});
+ var colorRows=COLOR_ORDER.filter(function(c){return colorM[c]}).map(function(c){return {label:c,n:colorM[c],fill:(COLORS[c.toLowerCase()]||'var(--acc)'),swatch:sw(c),edge:/^(white|colorless|multi)$/i.test(c)}});
+ if(colorNone)colorRows.push({label:'None',n:colorNone,fill:'var(--line)',edge:1});
  // Free-text and list fields, grouped without regard to case
  var tally=function(vals){var m={};vals.forEach(function(k){var t=String(k).trim();if(!t)return;var key=t.toLowerCase();if(!m[key])m[key]={label:tc(t),n:0};m[key].n++});return Object.keys(m).map(function(k){return {label:m[k].label,n:m[k].n,fill:'var(--acc)'}})};
  var withBlank=function(rows,blank){if(blank)rows.push({label:'Not recorded',n:blank,fill:'var(--line)'});return rows};
@@ -2299,7 +2325,9 @@ function coerce(k,v){
  if(k==='category')return catFix(v);
  if(k==='status'){var mt={status:v};migrateStatus(mt);return mt.status}
  if(k==='whereabouts'){var wv=WHERE.filter(function(w){return w.toLowerCase()===String(v).toLowerCase()})[0];return wv||'In possession'}
- if(k==='period')return PERIODS.filter(function(p){return p.toLowerCase()===v.toLowerCase()})[0]||'Antique';
+ if(k==='period'){if(/^mid[- ]?century$/i.test(v))return 'Vintage';return PERIODS.filter(function(p){return p.toLowerCase()===v.toLowerCase()})[0]||'Antique'}
+ if(k==='era')return eraMatch(v)||styleMatch(v)&&v||v;
+ if(k==='style')return styleMatch(v)||v;
  if(k==='colorMain')return String(v).split(/[,;]/).map(function(x){return capColor(x)}).filter(Boolean);
  return v;
 }
@@ -2342,6 +2370,7 @@ function applyCSV(text,dry){
      if(rec[k]==='(clear)'){if(k!=='title')out[k]=clearedVal(out[k])}
      else out[k]=coerce(k,rec[k]);
    });
+   if(/^mid[- ]?century$/i.test(rec.period||'')&&!String(out.era||'').trim())out.era='Mid-century';
    out=mig(out);migrateStatus(out);
    if(existing){items[items.indexOf(existing)]=out;updated++}else{items.push(out);added++;if(!rec.id||rec.id==='-1')noIdNew+=(rec.id==='-1'?0:1)}
    if(rec.id&&rec.id!=='-1')fileIdMap[rec.id]=out.id;
@@ -3037,7 +3066,7 @@ function confettiBurst(){
  })();
 }
 /* ---------- update banner with What's new CTA (no popup) ---------- */
-var WHATS_NEW='Offline: With no signal the app opens straight away. The Out treasure hunting screen is gone.\nSecret Compartment: In the Timeless dark theme, the text in the panel is now light and easy to read.\nCoveted: The first quote now credits Unknown.';
+var WHATS_NEW='Era and Style: Era is now a dropdown, and there is a new Style dropdown, so one piece can carry both. Your existing values are sorted into them when the app opens. Anything that does not match stays as it was.\nPeriod: Mid-Century is gone. Those pieces are now Vintage with the Mid-century era.\nSecret Compartment: Panel text is white on Ruby, Sapphire and Emerald.\nWares: White, Colorless, Multi and None bars on Pieces by Color have a thin border.\nCoveted: The Velvet panel has a velvet texture.';
 function updateBannerCheck(){
  var seen=null;try{seen=localStorage.getItem('ntts_seen_ver')}catch(e){}
  try{localStorage.setItem('ntts_seen_ver',APP_VERSION)}catch(e){}
