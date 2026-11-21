@@ -8,11 +8,13 @@ Live site: https://nevertwicethesame.github.io/jewelrybox/
 
 - **Catalog:** record each piece's details, photos, and status.
 - **Gallery:** shared reference photos, linked to pieces as references, comparables, or covers.
-- **Curations:** collect pieces around a theme, such as Victorian mourning rings, and order them your way.
-- **Sets:** link pieces that go together, such as matching earrings and a necklace. Linked pieces form one set, shown as a tray on the Collections page, sorted by type and then color.
+- **Collections:** group pieces around a theme, such as Victorian mourning rings, and order them your way.
 - **Coveted Pieces:** wanted items with a photo, a link, and a type.
-- **Secret Compartment:** a keyword-protected section. Hidden pieces stay hidden everywhere, including collections.
-- **Jewelry of the Day:** a random pick, weighted toward pieces not worn recently.
+- **Secret Compartment:** a keyword-protected view that hides pieces above a dollar amount, everywhere in the app. It is a privacy screen, not encryption: hidden pieces are still in the app's data and in backups.
+- **Jewelry of the Day:** a random pick for a ring, earrings, and a necklace, weighted toward pieces not worn recently.
+- **Wares and Dashboard:** what's for sale and what has sold, with gold and silver prices and charts.
+- **Guides:** ring, earring, and necklace size guides, and a timeline of jewelry periods.
+- **Themes:** four color themes, light and dark.
 - **Import and export:** CSV for spreadsheets, and JSON for full backups.
 - **Reminders:** a backup banner when the last JSON backup is over 7 days old, and an update notice when a newer version is published.
 
@@ -35,10 +37,27 @@ To restore, open the menu, tap **I/O**, and choose **Import JSON**. Select **all
 
 ## Privacy
 
-- No accounts, analytics, or tracking. The only outside resource is Google Fonts.
+- No accounts, analytics, cookies, or tracking.
 - Your collection, photos, and wishlist stay on your device. The app's event log stays there too, with counts but no piece titles.
-- The only other request the app makes is a check for `version.json` on this site.
-- JSON backups are not encrypted. Store them somewhere private.
+- Fonts are served from this site, not from Google or anyone else.
+- The app asks this site for two small files: `version.json` (update check) and `prices.json` (gold and silver prices). Nothing about you or your collection is sent.
+- The Coveted preview window loads the page you link to. That page belongs to the other site, and the app does not send a referrer.
+- JSON backups are not encrypted and contain costs, sellers, and notes. Store them somewhere private. Never commit one to this repository.
+- Like any website, GitHub Pages may log visitor IP addresses. That is GitHub's doing and not something the app controls.
+
+## Prices
+
+Gold and silver spot and melt prices are fetched once a day by a GitHub Action (`.github/workflows/prices.yml`, script `scripts/fetch-prices.mjs`), which saves them to `prices.json`. The API key is a GitHub Actions secret and is not in any file. Prices come from [MetalCharts](https://metalcharts.org) and are indicative only: estimates, not an appraisal or financial advice.
+
+## Accessibility
+
+The goal is WCAG 2.2 level AA as far as is practical for a personal app. Text meets contrast minimums in every theme, icon-only buttons are labeled, pinch zoom is on, and the heart animation is skipped when iOS Reduce Motion is on. Known gaps are tracked in the project's design notes.
+
+## Credits and licenses
+
+- Fonts: [Cormorant Garamond](https://fonts.google.com/specimen/Cormorant+Garamond) and [Varta](https://fonts.google.com/specimen/Varta), both under the SIL Open Font License 1.1. License text is in the `fonts` folder.
+- Illustrations and icons are original to this project.
+- Photos, quotes, and links in Coveted Pieces and the Gallery belong to their owners and are for private reference only.
 
 ## Files
 
@@ -46,8 +65,11 @@ To restore, open the menu, tap **I/O**, and choose **Import JSON**. Select **all
 | --- | --- |
 | `index.html` | The whole app in one file. |
 | `version.json` | The current version. The app reads it for the update notice. |
+| `prices.json` | Daily gold and silver prices, written by the GitHub Action. |
 | `sw.js` | The service worker, which keeps the app working offline. |
+| `fonts/` | The self-hosted fonts and their license files. |
 | `apple-touch-icon.png` | The Home Screen icon. |
+| `.github/workflows/prices.yml`, `scripts/fetch-prices.mjs` | The daily price update. |
 | `README.md` | This file. |
 
 ## Development
