@@ -356,7 +356,7 @@ header button[data-a="drawer"]{display:flex;align-items:center;justify-content:c
 <script>
 document.getElementById('app').innerHTML='<div style="position:fixed;inset:0;z-index:50;background:var(--bg);display:flex;align-items:center;justify-content:center">'+mothLoaderHTML()+'</div>';
 var K='ntts_items_v2',OK='ntts_order_v1',PER=25,MAX_UPLOAD=300*1024;
-var APP_VERSION='2.24.1',APP_DATE='2026-11-20 · 9:55 PM ET',UPDATE_URL='';
+var APP_VERSION='2.25.0',APP_DATE='2026-11-21 · 9:32 AM ET',UPDATE_URL='';
 var ICONS={reorder:"<path d='M8 20V4M8 4L4.5 7.5M8 4l3.5 3.5M16 4v16M16 20l-3.5-3.5M16 20l3.5-3.5'/>",coll:"<rect x='3' y='4' width='18' height='16' rx='2'/><path d='M3 10h18M8 14h8'/>",gem:"<path d='M7 4h10l4 5-9 11L3 9z'/><path d='M3 9h18M9 4l-1.5 5L12 20l4.5-11L15 4'/>",pkg:"<path d='M3 7.5L12 3l9 4.5v9L12 21l-9-4.5z'/><path d='M3 7.5l9 4.5 9-4.5M12 12v9'/>",hand:"<path d='M5 11V7a1.5 1.5 0 0 1 3 0v4M8 11V5a1.5 1.5 0 0 1 3 0v6M11 11V6a1.5 1.5 0 0 1 3 0v6M14 11V8a1.5 1.5 0 0 1 3 0v7c0 3-2 5-5 5h-1c-2 0-3-1-4-3l-2-4'/>",x:"<path d='M6 6l12 12M18 6L6 18'/>",ring:"<circle cx='12' cy='14' r='6'/><path d='M9.5 8 12 4l2.5 4'/><path d='M12 9.5l1.5 2.5-1.5 2.5-1.5-2.5z'/>",earrings:"<path d='M7 3v3'/><path d='M7 6c-1.6 0-2.5 1.3-2.5 3S6 14 7 17c1-3 2.5-5 2.5-8C9.5 7.3 8.6 6 7 6z'/><path d='M17 3v3'/><path d='M17 6c-1.6 0-2.5 1.3-2.5 3S16 14 17 17c1-3 2.5-5 2.5-8C19.5 7.3 18.6 6 17 6z'/>",necklace:"<path d='M4 5c2 7 14 7 16 0'/><path d='M12 12.5V15'/><circle cx='12' cy='17' r='2.2'/>",bracelet:"<ellipse cx='12' cy='12' rx='8' ry='5.5'/><ellipse cx='12' cy='12' rx='5.5' ry='3'/>",watch:"<circle cx='12' cy='13' r='5.5'/><path d='M9 7.5 10 3h4l1 4.5M9 18.5 10 23h4l1-4.5'/><path d='M12 10.5V13l1.8 1.2'/>",heart:"<path d='M12 20s-7-4.4-7-9.5A4 4 0 0 1 12 8a4 4 0 0 1 7 2.5C19 15.6 12 20 12 20z'/>",wrench:"<path d='M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-.5-.5-2.5z'/>",key:"<g transform='rotate(-45 12.5 12)'><circle cx='8' cy='12' r='4'/><path d='M12 12h9M18 12v3M21 12v2.5'/></g>",curio:"<rect x='4' y='3' width='16' height='18' rx='1'/><path d='M3 3h18M3 21h18'/><path d='M12 3v18'/><path d='M4 11h16'/><path d='M10.5 7v1.5M13.5 7v1.5M10.5 15v1.5M13.5 15v1.5'/>",clock:"<circle cx='12' cy='12' r='9'/><path d='M12 7v5l3 2'/>",pencil:"<path d='M4 20h4L19 9l-4-4L4 16z'/><path d='M13.5 6.5l4 4'/>",lock:"<rect x='5' y='11' width='14' height='10' rx='2'/><path d='M8 11V7a4 4 0 0 1 8 0v4'/>",unlock:"<rect x='3.95' y='11' width='11.1' height='10' rx='2'/><path d='M12.8 11V6.3A3.3 3.3 0 0 1 19.4 6.3V9.5'/>",bag:"<path d='M5 8h14l-1 12H6z'/><path d='M9 8V6a3 3 0 0 1 6 0v2'/>",plus:"<path d='M12 5v14M5 12h14'/>",x:"<path d='M6 6l12 12M18 6L6 18'/>",spark:"<path d='M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z'/>",gallery:"<rect x='3' y='4' width='18' height='16' rx='2'/><circle cx='9' cy='10' r='2'/><path d='M21 16l-5-5-8 9'/>"};
 var ORN='<svg width="72" height="10" viewBox="0 0 72 10" fill="none" stroke="#a8864f" stroke-width="1.2"><path d="M0 5h28M44 5h28"/><path d="M36 1l4 4-4 4-4-4z"/></svg>';
 var ICOFIT_O={"reorder":[11.75,12,16],"coll":[12,12,16],"gem":[12,12,16],"ring":[12,12,16],"earrings":[12,10,15],"necklace":[12,12.1,16],"bracelet":[12,12,16],"watch":[12,13,20],"heart":[12,13.32,14],"wrench":[10.58,13.42,15.16],"key":[12.5,12,17.68],"curio":[12,12,18],"clock":[12,12,18],"pencil":[11.5,12.5,15],"lock":[12,12,18],"unlock":[12,12,17.99],"bag":[12,11.5,17],"plus":[12,12,14],"x":[12,12,12],"spark":[12,10,14],"gallery":[12,12,18]},ICOFIT_S={"coll":[12,12,16],"gem":[12,12,16],"ring":[12,11.5,17],"key":[12.25,12,18.74],"bag":[12,11.5,17],"plus":[12,12,19],"spark":[12,10,14]};
@@ -657,6 +657,7 @@ async function init(){var _t0=Date.now();
  var gRaw=await kget('gallery');gal=normGal(gRaw);
  secretCfg=(await kget('secret'))||secretCfg;if(secretCfg&&'kw' in secretCfg){delete secretCfg.kw;saveSecret()}
  wish=(await kget('wishlist'))||[];
+ quotes=(await kget('quotes'))||[];if(!Array.isArray(quotes))quotes=[];
  colls=(await kget('collections'))||[];colls.forEach(function(c){if(!c.pieceIds)c.pieceIds=[]});
  await loadGalImgs(gRaw,it);
  lastExport=(await kget('lastExport'))||'';
@@ -853,6 +854,19 @@ function wishGalHTML(){
  return '<details data-gsec="wish"'+(galOpen.wish?' open':'')+'><summary>Coveted Items ('+wish.length+')</summary>'
   +(!galOpen.wish&&wish.length?'<p class="meta">Open to see '+wish.length+' coveted item'+(wish.length===1?'':'s')+'.</p>':wish.length?'<div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(110px,1fr))">'+wish.slice().reverse().map(function(w){return '<div><div style="position:relative;aspect-ratio:1;border-radius:8px;overflow:hidden;background:var(--acc)">'+(gal.imgs[wishCover(w).id]?coverImg(wishCover(w),true):'<span class="meta" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center">No image</span>')+'</div></div>'}).join('')+'</div>':'<p class="meta">Nothing coveted yet.</p>')
   +'<p class="meta">Add or remove coveted items on the Coveted page.</p></details>';
+}
+function quotesGalHTML(){
+ return '<details data-gsec="quotes"'+(galOpen.quotes?' open':'')+'><summary>Quotes ('+quotes.length+')</summary>'
+  +(galOpen.quotes?(quotes.length?'<div style="display:flex;flex-direction:column;gap:8px;margin:8px 0">'+quotes.map(function(x){return '<button type="button" data-a="qedit" data-id="'+esc(x.id)+'" style="display:block;width:100%;text-align:left;padding:10px 12px;border-radius:12px;height:auto;min-height:44px"><span style="display:block;font-style:italic;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical">'+esc(x.q)+'</span><span class="meta" style="display:block;margin-top:2px">'+esc(x.by||'Unknown')+'</span></button>'}).join('')+'</div>':'<p class="meta">No quotes yet.</p>'):(quotes.length?'<p class="meta">Open to see '+quotes.length+' quote'+(quotes.length===1?'':'s')+'.</p>':''))
+  +'<div style="margin:8px 0"><button type="button" data-a="qadd" style="width:100%">Add Quote</button></div>'
+  +'<p class="meta">One quote is picked at random under the Coveted page.</p></details>';
+}
+function quoteFormHTML(id){
+ var x=id?quotes.filter(function(k){return k.id===id})[0]:null;
+ return '<div class="modal" data-a="backdrop"><div style="max-width:520px;width:94vw"><h3 style="margin:0 0 6px">'+(x?'Edit quote':'Add a quote')+'</h3>'
+  +'<label style="margin-top:10px">Quote<textarea id="qtext" rows="4" maxlength="300">'+esc(x?x.q:'')+'</textarea></label>'
+  +'<label style="margin-top:10px">By<input type="text" id="qby" maxlength="60" placeholder="Unknown" value="'+esc(x?x.by:'')+'"></label>'
+  +'<div class="bar" style="justify-content:center;margin:12px 0 0"><button class="pri" data-a="qsave" data-id="'+esc(id||'')+'">Save</button><button data-a="x">Cancel</button>'+(x?'<button class="dan" data-a="qdel" data-id="'+esc(id)+'">Delete</button>':'')+'</div></div></div>';
 }
 function imgBytes(u){if(!u)return 0;var b=u.split(',')[1]||'';return Math.floor(b.length*3/4)-(b.slice(-2)==='=='?2:b.slice(-1)==='='?1:0)}
 var TH={},thQ=[],thRun=false;
@@ -1054,7 +1068,7 @@ function collGalHTML(){
  var body=!galOpen.colls?(list.length?'<p class="meta">Open to see '+list.length+' collection cover'+(list.length===1?'':'s')+'.</p>':''):(list.length?'<div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(110px,1fr))">'+list.map(function(c){return '<button type="button" data-a="gcollopen" data-id="'+c.id+'" style="padding:0;border:0;background:transparent;text-align:left;display:block;min-height:0"><div style="position:relative;aspect-ratio:1;border-radius:8px;overflow:hidden;background:var(--acc)">'+coverImg(c.cover,true)+'</div><div class="meta" style="font-size:12px;margin-top:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+esc(c.title||'Untitled')+'</div></button>'}).join('')+'</div>':'<p class="meta">No collection cover photos yet.</p>');
  return '<details data-gsec="colls"'+(galOpen.colls?' open':'')+'><summary>Collections ('+list.length+')</summary>'+body+'</details>';
 }
-function renderGallery(){return '<h2>Gallery</h2>'+gallerySection('refs','Reference Images')+gallerySection('comps','Comparables')+gallerySection('covers','Cover Photos')+collGalHTML()+wishGalHTML()}
+function renderGallery(){return '<h2>Gallery</h2>'+gallerySection('refs','Reference Images')+gallerySection('comps','Comparables')+gallerySection('covers','Cover Photos')+collGalHTML()+wishGalHTML()+quotesGalHTML()}
 function gicon(n){var w=(28-(n-1)*2)/n,r='';for(var k=0;k<n;k++)r+='<rect x="'+(k*(w+2))+'" y="0" width="'+w+'" height="14" rx="2" fill="currentColor"/>';return '<svg role="img" aria-label="'+n+' across" width="28" height="14" viewBox="0 0 28 14">'+r+'</svg>'}
 function wishCover(w){return w.cover||{id:w.img,l:null,t:null,w:null,h:null}}
 var sgTab='ring',sgFrom='box';
@@ -1174,15 +1188,13 @@ function necklaceSizesHTML(){
  return '<h4 class="sub" style="margin:12px 0 4px;text-align:left">Where chains fall</h4>'+art+'<p class="meta" style="font-size:12px;margin:8px 0 0">Lengths are full chain length, clasp to clasp, in inches. Drop depths are approximate. Illustrations are drawn from estimated references and may not be exactly to scale.</p>';
 }
 /* Jewelry quotes for the Coveted page. Add one line per quote: { q: 'the quote', by: 'who said it (optional)' }. The strip is hidden while the list is empty. */
-var JEWELRY_QUOTES=[
-  { q: "Nothing haunts you like the jewelry you didn't buy. AND THEN IT GETS SOLD OUT.", by: "Unknown" },
-  { q: "No, that's my FRIEND's niche interest that i'm obsessed with on their behalf… that's my interest-in-law.", by: "@bnaps38" }
-];
+var quotes=[];
+function saveQuotes(){touchChange();return track(kset('quotes',quotes))}
 var WISH_QUOTE=-1;
-function quoteHTML(){if(!JEWELRY_QUOTES.length)return '';if(WISH_QUOTE<0||WISH_QUOTE>=JEWELRY_QUOTES.length)WISH_QUOTE=Math.floor(Math.random()*JEWELRY_QUOTES.length);var x=JEWELRY_QUOTES[WISH_QUOTE];return '<div style="width:90%;margin:14px auto 0;text-align:center"><p style="margin:0;font-style:italic;color:var(--mute)">'+esc(x.q)+'</p>'+(x.by?'<p class="meta" style="margin:4px 0 0">'+esc(x.by)+'</p>':'')+'</div>'}
+function quoteHTML(){if(!quotes.length)return '';if(WISH_QUOTE<0||WISH_QUOTE>=quotes.length)WISH_QUOTE=Math.floor(Math.random()*quotes.length);var x=quotes[WISH_QUOTE];return '<div style="width:90%;margin:14px auto 0;text-align:center"><p style="margin:0;font-style:italic;color:var(--mute)">'+esc(x.q)+'</p>'+'<p class="meta" style="margin:4px 0 0">'+esc(x.by||'Unknown')+'</p>'+'</div>'}
 function renderWishlist(){
  var list=wish.filter(function(w){return (!wishType.length||wishType.indexOf(w.category)>-1)&&(!q||((w.category||'')+' '+(w.link||'')).toLowerCase().indexOf(q)>-1)});
- var tiles=list.map(function(w){return '<div class="'+(wro?'tile':'')+'" data-id="'+w.id+'" style="position:relative"><button type="button" data-a="wopen" data-id="'+w.id+'" aria-label="'+esc('Open coveted piece'+(wishDomain(w.link)?', '+wishDomain(w.link):''))+'" style="padding:0;border:0;border-radius:10px;overflow:hidden;aspect-ratio:1;width:100%;display:block;min-height:0;background:var(--acc);position:relative">'+coverImg(wishCover(w),true)+'</button>'+(wro?xBtn('data-a="wdel" data-id="'+w.id+'"','Remove from coveted'):'')+(wro?'':'<div class="meta" style="margin-top:4px;text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:'+(bgStyle==="pattern"?'var(--ont,#f3ece2)':'#2a2420')+'">'+esc(wishDomain(w.link))+'</div>')+'</div>'}).join('');
+ var tiles=list.map(function(w){return '<div class="'+(wro?'tile':'')+'" data-id="'+w.id+'" style="position:relative'+(wro?';display:block;aspect-ratio:auto;overflow:visible;background:none;border-radius:0;box-shadow:none;font-size:16px':'')+'"><button type="button" data-a="wopen" data-id="'+w.id+'" aria-label="'+esc('Open coveted piece'+(wishDomain(w.link)?', '+wishDomain(w.link):''))+'" style="padding:0;border:0;border-radius:10px;overflow:hidden;aspect-ratio:1;width:100%;display:block;min-height:0;background:var(--acc);position:relative'+(wro?';box-shadow:0 3px 9px rgba(0,0,0,.55)':'')+'">'+coverImg(wishCover(w),true)+'</button>'+(wro?xBtn('data-a="wdel" data-id="'+w.id+'"','Remove from coveted'):'')+('<div class="meta" style="margin-top:4px;text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:'+(bgStyle==="pattern"?'var(--ont,#f3ece2)':'#2a2420')+'">'+esc(wishDomain(w.link))+'</div>')+'</div>'}).join('');
  return '<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:14px"><h2 style="margin:0">Coveted Pieces</h2><div style="display:flex;gap:8px">'+(list.length?gridBtn()+roBtn('wro',wro):'')+ADDB('wadd','Add Coveted Piece')+'</div></div>'
   +(list.length?'<div class="box'+(bgStyle==="pattern"?' pat':' vtx')+'" style="overflow:hidden;min-width:0;'+(bgStyle==="pattern"?'background-color:var(--v1);background-image:var(--wpat);background-repeat:repeat;background-size:69.282px 40px':'')+';box-shadow:inset 0 0 22px rgba(90,70,50,.12),inset 0 0 0 1px var(--line)"><div class="grid'+(wro?' ro':'')+'" style="grid-template-columns:repeat('+cols+',minmax(0,1fr))">'+tiles+'</div></div>':'<p class="meta">'+(wish.length?'No coveted items match this type.':'Nothing coveted yet.')+'</p>')
   +quoteHTML();
@@ -1717,7 +1729,7 @@ function renderColl(){
  if(collTab==='set')return head+renderSets();
  var cards=colls.map(function(c){return {c:c,p:collVisIds(c)}}).filter(function(x){return x.p.length||x.c.pieceIds.length===0||!secretCfg.on});
  if(!cards.length)return head+'<p class="meta">'+(colls.length?'Nothing to show while Secret Compartment is on.':'No collections yet.')+'</p>';
- var tiles=cards.map(function(x){var f=x.p[0];var inner='<button type="button" data-a="copen" data-id="'+x.c.id+'" style="padding:0;border:0;background:transparent;text-align:left;display:block;min-height:0"><div style="aspect-ratio:1;border-radius:10px;overflow:hidden;background:var(--acc);position:relative">'+(x.c.cover?coverImg(x.c.cover,true):(f?(coverImg(f.cover,true)||noThumb(f,40)):'<div class="meta" style="height:100%;display:flex;align-items:center;justify-content:center">Empty</div>'))+'</div><div class="ctitle" style="margin-top:6px">'+esc(x.c.title||'Untitled')+'</div><div class="meta">'+x.p.length+' piece'+(x.p.length===1?'':'s')+'</div></button>';if(collListRo)return '<div class="tile" data-id="'+x.c.id+'" style="display:block;min-width:0;cursor:grab;box-shadow:0 3px 9px rgba(0,0,0,.55)">'+(x.c.cover?coverImg(x.c.cover,true):(f?(coverImg(f.cover,true)||noThumb(f,40)):''))+'<div class="ctitle" style="margin-top:6px">'+esc(x.c.title||'Untitled')+'</div><div class="meta">'+x.p.length+' piece'+(x.p.length===1?'':'s')+'</div></div>';return inner}).join('');
+ var tiles=cards.map(function(x){var f=x.p[0];var inner='<button type="button" data-a="copen" data-id="'+x.c.id+'" style="padding:0;border:0;background:transparent;text-align:left;display:block;min-height:0"><div style="aspect-ratio:1;border-radius:10px;overflow:hidden;background:var(--acc);position:relative">'+(x.c.cover?coverImg(x.c.cover,true):(f?(coverImg(f.cover,true)||noThumb(f,40)):'<div class="meta" style="height:100%;display:flex;align-items:center;justify-content:center">Empty</div>'))+'</div><div class="ctitle" style="margin-top:6px">'+esc(x.c.title||'Untitled')+'</div><div class="meta">'+x.p.length+' piece'+(x.p.length===1?'':'s')+'</div></button>';if(collListRo)return '<div class="tile" data-id="'+x.c.id+'" style="display:block;min-width:0;cursor:grab;aspect-ratio:auto;overflow:visible;background:none;border-radius:0;box-shadow:none;font-size:16px;line-height:1.45;text-align:left"><div style="aspect-ratio:1;border-radius:10px;overflow:hidden;background:var(--acc);position:relative">'+(x.c.cover?coverImg(x.c.cover,true):(f?(coverImg(f.cover,true)||noThumb(f,40)):''))+'</div><div class="ctitle" style="margin-top:6px">'+esc(x.c.title||'Untitled')+'</div><div class="meta">'+x.p.length+' piece'+(x.p.length===1?'':'s')+'</div></div>';return inner}).join('');
  return head+'<div class="grid'+(collListRo?' ro':'')+'" style="grid-template-columns:repeat('+cols+',minmax(0,1fr))">'+tiles+'</div>';
 }
 var lhTab='to';
@@ -2457,7 +2469,7 @@ function planChunks(){
  return chunks;
 }
 var expParts=null,expDone={};
-function docForPart(c,n,N){var doc={app:'never-twice-the-same',format:2,part:n+1,of:N,exported:new Date().toISOString(),items:c.items,images:c.imgs};if(n===N-1){doc.gallery={refs:gal.refs,covers:gal.covers,comps:gal.comps};doc.order=order;doc.theme=theme;doc.hideSold=hideSold;doc.wishlist=wish;doc.collections=colls;doc.appearance={bgStyle:bgStyle,frameStyle:frameStyle};doc.secret={on:!!secretCfg.on,threshold:secretCfg.threshold,hash:secretCfg.hash||''}}return doc}
+function docForPart(c,n,N){var doc={app:'never-twice-the-same',format:2,part:n+1,of:N,exported:new Date().toISOString(),items:c.items,images:c.imgs};if(n===N-1){doc.gallery={refs:gal.refs,covers:gal.covers,comps:gal.comps};doc.order=order;doc.theme=theme;doc.hideSold=hideSold;doc.wishlist=wish;doc.quotes=quotes;doc.collections=colls;doc.appearance={bgStyle:bgStyle,frameStyle:frameStyle};doc.secret={on:!!secretCfg.on,threshold:secretCfg.threshold,hash:secretCfg.hash||''}}return doc}
 function stampFile(){var d=new Date();return today()+'_'+('0'+d.getHours()).slice(-2)+('0'+d.getMinutes()).slice(-2)}
 function stampNow(){var d=new Date();return today()+'-'+('0'+d.getHours()).slice(-2)+('0'+d.getMinutes()).slice(-2)}
 function saveFile(name,mime,text){
@@ -2511,20 +2523,20 @@ function importJSON(texts){
  try{texts.forEach(function(t){docs.push(JSON.parse(t))})}catch(e){alert('One of the selected files is not a valid backup.');return}
  var kinded=docs.filter(function(d){return d&&d.kind});if(kinded.length){alert('This is an older links and gallery lists backup. Restore it with an Everything backup, or back up data again.');return}
  var noPh=docs.some(function(d){return d&&d.noPhotos});
- var allItems=[],imgs={},lists={refs:[],covers:[],comps:[]},ord=null,th=null,hs=null,wl=null,cl=null,ap=null,sc=null;
+ var allItems=[],imgs={},lists={refs:[],covers:[],comps:[]},ord=null,th=null,hs=null,wl=null,qs=null,cl=null,ap=null,sc=null;
  var parts={},partOf=0,hasTail=false,fmt2=0;
  docs.forEach(function(d){
    if(d.format===2){fmt2++;if(d.part)parts[d.part]=1;if(d.of)partOf=Math.max(partOf,d.of);if(d.gallery)hasTail=true;
      (d.items||[]).forEach(function(i){allItems.push(i)});
      Object.keys(d.images||{}).forEach(function(k){imgs[k]=d.images[k]});
      if(d.gallery){lists.refs=lists.refs.concat(d.gallery.refs||[]);lists.covers=lists.covers.concat(d.gallery.covers||[]);lists.comps=lists.comps.concat(d.gallery.comps||[])}
-     if(d.order)ord=d.order;if(d.theme)th=d.theme;if(typeof d.hideSold==='boolean')hs=d.hideSold;if(d.wishlist)wl=d.wishlist;if(d.collections)cl=d.collections;if(d.appearance)ap=d.appearance;if(d.secret)sc=d.secret;
+     if(d.order)ord=d.order;if(d.theme)th=d.theme;if(typeof d.hideSold==='boolean')hs=d.hideSold;if(d.wishlist)wl=d.wishlist;if(Array.isArray(d.quotes))qs=d.quotes;if(d.collections)cl=d.collections;if(d.appearance)ap=d.appearance;if(d.secret)sc=d.secret;
    }else{
      var arr=Array.isArray(d)?d:(d.items||[]);
      arr.forEach(function(i){allItems.push(i)});
      var g=normGal(d.gallery||null);Object.keys(g.imgs).forEach(function(k){imgs[k]=g.imgs[k]});
      lists.refs=lists.refs.concat(g.refs);lists.covers=lists.covers.concat(g.covers);lists.comps=lists.comps.concat(g.comps);
-     if(d.order)ord=d.order;if(d.theme)th=d.theme;if(typeof d.hideSold==='boolean')hs=d.hideSold;if(d.wishlist)wl=d.wishlist;if(d.collections)cl=d.collections;if(d.appearance)ap=d.appearance;if(d.secret)sc=d.secret;
+     if(d.order)ord=d.order;if(d.theme)th=d.theme;if(typeof d.hideSold==='boolean')hs=d.hideSold;if(d.wishlist)wl=d.wishlist;if(Array.isArray(d.quotes))qs=d.quotes;if(d.collections)cl=d.collections;if(d.appearance)ap=d.appearance;if(d.secret)sc=d.secret;
    }
  });
  var warn='';
@@ -2540,7 +2552,7 @@ function importJSON(texts){
  order=ord||[];
  if(th&&THEMES[th])theme=th;
  if(hs!==null)hideSold=hs;
- if(wl)wish=wl;saveWish();if(cl){colls=cl;colls.forEach(function(c){if(!c.pieceIds)c.pieceIds=[]});saveColls()}
+ if(wl)wish=wl;saveWish();if(qs){quotes=qs;saveQuotes()}if(cl){colls=cl;colls.forEach(function(c){if(!c.pieceIds)c.pieceIds=[]});saveColls()}
  if(ap){if(ap.bgStyle){bgStyle=ap.bgStyle;kset('bgStyle',bgStyle)}if(ap.frameStyle){frameStyle=ap.frameStyle;document.documentElement.dataset.frame=frameStyle;kset('frameStyle',frameStyle)}}
  if(sc){secretCfg={on:!!sc.on,hash:sc.hash||'',threshold:sc.threshold==null?null:sc.threshold};secretUnlocked=false;saveSecret()}
  saveItems();saveOrder();saveSettings();saveGallery();applyTheme();render();
@@ -2608,7 +2620,7 @@ function askConfirm(title,msg,label,fn){CONFIRM_FN=fn;document.getElementById('m
 function collDelete(){var cdel=curColl();if(!cdel)return;colls=colls.filter(function(x){return x.id!==collId});collId=null;if(cdel.cover)collPruneImg(cdel.cover.id);saveColls();saveGallery();document.getElementById('modal').innerHTML='';render()}
 function eraseOpen(){document.getElementById('modal').innerHTML='<div class="modal kwm" data-a="backdrop"><div class="kwbox"><h3>Erase everything?</h3><p class="meta">This erases every piece, photo, and setting on this device. Type DELETE to confirm.</p><input id="eraseIn" autocomplete="off" autocapitalize="characters" maxlength="10" style="text-align:left;padding-left:16px"><div class="bar" style="justify-content:center;margin:12px 0 0;flex-wrap:wrap"><button type="button" class="dan" data-a="eraseyes">Erase</button><button type="button" data-a="x">Cancel</button></div></div></div>';setTimeout(function(){var e=document.getElementById("eraseIn");if(e)e.focus()},50)}
 function deleteAll(){
- items=[];frameStyle='floral';document.documentElement.dataset.frame='floral';gal={imgs:{},refs:[],covers:[],comps:[]};galSel={refs:{},covers:{},comps:{}};secretCfg={on:false,hash:'',threshold:null};secretUnlocked=false;wish=[];order=[];theme='ruby';bgStyle='velvet';hideSold=true;fsel={status:DEFAULT_STATUS.slice()};rng={};q='';document.getElementById('q').value='';sortBy='new';ro=false;view='box';
+ items=[];frameStyle='floral';document.documentElement.dataset.frame='floral';gal={imgs:{},refs:[],covers:[],comps:[]};galSel={refs:{},covers:{},comps:{}};secretCfg={on:false,hash:'',threshold:null};secretUnlocked=false;wish=[];quotes=[];order=[];theme='ruby';bgStyle='velvet';hideSold=true;fsel={status:DEFAULT_STATUS.slice()};rng={};q='';document.getElementById('q').value='';sortBy='new';ro=false;view='box';
  kclear().then(function(){return Promise.all([saveItems(),saveOrder(),saveSettings(),saveGallery()])}).then(function(){applyTheme();render();alert('Everything has been reset.')});
 }
 
@@ -2763,6 +2775,10 @@ case 'frm':frameStyle=d.v;document.documentElement.dataset.frame=frameStyle;kset
   case 'galuse':M.innerHTML='';syncForm();editing.cover={id:d.id,l:null,t:null,w:null,h:null};renderMain();break;
   case 'galaddref':M.innerHTML='';syncForm();if((editing.refs||[]).indexOf(d.id)<0)editing.refs=(editing.refs||[]).concat([d.id]);firstRefCover();renderMain();break;
   case 'previewcover':if(editing.cover&&gal.imgs[editing.cover.id])M.innerHTML=previewHTML(gal.imgs[editing.cover.id]);break;
+  case 'qadd':M.innerHTML=quoteFormHTML(null);break;
+  case 'qedit':M.innerHTML=quoteFormHTML(d.id);break;
+  case 'qsave':{var qt=(document.getElementById('qtext').value||'').trim(),qb=(document.getElementById('qby').value||'').trim();if(!qt){alert('Enter the quote.');break}if(d.id){var qx=quotes.filter(function(k){return k.id===d.id})[0];if(qx){qx.q=qt;qx.by=qb}}else quotes.push({id:uid(),q:qt,by:qb});saveQuotes();WISH_QUOTE=-1;galOpen.quotes=true;M.innerHTML='';renderMain();break}
+  case 'qdel':askConfirm('Delete quote?','This removes the quote from your list.','Delete',function(){quotes=quotes.filter(function(k){return k.id!==d.id});saveQuotes();WISH_QUOTE=-1;M.innerHTML='';renderMain()});break;
   case 'wadd':drawer(false);if(wishPending&&wish.every(function(w){return w.img!==wishPending}))delete gal.imgs[wishPending];wishPending=null;CR=null;M.innerHTML=wishAddHTML();break;
   case 'wsave':var wcat=document.getElementById('wcat').value;var wlk=(document.getElementById('wlink').value||'').trim();if(!wishPending){alert('Choose a photo.');break}if(!wlk){alert('Enter the link.');break}var href=/^https?:\/\//i.test(wlk)?wlk:'https://'+wlk;var cf=wishCropFrac();wish.push({id:uid(),img:wishPending,cover:{id:wishPending,l:cf.l,t:cf.t,w:cf.w,h:cf.h},category:wcat,link:href});wishPending=null;CR=null;saveWish();saveGallery();M.innerHTML='';renderMain();break;
   case 'wtype':var wti=wishType.indexOf(d.v);if(wti>-1)wishType.splice(wti,1);else wishType.push(d.v);render();break;
@@ -3101,7 +3117,7 @@ function confettiBurst(){
  })();
 }
 /* ---------- update banner with What's new CTA (no popup) ---------- */
-var WHATS_NEW='Search: The header search now looks through the whole record, including maker, measurements, ring size and collection names.\nWares: The Keep tab column choices are now simple links: Details, Cost & Sale, and Wear & Rating. The piece count moved to the bottom.\nMenu: Clear all filters and sorting now sits at the top, with the Keyword Filter below it. The Color filter shows the top 5 with Show all.\nSecret Compartment and collections: Grid size and reorder are now buttons on the page title, and the Display section is gone from the menu.';
+var WHATS_NEW='Gallery: A new Quotes section lets you add, edit and delete the quotes shown on the Coveted page, with a Quote field and a By field. They are included in your JSON backups.\nCollections and Coveted: Descriptions stay visible while you reorder.';
 function updateBannerCheck(){
  var seen=null;try{seen=localStorage.getItem('ntts_seen_ver')}catch(e){}
  try{localStorage.setItem('ntts_seen_ver',APP_VERSION)}catch(e){}
