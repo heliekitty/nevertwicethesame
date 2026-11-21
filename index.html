@@ -356,7 +356,7 @@ header button[data-a="drawer"]{display:flex;align-items:center;justify-content:c
 <script>
 document.getElementById('app').innerHTML='<div style="position:fixed;inset:0;z-index:50;background:var(--bg);display:flex;align-items:center;justify-content:center">'+mothLoaderHTML()+'</div>';
 var K='ntts_items_v2',OK='ntts_order_v1',PER=25,MAX_UPLOAD=300*1024;
-var APP_VERSION='2.25.0',APP_DATE='2026-11-21 · 9:32 AM ET',UPDATE_URL='';
+var APP_VERSION='2.26.0',APP_DATE='2026-11-21 · 2:12 PM ET',UPDATE_URL='';
 var ICONS={reorder:"<path d='M8 20V4M8 4L4.5 7.5M8 4l3.5 3.5M16 4v16M16 20l-3.5-3.5M16 20l3.5-3.5'/>",coll:"<rect x='3' y='4' width='18' height='16' rx='2'/><path d='M3 10h18M8 14h8'/>",gem:"<path d='M7 4h10l4 5-9 11L3 9z'/><path d='M3 9h18M9 4l-1.5 5L12 20l4.5-11L15 4'/>",pkg:"<path d='M3 7.5L12 3l9 4.5v9L12 21l-9-4.5z'/><path d='M3 7.5l9 4.5 9-4.5M12 12v9'/>",hand:"<path d='M5 11V7a1.5 1.5 0 0 1 3 0v4M8 11V5a1.5 1.5 0 0 1 3 0v6M11 11V6a1.5 1.5 0 0 1 3 0v6M14 11V8a1.5 1.5 0 0 1 3 0v7c0 3-2 5-5 5h-1c-2 0-3-1-4-3l-2-4'/>",x:"<path d='M6 6l12 12M18 6L6 18'/>",ring:"<circle cx='12' cy='14' r='6'/><path d='M9.5 8 12 4l2.5 4'/><path d='M12 9.5l1.5 2.5-1.5 2.5-1.5-2.5z'/>",earrings:"<path d='M7 3v3'/><path d='M7 6c-1.6 0-2.5 1.3-2.5 3S6 14 7 17c1-3 2.5-5 2.5-8C9.5 7.3 8.6 6 7 6z'/><path d='M17 3v3'/><path d='M17 6c-1.6 0-2.5 1.3-2.5 3S16 14 17 17c1-3 2.5-5 2.5-8C19.5 7.3 18.6 6 17 6z'/>",necklace:"<path d='M4 5c2 7 14 7 16 0'/><path d='M12 12.5V15'/><circle cx='12' cy='17' r='2.2'/>",bracelet:"<ellipse cx='12' cy='12' rx='8' ry='5.5'/><ellipse cx='12' cy='12' rx='5.5' ry='3'/>",watch:"<circle cx='12' cy='13' r='5.5'/><path d='M9 7.5 10 3h4l1 4.5M9 18.5 10 23h4l1-4.5'/><path d='M12 10.5V13l1.8 1.2'/>",heart:"<path d='M12 20s-7-4.4-7-9.5A4 4 0 0 1 12 8a4 4 0 0 1 7 2.5C19 15.6 12 20 12 20z'/>",wrench:"<path d='M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-.5-.5-2.5z'/>",key:"<g transform='rotate(-45 12.5 12)'><circle cx='8' cy='12' r='4'/><path d='M12 12h9M18 12v3M21 12v2.5'/></g>",curio:"<rect x='4' y='3' width='16' height='18' rx='1'/><path d='M3 3h18M3 21h18'/><path d='M12 3v18'/><path d='M4 11h16'/><path d='M10.5 7v1.5M13.5 7v1.5M10.5 15v1.5M13.5 15v1.5'/>",clock:"<circle cx='12' cy='12' r='9'/><path d='M12 7v5l3 2'/>",pencil:"<path d='M4 20h4L19 9l-4-4L4 16z'/><path d='M13.5 6.5l4 4'/>",lock:"<rect x='5' y='11' width='14' height='10' rx='2'/><path d='M8 11V7a4 4 0 0 1 8 0v4'/>",unlock:"<rect x='3.95' y='11' width='11.1' height='10' rx='2'/><path d='M12.8 11V6.3A3.3 3.3 0 0 1 19.4 6.3V9.5'/>",bag:"<path d='M5 8h14l-1 12H6z'/><path d='M9 8V6a3 3 0 0 1 6 0v2'/>",plus:"<path d='M12 5v14M5 12h14'/>",x:"<path d='M6 6l12 12M18 6L6 18'/>",spark:"<path d='M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z'/>",gallery:"<rect x='3' y='4' width='18' height='16' rx='2'/><circle cx='9' cy='10' r='2'/><path d='M21 16l-5-5-8 9'/>"};
 var ORN='<svg width="72" height="10" viewBox="0 0 72 10" fill="none" stroke="#a8864f" stroke-width="1.2"><path d="M0 5h28M44 5h28"/><path d="M36 1l4 4-4 4-4-4z"/></svg>';
 var ICOFIT_O={"reorder":[11.75,12,16],"coll":[12,12,16],"gem":[12,12,16],"ring":[12,12,16],"earrings":[12,10,15],"necklace":[12,12.1,16],"bracelet":[12,12,16],"watch":[12,13,20],"heart":[12,13.32,14],"wrench":[10.58,13.42,15.16],"key":[12.5,12,17.68],"curio":[12,12,18],"clock":[12,12,18],"pencil":[11.5,12.5,15],"lock":[12,12,18],"unlock":[12,12,17.99],"bag":[12,11.5,17],"plus":[12,12,14],"x":[12,12,12],"spark":[12,10,14],"gallery":[12,12,18]},ICOFIT_S={"coll":[12,12,16],"gem":[12,12,16],"ring":[12,11.5,17],"key":[12.25,12,18.74],"bag":[12,11.5,17],"plus":[12,12,19],"spark":[12,10,14]};
@@ -857,8 +857,8 @@ function wishGalHTML(){
 }
 function quotesGalHTML(){
  return '<details data-gsec="quotes"'+(galOpen.quotes?' open':'')+'><summary>Quotes ('+quotes.length+')</summary>'
+  +(galOpen.quotes?'<div style="margin:8px 0"><button type="button" data-a="qadd" style="width:100%">Add Quote</button></div>':'')
   +(galOpen.quotes?(quotes.length?'<div style="display:flex;flex-direction:column;gap:8px;margin:8px 0">'+quotes.map(function(x){return '<button type="button" data-a="qedit" data-id="'+esc(x.id)+'" style="display:block;width:100%;text-align:left;padding:10px 12px;border-radius:12px;height:auto;min-height:44px"><span style="display:block;font-style:italic;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical">'+esc(x.q)+'</span><span class="meta" style="display:block;margin-top:2px">'+esc(x.by||'Unknown')+'</span></button>'}).join('')+'</div>':'<p class="meta">No quotes yet.</p>'):(quotes.length?'<p class="meta">Open to see '+quotes.length+' quote'+(quotes.length===1?'':'s')+'.</p>':''))
-  +'<div style="margin:8px 0"><button type="button" data-a="qadd" style="width:100%">Add Quote</button></div>'
   +'<p class="meta">One quote is picked at random under the Coveted page.</p></details>';
 }
 function quoteFormHTML(id){
@@ -1771,6 +1771,7 @@ function priceStrip(){
   +'<div class="meta" style="font-size:11px;margin:6px 0 0">Estimates only. Not an appraisal or financial advice.</div>'
   +'</div>';
 }
+function isListed(i){return !!(i.linkSale||i.linkSale2)}
 function renderListing(){
  pricesLoad();
  var sold=lhTab==='sold';
@@ -1812,7 +1813,7 @@ function metalShort(i){
 }
 function table(rows){
    var byCat={},order=[],T=new Array(NC).fill(0);
-   rows.forEach(function(i){var k=i.category||'Other';if(!byCat[k]){byCat[k]={n:0,v:new Array(NC).fill(0)};order.push(k)}var b=byCat[k];b.n++;vec(i).forEach(function(x,j){x=x==null?0:x;b.v[j]+=x;T[j]+=x})});
+   rows.forEach(function(i){var k=i.category||'Other';if(!byCat[k]){byCat[k]={n:0,v:new Array(NC).fill(0)};order.push(k)}var b=byCat[k];b.n++;if(!isListed(i))b.tl=(b.tl||0)+1;vec(i).forEach(function(x,j){x=x==null?0:x;b.v[j]+=x;T[j]+=x})});
    order.sort(function(a,b){var x=CATS.indexOf(a),y=CATS.indexOf(b);return (x<0?99:x)-(y<0?99:y)||a.localeCompare(b)});
      var mc='<td style="'+LABC+'"></td>';
    var totRow=rows.length?'<tr class="tot" style="font-weight:600"><td style="'+LABC+'">Total ('+rows.length+')</td>'+mc+num5(T)+'</tr>':'';
@@ -1821,23 +1822,39 @@ function table(rows){
      var img=(i.cover?coverImg(i.cover,true):'')||'<span style="display:flex;align-items:center;justify-content:center;width:100%;height:100%">'+ico(String(i.category||'other').toLowerCase(),20)+'</span>';
      var thumb='<button type="button" data-a="viewpiece" data-id="'+i.id+'" aria-label="Open '+esc(title(i))+'" style="padding:0;border:0;background:transparent;min-height:0;width:var(--wthumb,40px);flex:0 0 var(--wthumb,40px)"><div style="width:var(--wthumb,40px);height:var(--wthumb,40px);border-radius:8px;overflow:hidden;background:var(--acc);position:relative">'+img+'</div></button>';
      return '<tr><td rowspan="2" style="padding:10px 4px 10px 0;border-bottom:1px solid var(--line);vertical-align:middle">'+thumb+'</td>'
-      +'<td colspan="'+(1+NC)+'" style="padding:10px 0 0;border-bottom:0;font-weight:600;font-size:13px;line-height:1.25;overflow-wrap:anywhere">'+esc(title(i))+listLinksHTML(i)+'</td></tr>'
+      +'<td colspan="'+(1+NC)+'" style="padding:10px 0 0;border-bottom:0;font-weight:600;font-size:13px;line-height:1.25;overflow-wrap:anywhere">'+esc(title(i))+(tabKey==='t'&&!isListed(i)?'<div style="font-size:12px;font-weight:600;margin-top:2px;color:var(--lnk)">To list</div>':'')+listLinksHTML(i)+'</td></tr>'
       +'<tr><td style="padding:4px 4px 10px 0;border-bottom:1px solid var(--line);vertical-align:middle;font-size:12px;line-height:1.25;overflow-wrap:anywhere">'+esc(metalShort(i))+'</td>'+num5(vec(i))+'</tr>';
    }
    var groups=order.map(function(k){
      var b=byCat[k],key=tabKey+'|'+k,open=!!catOpen[key];
-     var head='<tr data-a="cattog" data-k="'+esc(key)+'" aria-expanded="'+(open?'true':'false')+'" style="cursor:pointer"><td colspan="2" style="'+LABC+'"><span aria-hidden="true" style="display:inline-block;width:16px;color:var(--mut,inherit)">'+(open?'\u25BE':'\u25B8')+'</span>'+esc(k)+' ('+b.n+')</td>'+num5(b.v)+'</tr>';
+     var head='<tr data-a="cattog" data-k="'+esc(key)+'" aria-expanded="'+(open?'true':'false')+'" style="cursor:pointer"><td colspan="2" style="'+LABC+'"><span aria-hidden="true" style="display:inline-block;width:16px;color:var(--mut,inherit)">'+(open?'\u25BE':'\u25B8')+'</span>'+esc(k)+' ('+b.n+')'+(tabKey==='t'&&b.tl?' <span style="font-weight:400;color:var(--lnk)">· '+b.tl+' to list</span>':'')+'</td>'+num5(b.v)+'</tr>';
      if(!open)return head;
-     return head+rows.filter(function(i){return (i.category||'Other')===k}).map(itemRow).join('');
+     return head+rows.filter(function(i){return (i.category||'Other')===k}).sort(function(a,c){return (isListed(a)?1:0)-(isListed(c)?1:0)}).map(itemRow).join('');
    }).join('');
    return '<table class="wtbl" style="width:100%;table-layout:fixed;border-collapse:separate;border-spacing:0">'+colgroup+thead+'<tbody>'+totRow+groups+'</tbody></table>';
  }
- var out='<div class="wtop"><h2 style="margin:0 0 14px">Wares</h2>'+priceStrip()+'<div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap">'+seg+(dash?dashExpLink():keep?'':catBar(melting?melt:list,sold?'s':melting?'m':'t'))+'</div></div>';
- if(dash)return out+dashHTML();
- if(keep)return out+renderTable();
+ var out='<div class="wtop"><h2 style="margin:0 0 14px">Wares</h2><div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap">'+seg+(dash?dashExpLink():keep?'':catBar(melting?melt:list,sold?'s':melting?'m':'t'))+'</div></div>';
+ var ps=priceStrip();ps=ps?'<div style="margin-top:16px">'+ps+'</div>':'';
+ if(dash)return out+dashHTML()+ps;
+ if(keep)return out+renderTable()+ps;
  if(melting)out+=melt.length?table(melt):'<p class="meta">Nothing to melt.</p>';
- else out+=(list.length?table(list):'<p class="meta">'+(anyFilter()?'No pieces match these filters.':sold?'Nothing sold yet.':'Nothing selling yet.')+'</p>');
- return out;
+ else out+=(!sold?sellProgress():'')+(list.length?table(list):'<p class="meta">'+(anyFilter()?'No pieces match these filters.':sold?'Nothing sold yet.':'Nothing selling yet.')+'</p>');
+ return out+ps;
+}
+function sellProgress(){
+ var all=vis().filter(function(i){return i.status==='Selling'});if(!all.length)return '';
+ var un=all.filter(function(i){return !isListed(i)}),n=all.length,l=n-un.length;
+ var fl=0;un.forEach(function(i){var f=floorOf(i);if(f!=null&&!isNaN(f))fl+=f});
+ un.sort(function(a,b){var x=a.purchaseDate||'9999',y=b.purchaseDate||'9999';return x<y?-1:x>y?1:title(a).localeCompare(title(b))});
+ var nx=un[0],pct=Math.round(l/n*100);
+ var h='<div style="margin:12px 0 14px;padding:12px;border:1px solid var(--line);border-radius:12px;background:var(--card)">'
+  +'<div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px"><span style="font-weight:600">'+l+' of '+n+' listed</span>'+(fl>0?'<span class="meta">'+lhD(fl)+' est. floor waiting</span>':'')+'</div>'
+  +'<div role="progressbar" aria-valuemin="0" aria-valuemax="'+n+'" aria-valuenow="'+l+'" aria-label="Pieces listed on eBay" style="height:8px;border-radius:4px;background:var(--line);margin-top:8px;overflow:hidden"><div style="height:100%;width:'+pct+'%;background:var(--acc)"></div></div>';
+ if(nx){
+  var img=(nx.cover?coverImg(nx.cover,true):'')||'<span style="display:flex;align-items:center;justify-content:center;width:100%;height:100%">'+ico(String(nx.category||'other').toLowerCase(),20)+'</span>';
+  h+='<button type="button" data-a="viewpiece" data-id="'+nx.id+'" aria-label="Next up: '+esc(title(nx))+'. Open details" style="display:flex;align-items:center;justify-content:flex-start;gap:10px;width:100%;margin:12px 0 0;padding:8px;text-align:left;height:auto;border-radius:12px"><span style="width:48px;height:48px;flex:0 0 48px;border-radius:8px;overflow:hidden;background:var(--acc);position:relative;display:block">'+img+'</span><span style="min-width:0"><span class="meta" style="display:block">Next up: photograph and list</span><span style="display:block;font-weight:600;overflow-wrap:anywhere">'+esc(title(nx))+'</span></span></button>';
+ }else h+='<p class="meta" style="margin:10px 0 0">Everything is listed.</p>';
+ return h+'</div>';
 }
 function renderMain(){
  document.getElementById('app').innerHTML=backupBanner()+(view==='box'?boxTitle()+renderBox():view==='gallery'?renderGallery():view==='manage'?renderManage():view==='wishlist'?renderWishlist():view==='sizeguide'?renderSizeGuide():view==='coll'?renderColl():view==='secret'?renderSecret():view==='jotd'?renderJotd():view==='about'?renderAbout():view==='listing'?renderListing():view==='piece'?renderPiece():renderEdit());
@@ -3117,7 +3134,7 @@ function confettiBurst(){
  })();
 }
 /* ---------- update banner with What's new CTA (no popup) ---------- */
-var WHATS_NEW='Gallery: A new Quotes section lets you add, edit and delete the quotes shown on the Coveted page, with a Quote field and a By field. They are included in your JSON backups.\nCollections and Coveted: Descriptions stay visible while you reorder.';
+var WHATS_NEW='Wares: The Selling tab now shows how many pieces are listed, the estimated floor value still waiting, and a Next up piece to photograph and list. Unlisted pieces are tagged To list and sort to the top. The gold and silver prices moved below the table.\nGallery: The Add Quote button now sits above your quotes.';
 function updateBannerCheck(){
  var seen=null;try{seen=localStorage.getItem('ntts_seen_ver')}catch(e){}
  try{localStorage.setItem('ntts_seen_ver',APP_VERSION)}catch(e){}
