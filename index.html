@@ -194,12 +194,19 @@ h4.side{margin:14px 0 6px;letter-spacing:.03em}
 table{border-collapse:collapse;width:max-content;min-width:100%;font-size:14px}
 th,td{padding:8px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;white-space:normal;overflow-wrap:normal;word-break:normal;min-width:96px;max-width:220px}
 th{color:var(--mute);font-weight:normal;font-size:12px}
+.tw.k{border:0;border-radius:0}
+table.ktbl th,table.ktbl td{padding:6px 8px 6px 0;font-size:13px;line-height:1.3}
+table.ktbl th{font-size:12px;font-weight:600;vertical-align:bottom}
+table.ktbl th:first-child,table.ktbl td:first-child{padding-left:8px}
+table.ktbl th:last-child,table.ktbl td:last-child{padding-right:8px}
+table.ktbl td.kt .ttx{font-weight:600;font-size:13px;line-height:1.25;overflow-wrap:anywhere}
 td.stk,th.stk{position:sticky;left:0;z-index:2;background:var(--card);width:156px;min-width:156px;max-width:156px}
 @media (min-width:414px){:root{--wthumb:56px;--wItem:128px}}
 .wtop{position:sticky;top:var(--hdr-h,62px);z-index:4;background:var(--bg);padding-top:20px;padding-bottom:4px}
 table.wtbl th:first-child,table.wtbl td:first-child{padding-left:8px!important}
 table.wtbl th:last-child,table.wtbl td:last-child{padding-right:8px!important}
 tr.tot td{background:color-mix(in srgb,var(--gold-soft) 35%,var(--card))}
+tr.tot td.stk{background:color-mix(in srgb,var(--gold-soft) 35%,var(--card))}
 tr.grp td{background:var(--bg);font-weight:bold;letter-spacing:.03em;color:var(--lnk,var(--acc));font-size:12px;white-space:nowrap}
 .ringtbl{width:100%;table-layout:fixed}
 .ringtbl th,.ringtbl td{min-width:0;max-width:none;white-space:normal;overflow-wrap:normal;word-break:normal;text-align:center;padding:6px 4px}
@@ -356,7 +363,7 @@ header button[data-a="drawer"]{display:flex;align-items:center;justify-content:c
 <script>
 document.getElementById('app').innerHTML='<div style="position:fixed;inset:0;z-index:50;background:var(--bg);display:flex;align-items:center;justify-content:center">'+mothLoaderHTML()+'</div>';
 var K='ntts_items_v2',OK='ntts_order_v1',PER=25,MAX_UPLOAD=300*1024;
-var APP_VERSION='2.26.1',APP_DATE='2026-11-21 · 3:15 PM ET',UPDATE_URL='';
+var APP_VERSION='2.27.0',APP_DATE='2026-11-21 · 4:58 PM ET',UPDATE_URL='';
 var ICONS={reorder:"<path d='M8 20V4M8 4L4.5 7.5M8 4l3.5 3.5M16 4v16M16 20l-3.5-3.5M16 20l3.5-3.5'/>",coll:"<rect x='3' y='4' width='18' height='16' rx='2'/><path d='M3 10h18M8 14h8'/>",gem:"<path d='M7 4h10l4 5-9 11L3 9z'/><path d='M3 9h18M9 4l-1.5 5L12 20l4.5-11L15 4'/>",pkg:"<path d='M3 7.5L12 3l9 4.5v9L12 21l-9-4.5z'/><path d='M3 7.5l9 4.5 9-4.5M12 12v9'/>",hand:"<path d='M5 11V7a1.5 1.5 0 0 1 3 0v4M8 11V5a1.5 1.5 0 0 1 3 0v6M11 11V6a1.5 1.5 0 0 1 3 0v6M14 11V8a1.5 1.5 0 0 1 3 0v7c0 3-2 5-5 5h-1c-2 0-3-1-4-3l-2-4'/>",x:"<path d='M6 6l12 12M18 6L6 18'/>",ring:"<circle cx='12' cy='14' r='6'/><path d='M9.5 8 12 4l2.5 4'/><path d='M12 9.5l1.5 2.5-1.5 2.5-1.5-2.5z'/>",earrings:"<path d='M7 3v3'/><path d='M7 6c-1.6 0-2.5 1.3-2.5 3S6 14 7 17c1-3 2.5-5 2.5-8C9.5 7.3 8.6 6 7 6z'/><path d='M17 3v3'/><path d='M17 6c-1.6 0-2.5 1.3-2.5 3S16 14 17 17c1-3 2.5-5 2.5-8C19.5 7.3 18.6 6 17 6z'/>",necklace:"<path d='M4 5c2 7 14 7 16 0'/><path d='M12 12.5V15'/><circle cx='12' cy='17' r='2.2'/>",bracelet:"<ellipse cx='12' cy='12' rx='8' ry='5.5'/><ellipse cx='12' cy='12' rx='5.5' ry='3'/>",watch:"<circle cx='12' cy='13' r='5.5'/><path d='M9 7.5 10 3h4l1 4.5M9 18.5 10 23h4l1-4.5'/><path d='M12 10.5V13l1.8 1.2'/>",heart:"<path d='M12 20s-7-4.4-7-9.5A4 4 0 0 1 12 8a4 4 0 0 1 7 2.5C19 15.6 12 20 12 20z'/>",wrench:"<path d='M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-.5-.5-2.5z'/>",key:"<g transform='rotate(-45 12.5 12)'><circle cx='8' cy='12' r='4'/><path d='M12 12h9M18 12v3M21 12v2.5'/></g>",curio:"<rect x='4' y='3' width='16' height='18' rx='1'/><path d='M3 3h18M3 21h18'/><path d='M12 3v18'/><path d='M4 11h16'/><path d='M10.5 7v1.5M13.5 7v1.5M10.5 15v1.5M13.5 15v1.5'/>",clock:"<circle cx='12' cy='12' r='9'/><path d='M12 7v5l3 2'/>",pencil:"<path d='M4 20h4L19 9l-4-4L4 16z'/><path d='M13.5 6.5l4 4'/>",lock:"<rect x='5' y='11' width='14' height='10' rx='2'/><path d='M8 11V7a4 4 0 0 1 8 0v4'/>",unlock:"<rect x='3.95' y='11' width='11.1' height='10' rx='2'/><path d='M12.8 11V6.3A3.3 3.3 0 0 1 19.4 6.3V9.5'/>",bag:"<path d='M5 8h14l-1 12H6z'/><path d='M9 8V6a3 3 0 0 1 6 0v2'/>",plus:"<path d='M12 5v14M5 12h14'/>",x:"<path d='M6 6l12 12M18 6L6 18'/>",spark:"<path d='M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z'/>",gallery:"<rect x='3' y='4' width='18' height='16' rx='2'/><circle cx='9' cy='10' r='2'/><path d='M21 16l-5-5-8 9'/>"};
 var ORN='<svg width="72" height="10" viewBox="0 0 72 10" fill="none" stroke="#a8864f" stroke-width="1.2"><path d="M0 5h28M44 5h28"/><path d="M36 1l4 4-4 4-4-4z"/></svg>';
 var ICOFIT_O={"reorder":[11.75,12,16],"coll":[12,12,16],"gem":[12,12,16],"ring":[12,12,16],"earrings":[12,10,15],"necklace":[12,12.1,16],"bracelet":[12,12,16],"watch":[12,13,20],"heart":[12,13.32,14],"wrench":[10.58,13.42,15.16],"key":[12.5,12,17.68],"curio":[12,12,18],"clock":[12,12,18],"pencil":[11.5,12.5,15],"lock":[12,12,18],"unlock":[12,12,17.99],"bag":[12,11.5,17],"plus":[12,12,14],"x":[12,12,12],"spark":[12,10,14],"gallery":[12,12,18]},ICOFIT_S={"coll":[12,12,16],"gem":[12,12,16],"ring":[12,11.5,17],"key":[12.25,12,18.74],"bag":[12,11.5,17],"plus":[12,12,19],"spark":[12,10,14]};
@@ -1259,16 +1266,19 @@ function keepRows(){return items.filter(function(i){return i.status==='Keep'&&pa
 function renderTable(){
  var cols=TC[ctab];var list=keepRows(),body='',byCat={},order=[];
  list.forEach(function(i){var k=i.category||'Other';if(!byCat[k]){byCat[k]=[];order.push(k)}byCat[k].push(i)});
+ var SUMK={'Cost':function(i){return num(i.cost)||0},'Shipping (acquired)':function(i){return num(i.acqShipping)||0},'Tariffs':function(i){return num(i.tariffs)||0},'Repairs':function(i){return num(i.repairs)||0},'Total Cost':function(i){return (num(i.cost)||0)+(num(i.acqShipping)||0)+(num(i.tariffs)||0)+(num(i.repairs)||0)}};
+ if(list.length)body+='<tr class="tot" style="font-weight:600"><td class="stk">Total ('+list.length+')</td>'+cols.map(function(c){var f=SUMK[c[0]];return '<td>'+(f?money(list.reduce(function(a,i){return a+f(i)},0)):'')+'</td>'}).join('')+'<td></td></tr>';
  order.forEach(function(k){
    var key='k|'+k,open=!!catOpen[key];
-   body+='<tr class="grp" data-a="cattog" data-k="'+esc(key)+'" aria-expanded="'+(open?'true':'false')+'" style="cursor:pointer"><td colspan="'+(cols.length+2)+'"><span style="position:sticky;left:0;display:inline-block"><span aria-hidden="true" style="display:inline-block;width:16px">'+(open?'\u25BE':'\u25B8')+'</span>'+esc(k)+' ('+byCat[k].length+')</span></td></tr>';
+   body+='<tr data-a="cattog" data-k="'+esc(key)+'" aria-expanded="'+(open?'true':'false')+'" style="cursor:pointer"><td colspan="'+(cols.length+2)+'" style="font-size:13px;white-space:nowrap;vertical-align:middle"><span style="position:sticky;left:0;display:inline-block"><span aria-hidden="true" style="display:inline-block;width:16px">'+(open?'\u25BE':'\u25B8')+'</span>'+esc(k)+' ('+byCat[k].length+')</span></td></tr>';
    if(!open)return;
    byCat[k].forEach(function(i){
-     body+='<tr><td class="stk"><div style="display:flex;gap:6px;align-items:flex-start">'+(i.cover?'<div style="position:relative;width:40px;height:40px;border-radius:6px;overflow:hidden;flex:none">'+coverImg(i.cover,true)+'</div>':'<span class="phe">'+ico(String(i.category).toLowerCase(),18)+'</span>')+'<span>'+esc(i.title||'—')+'</span></div></td>'+cols.map(function(c){return '<td>'+c[1](i)+'</td>'}).join('')+'<td><button data-a="edit" data-id="'+i.id+'" aria-label="Edit" style="padding:6px 10px">'+ico('pencil',16)+'</button></td></tr>';
+     body+='<tr><td class="stk kt"><div style="display:flex;gap:6px;align-items:flex-start">'+(i.cover?'<div style="position:relative;width:40px;height:40px;border-radius:6px;overflow:hidden;flex:none">'+coverImg(i.cover,true)+'</div>':'<span class="phe">'+ico(String(i.category).toLowerCase(),18)+'</span>')+'<span class="ttx">'+esc(i.title||'—')+'</span></div></td>'+cols.map(function(c){return '<td>'+c[1](i)+'</td>'}).join('')+'<td><button data-a="edit" data-id="'+i.id+'" aria-label="Edit" style="padding:6px 10px">'+ico('pencil',16)+'</button></td></tr>';
    });
  });
  return '<div role="group" aria-label="Table columns" style="display:flex;align-items:center;flex-wrap:wrap;column-gap:6px;margin:0 0 4px">'+[['Piece','Details'],['Transaction','Acquisition'],['Stats','Wear &amp; Rating']].map(function(t,k){var on=ctab===t[0];return (k?'<span aria-hidden="true" class="meta">·</span>':'')+'<button type="button" class="link" data-a="ct" data-v="'+t[0]+'"'+(on?' aria-current="true"':'')+' style="min-height:40px;margin:0;padding:0 6px;font-size:14px'+(on?';font-weight:700;color:var(--fg)':'')+'">'+t[1]+'</button>'}).join('')+'</div>'
-  +'<div class="tw"><table><thead><tr><th class="stk">Title</th>'+cols.map(function(c){return '<th>'+c[0]+'</th>'}).join('')+'<th></th></tr></thead><tbody>'+body+'</tbody></table></div>'
+  +'<div id="khw" style="position:sticky;top:calc(var(--hdr-h,62px) + var(--wtop-h,0px));height:0;z-index:3"><div id="kh" aria-hidden="true" style="position:absolute;left:0;right:0;top:0;overflow:hidden;background:var(--card)"></div></div>'
+  +'<div class="tw k"><table class="ktbl"><thead><tr><th class="stk">Title</th>'+cols.map(function(c){return '<th>'+c[0]+'</th>'}).join('')+'<th></th></tr></thead><tbody>'+body+'</tbody></table></div>'
   +(list.length?'':'<p class="meta">No pieces match these filters.</p>')
   +countLine(list.length);
 }
@@ -1853,8 +1863,8 @@ function sellProgress(){
  un.sort(function(a,b){var x=a.purchaseDate||'9999',y=b.purchaseDate||'9999';return x<y?-1:x>y?1:title(a).localeCompare(title(b))});
  var nx=un[0],pct=ft>0?Math.round(fl/ft*100):Math.round(l/n*100);
  var h='<div style="margin:12px 0 14px;padding:12px;border:1px solid var(--line);border-radius:12px;background:var(--card)">'
-  +'<div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px"><span style="font-weight:600">'+(ft>0?lhD(fl)+' of '+lhD(ft)+' cost listed':l+' of '+n+' listed')+'</span>'+(ft>0?'<span class="meta">'+l+' of '+n+' pieces</span>':'')+'</div>'
-  +'<div role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="'+pct+'" aria-valuetext="'+(ft>0?lhD(fl)+' of '+lhD(ft)+' cost listed, '+l+' of '+n+' pieces':l+' of '+n+' pieces')+'" aria-label="Listed on eBay" style="height:8px;border-radius:4px;background:var(--line);margin-top:8px;overflow:hidden"><div style="height:100%;width:'+pct+'%;background:var(--acc)"></div></div>';
+  +'<div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px"><span style="font-weight:600">'+(ft>0?lhD(fl)+' of '+lhD(ft)+' to recoup':l+' of '+n+' pieces listed')+'</span>'+(ft>0?'<span class="meta">'+l+' of '+n+' pieces listed</span>':'')+'</div>'
+  +'<div role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="'+pct+'" aria-valuetext="'+(ft>0?lhD(fl)+' of '+lhD(ft)+' to recoup, '+l+' of '+n+' pieces listed':l+' of '+n+' pieces listed')+'" aria-label="Listed on eBay" style="height:8px;border-radius:4px;background:var(--line);margin-top:8px;overflow:hidden"><div style="height:100%;width:'+pct+'%;background:var(--acc)"></div></div>';
  if(nx){
   var img=(nx.cover?coverImg(nx.cover,true):'')||'<span style="display:flex;align-items:center;justify-content:center;width:100%;height:100%">'+ico(String(nx.category||'other').toLowerCase(),20)+'</span>';
   h+='<button type="button" data-a="viewpiece" data-id="'+nx.id+'" aria-label="Next up: '+esc(title(nx))+'. Open details" style="display:flex;align-items:center;justify-content:flex-start;gap:10px;width:100%;margin:12px 0 0;padding:8px;text-align:left;height:auto;border-radius:12px"><span style="width:48px;height:48px;flex:0 0 48px;border-radius:8px;overflow:hidden;background:var(--acc);position:relative;display:block">'+img+'</span><span style="min-width:0"><span class="meta" style="display:block">Next up: photograph and list</span><span style="display:block;font-weight:600;overflow-wrap:anywhere">'+esc(title(nx))+'</span></span></button>';
@@ -1873,15 +1883,111 @@ function soldProgress(){
   +'<div role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="'+pct+'" aria-valuetext="'+lhD(rec)+' of '+lhD(ct)+' recouped" aria-label="Cost recouped" style="height:8px;border-radius:4px;background:var(--line);margin-top:8px;overflow:hidden"><div style="height:100%;width:'+pct+'%;background:var(--acc)"></div></div>'
   +'<p class="meta" style="margin:10px 0 0">Net profit so far '+lhD(net)+(dn?'. Average '+Math.round(dsum/dn)+' days to sell.':'.')+'</p></div>';
 }
+function keepHeadSync(){
+ var kh=document.getElementById('kh'),tw=document.querySelector('.tw');if(!kh||!tw)return;
+ var rt=tw.querySelector('table'),th=rt&&rt.querySelector('thead');if(!th)return;
+ var ths=th.querySelectorAll('th'),ws=[].map.call(ths,function(x){return x.getBoundingClientRect().width});
+ kh.innerHTML='<table class="ktbl" style="width:'+rt.getBoundingClientRect().width+'px;min-width:0;table-layout:fixed"><colgroup>'+ws.map(function(w){return '<col style="width:'+w+'px">'}).join('')+'</colgroup><thead>'+th.innerHTML+'</thead></table>';
+ [].forEach.call(kh.querySelectorAll('th'),function(x,n){x.style.width=x.style.minWidth=x.style.maxWidth=ws[n]+'px'});var sk=kh.querySelector('th.stk');if(sk)sk.style.boxShadow='inset 0 -1px 0 var(--line)';
+ kh.scrollLeft=tw.scrollLeft;
+}
+document.addEventListener('scroll',function(e){var t=e.target;if(t&&t.classList&&t.classList.contains('tw')){var kh=document.getElementById('kh');if(kh)kh.scrollLeft=t.scrollLeft}},true);
+window.addEventListener('resize',function(){keepHeadSync()});
+var lhChan='eBay',lhRet=0;
+function lhResults(){
+ var c=calcs(editing),isE=lhChan==='eBay';
+ return {sug:isE?c.sugE:c.sugI,pot:isE?c.potE:c.potI};
+}
+function renderLhelp(){
+ var it=editing,isE=lhChan==='eBay',r=lhResults(),hasCost=num(it.cost)!=null;
+ var ship=num(it.shipEstimate);if(ship==null)ship=shipDefault(it.cost);
+ var img=(it.cover?coverImg(it.cover,true):'')||'<span style="display:flex;align-items:center;justify-content:center;width:100%;height:100%">'+ico(String(it.category||'other').toLowerCase(),22)+'</span>';
+ var card='padding:12px;border:1px solid var(--line);border-radius:12px;background:var(--card);margin:0 0 14px';
+ var stat=function(l,id,v){return '<div style="flex:1;min-width:0"><div class="meta">'+l+'</div><div id="'+id+'" style="font-size:24px;font-family:Cormorant Garamond,serif;font-weight:600;line-height:1.2">'+v+'</div></div>'};
+ return '<div id="lhp"><div style="display:flex;align-items:center;gap:8px;margin:6px 0 14px"><button data-a="lhback" aria-label="Back to edit" title="Back" style="width:40px;height:40px;min-width:0;min-height:0;padding:0;border-radius:50%;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button><h2 style="margin:0">Listing Helper</h2></div>'
+  +'<div style="'+card+';display:flex;gap:10px;align-items:center"><span style="width:48px;height:48px;flex:0 0 48px;border-radius:8px;overflow:hidden;background:var(--acc);position:relative;display:block">'+img+'</span><span style="min-width:0"><span style="font-weight:600;overflow-wrap:anywhere">'+esc(title(it))+'</span><span class="meta" style="display:block">'+esc(it.category||'')+'</span></span></div>'
+  +'<div style="'+card+'"><h4 class="sub" style="margin:0 0 8px">Selling Channel</h4><span class="fw"><select id="lhChan" aria-label="Selling channel"><option'+(isE?' selected':'')+'>eBay</option><option'+(!isE?' selected':'')+'>Instagram</option></select></span></div>'
+  +'<div style="'+card+'"><h4 class="sub" style="margin:0 0 8px">Price</h4>'
+  +(hasCost?'':'<p class="meta" style="margin:0 0 8px">Add a cost on the edit page to see a price.</p>')
+  +'<div class="f">'+fieldHTML('shipEstimate',ship)+fieldHTML('buffer',it.buffer==null||it.buffer===''?5:it.buffer)+fieldHTML(isE?'ebayPct':'igPct')+'</div>'
+  +'<div style="display:flex;gap:12px;margin-top:12px;padding-top:12px;border-top:1px solid var(--line)">'+stat('Suggested '+(isE?'eBay':'Instagram')+' price','lhSug',r.sug)+stat('Potential profit','lhPot',r.pot)+'</div></div>'
+  +'<div style="'+card+'"><h4 class="sub" style="margin:0 0 8px">'+(isE?'eBay listing':'Copy')+'</h4>'+(isE?'<p class="meta" style="margin:0 0 12px">In eBay\u2019s form order. Price already includes free shipping.</p>'+ebayList(it):listingBlock(it))+'</div></div>';
+}
+var EB_S1="<style>\n        * {\n            margin: 0;\n            padding: 0;\n            box-sizing: border-box;\n        }\n        \n        body {\n            font-family: Arial, sans-serif;\n            background-color: #f5f5f5;\n            color: #333;\n            line-height: 1.6;\n        }\n        \n        .container {\n            max-width: 1000px;\n            margin: 0 auto;\n            background-color: #fff;\n        }\n        \n        .header {\n            //background-color: #1b371c;\n            background: linear-gradient(180deg, #1b371c 0%, #4f6440 100%);\n            color: #FFFFFF;\n            padding: 28px 16px 24px 16px;\n            text-align: center;\n        }\n        \n        .header h1 {\n            font-size: 32px;\n            margin-bottom: 10px;\n            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);\n        }\n        \n        .header p {\n            font-size: 18px;\n            opacity: 0.9;\n        }\n        \n        .banner {\n            background-color: #fbccc6;\n            //background: linear-gradient(135deg, #a86165 0%, #fbccc6 100%);\n            color: #5c3336;\n            text-align: center;\n            padding: 8px;\n            font-weight: bold;\n            font-size: 12px;\n        }\n        \n        .content {\n            padding: 30px;\n        }\n        \n        .section {\n            margin-bottom: 30px;\n        }\n        \n        .section-title {\n            //background: linear-gradient(90deg, #dc2626 0%, #ff6b35 100%);\n            background: linear-gradient(180deg, #1b371c 0%, #4f6440 100%);\n            color: white;\n            padding: 12px 20px;\n            font-size: 20px;\n            font-weight: bold;\n            margin-bottom: 15px;\n            border-radius: 5px;\n        }\n        \n        .info-grid {\n            display: grid;\n            grid-template-columns: 1fr 1fr;\n            gap: 15px;\n            margin-bottom: 20px;\n        }\n        \n        .info-item {\n            background-color: #fff7ed;\n            padding: 15px;\n            //border-left: 4px solid #ff6b35;\n            border-left: 4px solid #FBCCC6;\n            border-radius: 3px;\n        }\n        \n        .info-label {\n            font-weight: bold;\n            //color: #dc2626;\n            color: #1B371C;\n            margin-bottom: 0px;\n            font-size: 14px;\n            text-transform: uppercase;\n        }\n        \n        .info-value {\n            font-size: 16px;\n            color: #333;\n        }\n        \n        .description-text {\n            background-color: #fff7ed;\n            padding: 20px;\n            border-radius: 5px;\n            line-height: 1.8;\n        }\n        \n        .condition-badge {\n            display: inline-block;\n            //background: linear-gradient(90deg, #dc2626 0%, #ff6b35 100%);\n            background-color: #fbccc6;\n            //color: white;\n            color: #5c3336;\n            padding: 8px 16px;\n            border-radius: 20px;\n            font-weight: bold;\n            font-size: 14px;\n            margin-bottom: 0px;\n            margin-right: 8px;\n        }\n        \n        .features-list {\n            list-style: none;\n            padding: 0;\n        }\n        \n        .features-list li {\n            padding: 8px 15px;\n            margin-bottom: 8px;\n            background-color: #fff7ed;\n            border-left: 3px solid #ff6b35;\n            border-radius: 3px;\n        }\n        \n        .features-list li:before {\n            content: \"? \";\n            color: #dc2626;\n            font-weight: bold;\n            margin-right: 8px;\n        }\n        \n        .shipping-box {\n            //background-color: #fff1f2;\n            //border: 2px solid #ff6b35;\n            background-color: #fff7ed;\n            padding: 20px;\n            border-radius: 8px;\n            margin-top: 20px;\n        }\n        \n        .shipping-box h3 {\n            //color: #dc2626;\n            color: #1B371C;\n            margin-bottom: 10px;\n        }\n        \n        .footer {\n            //background-color: #1f2937;\n            background-color: #1B371C;\n            color: white;\n            padding: 30px;\n            text-align: center;\n        }\n        \n        .footer-links {\n            margin-top: 15px;\n        }\n        \n        .footer-links a {\n            //color: #ff6b35;\n            color: #FBCCC6;\n            text-decoration: none;\n            margin: 0 15px;\n        }\n        \n        .highlight {\n            background-color: #fed7aa;\n            padding: 2px 6px;\n            border-radius: 3px;\n        }\n        \n        @media (max-width: 768px) {\n            .info-grid {\n                grid-template-columns: 1fr;\n            }\n            \n            .header h1 {\n                font-size: 32px;\n            }\n        }\n    <\/style>\n\n\n    <div class=\"container\">\n        <!-- Header -->\n        <div class=\"header\">\n            <h1><font face=\"Georgia\">Never Twice the Same&nbsp;<\/font><\/h1>\n        <\/div>\n        \n        <div class=\"banner\"><font face=\"Trebuchet MS\">&nbsp;US Shipping Only | All Sales Final<i style=\"\">&nbsp;<\/i><\/font><\/div>\n        \n        <!-- Main Content -->\n        <div class=\"content\">\n            <!-- Product Title Section -->\n            <div class=\"section\">\n                <h2 style=\"font-size: 28px; color: #1f2937; margin-bottom: 20px;\">",EB_S2="<\/h2><\/div><div class=\"section\">\n                <span class=\"condition-badge\">",EB_S3="<\/span><\/div><div class=\"section\">\n                <div class=\"info-grid\">",EB_S4="<\/div><\/div>\n            \n            <!-- What's Included -->\n            <div class=\"section\">\n                <div class=\"section-title\">Shipping &amp; Returns<br><\/div><\/div><div class=\"section\">\n                <div class=\"shipping-box\">\n                    <h3>Shipping &amp; Handling<br><\/h3>\n                    <p><strong>Processing Time:<\/strong> Orders ship within 1-2 business days<\/p>\n                    <p><strong>Packaging:<\/strong> All items are carefully packaged with protective materials to ensure safe delivery<\/p>\n                    <p><strong>Tracking:<\/strong> Tracking information provided for all shipments<\/p>\n                    <p><strong>International Shipping:<\/strong> Unfortunately, we currently do not ship internationally<\/p><p><br><\/p><h3>Returns Policy<\/h3><p><strong>Returns:<\/strong>&nbsp;All sales are final.<br><\/p><p><br><\/p><p><strong>Questions?:<\/strong>&nbsp;We typically respond within 24 hours. Feel free to message us anytime!<\/p><p><br><\/p><p><strong>Feedback:<\/strong>&nbsp;Your satisfaction is our priority. We strive for 5-star service on every transaction.<\/p>\n                <\/div>\n            <\/div>\n            \n            <!-- Store Policies -->\n            <\/div><div class=\"footer\"><h3>Thank You for Visiting Nevertwicethesame!<\/h3>\n            <p>Building Collections One Piece at a Time!<\/p>\n            <div class=\"footer-links\">\n                <a href=\"https://www.ebay.com/usr/nevertwicethesame\">Visit Our eBay Store<\/a> |\n                <a href=\"https://www.ebay.com/sch/i.html?_dkr=1&amp;iconV2Request=true&amp;_blrs=recall_filtering&amp;_ssn=nevertwicethesame&amp;_oac=1\">View All Listings<\/a><\/div>\n            <p style=\"margin-top: 20px; font-size: 12px; opacity: 0.8;\">\n          \n            <\/p>\n        <\/div>\n    <\/div>";
+var EBAY_CATS=[['Rings','vintage antique rings'],['Earrings','vintage antique earrings'],['Necklaces & Pendants','vintage antique necklaces pendants'],['Bracelets & Charms','vintage antique bracelets']];
+var EBAY_CAT_OF={'Ring':0,'Earrings':1,'Necklace':2,'Pendants & Charms':2,'Chain':2,'Bracelet':3};
+var EBAY_TYPES=['Ring','Earrings','Necklace','Pendant','Charm','Chain','Bracelet','Brooch'];
+var EBAY_TYPE_OF={'Ring':'Ring','Earrings':'Earrings','Necklace':'Necklace','Pendants & Charms':'Pendant','Chain':'Chain','Bracelet':'Bracelet','Brooches & Pins':'Brooch'};
+var EBAY_HEAD={'Ring':'Rings','Earrings':'Earrings','Necklace':'Necklaces','Pendants & Charms':'Pendants &amp; Charms','Chain':'Chains','Bracelet':'Bracelets','Watch':'Watches','Brooches & Pins':'Brooches &amp; Pins','Box':'Boxes'};
+var EBAY_PATH='Jewelry & Watches > Vintage & Antique Jewelry > ';
+var lhE={title:'',cat:-1,type:'',q:''};
+function ebCap(s){s=String(s||'').trim();return s?s.charAt(0).toUpperCase()+s.slice(1):''}
+function ebPriceNum(){var c=calcs(editing),v=c.sugE;return v&&v!=='—'?String(v).replace(/[^0-9.]/g,'').replace(/\.00$/,''):''}
+function lhEInit(){
+ var it=editing,g=function(k){return valOf(it[k])};
+ lhE.title=listingTexts(g)[0].split('\n')[0];
+ lhE.cat=EBAY_CAT_OF[it.category]==null?-1:EBAY_CAT_OF[it.category];
+ lhE.type=EBAY_TYPE_OF[it.category]||'';
+ lhE.q=lhE.cat<0?'vintage antique jewelry':EBAY_CATS[lhE.cat][1];
+}
+function ebDesc(it){
+ var esc2=esc,head=EBAY_HEAD[it.category]||'Jewelry',per=String(it.period||'').toUpperCase();
+ var pri=(it.metal&&it.metal[0])||'',pk=metalKind(pri),pu=num(it.purity);
+ var puT=pu==null?'':(pk==='gold'?pu+'k':String(pu));
+ var wt=num(it.grams)!=null?num(it.grams)+' g':String(it.weight||'');
+ var uk=['england','scotland','wales','northern ireland','great britain','united kingdom','uk'],us=['us','usa','u.s.','u.s.a.','united states','united states of america','america'];
+ var c=String(it.country||'').trim(),cl=c.toLowerCase(),origin=uk.indexOf(cl)>-1?'United Kingdom':us.indexOf(cl)>-1?'United States':c;
+ var items=[['Era',it.era||it.decade],['Metal',(it.metal||[]).join(', ')],['Purity',puT],['Main stone',ebCap((it.stone||[])[0])],['Ring size',it.ringSize],['Measurement',it.measurement],['Weight',wt],['Maker',it.maker],['Hallmark',it.hallmark],['Origin',origin]];
+ var h=items.filter(function(x){return x[1]!=null&&String(x[1]).trim()!==''}).map(function(x){return '<div class="info-item"><div class="info-label">'+esc2(x[0])+'</div><div class="info-value">'+esc2(String(x[1]).trim())+'</div></div>'}).join('');
+ return EB_S1+head+EB_S2+esc2(per)+EB_S3+h+EB_S4;
+}
+function ebRow(label,id,val,extra){
+ return '<div style="margin:0 0 12px"><div class="seg" style="justify-content:space-between"><label class="meta" for="'+id+'">'+label+'</label><button type="button" class="link" data-a="copy" data-id="'+id+'">Copy</button></div>'+(extra||'<input id="'+id+'" value="'+esc(val)+'" style="width:100%">')+'</div>';
+}
+function ebSel(id,opts,sel){return '<span class="fw"><select id="'+id+'">'+opts.map(function(o){return '<option'+(o===sel?' selected':'')+'>'+esc(o)+'</option>'}).join('')+'</select></span>'}
+function ebayList(it){
+ var pri=(it.metal&&it.metal[0])||'',pk=metalKind(pri),pu=num(it.purity),puT=pu==null?'':(pk==='gold'?pu+'k':String(pu));
+ var catOpts=EBAY_CATS.map(function(c){return EBAY_PATH+c[0]});if(lhE.cat<0)catOpts.unshift('Choose manually');
+ var catSel=lhE.cat<0?'Choose manually':EBAY_PATH+EBAY_CATS[lhE.cat][0];
+ var typeOpts=EBAY_TYPES.slice();if(lhE.type&&typeOpts.indexOf(lhE.type)<0)typeOpts.unshift(lhE.type);if(!lhE.type)typeOpts.unshift('');
+ var tl=lhE.title.length;
+ var showSize=it.category==='Ring'||it.ringSize;
+ return ebRow('Category search','ebQ',lhE.q)
+  +ebRow('Category','ebCat','',ebSel('ebCat',catOpts,catSel))
+  +ebRow('Item title <span id="ebTc" style="'+(tl>80?'color:var(--danger)':'')+'">('+tl+'/80)</span>','ebTitle',lhE.title)
+  +ebRow('Brand','ebBrand','Unbranded')
+  +(showSize?ebRow('Ring size','ebSize',valOf(it.ringSize)):'')
+  +ebRow('Type','ebType','',ebSel('ebType',typeOpts,lhE.type))
+  +ebRow('Metal','ebMetal',pri)
+  +ebRow('Metal purity','ebPur',puT)
+  +ebRow('Main stone','ebStone',ebCap((it.stone||[])[0]))
+  +ebRow('Condition','ebCond','Pre-owned - Good')
+  +ebRow('Description (paste in eBay’s HTML view)','ebDesc','','<textarea id="ebDesc" rows="4" style="height:auto;width:100%">'+esc(ebDesc(it))+'</textarea>')
+  +ebRow('Format','ebFmt','Buy It Now')
+  +ebRow('Item price','ebPrice',ebPriceNum())
+  +ebRow('Quantity','ebQty','1')
+  +ebRow('Shipping','ebShip','Free');
+}
+function lhInput(t){
+ if(t.id==='ebTitle'){lhE.title=t.value;var tc=document.getElementById('ebTc');if(tc){tc.textContent='('+t.value.length+'/80)';tc.style.color=t.value.length>80?'var(--danger)':''}return}
+ if(t.id==='ebQ'){lhE.q=t.value;return}
+ var n=t.name;
+ if(n==='shipEstimate')editing.shipEstimate=parseMoney(t.value);
+ else if(n==='buffer')editing.buffer=t.value===''?'':Number(t.value);
+ else if(n==='ebayPct')PS.eb=Number(t.value)||0;
+ else if(n==='igPct')PS.ig=Number(t.value)||0;
+ else return;
+ var r=lhResults(),a=document.getElementById('lhSug'),b=document.getElementById('lhPot');if(a)a.textContent=r.sug;if(b)b.textContent=r.pot;var pe=document.getElementById('ebPrice');if(pe)pe.value=ebPriceNum();
+}
 function renderMain(){
- document.getElementById('app').innerHTML=backupBanner()+(view==='box'?boxTitle()+renderBox():view==='gallery'?renderGallery():view==='manage'?renderManage():view==='wishlist'?renderWishlist():view==='sizeguide'?renderSizeGuide():view==='coll'?renderColl():view==='secret'?renderSecret():view==='jotd'?renderJotd():view==='about'?renderAbout():view==='listing'?renderListing():view==='piece'?renderPiece():renderEdit());
+ document.getElementById('app').innerHTML=backupBanner()+(view==='box'?boxTitle()+renderBox():view==='gallery'?renderGallery():view==='manage'?renderManage():view==='wishlist'?renderWishlist():view==='sizeguide'?renderSizeGuide():view==='coll'?renderColl():view==='secret'?renderSecret():view==='jotd'?renderJotd():view==='about'?renderAbout():view==='listing'?renderListing():view==='piece'?renderPiece():view==='lhelp'?renderLhelp():renderEdit());
  var eb=document.getElementById('editbar'),hd=document.querySelector('header');if(eb&&hd)eb.style.top=hd.offsetHeight+'px';
  setupFloat();
  if(view==='gallery')fillThumbs();
  setupLazyBox();
- updateSummary();setTabs();updateStorage();
+ updateSummary();setTabs();updateStorage();keepHeadSync();
 }
-function fadesUpd(){var t=document.getElementById('gfT'),b=document.getElementById('gfB');if(!t||!b)return;var tb=document.getElementById('tabbar');b.style.bottom=(tb&&tb.offsetHeight?tb.offsetHeight-1:0)+'px';var on=['box','coll','wishlist','gallery','manage','about','edit','listing','jotd','secret','sizeguide'].indexOf(view)>-1;var ubOn=!!document.querySelector('.upd:not([hidden])');var max=document.documentElement.scrollHeight-innerHeight;var bn=0;document.querySelectorAll('.upd:not([hidden])').forEach(function(x){bn+=x.offsetHeight});var hd=document.querySelector('header'),stuck=!!hd&&hd.getBoundingClientRect().top<=(parseFloat(getComputedStyle(hd).top)||0)+1;t.style.opacity=on&&!ubOn&&scrollY>4?'1':'0';b.style.opacity=on&&scrollY<max-4?'1':'0'}
+function fadesUpd(){var t=document.getElementById('gfT'),b=document.getElementById('gfB');if(!t||!b)return;var tb=document.getElementById('tabbar');b.style.bottom=(tb&&tb.offsetHeight?tb.offsetHeight-1:0)+'px';var on=['box','coll','wishlist','gallery','manage','about','edit','listing','jotd','secret','sizeguide','lhelp'].indexOf(view)>-1;var ubOn=!!document.querySelector('.upd:not([hidden])');var max=document.documentElement.scrollHeight-innerHeight;var bn=0;document.querySelectorAll('.upd:not([hidden])').forEach(function(x){bn+=x.offsetHeight});var hd=document.querySelector('header'),stuck=!!hd&&hd.getBoundingClientRect().top<=(parseFloat(getComputedStyle(hd).top)||0)+1;t.style.opacity=on&&!ubOn&&scrollY>4?'1':'0';b.style.opacity=on&&scrollY<max-4?'1':'0'}
 function fadesInit(){if(document.getElementById('gfT'))return;['gfT','gfB'].forEach(function(id){var d=document.createElement('div');d.id=id;d.className='gfade';document.body.appendChild(d)});window.addEventListener('scroll',fadesUpd,{passive:true});window.addEventListener('resize',fadesUpd)}
 function render(){document.body.dataset.view=view;cols=colsBy[view]||3;renderMain();renderDrawer();wfix();fadesInit();fadesUpd()}
 var wtopRO=window.ResizeObserver?new ResizeObserver(function(){wfix()}):null;
@@ -1900,7 +2006,7 @@ function trailBack(){
  drawer(false);render();window.scrollTo(0,s.y||0);
 }
 function jotdApplyWorn(){var wp=jotdWornPicks();['ring1','ring2','earring','necklace'].forEach(function(k){if(wp[k]&&!jotdLock[k]&&(!jotdSel[k]||jotdSel[k].id!==wp[k].id))jotdSel[k]=wp[k]})}
-function show(v){if(v!=='edit')editing=null;if(v==='wishlist')WISH_QUOTE=-1;if(v==='jotd'&&jotdSel)jotdApplyWorn();view=v;cols=colsBy[v]||3;ro=false;wro=false;compShownFor=null;if(v!=='edit')backTo='box';drawer(false);render();if(v==='box'&&keepY!=null){window.scrollTo(0,keepY);keepY=null}else{if(v!=='edit')keepY=null;window.scrollTo(0,0)}}
+function show(v){if(v!=='edit'&&v!=='lhelp')editing=null;if(v==='wishlist')WISH_QUOTE=-1;if(v==='jotd'&&jotdSel)jotdApplyWorn();view=v;cols=colsBy[v]||3;ro=false;wro=false;compShownFor=null;if(v!=='edit'&&v!=='lhelp')backTo='box';drawer(false);render();if(v==='box'&&keepY!=null){window.scrollTo(0,keepY);keepY=null}else{if(v!=='edit')keepY=null;window.scrollTo(0,0)}}
 function setTabs(){var t=document.getElementById('tabbar'),bs=t.querySelectorAll('button');bs.forEach(function(x){x.classList.toggle('on',x.dataset.v===view)});tabBar()}
 function tabBar(){var t=document.getElementById('tabbar'),el=t.querySelector('button.on');if(!el)return;t.style.setProperty('--tl',el.offsetLeft+'px');t.style.setProperty('--tw',el.offsetWidth+'px')}
 window.addEventListener('resize',tabBar);
@@ -2672,6 +2778,7 @@ document.addEventListener('input',function(e){
  }
  if(t.getAttribute('data-a')==='sthr')return;
  if(t.id==='cropz'){cropZoom(Number(t.value));return}
+ if(view==='lhelp'&&t.closest&&t.closest('#lhp')){lhInput(t);return}
  var f=document.getElementById('form');
  if(f&&f.contains(t)){
    if(t.name==='ebayPct')PS.eb=Number(t.value)||0;
@@ -2822,7 +2929,8 @@ case 'frm':frameStyle=d.v;document.documentElement.dataset.frame=frameStyle;kset
   case 'wdel':askConfirm('Remove from coveted?','This removes the piece from Coveted Pieces.','Remove',function(){var wd=wish.filter(function(x){return x.id===d.id})[0];wish=wish.filter(function(x){return x.id!==d.id});if(wd&&!isUsed(wd.img)){gal.refs=gal.refs.filter(function(x){return x!==wd.img});gal.covers=gal.covers.filter(function(x){return x!==wd.img});delete gal.imgs[wd.img]}saveWish();saveGallery();renderMain()});break;
   case 'covadd':document.getElementById('cvfile').click();break;
   case 'refadd':document.getElementById('reffile').click();break;
-  case 'listmodal':e.preventDefault();syncForm();var pr2=editing.shipEstimate!=null&&editing.shipEstimate!==''?editing.shipEstimate:shipDefault(editing.cost);var ph=ORDER_PRICE.map(function(k){return fieldHTML(k,k==='shipEstimate'?pr2:editing[k])}).join('').replace(/<(input|select|textarea) /g,'<$1 form="form" ');M.innerHTML='<div class="modal" data-a="backdrop"><div id="lhPrice" style="max-width:520px;width:94vw;max-height:88vh;overflow:auto"><h3 style="margin:0 0 8px">Listing Helper</h3>'+listingBlock(editing)+'<div class="f">'+ph+'</div>'+'<div class="bar" style="justify-content:center;margin:12px 0 0"><button data-a="x">Close</button></div></div></div>';break;
+  case 'listmodal':e.preventDefault();syncForm();lhRet=window.pageYOffset;lhChan=editing.sellPlatform==='Instagram'?'Instagram':'eBay';lhEInit();show('lhelp');break;
+  case 'lhback':show('edit');window.scrollTo(0,lhRet);break;
   case 'showcomp':var scy=window.pageYOffset;syncForm();compShownFor=editing.id;renderMain();window.scrollTo(0,scy);setTimeout(function(){window.scrollTo(0,scy)},60);break;
   case 'rmref':syncForm();editing.refs.splice(Number(d.i),1);renderMain();break;
   case 'pickref':syncForm();editing.cover={id:editing.refs[Number(d.i)],l:null,t:null,w:null,h:null};renderMain();break;
@@ -2852,7 +2960,9 @@ case 'frm':frameStyle=d.v;document.documentElement.dataset.frame=frameStyle;kset
   case 'expclose':expParts=null;expDone={};renderMain();break;
  }
 });
-document.addEventListener('change',function(e){
+document.addEventListener('change',function(e){if(e.target&&e.target.id==='ebCat'){var ci=-1;EBAY_CATS.forEach(function(c,n){if(EBAY_PATH+c[0]===e.target.value)ci=n});lhE.cat=ci;lhE.q=ci<0?'vintage antique jewelry':EBAY_CATS[ci][1];var q=document.getElementById('ebQ');if(q)q.value=lhE.q;return}
+if(e.target&&e.target.id==='ebType'){lhE.type=e.target.value;return}
+if(e.target&&e.target.id==='lhChan'){lhChan=e.target.value==='Instagram'?'Instagram':'eBay';renderMain();return}
  var t=e.target;if(t&&t.name==='whereabouts'&&t.closest&&t.closest('#form')){var ss=document.querySelector('#form select[name="status"]');if(ss){var cur=ss.value,gone=t.value==='Gone',opts=gone?EXITS:STAT,pick=opts.indexOf(cur)>-1?cur:opts[0];ss.innerHTML=opts.map(function(o){return '<option value="'+esc(o)+'"'+(o===pick?' selected':'')+'>'+esc(o)+'</option>'}).join('')}}
  var a=t.getAttribute('data-a');
  if(t.id==='sort'){sortBy=t.value;render();return}
@@ -3151,7 +3261,7 @@ function confettiBurst(){
  })();
 }
 /* ---------- update banner with What's new CTA (no popup) ---------- */
-var WHATS_NEW='Wares: The Keep tab groups pieces by category, collapsed to start, with Expand all. The Cost & Sale columns are now Acquisition, with the sale columns removed and Provenance added. Category, Period, Status, Tracking link and Expected delivery columns are gone. Decade, Condition and Whereabouts columns are new. The Selling tab now shows how much of your total cost is listed, with a bar that fills by dollars. The Sold tab shows how much of your total cost you have recouped. Listed pieces show how many days they have been listed. Unlisted pieces get a red outline and a red To list tag, and category rows show how many are listed, like (8 of 9).';
+var WHATS_NEW='Wares: The Selling card now reads like "$510 of $65,789 to recoup" with "1 of 110 pieces listed" on the right. The Keep tab has sticky column headers, matches the Selling tab\'s look, and ends with a Total row for cost, shipping, tariffs, repairs and total cost. Listing Helper: it is now its own page instead of a popup, with a channel menu (eBay or Instagram). For eBay it gives you a copy-ready checklist in eBay\'s form order: category search, category, title with an 80-character counter, brand, ring size, type, metal, purity, main stone, condition, your HTML description template, format, price, quantity and shipping.';
 function updateBannerCheck(){
  var seen=null;try{seen=localStorage.getItem('ntts_seen_ver')}catch(e){}
  try{localStorage.setItem('ntts_seen_ver',APP_VERSION)}catch(e){}
