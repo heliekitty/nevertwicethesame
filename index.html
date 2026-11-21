@@ -356,7 +356,7 @@ header button[data-a="drawer"]{display:flex;align-items:center;justify-content:c
 <script>
 document.getElementById('app').innerHTML='<div style="position:fixed;inset:0;z-index:50;background:var(--bg);display:flex;align-items:center;justify-content:center">'+mothLoaderHTML()+'</div>';
 var K='ntts_items_v2',OK='ntts_order_v1',PER=25,MAX_UPLOAD=300*1024;
-var APP_VERSION='2.26.0',APP_DATE='2026-11-21 · 2:12 PM ET',UPDATE_URL='';
+var APP_VERSION='2.26.1',APP_DATE='2026-11-21 · 3:15 PM ET',UPDATE_URL='';
 var ICONS={reorder:"<path d='M8 20V4M8 4L4.5 7.5M8 4l3.5 3.5M16 4v16M16 20l-3.5-3.5M16 20l3.5-3.5'/>",coll:"<rect x='3' y='4' width='18' height='16' rx='2'/><path d='M3 10h18M8 14h8'/>",gem:"<path d='M7 4h10l4 5-9 11L3 9z'/><path d='M3 9h18M9 4l-1.5 5L12 20l4.5-11L15 4'/>",pkg:"<path d='M3 7.5L12 3l9 4.5v9L12 21l-9-4.5z'/><path d='M3 7.5l9 4.5 9-4.5M12 12v9'/>",hand:"<path d='M5 11V7a1.5 1.5 0 0 1 3 0v4M8 11V5a1.5 1.5 0 0 1 3 0v6M11 11V6a1.5 1.5 0 0 1 3 0v6M14 11V8a1.5 1.5 0 0 1 3 0v7c0 3-2 5-5 5h-1c-2 0-3-1-4-3l-2-4'/>",x:"<path d='M6 6l12 12M18 6L6 18'/>",ring:"<circle cx='12' cy='14' r='6'/><path d='M9.5 8 12 4l2.5 4'/><path d='M12 9.5l1.5 2.5-1.5 2.5-1.5-2.5z'/>",earrings:"<path d='M7 3v3'/><path d='M7 6c-1.6 0-2.5 1.3-2.5 3S6 14 7 17c1-3 2.5-5 2.5-8C9.5 7.3 8.6 6 7 6z'/><path d='M17 3v3'/><path d='M17 6c-1.6 0-2.5 1.3-2.5 3S16 14 17 17c1-3 2.5-5 2.5-8C19.5 7.3 18.6 6 17 6z'/>",necklace:"<path d='M4 5c2 7 14 7 16 0'/><path d='M12 12.5V15'/><circle cx='12' cy='17' r='2.2'/>",bracelet:"<ellipse cx='12' cy='12' rx='8' ry='5.5'/><ellipse cx='12' cy='12' rx='5.5' ry='3'/>",watch:"<circle cx='12' cy='13' r='5.5'/><path d='M9 7.5 10 3h4l1 4.5M9 18.5 10 23h4l1-4.5'/><path d='M12 10.5V13l1.8 1.2'/>",heart:"<path d='M12 20s-7-4.4-7-9.5A4 4 0 0 1 12 8a4 4 0 0 1 7 2.5C19 15.6 12 20 12 20z'/>",wrench:"<path d='M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-.5-.5-2.5z'/>",key:"<g transform='rotate(-45 12.5 12)'><circle cx='8' cy='12' r='4'/><path d='M12 12h9M18 12v3M21 12v2.5'/></g>",curio:"<rect x='4' y='3' width='16' height='18' rx='1'/><path d='M3 3h18M3 21h18'/><path d='M12 3v18'/><path d='M4 11h16'/><path d='M10.5 7v1.5M13.5 7v1.5M10.5 15v1.5M13.5 15v1.5'/>",clock:"<circle cx='12' cy='12' r='9'/><path d='M12 7v5l3 2'/>",pencil:"<path d='M4 20h4L19 9l-4-4L4 16z'/><path d='M13.5 6.5l4 4'/>",lock:"<rect x='5' y='11' width='14' height='10' rx='2'/><path d='M8 11V7a4 4 0 0 1 8 0v4'/>",unlock:"<rect x='3.95' y='11' width='11.1' height='10' rx='2'/><path d='M12.8 11V6.3A3.3 3.3 0 0 1 19.4 6.3V9.5'/>",bag:"<path d='M5 8h14l-1 12H6z'/><path d='M9 8V6a3 3 0 0 1 6 0v2'/>",plus:"<path d='M12 5v14M5 12h14'/>",x:"<path d='M6 6l12 12M18 6L6 18'/>",spark:"<path d='M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z'/>",gallery:"<rect x='3' y='4' width='18' height='16' rx='2'/><circle cx='9' cy='10' r='2'/><path d='M21 16l-5-5-8 9'/>"};
 var ORN='<svg width="72" height="10" viewBox="0 0 72 10" fill="none" stroke="#a8864f" stroke-width="1.2"><path d="M0 5h28M44 5h28"/><path d="M36 1l4 4-4 4-4-4z"/></svg>';
 var ICOFIT_O={"reorder":[11.75,12,16],"coll":[12,12,16],"gem":[12,12,16],"ring":[12,12,16],"earrings":[12,10,15],"necklace":[12,12.1,16],"bracelet":[12,12,16],"watch":[12,13,20],"heart":[12,13.32,14],"wrench":[10.58,13.42,15.16],"key":[12.5,12,17.68],"curio":[12,12,18],"clock":[12,12,18],"pencil":[11.5,12.5,15],"lock":[12,12,18],"unlock":[12,12,17.99],"bag":[12,11.5,17],"plus":[12,12,14],"x":[12,12,12],"spark":[12,10,14],"gallery":[12,12,18]},ICOFIT_S={"coll":[12,12,16],"gem":[12,12,16],"ring":[12,11.5,17],"key":[12.25,12,18.74],"bag":[12,11.5,17],"plus":[12,12,19],"spark":[12,10,14]};
@@ -1251,23 +1251,26 @@ function daysUntil(s){if(!s)return null;var p=String(s).split('-');if(p.length!=
 function countPill(i){if(i.whereabouts!=='Incoming')return '';var n=daysUntil(i.deliveryDate);if(n==null||n<0)return '';return '<span aria-hidden="true" style="position:absolute;left:6px;bottom:6px;padding:2px 7px;border-radius:999px;background:rgba(0,0,0,.5);color:#fff;font-size:11px;line-height:1.4;pointer-events:none">'+(n===0?'Today':n+'d')+'</span>'}
 function countLine(n){return '<p class="meta" style="text-align:center;margin:16px 0 0">'+n+' piece'+(n===1?'':'s')+(anyFilter()?' (filtered)':'')+'</p>'}
 var TC={
- Piece:[['Category',function(i){return esc(i.category)}],['Period',function(i){return esc(i.period)}],['Era',function(i){return esc(i.era||'—')}],['Style',function(i){return esc(i.style||'—')}],['Year',function(i){return esc(i.yearMade==null?'—':i.yearMade)}],['Country of Origin',function(i){return esc(i.country||'—')}],['Maker',function(i){return esc(i.maker||'—')}],['Stones',function(i){return esc((i.stone||[]).join(', ')||'—')}],['Metals',function(i){return metalsText(i)}],['Purity',function(i){return purityText(i)}],['Stone weight (ct)',function(i){return esc(i.stoneCt==null||i.stoneCt===''?'—':i.stoneCt+' ct')}],['Hallmarks',function(i){return esc(i.hallmark||'—')}],['Measurements',function(i){return esc(i.measurement||'—')}],['Weight (g)',function(i){return esc(i.grams==null||i.grams===''?(i.weight||'—'):i.grams+' g')}],['Ring Size',function(i){return esc(i.ringSize==null||i.ringSize===''?'—':i.ringSize)}],['Cut',function(i){return esc((i.cut||[]).join(', ')||'—')}],['Color',function(i){return colorsHTML(i.colorMain)}],['Motifs',function(i){return esc((i.motif||[]).join(', ')||'—')}],['Notes',function(i){return esc(i.notes||'—')}]],
- Transaction:[['Status',function(i){return esc(i.status)}],['Date Acquired',function(i){return esc(fmtDate(i.purchaseDate)||'—')}],['Seller',function(i){return esc(i.seller||'—')}],['Purchase Platform',function(i){return esc(i.purchasePlatform||'—')}],['Cost',function(i){return money(num(i.cost))}],['Shipping (acquired)',function(i){return money(num(i.acqShipping))}],['Tariffs',function(i){return money(num(i.tariffs))}],['Repairs',function(i){return money(num(i.repairs))}],['Total Cost',function(i){return (num(i.acqShipping)==null&&num(i.tariffs)==null&&num(i.repairs)==null)?'—':calcs(i).totCost}],['Selling Platform',function(i){return esc(i.sellPlatform||'—')}],['Date Listed',function(i){return esc(fmtDate(i.dateListed)||'—')}],['Listing Link',function(i){return i.linkSale?'<a href="'+esc(i.linkSale)+'" target="_blank" rel="noopener">open</a>':'—'}],['Date Sold',function(i){return esc(fmtDate(i.dateSold)||'—')}],['Turnover',function(i){return days(i)==null?'—':days(i)+' days'}],['Platform Fee',function(i){return fees(i)?money(fees(i)):'—'}],['Shipping (sold)',function(i){return money(num(i.shipActual))}],['Final Payout',function(i){return money(num(i.payout))}],['Net Profit',function(i){return calcs(i)['c-net']}]],
- Stats:[['Last Worn',function(i){return esc(fmtDate(i.wornLast)||'—')}],['Times Worn',function(i){return esc(i.wornCount==null||i.wornCount===''?'—':i.wornCount)}],['Rating',function(i){return stars(i.rating)||'—'}],['Photoshoot?',function(i){return i.photoshoot?'Yes':'No'}],['Tracking link',function(i){var u=String(i.trackUrl||'').trim();return /^https?:\/\//i.test(u)?'<a href="'+esc(u)+'" target="_blank" rel="noopener">open</a>':'—'}],['Expected delivery',function(i){return esc(fmtDate(i.deliveryDate)||'—')}]]
+ Piece:[['Era',function(i){return esc(i.era||'—')}],['Style',function(i){return esc(i.style||'—')}],['Decade',function(i){return esc(i.decade||'—')}],['Year',function(i){return esc(i.yearMade==null?'—':i.yearMade)}],['Country of Origin',function(i){return esc(i.country||'—')}],['Maker',function(i){return esc(i.maker||'—')}],['Stones',function(i){return esc((i.stone||[]).join(', ')||'—')}],['Metals',function(i){return metalsText(i)}],['Purity',function(i){return purityText(i)}],['Stone weight (ct)',function(i){return esc(i.stoneCt==null||i.stoneCt===''?'—':i.stoneCt+' ct')}],['Hallmarks',function(i){return esc(i.hallmark||'—')}],['Measurements',function(i){return esc(i.measurement||'—')}],['Weight (g)',function(i){return esc(i.grams==null||i.grams===''?(i.weight||'—'):i.grams+' g')}],['Ring Size',function(i){return esc(i.ringSize==null||i.ringSize===''?'—':i.ringSize)}],['Cut',function(i){return esc((i.cut||[]).join(', ')||'—')}],['Color',function(i){return colorsHTML(i.colorMain)}],['Motifs',function(i){return esc((i.motif||[]).join(', ')||'—')}],['Condition',function(i){return esc(i.condition||'—')}],['Notes',function(i){return esc(i.notes||'—')}]],
+ Transaction:[['Date Acquired',function(i){return esc(fmtDate(i.purchaseDate)||'—')}],['Seller',function(i){return esc(i.seller||'—')}],['Purchase Platform',function(i){return esc(i.purchasePlatform||'—')}],['Cost',function(i){return money(num(i.cost))}],['Shipping (acquired)',function(i){return money(num(i.acqShipping))}],['Tariffs',function(i){return money(num(i.tariffs))}],['Repairs',function(i){return money(num(i.repairs))}],['Total Cost',function(i){return (num(i.acqShipping)==null&&num(i.tariffs)==null&&num(i.repairs)==null)?'—':calcs(i).totCost}],['Provenance',function(i){return esc(i.provenance||'—')}]],
+ Stats:[['Whereabouts',function(i){return esc(i.whereabouts||'In possession')}],['Last Worn',function(i){return esc(fmtDate(i.wornLast)||'—')}],['Times Worn',function(i){return esc(i.wornCount==null||i.wornCount===''?'—':i.wornCount)}],['Rating',function(i){return stars(i.rating)||'—'}],['Photoshoot?',function(i){return i.photoshoot?'Yes':'No'}]]
 };
+function keepRows(){return items.filter(function(i){return i.status==='Keep'&&passTab(i)}).sort(groupCmp)}
 function renderTable(){
- var cols=TC[ctab];var list=items.filter(function(i){return i.status==='Keep'&&passTab(i)}).sort(groupCmp);
- var n=Math.max(1,Math.ceil(list.length/PER));if(page>n)page=n;
- var rows=list.slice((page-1)*PER,page*PER),last='',body='';
- rows.forEach(function(i){
-   var gk=i.category+'|'+i.period;
-   if(gk!==last){body+='<tr class="grp"><td colspan="'+(cols.length+2)+'"><span style="position:sticky;left:0;display:inline-block">'+esc(i.category)+' · '+esc(i.period)+'</span></td></tr>';last=gk}
-   body+='<tr><td class="stk"><div style="display:flex;gap:6px;align-items:flex-start">'+(i.cover?'<div style="position:relative;width:40px;height:40px;border-radius:6px;overflow:hidden;flex:none">'+coverImg(i.cover,true)+'</div>':'<span class="phe">'+ico(String(i.category).toLowerCase(),18)+'</span>')+'<span>'+esc(i.title||'—')+'</span></div></td>'+cols.map(function(c){return '<td>'+c[1](i)+'</td>'}).join('')+'<td><button data-a="edit" data-id="'+i.id+'" aria-label="Edit" style="padding:6px 10px">'+ico('pencil',16)+'</button></td></tr>';
+ var cols=TC[ctab];var list=keepRows(),body='',byCat={},order=[];
+ list.forEach(function(i){var k=i.category||'Other';if(!byCat[k]){byCat[k]=[];order.push(k)}byCat[k].push(i)});
+ order.forEach(function(k){
+   var key='k|'+k,open=!!catOpen[key];
+   body+='<tr class="grp" data-a="cattog" data-k="'+esc(key)+'" aria-expanded="'+(open?'true':'false')+'" style="cursor:pointer"><td colspan="'+(cols.length+2)+'"><span style="position:sticky;left:0;display:inline-block"><span aria-hidden="true" style="display:inline-block;width:16px">'+(open?'\u25BE':'\u25B8')+'</span>'+esc(k)+' ('+byCat[k].length+')</span></td></tr>';
+   if(!open)return;
+   byCat[k].forEach(function(i){
+     body+='<tr><td class="stk"><div style="display:flex;gap:6px;align-items:flex-start">'+(i.cover?'<div style="position:relative;width:40px;height:40px;border-radius:6px;overflow:hidden;flex:none">'+coverImg(i.cover,true)+'</div>':'<span class="phe">'+ico(String(i.category).toLowerCase(),18)+'</span>')+'<span>'+esc(i.title||'—')+'</span></div></td>'+cols.map(function(c){return '<td>'+c[1](i)+'</td>'}).join('')+'<td><button data-a="edit" data-id="'+i.id+'" aria-label="Edit" style="padding:6px 10px">'+ico('pencil',16)+'</button></td></tr>';
+   });
  });
- return '<div role="group" aria-label="Table columns" style="display:flex;align-items:center;flex-wrap:wrap;column-gap:6px;margin:0 0 4px">'+[['Piece','Details'],['Transaction','Cost &amp; Sale'],['Stats','Wear &amp; Rating']].map(function(t,k){var on=ctab===t[0];return (k?'<span aria-hidden="true" class="meta">·</span>':'')+'<button type="button" class="link" data-a="ct" data-v="'+t[0]+'"'+(on?' aria-current="true"':'')+' style="min-height:40px;margin:0;padding:0 6px;font-size:14px'+(on?';font-weight:700;color:var(--fg)':'')+'">'+t[1]+'</button>'}).join('')+'</div>'
+ return '<div role="group" aria-label="Table columns" style="display:flex;align-items:center;flex-wrap:wrap;column-gap:6px;margin:0 0 4px">'+[['Piece','Details'],['Transaction','Acquisition'],['Stats','Wear &amp; Rating']].map(function(t,k){var on=ctab===t[0];return (k?'<span aria-hidden="true" class="meta">·</span>':'')+'<button type="button" class="link" data-a="ct" data-v="'+t[0]+'"'+(on?' aria-current="true"':'')+' style="min-height:40px;margin:0;padding:0 6px;font-size:14px'+(on?';font-weight:700;color:var(--fg)':'')+'">'+t[1]+'</button>'}).join('')+'</div>'
   +'<div class="tw"><table><thead><tr><th class="stk">Title</th>'+cols.map(function(c){return '<th>'+c[0]+'</th>'}).join('')+'<th></th></tr></thead><tbody>'+body+'</tbody></table></div>'
-  +(rows.length?'':'<p class="meta">No pieces match these filters.</p>')
-  +'<div class="pager"><button data-a="pg" data-v="-1"'+(page<=1?' disabled':'')+'>Prev</button><span>Page '+page+' of '+n+'</span><button data-a="pg" data-v="1"'+(page>=n?' disabled':'')+'>Next</button></div>'+countLine(list.length);
+  +(list.length?'':'<p class="meta">No pieces match these filters.</p>')
+  +countLine(list.length);
 }
 var boxLim=30,boxKey='',boxIO=null;
 function setupLazyBox(){var el=document.getElementById('boxSent');if(boxIO){boxIO.disconnect();boxIO=null}if(!el||!('IntersectionObserver' in window))return;boxIO=new IntersectionObserver(function(es){if(es.some(function(e){return e.isIntersecting})){boxIO.disconnect();boxIO=null;boxLim+=60;renderMain()}},{rootMargin:'800px 0px'});boxIO.observe(el)}
@@ -1771,6 +1774,8 @@ function priceStrip(){
   +'<div class="meta" style="font-size:11px;margin:6px 0 0">Estimates only. Not an appraisal or financial advice.</div>'
   +'</div>';
 }
+function daysSince(s){if(!s)return null;var p=String(s).split('-');if(p.length!==3)return null;var d=new Date(+p[0],+p[1]-1,+p[2]),t=new Date();t=new Date(t.getFullYear(),t.getMonth(),t.getDate());var n=Math.round((t-d)/864e5);return isNaN(n)||n<0?null:n}
+function listedAge(i){var n=isListed(i)?daysSince(i.dateListed):null;return n}
 function isListed(i){return !!(i.linkSale||i.linkSale2)}
 function renderListing(){
  pricesLoad();
@@ -1820,41 +1825,53 @@ function table(rows){
    var tabKey=sold?'s':melting?'m':'t';
    function itemRow(i){
      var img=(i.cover?coverImg(i.cover,true):'')||'<span style="display:flex;align-items:center;justify-content:center;width:100%;height:100%">'+ico(String(i.category||'other').toLowerCase(),20)+'</span>';
-     var thumb='<button type="button" data-a="viewpiece" data-id="'+i.id+'" aria-label="Open '+esc(title(i))+'" style="padding:0;border:0;background:transparent;min-height:0;width:var(--wthumb,40px);flex:0 0 var(--wthumb,40px)"><div style="width:var(--wthumb,40px);height:var(--wthumb,40px);border-radius:8px;overflow:hidden;background:var(--acc);position:relative">'+img+'</div></button>';
+     var thumb='<button type="button" data-a="viewpiece" data-id="'+i.id+'" aria-label="Open '+esc(title(i))+'" style="padding:0;border:0;background:transparent;min-height:0;width:var(--wthumb,40px);flex:0 0 var(--wthumb,40px)"><div style="width:var(--wthumb,40px);height:var(--wthumb,40px);border-radius:8px;overflow:hidden;background:var(--acc);position:relative'+(tabKey==='t'&&!isListed(i)?';box-shadow:0 0 0 2px var(--danger)':'')+'">'+img+'</div></button>';
      return '<tr><td rowspan="2" style="padding:10px 4px 10px 0;border-bottom:1px solid var(--line);vertical-align:middle">'+thumb+'</td>'
-      +'<td colspan="'+(1+NC)+'" style="padding:10px 0 0;border-bottom:0;font-weight:600;font-size:13px;line-height:1.25;overflow-wrap:anywhere">'+esc(title(i))+(tabKey==='t'&&!isListed(i)?'<div style="font-size:12px;font-weight:600;margin-top:2px;color:var(--lnk)">To list</div>':'')+listLinksHTML(i)+'</td></tr>'
+      +'<td colspan="'+(1+NC)+'" style="padding:10px 0 0;border-bottom:0;font-weight:600;font-size:13px;line-height:1.25;overflow-wrap:anywhere">'+esc(title(i))+(tabKey==='t'&&!isListed(i)?'<div style="font-size:12px;font-weight:600;margin-top:2px;color:var(--danger)">To list</div>':'')+(tabKey==='t'&&listedAge(i)!=null?'<div class="meta" style="font-size:12px;margin-top:2px">Listed '+listedAge(i)+(listedAge(i)===1?' day':' days')+'</div>':'')+listLinksHTML(i)+'</td></tr>'
       +'<tr><td style="padding:4px 4px 10px 0;border-bottom:1px solid var(--line);vertical-align:middle;font-size:12px;line-height:1.25;overflow-wrap:anywhere">'+esc(metalShort(i))+'</td>'+num5(vec(i))+'</tr>';
    }
    var groups=order.map(function(k){
      var b=byCat[k],key=tabKey+'|'+k,open=!!catOpen[key];
-     var head='<tr data-a="cattog" data-k="'+esc(key)+'" aria-expanded="'+(open?'true':'false')+'" style="cursor:pointer"><td colspan="2" style="'+LABC+'"><span aria-hidden="true" style="display:inline-block;width:16px;color:var(--mut,inherit)">'+(open?'\u25BE':'\u25B8')+'</span>'+esc(k)+' ('+b.n+')'+(tabKey==='t'&&b.tl?' <span style="font-weight:400;color:var(--lnk)">· '+b.tl+' to list</span>':'')+'</td>'+num5(b.v)+'</tr>';
+     var head='<tr data-a="cattog" data-k="'+esc(key)+'" aria-expanded="'+(open?'true':'false')+'" style="cursor:pointer"><td colspan="2" style="'+LABC+'"><span aria-hidden="true" style="display:inline-block;width:16px;color:var(--mut,inherit)">'+(open?'\u25BE':'\u25B8')+'</span>'+esc(k)+' ('+(tabKey==='t'&&b.tl?(b.n-b.tl)+' of '+b.n:b.n)+')'+'</td>'+num5(b.v)+'</tr>';
      if(!open)return head;
-     return head+rows.filter(function(i){return (i.category||'Other')===k}).sort(function(a,c){return (isListed(a)?1:0)-(isListed(c)?1:0)}).map(itemRow).join('');
+     return head+rows.filter(function(i){return (i.category||'Other')===k}).sort(function(a,c){var d=(isListed(a)?1:0)-(isListed(c)?1:0);if(d||tabKey!=='t')return d;var x=listedAge(a),y=listedAge(c);return (y==null?-1:y)-(x==null?-1:x)}).map(itemRow).join('');
    }).join('');
    return '<table class="wtbl" style="width:100%;table-layout:fixed;border-collapse:separate;border-spacing:0">'+colgroup+thead+'<tbody>'+totRow+groups+'</tbody></table>';
  }
- var out='<div class="wtop"><h2 style="margin:0 0 14px">Wares</h2><div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap">'+seg+(dash?dashExpLink():keep?'':catBar(melting?melt:list,sold?'s':melting?'m':'t'))+'</div></div>';
+ var out='<div class="wtop"><h2 style="margin:0 0 14px">Wares</h2><div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap">'+seg+(dash?dashExpLink():keep?catBar(keepRows(),'k'):catBar(melting?melt:list,sold?'s':melting?'m':'t'))+'</div></div>';
  var ps=priceStrip();ps=ps?'<div style="margin-top:16px">'+ps+'</div>':'';
  if(dash)return out+dashHTML()+ps;
  if(keep)return out+renderTable()+ps;
  if(melting)out+=melt.length?table(melt):'<p class="meta">Nothing to melt.</p>';
- else out+=(!sold?sellProgress():'')+(list.length?table(list):'<p class="meta">'+(anyFilter()?'No pieces match these filters.':sold?'Nothing sold yet.':'Nothing selling yet.')+'</p>');
+ else out+=(sold?soldProgress():sellProgress())+(list.length?table(list):'<p class="meta">'+(anyFilter()?'No pieces match these filters.':sold?'Nothing sold yet.':'Nothing selling yet.')+'</p>');
  return out+ps;
 }
 function sellProgress(){
  var all=vis().filter(function(i){return i.status==='Selling'});if(!all.length)return '';
  var un=all.filter(function(i){return !isListed(i)}),n=all.length,l=n-un.length;
- var fl=0;un.forEach(function(i){var f=floorOf(i);if(f!=null&&!isNaN(f))fl+=f});
+ var tc=function(i){return (num(i.cost)||0)+(num(i.acqShipping)||0)+(num(i.tariffs)||0)+(num(i.repairs)||0)},fl=0,ft=0;all.forEach(function(i){var c=tc(i);ft+=c;if(isListed(i))fl+=c});
  un.sort(function(a,b){var x=a.purchaseDate||'9999',y=b.purchaseDate||'9999';return x<y?-1:x>y?1:title(a).localeCompare(title(b))});
- var nx=un[0],pct=Math.round(l/n*100);
+ var nx=un[0],pct=ft>0?Math.round(fl/ft*100):Math.round(l/n*100);
  var h='<div style="margin:12px 0 14px;padding:12px;border:1px solid var(--line);border-radius:12px;background:var(--card)">'
-  +'<div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px"><span style="font-weight:600">'+l+' of '+n+' listed</span>'+(fl>0?'<span class="meta">'+lhD(fl)+' est. floor waiting</span>':'')+'</div>'
-  +'<div role="progressbar" aria-valuemin="0" aria-valuemax="'+n+'" aria-valuenow="'+l+'" aria-label="Pieces listed on eBay" style="height:8px;border-radius:4px;background:var(--line);margin-top:8px;overflow:hidden"><div style="height:100%;width:'+pct+'%;background:var(--acc)"></div></div>';
+  +'<div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px"><span style="font-weight:600">'+(ft>0?lhD(fl)+' of '+lhD(ft)+' cost listed':l+' of '+n+' listed')+'</span>'+(ft>0?'<span class="meta">'+l+' of '+n+' pieces</span>':'')+'</div>'
+  +'<div role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="'+pct+'" aria-valuetext="'+(ft>0?lhD(fl)+' of '+lhD(ft)+' cost listed, '+l+' of '+n+' pieces':l+' of '+n+' pieces')+'" aria-label="Listed on eBay" style="height:8px;border-radius:4px;background:var(--line);margin-top:8px;overflow:hidden"><div style="height:100%;width:'+pct+'%;background:var(--acc)"></div></div>';
  if(nx){
   var img=(nx.cover?coverImg(nx.cover,true):'')||'<span style="display:flex;align-items:center;justify-content:center;width:100%;height:100%">'+ico(String(nx.category||'other').toLowerCase(),20)+'</span>';
   h+='<button type="button" data-a="viewpiece" data-id="'+nx.id+'" aria-label="Next up: '+esc(title(nx))+'. Open details" style="display:flex;align-items:center;justify-content:flex-start;gap:10px;width:100%;margin:12px 0 0;padding:8px;text-align:left;height:auto;border-radius:12px"><span style="width:48px;height:48px;flex:0 0 48px;border-radius:8px;overflow:hidden;background:var(--acc);position:relative;display:block">'+img+'</span><span style="min-width:0"><span class="meta" style="display:block">Next up: photograph and list</span><span style="display:block;font-weight:600;overflow-wrap:anywhere">'+esc(title(nx))+'</span></span></button>';
- }else h+='<p class="meta" style="margin:10px 0 0">Everything is listed.</p>';
+ }else{var ages=all.map(function(i){return {i:i,n:listedAge(i)}}).filter(function(x){return x.n!=null}).sort(function(a,b){return b.n-a.n});h+='<p class="meta" style="margin:10px 0 0">Everything is listed.'+(ages.length?' Longest wait: '+esc(title(ages[0].i))+', '+ages[0].n+(ages[0].n===1?' day':' days')+'.':'')+'</p>'}
  return h+'</div>';
+}
+function soldProgress(){
+ var V=vis(),sold=V.filter(function(i){return i.status==='Sold'}),sell=V.filter(function(i){return i.status==='Selling'});if(!sold.length)return '';
+ var tc=function(i){return (num(i.cost)||0)+(num(i.acqShipping)||0)+(num(i.tariffs)||0)+(num(i.repairs)||0)},back=function(i){return (num(i.payout)||0)-(num(i.feeFinal)||0)-(num(i.shipActual)||0)};
+ var rec=0,cs=0,ct=0,dsum=0,dn=0;
+ sold.forEach(function(i){rec+=back(i);cs+=tc(i);ct+=tc(i);var d=days(i);if(d!=null&&!isNaN(d)){dsum+=d;dn++}});
+ sell.forEach(function(i){ct+=tc(i)});
+ var pct=ct>0?Math.max(0,Math.min(100,Math.round(rec/ct*100))):0,net=rec-cs,n=sold.length;
+ return '<div style="margin:12px 0 14px;padding:12px;border:1px solid var(--line);border-radius:12px;background:var(--card)">'
+  +'<div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px"><span style="font-weight:600">'+lhD(rec)+' of '+lhD(ct)+' recouped</span><span class="meta">'+n+(n===1?' piece':' pieces')+' sold</span></div>'
+  +'<div role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="'+pct+'" aria-valuetext="'+lhD(rec)+' of '+lhD(ct)+' recouped" aria-label="Cost recouped" style="height:8px;border-radius:4px;background:var(--line);margin-top:8px;overflow:hidden"><div style="height:100%;width:'+pct+'%;background:var(--acc)"></div></div>'
+  +'<p class="meta" style="margin:10px 0 0">Net profit so far '+lhD(net)+(dn?'. Average '+Math.round(dsum/dn)+' days to sell.':'.')+'</p></div>';
 }
 function renderMain(){
  document.getElementById('app').innerHTML=backupBanner()+(view==='box'?boxTitle()+renderBox():view==='gallery'?renderGallery():view==='manage'?renderManage():view==='wishlist'?renderWishlist():view==='sizeguide'?renderSizeGuide():view==='coll'?renderColl():view==='secret'?renderSecret():view==='jotd'?renderJotd():view==='about'?renderAbout():view==='listing'?renderListing():view==='piece'?renderPiece():renderEdit());
@@ -3134,7 +3151,7 @@ function confettiBurst(){
  })();
 }
 /* ---------- update banner with What's new CTA (no popup) ---------- */
-var WHATS_NEW='Wares: The Selling tab now shows how many pieces are listed, the estimated floor value still waiting, and a Next up piece to photograph and list. Unlisted pieces are tagged To list and sort to the top. The gold and silver prices moved below the table.\nGallery: The Add Quote button now sits above your quotes.';
+var WHATS_NEW='Wares: The Keep tab groups pieces by category, collapsed to start, with Expand all. The Cost & Sale columns are now Acquisition, with the sale columns removed and Provenance added. Category, Period, Status, Tracking link and Expected delivery columns are gone. Decade, Condition and Whereabouts columns are new. The Selling tab now shows how much of your total cost is listed, with a bar that fills by dollars. The Sold tab shows how much of your total cost you have recouped. Listed pieces show how many days they have been listed. Unlisted pieces get a red outline and a red To list tag, and category rows show how many are listed, like (8 of 9).';
 function updateBannerCheck(){
  var seen=null;try{seen=localStorage.getItem('ntts_seen_ver')}catch(e){}
  try{localStorage.setItem('ntts_seen_ver',APP_VERSION)}catch(e){}
